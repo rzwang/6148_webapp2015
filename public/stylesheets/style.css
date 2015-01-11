@@ -24,9 +24,9 @@ html, body {
   pointer-events: none; }
 
 h1 {
-  font-style: 'Open Sans', sans-serif;
-  font-weight: 200;
-  font-size: 80px; }
+  font-family: "Open Sans" sans-serif;
+  font-weight: 300;
+  font-size: 7em; }
 
 img {
   height: 100%;
