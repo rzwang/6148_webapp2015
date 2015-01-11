@@ -40,16 +40,17 @@ h1{
     font-size: 80px;
 }
 
-
-img{
-    height: 100%;
-    width: 100%;
+p{
+    font-style: 'Josefin Sans', sans-serif;
+    font-weight: 110;
+    font-size: 20px;
 }
 
 // SECTIONS
 section.main {
     background-image: url("../images/worldbackground.jpg");
     background-size: 100%;
+    
     .container {
         position: relative;
         top: 20vh;
@@ -58,12 +59,16 @@ section.main {
         .wrapper {
             
             .title {
+                position: relative;
+                margin: 10px 10px;
                 color: rgba(176, 228, 231, 1);
                 text-align: center;
             }
 
-            .description{
-
+             .description{
+                position: relative;
+                color: $white;
+                text-align: center;
             }
         }
     }

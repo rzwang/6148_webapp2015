@@ -28,9 +28,10 @@ h1 {
   font-weight: 200;
   font-size: 80px; }
 
-img {
-  height: 100%;
-  width: 100%; }
+p {
+  font-style: 'Josefin Sans', sans-serif;
+  font-weight: 110;
+  font-size: 20px; }
 
 section.main {
   background-image: url("../images/worldbackground.jpg");
@@ -40,7 +41,13 @@ section.main {
     top: 20vh;
     width: 100vw; }
     section.main .container .wrapper .title {
+      position: relative;
+      margin: 10px 10px;
       color: #b0e4e7;
+      text-align: center; }
+    section.main .container .wrapper .description {
+      position: relative;
+      color: white;
       text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
