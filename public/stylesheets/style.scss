@@ -31,7 +31,7 @@ img {
 
 // SECTIONS
 section.main {
-    background-image: url("../images/Blurred.jpg");
+    background-image: url("../images/blurred.jpg");
     background-size: 100%;
 
     .container {
@@ -50,6 +50,14 @@ section.main {
                 color: black;
                 text-align: center;
             }
+        }
+
+        .login {
+            @include button;
+        }
+
+        .login:hover {
+            @include button_hover();
         }
     }
 }

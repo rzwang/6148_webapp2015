@@ -22,7 +22,7 @@ img {
   width: 100%; }
 
 section.main {
-  background-image: url("../images/Blurred.jpg");
+  background-image: url("../images/blurred.jpg");
   background-size: 100%; }
   section.main .container {
     position: relative;
@@ -34,5 +34,25 @@ section.main {
     section.main .container .wrapper .description {
       color: black;
       text-align: center; }
+    section.main .container .login {
+      font-family: "Open Sans" sans-serif;
+      padding: 3px 40px 3px 40px;
+      background-color: #303030;
+      border: 2px solid #4b9cc3;
+      margin-top: 2%;
+      border-radius: 0;
+      margin-left: 20px; }
+      section.main .container .login h4 {
+        letter-spacing: 2px;
+        font-size: .9em;
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: #4b9cc3; }
+    section.main .container .login:hover {
+      text-decoration: none;
+      background: #606060;
+      transition: all 600ms ease; }
+      section.main .container .login:hover h4 {
+        color: #4b9cc3; }
 
 /*# sourceMappingURL=style.css.map */

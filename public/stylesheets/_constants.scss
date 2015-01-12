@@ -3,3 +3,31 @@ $gray: rgba(96,96,96,1);
 $testcolor: rgba(75,156,195,1);
 
 $opensans: 'Open Sans' sans-serif;
+
+@mixin button () {
+    font-family: $opensans;
+    padding: 3px 40px 3px 40px;
+    background-color: $darkgray;
+    border: 2px solid $testcolor;
+    margin-top: 2%;
+    border-radius: 0;
+    margin-left: 20px;
+
+    h4 {
+        letter-spacing: 2px;
+        font-size:.9em;
+        font-weight:bolder;
+        text-transform: uppercase;
+        color: $testcolor;
+    }
+}
+
+@mixin button_hover () {
+    h4 {
+        color: $testcolor; 
+    }
+    text-decoration: none;
+    background: $gray;
+
+    transition: all 600ms ease;
+}
