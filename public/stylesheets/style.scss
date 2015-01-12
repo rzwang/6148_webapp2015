@@ -36,10 +36,33 @@ h3 {
 // SECTIONS
 nav.navbar.navbar-inverse.navbar-fixed-top {
     .container-fluid {
+        margin: 5px auto;
         font-family: $opensans;
 
-        .navbar-header.navbar-brand {
-            color: $testcolor;
+        .navbar-header {
+            button {
+                border: 1px solid white;
+            }            
+
+            a {
+                font-weight: 300;
+                font-size: 2.5em;
+                color: $testcolor;
+            }
+
+            a:hover {
+                color: white;
+            }
+        }
+
+        .collapse.navbar-collapse {
+            a {
+                color: $testcolor;
+            }
+
+            a:hover {
+                color: white;
+            }
         }
     }
 }
@@ -50,7 +73,7 @@ section.main {
 
     .container {
         position: relative;
-        top: 15vh;
+        top: 20vh;
         width: 100vw;
 
         .wrapper {

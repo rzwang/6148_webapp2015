@@ -24,16 +24,27 @@ h3 {
   background: #4b9cc3; }
 
 nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid {
+  margin: 5px auto;
   font-family: "Open Sans", sans-serif; }
-  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .navbar-header.navbar-brand {
+  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .navbar-header button {
+    border: 1px solid white; }
+  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .navbar-header a {
+    font-weight: 300;
+    font-size: 2.5em;
     color: #4b9cc3; }
+  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .navbar-header a:hover {
+    color: white; }
+  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .collapse.navbar-collapse a {
+    color: #4b9cc3; }
+  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .collapse.navbar-collapse a:hover {
+    color: white; }
 
 section.main {
   background-image: url("../images/blurred.jpg");
   background-size: 100%; }
   section.main .container {
     position: relative;
-    top: 15vh;
+    top: 20vh;
     width: 100vw; }
     section.main .container .wrapper .title {
       color: black;
