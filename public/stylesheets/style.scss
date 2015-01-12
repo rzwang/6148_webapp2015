@@ -46,18 +46,27 @@ section.main {
                 text-align: center;
             }
 
-            .description{
+            .description {
                 color: black;
                 text-align: center;
             }
         }
-
-        .login {
-            @include button;
+        button.login {
+            font-size: 20px;
+            width: 320px;
+            border-radius:3px;
+            padding: 8px;
+            margin-top: 18px;
+            color: white;
+            background: $testcolor;
+            border: solid white 2px;
+            opacity:.75;
+            transition: all 600ms ease;
         }
 
-        .login:hover {
-            @include button_hover();
+        button.login:hover {
+            background: white;
+            color: $testcolor
         }
     }
 }

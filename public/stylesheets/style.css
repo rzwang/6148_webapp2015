@@ -34,25 +34,19 @@ section.main {
     section.main .container .wrapper .description {
       color: black;
       text-align: center; }
-    section.main .container .login {
-      font-family: "Open Sans" sans-serif;
-      padding: 3px 40px 3px 40px;
-      background-color: #303030;
-      border: 2px solid #4b9cc3;
-      margin-top: 2%;
-      border-radius: 0;
-      margin-left: 20px; }
-      section.main .container .login h4 {
-        letter-spacing: 2px;
-        font-size: .9em;
-        font-weight: bolder;
-        text-transform: uppercase;
-        color: #4b9cc3; }
-    section.main .container .login:hover {
-      text-decoration: none;
-      background: #606060;
+    section.main .container button.login {
+      font-size: 20px;
+      width: 320px;
+      border-radius: 3px;
+      padding: 8px;
+      margin-top: 18px;
+      color: white;
+      background: #4b9cc3;
+      border: solid white 2px;
+      opacity: .75;
       transition: all 600ms ease; }
-      section.main .container .login:hover h4 {
-        color: #4b9cc3; }
+    section.main .container button.login:hover {
+      background: white;
+      color: #4b9cc3; }
 
 /*# sourceMappingURL=style.css.map */
