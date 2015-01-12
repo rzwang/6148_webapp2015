@@ -10,11 +10,12 @@ router.get('/login', function(req, res) {
     res.render('login', {title: 'Login'});
 });
 
+router.get('/signup', function(req, res) {
+    res.render('signup', {title: 'Sign Up'});
+});
+
 // // ADD THESE BACK IN WHEN THE VIEWS FILES ARE CREATED
 
-// router.get('/signup', function(req, res) {
-//     res.render('signup', {title: 'Sign Up'});
-// });
 
 // router.get('/request_match', function(req, res) {
 //     res.render('request_match', {title: 'Request Match'});

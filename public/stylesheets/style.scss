@@ -35,13 +35,13 @@ html, body {
 }
 
 h1{
-    font-style: 'Open Sans', sans-serif;
+    font-family: $opensans;
     font-weight: 200;
     font-size: 80px;
 }
 
 p{
-    font-style: 'Josefin Sans', sans-serif;
+    font-family: $opensans;
     font-weight: 110;
     font-size: 20px;
 }
@@ -67,8 +67,25 @@ section.main {
 
              .description{
                 position: relative;
-                color: $white;
+                color: white;
                 text-align: center;
+            }
+
+            .button{
+                list-style-type: none;
+                position: relative;
+                top: 40px;
+                color: white;
+                text-align: center;
+                left: 37.5%;
+
+                li{
+                    position: relative;
+                    
+                    float: left;
+                    padding-left: 1cm;
+
+                }
             }
         }
     }

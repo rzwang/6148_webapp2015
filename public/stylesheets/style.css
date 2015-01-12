@@ -24,12 +24,12 @@ html, body {
   pointer-events: none; }
 
 h1 {
-  font-style: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 200;
   font-size: 80px; }
 
 p {
-  font-style: 'Josefin Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 110;
   font-size: 20px; }
 
@@ -49,5 +49,16 @@ section.main {
       position: relative;
       color: white;
       text-align: center; }
+    section.main .container .wrapper .button {
+      list-style-type: none;
+      position: relative;
+      top: 40px;
+      color: white;
+      text-align: center;
+      left: 37.5%; }
+      section.main .container .wrapper .button li {
+        position: relative;
+        float: left;
+        padding-left: 1cm; }
 
 /*# sourceMappingURL=style.css.map */
