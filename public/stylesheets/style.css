@@ -17,10 +17,6 @@ h3 {
   font-weight: 300;
   font-size: 3em; }
 
-img {
-  height: 100%;
-  width: 100%; }
-
 section.main {
   background-image: url("../images/blurred.jpg");
   background-size: 100%; }
