@@ -24,6 +24,15 @@ h3 {
     font-size: 3em;
 }
 
+::selection {
+    background: $testcolor;
+}
+
+::-moz-selection {
+    background: $testcolor;
+}
+
+
 // SECTIONS
 section.main {
     background-image: url("../images/blurred.jpg");
@@ -45,24 +54,30 @@ section.main {
                 color: black;
                 text-align: center;
             }
-        }
+            
+            .button {
+                width: 200px;
+                margin: auto;
 
-        button.login {
-            font-size: 20px;
-            width: 320px;
-            border-radius: 10px;
-            padding: 8px;
-            margin-top: 18px;
-            color: white;
-            background: $testcolor;
-            border: solid white 2px;
-            opacity:.75;
-            transition: all 500ms ease;
-        }
+                button {
+                    font-size: 30px;
+                    font-weight: 300;
+                    width: 200px;
+                    border-radius: 10px;
+                    padding: 8px;
+                    margin-top: 25vh;
+                    color: white;
+                    background: black;
+                    border: solid white 2px;
+                    opacity: .75;
+                    transition: all 500ms ease;
+                }
 
-        button.login:hover {
-            background: white;
-            color: $testcolor
+                button:hover {
+                    background: white;
+                    color: black;
+                }
+            }
         }
     }
 }

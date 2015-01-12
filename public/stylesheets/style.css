@@ -8,14 +8,20 @@ html, body {
     width: 100vw; }
 
 h1 {
-  font-family: "Open Sans" sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   font-size: 7em; }
 
 h3 {
-  font-family: "Open Sans" sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   font-size: 3em; }
+
+::selection {
+  background: #4b9cc3; }
+
+::-moz-selection {
+  background: #4b9cc3; }
 
 section.main {
   background-image: url("../images/blurred.jpg");
@@ -30,19 +36,23 @@ section.main {
     section.main .container .wrapper .description {
       color: black;
       text-align: center; }
-    section.main .container button.login {
-      font-size: 20px;
-      width: 320px;
-      border-radius: 10px;
-      padding: 8px;
-      margin-top: 18px;
-      color: white;
-      background: #4b9cc3;
-      border: solid white 2px;
-      opacity: .75;
-      transition: all 500ms ease; }
-    section.main .container button.login:hover {
-      background: white;
-      color: #4b9cc3; }
+    section.main .container .wrapper .button {
+      width: 200px;
+      margin: auto; }
+      section.main .container .wrapper .button button {
+        font-size: 30px;
+        font-weight: 300;
+        width: 200px;
+        border-radius: 10px;
+        padding: 8px;
+        margin-top: 25vh;
+        color: white;
+        background: black;
+        border: solid white 2px;
+        opacity: .75;
+        transition: all 500ms ease; }
+      section.main .container .wrapper .button button:hover {
+        background: white;
+        color: black; }
 
 /*# sourceMappingURL=style.css.map */
