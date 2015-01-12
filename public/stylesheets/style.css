@@ -23,31 +23,41 @@ h3 {
 ::-moz-selection {
   background: #4b9cc3; }
 
-nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid {
+nav.navbar.navbar-fixed-top .container-fluid {
   margin: 5px auto;
   font-family: "Open Sans", sans-serif; }
-  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .navbar-header button {
-    border: 1px solid white; }
-  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .navbar-header a {
+  nav.navbar.navbar-fixed-top .container-fluid .navbar-header button {
+    border: 1px solid black; }
+    nav.navbar.navbar-fixed-top .container-fluid .navbar-header button .icon-bar {
+      background-color: black; }
+  nav.navbar.navbar-fixed-top .container-fluid .navbar-header a {
     font-weight: 300;
-    font-size: 2.5em;
+    font-size: 3em;
+    color: black; }
+  nav.navbar.navbar-fixed-top .container-fluid .navbar-header a:hover {
     color: #4b9cc3; }
-  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .navbar-header a:hover {
-    color: white; }
-  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .collapse.navbar-collapse a {
-    color: #4b9cc3; }
-  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .collapse.navbar-collapse a:hover {
-    color: white; }
+  nav.navbar.navbar-fixed-top .container-fluid .collapse.navbar-collapse a {
+    color: black; }
+  nav.navbar.navbar-fixed-top .container-fluid .collapse.navbar-collapse a:hover {
+    color: #4b9cc3;
+    background-color: transparent; }
 
+@media (min-width: 767px) {
+  .navbar {
+    padding: 0 10px; }
+
+  .top-nav-collapse {
+    padding: 0 20px;
+    background-color: black; } }
 section.main {
-  background: url("../images/blurred.jpg") no-repeat center center fixed;
+  background: url("../images/blurred.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
   section.main .container {
     position: relative;
-    top: 20vh;
+    top: 15vh;
     width: 100vw; }
     section.main .container .wrapper .title {
       color: black;

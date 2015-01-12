@@ -34,50 +34,68 @@ h3 {
 
 
 // NAVBAR
-nav.navbar.navbar-inverse.navbar-fixed-top {
+nav.navbar.navbar-fixed-top {
     .container-fluid {
         margin: 5px auto;
         font-family: $opensans;
 
         .navbar-header {
             button {
-                border: 1px solid white;
-            }            
+                border: 1px solid black;
+                
+                .icon-bar {
+                    background-color: black;
+                }
+            }
 
             a {
                 font-weight: 300;
-                font-size: 2.5em;
-                color: $testcolor;
+                font-size: 3em;
+                color: black;
             }
 
             a:hover {
-                color: white;
+                color: $testcolor;
             }
         }
 
         .collapse.navbar-collapse {
             a {
-                color: $testcolor;
+                color: black;
             }
 
             a:hover {
-                color: white;
+                color: $testcolor;
+                background-color: transparent;
             }
         }
     }
 }
 
+@media(min-width:767px) {
+    .navbar {
+        padding: 0 10px;
+    }
+
+    .top-nav-collapse {
+        padding: 0 20px;
+        background-color: black;
+    }
+}
+
+
+
 // SECTIONS
 section.main {
-    background: url("../images/blurred.jpg") no-repeat center center fixed;
+    background: url("../images/blurred.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    
+
     .container {
         position: relative;
-        top: 20vh;
+        top: 15vh;
         width: 100vw;
 
         .wrapper {
