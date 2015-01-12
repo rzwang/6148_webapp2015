@@ -24,11 +24,53 @@ h3 {
     font-size: 3em;
 }
 
+::selection {
+    background: $testcolor;
+}
+
+::-moz-selection {
+    background: $testcolor;
+}
+
+
 // SECTIONS
+nav.navbar.navbar-inverse.navbar-fixed-top {
+    .container-fluid {
+        margin: 5px auto;
+        font-family: $opensans;
+
+        .navbar-header {
+            button {
+                border: 1px solid white;
+            }            
+
+            a {
+                font-weight: 300;
+                font-size: 2.5em;
+                color: $testcolor;
+            }
+
+            a:hover {
+                color: white;
+            }
+        }
+
+        .collapse.navbar-collapse {
+            a {
+                color: $testcolor;
+            }
+
+            a:hover {
+                color: white;
+            }
+        }
+    }
+}
+
 section.main {
     .container {
         position: relative;
-        top: 15vh;
+        top: 20vh;
         width: 100vw;
 
         .wrapper {
@@ -70,24 +112,6 @@ section.main {
                 margin-right: auto;
                 list-style-type: none;
             }
-        }
-
-        button.login {
-            font-size: 20px;
-            width: 320px;
-            border-radius: 10px;
-            padding: 8px;
-            margin-top: 18px;
-            color: white;
-            background: $testcolor;
-            border: solid white 2px;
-            opacity:.75;
-            transition: all 500ms ease;
-        }
-
-        button.login:hover {
-            background: white;
-            color: $testcolor
         }
     }
 }

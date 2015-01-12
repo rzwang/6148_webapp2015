@@ -1,6 +1,19 @@
 extends layout
 
 block content
+    nav.navbar.navbar-inverse.navbar-fixed-top
+        div.container-fluid
+            div.navbar-header
+                a.navbar-brand(href="#") hitch
+                button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+            div.collapse.navbar-collapse#basic_nav
+                ul.nav.navbar-nav.navbar-right
+                    li: a(href="login") Login                    
+                    li: a(href="signup") Sign Up
+
     section.main#main
         div.container
             div.wrapper
@@ -11,3 +24,4 @@ block content
                 ul.button
                     li: a.loginbtn(href='signup') Sign Up
                     li: a.loginbtn(href='login') Login
+
