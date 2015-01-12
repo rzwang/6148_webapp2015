@@ -23,6 +23,11 @@ h3 {
 ::-moz-selection {
   background: #4b9cc3; }
 
+nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid {
+  font-family: "Open Sans", sans-serif; }
+  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .navbar-header.navbar-brand {
+    color: #4b9cc3; }
+
 section.main {
   background-image: url("../images/blurred.jpg");
   background-size: 100%; }

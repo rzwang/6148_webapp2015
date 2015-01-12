@@ -1,23 +1,20 @@
 extends layout
 
 block content
-    nav.navbar.navbar-default.navbar-fixed-top
+    nav.navbar.navbar-inverse.navbar-fixed-top
         div.container-fluid
             div.navbar-header
-                button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
-                    span.sr-only Toggle navigation
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar
                 a.navbar-brand(href="#") hitch
+                button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
             div.collapse.navbar-collapse#basic_nav
-                ul.nav.navbar-nav
+                ul.nav.navbar-nav.navbar-right
                     li
-                        a(href="login") Login
-                            span.sr-only (current)
+                        a(href="login") Login                    
                     li
                         a(href="signup") Sign Up
-                            span.sr-only (current)
 
     section.main#main
         div.container
