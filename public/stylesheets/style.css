@@ -17,14 +17,6 @@ h3 {
   font-weight: 300;
   font-size: 3em; }
 
-section.main{
-  background: url("../images/blurred.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 ::selection {
   background: #4b9cc3; }
 
@@ -48,8 +40,11 @@ nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid {
     color: white; }
 
 section.main {
-  background-image: url("../images/blurred.jpg");
-  background-size: 100%; }
+  background: url("../images/blurred.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
   section.main .container {
     position: relative;
@@ -106,6 +101,7 @@ section.main {
       width: 200px;
       margin: auto; }
       section.main .container .wrapper .button button {
+        font-family: "Open Sans", sans-serif;
         font-size: 30px;
         font-weight: 300;
         width: 200px;
@@ -120,6 +116,5 @@ section.main {
       section.main .container .wrapper .button button:hover {
         background: white;
         color: black; }
-
 
 /*# sourceMappingURL=style.css.map */

@@ -32,8 +32,7 @@ h3 {
     background: $testcolor;
 }
 
-
-// SECTIONS
+// NAVBAR
 nav.navbar.navbar-inverse.navbar-fixed-top {
     .container-fluid {
         margin: 5px auto;
@@ -67,7 +66,14 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
     }
 }
 
+// SECTIONS
 section.main {
+    background: url("../images/blurred.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
     .container {
         position: relative;
         top: 20vh;
