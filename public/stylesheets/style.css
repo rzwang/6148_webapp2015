@@ -17,10 +17,13 @@ h3 {
   font-weight: 300;
   font-size: 3em; }
 
-section.main {
-  background-image: url("../images/blurred.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat; }
+section.main{
+  background: url("../images/blurred.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
   section.main .container {
     position: relative;
     top: 15vh;
@@ -69,5 +72,6 @@ section.main {
     section.main .container button.login:hover {
       background: white;
       color: #4b9cc3; }
+}
 
 /*# sourceMappingURL=style.css.map */
