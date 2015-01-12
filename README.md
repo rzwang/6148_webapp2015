@@ -1,4 +1,4 @@
-6.148 Web Application
+hitch
 ==========
 
 Wistful Worldly Wonderers
