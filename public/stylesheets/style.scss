@@ -28,6 +28,7 @@ h3 {
 section.main {
     background-image: url("../images/blurred.jpg");
     background-size: 100%;
+    background-repeat: no-repeat;
 
     .container {
         position: relative;
@@ -44,6 +45,34 @@ section.main {
             .description {
                 color: black;
                 text-align: center;
+            }
+
+            ul.button{
+                .loginbtn{
+                    padding: 20px 40px;
+                    margin: 10px;
+                    display: block;
+                    font-family: $opensans;
+                    font-size: 14px;
+                    float: left;
+                    color: black;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    text-align: center;
+                    border-style: solid;
+                    border-radius: px;
+                    border-color: rgb(128,128,128);
+                }
+                position: relative;
+                height: 300px;
+                width: 400px;
+                top: 90px;
+                left: 10px;
+
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                list-style-type: none;
             }
         }
 
