@@ -5,7 +5,6 @@ html, body {
     height: auto;
     top: 0;
     left: 0;
-    // background-color: rgba(48,48,48,.5);
 
     section {
         height: 100vh;
@@ -13,56 +12,43 @@ html, body {
     }
 }
 
-.author{
-
-}
-
-.wrapper .head-fade {
-    width: 100%;
-    height: 165px;
-    background: -moz-linear-gradient(top, rgba(7, 7, 22, .7) 0, rgba(7, 7, 22, .3) 70%, rgba(7, 7, 22, 0) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(7, 7, 22, .7)), color-stop(70%, rgba(7, 7, 22, .3)), color-stop(100%, rgba(7, 7, 22, 0)));
-    background: -webkit-linear-gradient(top, rgba(7, 7, 22, .7) 0, rgba(7, 7, 22, .3) 70%, rgba(7, 7, 22, 0) 100%);
-    background: -o-linear-gradient(top, rgba(7, 7, 22, .7) 0, rgba(7, 7, 22, .3) 70%, rgba(7, 7, 22, 0) 100%);
-    background: -ms-linear-gradient(top, rgba(7, 7, 22, .7) 0, rgba(7, 7, 22, .3) 70%, rgba(7, 7, 22, 0) 100%);
-    background: linear-gradient(to bottom, rgba(7, 7, 22, .7) 0, rgba(7, 7, 22, .3) 70%, rgba(7, 7, 22, 0) 100%);
-    filter: "progid: DXImageTransform.Microsoft.gradient(startColorstr='#cc070716', endColorstr='#00070716', GradientType=0)";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 4;
-    pointer-events: none
-}
-
-h1{
+h1 {
     font-family: $opensans;
     font-weight: 300;
     font-size: 7em;
 }
 
-img{
+h3 {
+    font-family: $opensans;
+    font-weight: 300;
+    font-size: 3em;
+}
+
+img {
     height: 100%;
     width: 100%;
 }
 
 // SECTIONS
 section.main {
-    background-image: url("../images/worldbackground.jpg");
+    background-image: url("../images/Blurred.jpg");
     background-size: 100%;
+
     .container {
         position: relative;
-        top: 20vh;
+        top: 15vh;
         width: 100vw;
 
         .wrapper {
             
             .title {
-                color: rgba(176, 228, 231, 1);
+                color: black;
                 text-align: center;
             }
 
             .description{
-
+                color: black;
+                text-align: center;
             }
         }
     }
