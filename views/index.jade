@@ -1,6 +1,7 @@
 extends layout
 
 block content
+
     nav.navbar.navbar-inverse.navbar-fixed-top
         div.container-fluid
             div.navbar-header
@@ -11,8 +12,7 @@ block content
                     span.icon-bar
             div.collapse.navbar-collapse#basic_nav
                 ul.nav.navbar-nav.navbar-right
-                    li: a(href="login") Login                    
-                    li: a(href="signup") Sign Up
+                    li: a(href="login") Login
 
     section.main#main
         div.container
@@ -23,4 +23,11 @@ block content
                     h3 Making ridesharing easier than ever.
                 ul.button
                     li: a.loginbtn(href='signup') Sign Up
-                    li: a.loginbtn(href='login') Login
+
+    section.about#about
+        div.container
+            div.wrapper
+                div.title
+                    h2 About
+                div.description
+                    p Making ridesharing easier than ever.

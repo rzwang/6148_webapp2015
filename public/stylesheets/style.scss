@@ -12,6 +12,7 @@ html, body {
     }
 }
 
+//HEADINGS
 h1 {
     font-family: $opensans;
     font-weight: 300;
@@ -24,6 +25,14 @@ h3 {
     font-size: 3em;
 }
 
+logoheader{
+    font-family: $opensans;
+    font-weight: 300;
+    font-size: 2.5em;
+    color: $testcolor;
+}
+
+//HIGHLIGHTING
 ::selection {
     background: $testcolor;
 }
@@ -32,16 +41,43 @@ h3 {
     background: $testcolor;
 }
 
+header.main_banner{
+    position: absolute;
+    width: 100%;
+    background: transparent;
+    display:block;
+    padding-top: 0.35em;
+    z-index: 991;
+    -webkit-transition: padding 0.4s ease;
+    -moz-transition:padding 0.4s ease;
+    transition:padding 0.4s ease;
+
+    a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
+    .row{
+        width:100%;
+        max-width:100%;
+        padding-left:0.25em;
+        padding-right:0.25em;
+    }
+}
+
 // NAVBAR
 nav.navbar.navbar-inverse.navbar-fixed-top {
-    .container-fluid {
-        margin: 5px auto;
-        font-family: $opensans;
+    background: transparent;
+    border-color: transparent;
 
+    .container-fluid {
+        margin: 2% auto;
+        font-family: $opensans;
+        
         .navbar-header {
             button {
                 border: 1px solid white;
-            }            
+            }         
 
             a {
                 font-weight: 300;
@@ -50,7 +86,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
             }
 
             a:hover {
-                color: white;
+                color: black;
             }
         }
 
@@ -60,13 +96,15 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
             }
 
             a:hover {
-                color: white;
+                color: black;
             }
         }
     }
 }
 
 // SECTIONS
+// 
+// MAIN SECTION
 section.main {
     background: url("../images/blurred.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -98,25 +136,48 @@ section.main {
                     display: block;
                     font-family: $opensans;
                     font-size: 14px;
-                    float: left;
                     color: black;
+                    background-color: rgba(75,156,195,.8);
                     text-transform: uppercase;
                     text-decoration: none;
                     text-align: center;
                     border-style: solid;
-                    border-radius: px;
-                    border-color: rgb(128,128,128);
+                    border-color: transparent;
+                    border-radius: 3%;
                 }
                 position: relative;
-                height: 300px;
-                width: 400px;
-                top: 90px;
-                left: 10px;
-
                 display: block;
-                margin-left: auto;
-                margin-right: auto;
                 list-style-type: none;
+                width: 25%;
+                margin: 8% 37%;                
+            }
+        }
+    }
+}
+
+//ABOUT SECTION
+section.about {
+    background: url("../images/blurred.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    .container {
+        position: relative;
+        top: 20vh;
+        width: 100vw;
+
+        .wrapper {
+            
+            .title {
+                color: black;
+                text-align: center;
+            }
+
+            .description {
+                color: black;
+                text-align: center;
             }
         }
     }
