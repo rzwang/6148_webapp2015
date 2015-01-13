@@ -20,58 +20,59 @@ h3 {
 ::-moz-selection {
   background: #4b9cc3; }
 
-nav.navbar .navbar-fixed-top, nav.navbar .navbar-fixed-top-clear {
-  padding: 0 10px;
-  background: black;
-  height: 50px; }
-  nav.navbar .navbar-fixed-top .container-fluid, nav.navbar .navbar-fixed-top-clear .container-fluid {
-    font-family: "Open Sans", sans-serif;
-    max-width: 1500px; }
-    nav.navbar .navbar-fixed-top .container-fluid .navbar-header button .icon-bar, nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header button .icon-bar {
-      background-color: white; }
-    nav.navbar .navbar-fixed-top .container-fluid .navbar-header a, nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header a {
-      font-weight: 300;
-      font-size: 2.5em;
-      color: white;
-      transition: all 300ms ease; }
-    nav.navbar .navbar-fixed-top .container-fluid .navbar-header a:hover, nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header a:hover {
-      text-decoration: none;
-      color: #4b9cc3; }
-    nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse, nav.navbar .navbar-fixed-top-clear .container-fluid .collapse.navbar-collapse {
-      padding-right: 10px; }
-      nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse a, nav.navbar .navbar-fixed-top-clear .container-fluid .collapse.navbar-collapse a {
+nav.navbar {
+  position: fixed; }
+  nav.navbar .navbar-fixed-top, nav.navbar .navbar-fixed-top-clear {
+    padding: 0 10px;
+    background: black;
+    height: 50px; }
+    nav.navbar .navbar-fixed-top .container-fluid, nav.navbar .navbar-fixed-top-clear .container-fluid {
+      font-family: "Open Sans", sans-serif;
+      max-width: 1500px; }
+      nav.navbar .navbar-fixed-top .container-fluid .navbar-header button .icon-bar, nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header button .icon-bar {
+        background-color: white; }
+      nav.navbar .navbar-fixed-top .container-fluid .navbar-header a, nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header a {
         font-weight: 300;
-        font-size: 1.25em;
+        font-size: 2.5em;
         color: white;
         transition: all 300ms ease; }
-      nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse a:hover, nav.navbar .navbar-fixed-top-clear .container-fluid .collapse.navbar-collapse a:hover {
-        color: #4b9cc3;
+      nav.navbar .navbar-fixed-top .container-fluid .navbar-header a:hover, nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header a:hover {
         text-decoration: none;
-        background-color: transparent; }
-nav.navbar .navbar-fixed-top-clear {
-  position: fixed;
-  right: 0;
-  left: 0;
-  padding: 15px 10px;
-  background: transparent;
-  height: 80px; }
-  nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header button .icon-bar {
-    background-color: black; }
-  nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header a {
-    color: black; }
-  nav.navbar .navbar-fixed-top-clear .container-fluid .collapse.navbar-collapse a {
-    color: black; }
+        color: #4b9cc3; }
+      nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse, nav.navbar .navbar-fixed-top-clear .container-fluid .collapse.navbar-collapse {
+        padding-right: 10px; }
+        nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse a, nav.navbar .navbar-fixed-top-clear .container-fluid .collapse.navbar-collapse a {
+          font-weight: 300;
+          font-size: 1.25em;
+          color: white;
+          transition: all 300ms ease; }
+        nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse a:hover, nav.navbar .navbar-fixed-top-clear .container-fluid .collapse.navbar-collapse a:hover {
+          color: #4b9cc3;
+          text-decoration: none;
+          background-color: transparent; }
+  nav.navbar .navbar-fixed-top-clear {
+    position: fixed;
+    right: 0;
+    left: 0;
+    padding: 15px 10px;
+    background: transparent;
+    height: 80px; }
+    nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header button .icon-bar {
+      background-color: black; }
+    nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header a {
+      color: black; }
+    nav.navbar .navbar-fixed-top-clear .container-fluid .collapse.navbar-collapse a {
+      color: black; }
 
 @media (min-width: 767px) {
   .navbar.navbar-fixed-top, nav.navbar .navbar.navbar-fixed-top-clear {
-    background: red;
+    background: 0 0;
     -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
     -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
     transition: background .5s ease-in-out,padding .5s ease-in-out; } }
 section.main {
   height: 100vh;
   width: 100vw;
-  position: fixed;
   background: url("../images/blurred.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
