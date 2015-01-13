@@ -86,12 +86,12 @@ section.main {
         background: white;
         color: black; }
 
-section.test {
+section.about {
   height: 60vh;
   width: 100vw;
   background: white; }
 
-section.test2 {
+section.test {
   height: 100vh;
   width: 100vw;
   background: url("../images/blurred.png") no-repeat center center fixed;
