@@ -5,11 +5,6 @@ html, body {
     height: auto;
     top: 0;
     left: 0;
-
-    section {
-        height: 100vh;
-        width: 100vw;
-    }
 }
 
 h1 {
@@ -36,7 +31,6 @@ h3 {
 // NAVBAR
 nav.navbar.navbar-fixed-top {
     .container-fluid {
-        margin: 5px auto;
         font-family: $opensans;
 
         .navbar-header {
@@ -52,6 +46,7 @@ nav.navbar.navbar-fixed-top {
                 font-weight: 300;
                 font-size: 3em;
                 color: black;
+                transition: all 300ms ease;
             }
 
             a:hover {
@@ -62,6 +57,7 @@ nav.navbar.navbar-fixed-top {
         .collapse.navbar-collapse {
             a {
                 color: black;
+                transition: all 300ms ease;
             }
 
             a:hover {
@@ -74,7 +70,8 @@ nav.navbar.navbar-fixed-top {
 
 @media(min-width:767px) {
     .navbar {
-        padding: 0 10px;
+        padding: 0 20px 0 10px;
+        margin: 5px auto;
     }
 
     .top-nav-collapse {
@@ -84,9 +81,10 @@ nav.navbar.navbar-fixed-top {
 }
 
 
-
 // SECTIONS
 section.main {
+    height: 100vh;
+    width: 100vw;
     background: url("../images/blurred.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -136,4 +134,20 @@ section.main {
             }
         }
     }
+}
+
+section.test {
+    height: 60vh;
+    width: 100vw;
+    background: white;
+}
+
+section.test2{
+    height: 100vh;
+    width: 100vw;
+    background: url("../images/blurred.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
