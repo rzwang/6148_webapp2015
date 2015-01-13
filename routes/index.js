@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var app = express();
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -14,7 +15,7 @@ router.get('/register', function(req, res) {
     res.render('register', {title: 'Register'});
 });
 
-app.post('/register', function(req, res) {
+router.post('/register', function(req, res) {
     console.log(req.body);
 });
 
