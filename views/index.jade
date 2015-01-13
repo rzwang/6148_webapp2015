@@ -6,7 +6,7 @@ block header
 block content
     nav.navbar.navbar-fixed-top#navbar(
             data--50-top="background-color:transparent;"
-            data-top-bottom="background-color:black;"
+            data-top-bottom="background-color:black; opacity:.75;"
             data-anchor-target="#navbar")
         div.container-fluid
             div.navbar-header
@@ -15,9 +15,18 @@ block content
                         data-top-bottom="color:white;"
                         data-anchor-target="#navbar") hitch
                 button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar
+                    span.icon-bar(
+                            data--50-top="background-color:black;"
+                            data-top-bottom="background-color:white;"
+                            data-anchor-target="#navbar")
+                    span.icon-bar(
+                            data--50-top="background-color:black;"
+                            data-top-bottom="background-color:white;"
+                            data-anchor-target="#navbar")
+                    span.icon-bar(
+                            data--50-top="background-color:black;"
+                            data-top-bottom="background-color:white;"
+                            data-anchor-target="#navbar")
             div.collapse.navbar-collapse#basic_nav
                 ul.nav.navbar-nav.navbar-right
                     li: a(href="login"
