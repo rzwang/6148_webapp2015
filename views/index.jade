@@ -4,6 +4,7 @@ block header
     script(src='/javascripts/style.js')
 
 block content
+    //- FIND A WAY TO CLEAN THIS UP
     nav.navbar.navbar-fixed-top#navbar(
             data--50-top="background-color:transparent;"
             data-top-bottom="background-color:black; opacity:.75;"
@@ -28,11 +29,20 @@ block content
                             data-top-bottom="background-color:white;"
                             data-anchor-target="#navbar")
             div.collapse.navbar-collapse#basic_nav
+                //- STYLE THIS
                 ul.nav.navbar-nav.navbar-right
-                    li: a(href="login"
+                    //- SET TRANSPARENCY
+                    li: form.navbar-form
+                        //- ADD MARGINS
+                        div.form-group
+                            input.form-control(type="email" placeholder="Username")
+                        div.form-group
+                            input.form-control(type="password" placeholder="Password")
+                    li: a(href="#"
                             data--50-top="color:black;"
                             data-top-bottom="color:white;"
-                            data-anchor-target="#navbar") LOGIN                    
+                            data-anchor-target="#navbar") LOGIN
+                    //- MAKE THIS INTO A BUTTON
                     li: a(href="signup"
                             data--50-top="color:black;"
                             data-top-bottom="color:white;"
@@ -57,4 +67,4 @@ block content
     section.test
         div.container
             div.wrapper
-                h1 test
+                h1 Hello this is Montgomery
