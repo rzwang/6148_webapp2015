@@ -77,7 +77,7 @@ nav.navbar.navbar-fixed-top {
 
 @media(min-width:767px) {
     .navbar.navbar-fixed-top {
-        background: 0 0;
+        background: red;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -107,11 +107,11 @@ section.main {
                 text-align: center;
             }
 
-            .description {
+            .subtitle {
                 color: black;
                 text-align: center;
             }
-            
+
             .button {
                 width: 300px;
                 margin: auto;
