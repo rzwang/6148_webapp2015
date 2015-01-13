@@ -8,62 +8,76 @@ html, body {
     width: 100vw; }
 
 h1 {
-  font-family: "Open Sans" sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   font-size: 7em; }
 
 h3 {
-  font-family: "Open Sans" sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   font-size: 3em; }
 
-section.main .container {
-  position: relative;
-  top: 15vh;
-  width: 100vw; }
-  section.main .container .wrapper .title {
-    color: black;
-    text-align: center; }
-  section.main .container .wrapper .description {
-    color: black;
-    text-align: center; }
-  section.main .container .wrapper ul.button {
-    position: relative;
-    height: 300px;
-    width: 400px;
-    top: 90px;
-    left: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    list-style-type: none; }
-    section.main .container .wrapper ul.button .loginbtn {
-      padding: 20px 40px;
-      margin: 10px;
-      display: block;
-      font-family: "Open Sans" sans-serif;
-      font-size: 14px;
-      float: left;
-      color: black;
-      text-transform: uppercase;
-      text-decoration: none;
-      text-align: center;
-      border-style: solid;
-      border-radius: px;
-      border-color: gray; }
-  section.main .container button.login {
-    font-size: 20px;
-    width: 320px;
-    border-radius: 10px;
-    padding: 8px;
-    margin-top: 18px;
-    color: white;
-    background: #4b9cc3;
-    border: solid white 2px;
-    opacity: .75;
-    transition: all 500ms ease; }
-  section.main .container button.login:hover {
-    background: white;
+::selection {
+  background: #4b9cc3; }
+
+::-moz-selection {
+  background: #4b9cc3; }
+
+nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid {
+  margin: 5px auto;
+  font-family: "Open Sans", sans-serif; }
+  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .navbar-header button {
+    border: 1px solid white; }
+  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .navbar-header a {
+    font-weight: 300;
+    font-size: 2.5em;
     color: #4b9cc3; }
+  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .navbar-header a:hover {
+    color: white; }
+  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .collapse.navbar-collapse a {
+    color: #4b9cc3; }
+  nav.navbar.navbar-inverse.navbar-fixed-top .container-fluid .collapse.navbar-collapse a:hover {
+    color: white; }
+
+section.main {
+  background: url("../images/blurred.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+  section.main .container {
+    position: relative;
+    top: 20vh;
+    width: 100vw; }
+    section.main .container .wrapper .title {
+      color: black;
+      text-align: center; }
+    section.main .container .wrapper .description {
+      color: black;
+      text-align: center; }
+    section.main .container .wrapper ul.button {
+      position: relative;
+      height: 300px;
+      width: 400px;
+      top: 90px;
+      left: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      list-style-type: none; }
+      section.main .container .wrapper ul.button .loginbtn {
+        padding: 20px 40px;
+        margin: 10px;
+        display: block;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        float: left;
+        color: black;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-align: center;
+        border-style: solid;
+        border-radius: px;
+        border-color: gray; }
 
 /*# sourceMappingURL=style.css.map */

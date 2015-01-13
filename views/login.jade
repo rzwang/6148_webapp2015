@@ -1,15 +1,15 @@
 extends layout
 
 block stylesheets
-    link(rel="stylesheet", href="/stylesheets/signup.css")
+    link(rel="stylesheet", href="/stylesheets/login.css")
 
 block content
-    section.signup#signup
+    section.login#login
         div.container
             div.wrapper
                 div.title
-                    h3 Sign Up
-                div.reg-form
+                    h3 Login
+                div.signup-form
                     form.form-horizontal
                         div.form-group
                             label.col-sm-2.control-label(for='email') Email:    
@@ -25,8 +25,6 @@ block content
                                     label
                                         input(type="checkbox")
                                         p Remember me
-                         div.form-group
+                        div.form-group
                             div.col-sm-10.col-sm-offset-2
                                 button.btn.btn-default(type='submit') Submit
-
- 

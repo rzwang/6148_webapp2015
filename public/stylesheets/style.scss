@@ -7,6 +7,8 @@ html, body {
     left: 0;
 }
 
+
+// TYPOGRAPHY
 h1 {
     font-family: $opensans;
     font-weight: 300;
@@ -19,6 +21,8 @@ h3 {
     font-size: 3em;
 }
 
+
+// HIGHLIGHTING
 ::selection {
     background: $testcolor;
 }
@@ -31,9 +35,10 @@ h3 {
 // NAVBAR
 nav.navbar.navbar-fixed-top {
     padding: 15px 10px;
+    
     .container-fluid {
         font-family: $opensans;
-
+        
         .navbar-header {
             button {
                 border: 1px solid black;
@@ -112,7 +117,6 @@ section.main {
                 margin: auto;
 
                 button {
-                    font-family: $opensans;
                     font-size: 30px;
                     font-weight: 300;
                     width: 300px;
@@ -141,7 +145,7 @@ section.about {
     background: white;
 }
 
-section.test{
+section.test {
     height: 100vh;
     width: 100vw;
     background: url("../images/montgomery.png") no-repeat center center fixed;

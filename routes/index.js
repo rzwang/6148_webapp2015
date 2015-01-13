@@ -10,6 +10,10 @@ router.get('/signup', function(req, res) {
     res.render('signup', {title: 'Sign Up'});
 });
 
+// app.post('/signup', function(req, res) {
+//     console.log(req.body);
+// });
+
 // // ADD THESE BACK IN WHEN THE VIEWS FILES ARE CREATED
 
 
