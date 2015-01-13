@@ -3,19 +3,34 @@ extends layout
 block header
     script(src='/javascripts/style.js')
 
+block stylesheet
+    link(rel="stylesheet", href="/stylesheets/style.css")
+
 block content
-    nav.navbar.navbar-fixed-top#navbar
-        div.container-fluid(data-700=" transform:translate(0px,10px)")
+    nav.navbar.navbar-fixed-top#navbar(
+            data--50-top="background-color:transparent;"
+            data-top-bottom="background-color:black;"
+            data-anchor-target="#navbar")
+        div.container-fluid
             div.navbar-header
-                a.navbar-brand.page-scroll(href="#") hitch
+                a.navbar-brand.page-scroll(href="#"
+                        data--50-top="color:black;"
+                        data-top-bottom="color:white;"
+                        data-anchor-target="#navbar") hitch
                 button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
                     span.icon-bar
                     span.icon-bar
                     span.icon-bar
             div.collapse.navbar-collapse#basic_nav
                 ul.nav.navbar-nav.navbar-right
-                    li: a(href="login") LOGIN                    
-                    li: a(href="signup") SIGN UP
+                    li: a(href="login"
+                            data--50-top="color:black;"
+                            data-top-bottom="color:white;"
+                            data-anchor-target="#navbar") LOGIN                    
+                    li: a(href="signup"
+                            data--50-top="color:black;"
+                            data-top-bottom="color:white;"
+                            data-anchor-target="#navbar") SIGN UP
 
     section.main#main
         div.container
@@ -25,8 +40,8 @@ block content
                 div.description
                     h3 Making ridesharing easier than ever.
                 div.button
-                    a(href='signup')
-                        button SIGN UP
+                    a(href='http://google.com')
+                        button HITCH ME A RIDE
 
     section.about#about
         div.container
