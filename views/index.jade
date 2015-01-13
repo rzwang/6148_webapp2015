@@ -4,49 +4,22 @@ block header
     script(src='/javascripts/style.js')
 
 block content
-    //- FIND A WAY TO CLEAN THIS UP
-    nav.navbar.navbar-fixed-top#navbar(
-            data--50-top="background-color:transparent;"
-            data-top-bottom="background-color:black; opacity:.75;"
-            data-anchor-target="#navbar")
-        div.container-fluid
-            div.navbar-header
-                a.navbar-brand.page-scroll(href="#"
-                        data--50-top="color:black;"
-                        data-top-bottom="color:white;"
-                        data-anchor-target="#navbar") hitch
-                button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
-                    span.icon-bar(
-                            data--50-top="background-color:black;"
-                            data-top-bottom="background-color:white;"
-                            data-anchor-target="#navbar")
-                    span.icon-bar(
-                            data--50-top="background-color:black;"
-                            data-top-bottom="background-color:white;"
-                            data-anchor-target="#navbar")
-                    span.icon-bar(
-                            data--50-top="background-color:black;"
-                            data-top-bottom="background-color:white;"
-                            data-anchor-target="#navbar")
-            div.collapse.navbar-collapse#basic_nav
-                //- STYLE THIS
-                ul.nav.navbar-nav.navbar-right
-                    //- SET TRANSPARENCY
-                    li: form.navbar-form
-                        //- ADD MARGINS
-                        div.form-group
-                            input.form-control(type="email" placeholder="Username")
-                        div.form-group
-                            input.form-control(type="password" placeholder="Password")
-                    li: a(href="#"
-                            data--50-top="color:black;"
-                            data-top-bottom="color:white;"
-                            data-anchor-target="#navbar") LOGIN
-                    //- MAKE THIS INTO A BUTTON
-                    li: a(href="signup"
-                            data--50-top="color:black;"
-                            data-top-bottom="color:white;"
-                            data-anchor-target="#navbar") SIGN UP
+    nav.navbar#navbar
+        div.navbar-fixed-top(
+                data--50-top="@class:navbar-fixed-top-clear"
+                data-top-bottom="@class:navbar-fixed-top"
+                data-anchor-target="#navbar")
+            div.container-fluid
+                div.navbar-header
+                    a.navbar-brand.page-scroll(href="#") hitch
+                    button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                div.collapse.navbar-collapse#basic_nav
+                    ul.nav.navbar-nav.navbar-right
+                        li: a(href="login") LOGIN
+                        li: a(href="signup") SIGN UP
 
     section.main#main
         div.container

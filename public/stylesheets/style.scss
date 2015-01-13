@@ -33,49 +33,88 @@ h3 {
 
 
 // NAVBAR
-nav.navbar.navbar-fixed-top {
-    padding: 15px 10px;
-    
-    .container-fluid {
-        font-family: $opensans;
-        max-width: 1500px;
+nav.navbar {
 
-        .navbar-header {
-            
-            button {
+    .navbar-fixed-top {
+        padding: 0 10px;
+        background: black;
+        height: 50px;
+
+        .container-fluid {
+            font-family: $opensans;
+            max-width: 1500px;
+
+            .navbar-header {
                 
-                .icon-bar {
-                    background-color: black;
+                button {
+                    
+                    .icon-bar {
+                        background-color: white;
+                    }
+                }
+
+                a {
+                    font-weight: 300;
+                    font-size: 2.5em;
+                    color: white;
+                    transition: all 300ms ease;
+                }
+
+                a:hover {
+                    text-decoration: none;
+                    color: $testcolor;
                 }
             }
 
-            a {
-                font-weight: 300;
-                font-size: 2.5em;
-                color: black;
-                transition: all 300ms ease;
-            }
+            .collapse.navbar-collapse {
+                padding-right: 10px;
+                
+                a {
+                    font-weight: 300;
+                    font-size: 1.25em;
+                    color: white;
+                    transition: all 300ms ease;
+                }
 
-            a:hover {
-                text-decoration: none;
-                color: $testcolor;
+                a:hover {
+                    color: $testcolor;
+                    text-decoration: none;
+                    background-color: transparent;
+                }
             }
         }
+    }
 
-        .collapse.navbar-collapse {
-            padding-right: 10px;
-            
-            a {
-                font-weight: 300;
-                font-size: 1.25em;
-                color: black;
-                transition: all 300ms ease;
+    .navbar-fixed-top-clear {
+        @extend .navbar-fixed-top;
+        position: fixed;
+        right: 0;
+        left: 0;
+        padding: 15px 10px;
+        background: transparent;
+        height: 80px;
+
+        .container-fluid {
+
+            .navbar-header {
+                
+                button {
+                    
+                    .icon-bar {
+                        background-color: black;
+                    }
+                }
+
+                a {
+                    color: black;
+                }
             }
 
-            a:hover {
-                color: $testcolor;
-                text-decoration: none;
-                background-color: transparent;
+            .collapse.navbar-collapse {
+                
+                a {
+                    color: black;
+                }
             }
         }
     }
@@ -96,6 +135,7 @@ nav.navbar.navbar-fixed-top {
 section.main {
     height: 100vh;
     width: 100vw;
+    position: fixed;
     background: url("../images/blurred.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;

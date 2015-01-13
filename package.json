@@ -1,5 +1,5 @@
 {
-  "name": "6148_webapp",
+  "name": "hitch",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,8 @@
     "morgan": "~1.3.0",
     "serve-favicon": "~2.1.3",
     "debug": "~2.0.0",
-    "jade": "~1.6.0"
+    "jade": "~1.6.0",
+    "mongodb": "~2.0",
+    "mongoose": "^3.8.20"
   }
 }
