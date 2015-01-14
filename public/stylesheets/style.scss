@@ -35,15 +35,15 @@ h3 {
 // NAVBAR
 nav.navbar {
     position: fixed;
-
-    // -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-    // -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-    // transition: background .5s ease-in-out,padding .5s ease-in-out;
+    z-index: 9;
 
     .navbar-fixed-top {
         padding: 0 10px;
         background: black;
-        height: 50px;
+
+        -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
+        transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
 
         .container-fluid {
             font-family: $opensans;
@@ -97,11 +97,10 @@ nav.navbar {
         left: 0;
         padding: 15px 10px;
         background: transparent;
-        height: 80px;
 
-        // -webkit-transition: background .3s ease-in-out;
-        // -moz-transition: background .3s ease-in-out;
-        // transition: background .3s ease-in-out;
+        -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
+        transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
 
         .container-fluid {
 
@@ -128,21 +127,6 @@ nav.navbar {
         }
     }
 }
-
-// @media(min-width:767px) {
-    
-//     .navbar.navbar-fixed-top {
-//         padding: 0 10px;
-//         background: 0 0;
-//         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-//         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-//         transition: background .5s ease-in-out,padding .5s ease-in-out;
-//     }
-
-//     .navbar-fixed-top-clear {
-//         padding: 15px 10px;
-//     }
-// }
 
 
 // SECTIONS
