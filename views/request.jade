@@ -4,7 +4,7 @@ block header
     script(src='/javascripts/style.js')
 
 block stylesheets
-    link(rel="stylesheet", href="/stylesheets/signup.css")
+    link(rel="stylesheet", href="/stylesheets/request.css")
 
 block content
     nav.navbar#navbar
@@ -24,28 +24,26 @@ block content
                     ul.nav.navbar-nav.navbar-right
                         li: a(href="login") LOGIN
                         li: a(href="signup") SIGN UP
-
-    section.signup#login
+                        
+    section.request#request
         div.container
             div.wrapper
                 div.title
-                    h3 Login
-                div.login-form
+                    h1 Hitch me a ride
+                div.req-form
                     form.form-horizontal
                         div.form-group
-                            label.col-sm-2.control-label(for='email') Email:    
+                            label.col-sm-2.control-label(for='name') Name:
                             div.col-sm-10
-                                input#email.form-control(type='email', placeholder='Enter email')
+                                input#name.form-control(type='text', placeholder='e.g. Jane Doe')
                         div.form-group
-                            label.col-sm-2.control-label(for='pwd') Password:
+                            label.col-sm02.control-label(for='pickup') Pickup from:
                             div.col-sm-10
-                                input#pwd.form-control(type='password', placeholder='Enter password')
+                                input#pickup.form-control(type='text', placeholder='e.g. 305 Memorial Drive Cambridge, MA 02139')
                         div.form-group
-                            div.col-sm-10.col-sm-offset-2
-                                div.checkbox
-                                    label
-                                        input(type="checkbox")
-                                        p Remember me
+                            label.col-sm-10.control-lable(for='dropoff') Dropoff at:
+                            div.col-sm-10
+                                input#dropoff.form-control(type='text', placeholder= 'e.g. Boston Logan Airport')
                         div.form-group
                             div.col-sm-10.col-sm-offset-2
                                 button.btn.btn-default(type='submit') Submit
