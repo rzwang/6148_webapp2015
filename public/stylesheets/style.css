@@ -64,12 +64,6 @@ nav.navbar {
     nav.navbar .navbar-fixed-top-clear .container-fluid .collapse.navbar-collapse a {
       color: black; }
 
-@media (min-width: 767px) {
-  .navbar.navbar-fixed-top, nav.navbar .navbar.navbar-fixed-top-clear {
-    background: 0 0;
-    -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-    -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-    transition: background .5s ease-in-out,padding .5s ease-in-out; } }
 section.main {
   height: 100vh;
   width: 100vw;
