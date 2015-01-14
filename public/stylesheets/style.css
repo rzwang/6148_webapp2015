@@ -52,52 +52,55 @@ h3 {
 nav.navbar {
   position: fixed;
   z-index: 9; }
-  nav.navbar .navbar-fixed-top, nav.navbar .navbar-fixed-top-clear {
-    padding: 0 10px;
-    background: black;
-    -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
-    -moz-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
-    transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out; }
-    nav.navbar .navbar-fixed-top .container-fluid, nav.navbar .navbar-fixed-top-clear .container-fluid {
+  nav.navbar .navbar-fixed-top {
+    background: black; }
+    nav.navbar .navbar-fixed-top a {
+      font-weight: 300;
+      font-size: 2.5em;
+      color: white;
+      transition: all 300ms ease; }
+    nav.navbar .navbar-fixed-top .container-fluid {
       font-family: "Open Sans", sans-serif;
       max-width: 1500px; }
-      nav.navbar .navbar-fixed-top .container-fluid .navbar-header button .icon-bar, nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header button .icon-bar {
+      nav.navbar .navbar-fixed-top .container-fluid .navbar-header button .icon-bar {
         background-color: white; }
-      nav.navbar .navbar-fixed-top .container-fluid .navbar-header a, nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header a {
+      nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse a {
+        font-size: 1.25em; }
+
+@media only screen and (min-width: 768px) {
+  .navbar {
+    position: fixed;
+    z-index: 9; }
+    .navbar #clear, .navbar #collapsed {
+      padding: 15px 10px;
+      background: transparent;
+      -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
+      -moz-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
+      transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
+      font-family: "Open Sans", sans-serif; }
+      .navbar #clear a, .navbar #collapsed a {
         font-weight: 300;
         font-size: 2.5em;
-        color: white;
+        color: black;
         transition: all 300ms ease; }
-      nav.navbar .navbar-fixed-top .container-fluid .navbar-header a:hover, nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header a:hover {
+      .navbar #clear a:hover, .navbar #collapsed a:hover {
         text-decoration: none;
         color: #4b9cc3; }
-      nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse, nav.navbar .navbar-fixed-top-clear .container-fluid .collapse.navbar-collapse {
-        padding-right: 10px; }
-        nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse a, nav.navbar .navbar-fixed-top-clear .container-fluid .collapse.navbar-collapse a {
-          font-weight: 300;
-          font-size: 1.25em;
-          color: white;
-          transition: all 300ms ease; }
-        nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse a:hover, nav.navbar .navbar-fixed-top-clear .container-fluid .collapse.navbar-collapse a:hover {
-          color: #4b9cc3;
-          text-decoration: none;
-          background-color: transparent; }
-  nav.navbar .navbar-fixed-top-clear {
-    position: fixed;
-    right: 0;
-    left: 0;
-    padding: 15px 10px;
-    background: transparent;
-    -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
-    -moz-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
-    transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out; }
-    nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header button .icon-bar {
-      background-color: black; }
-    nav.navbar .navbar-fixed-top-clear .container-fluid .navbar-header a {
-      color: black; }
-    nav.navbar .navbar-fixed-top-clear .container-fluid .collapse.navbar-collapse a {
-      color: black; }
-
+      .navbar #clear .container-fluid, .navbar #collapsed .container-fluid {
+        max-width: 1500px; }
+        .navbar #clear .container-fluid .collapse.navbar-collapse, .navbar #collapsed .container-fluid .collapse.navbar-collapse {
+          padding-right: 10px; }
+          .navbar #clear .container-fluid .collapse.navbar-collapse a, .navbar #collapsed .container-fluid .collapse.navbar-collapse a {
+            font-size: 1.25em; }
+    .navbar #collapsed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0px 10px;
+      background: black; }
+      .navbar #collapsed a {
+        color: white; } }
 section.main {
   height: 100vh;
   width: 100vw;

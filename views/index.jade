@@ -5,21 +5,20 @@ block header
 
 block content
     nav.navbar#navbar
-        //- FIX RESPONSIVENESS
-        div.navbar-fixed-clear(
-                data-top="@class:navbar-fixed-top-clear"
-                data-0p="@class:navbar-fixed-top"
+        div.navbar-fixed-top(
+                data-top="@id:clear"
+                data-0p="@id:black"
                 data-anchor-target="#navbar")
             div.container-fluid
                 div.navbar-header
-                    a.navbar-brand.page-scroll(href="#") hitch
+                    a.navbar-brand.page-scroll(href="/") hitch
                     button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
                         span.icon-bar
                         span.icon-bar
                         span.icon-bar
                 div.collapse.navbar-collapse#basic_nav
                     ul.nav.navbar-nav.navbar-right
-                        li: a(href="login" id="bar") LOGIN
+                        li: a(href="login") LOGIN
                         li: a(href="signup") SIGN UP
 
     section.main#main

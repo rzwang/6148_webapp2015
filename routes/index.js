@@ -15,11 +15,15 @@ router.get('/', function(req, res) {
 });
 
 router.get('/signup', function(req, res) {
-    res.render('signup', {title: 'Sign Up'});
+    res.render('signup', {title: 'hitch | Sign Up'});
     // THIS IS PART OF THE TEST - need to write route to render image 
     // models.Photo.findOne({_id: photoId}, function(err, result) {
     //     res.render('photo', {photo: result});
     // });
+});
+
+router.get('/login', function(req, res) {
+    res.render('login', {title: 'hitch | Login'});
 });
 
 router.get('/login', function(req, res) {
