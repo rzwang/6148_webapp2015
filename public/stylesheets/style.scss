@@ -21,6 +21,33 @@ h3 {
     font-size: 3em;
 }
 
+.typed-cursor{
+    opacity: 1;
+    font-weight: 300;
+    font-size: 3em;
+    -webkit-animation: blink .75s infinite;
+    -moz-animation: blink .75s infinite;
+    animation: blink .75s infinite;
+}
+
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
 
 // HIGHLIGHTING
 ::selection {
@@ -128,6 +155,11 @@ nav.navbar {
     }
 }
 
+// FIX RESPONSIVENESS
+@media only screen and (min-width: 768px) {
+
+}
+
 
 // SECTIONS
 section.main {
@@ -137,7 +169,6 @@ section.main {
     background: url("../images/blurred.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
 
     .container {
@@ -196,6 +227,5 @@ section.test {
     background: url("../images/montgomery.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
 }

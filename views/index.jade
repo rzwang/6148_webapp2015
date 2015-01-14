@@ -5,6 +5,7 @@ block header
 
 block content
     nav.navbar#navbar
+        //- FIX RESPONSIVENESS
         div.navbar-fixed-top(
                 data-top="@class:navbar-fixed-top-clear"
                 data--250-top="@class:navbar-fixed-top"
@@ -27,15 +28,17 @@ block content
                 div.title
                     h1 hitch
                 div.subtitle
-                    h3 Making ridesharing easier than ever.
+                    //- FIX THIS
+                    h3 hitch a ride to
+                    span.typed
                 div.button
-                    a(href='http://google.com')
+                    a(href="http://google.com")
                         button HITCH ME A RIDE
 
     section.about#about
         div.container
             div.wrapper
-                h1 This is the about section
+                h1 Making ridesharing easier than ever.
 
     section.test
         div.container
