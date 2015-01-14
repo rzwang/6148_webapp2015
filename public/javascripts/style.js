@@ -1,37 +1,35 @@
 $(document).ready(function(){
 
 // FIX RESPONSIVENESS
-    // function adjustWindow(){
-    //     winH = $(window).height();
-    //     winW = $(window).width();
+    function adjustWindow(){
+        var winH = $(window).height();
+        var winW = $(window).width();
 
-    //     if(winH <= 550) {
-    //         winH=550;
-    //     }
+        if(winH <= 550) {
+            winH=550;
+        }
 
-    //     if(winW >= 768) {
-    //         var s = skrollr.init({
-    //             forceHeight: false
-    //         })(jQuery);
-    //         $section.height(winH);
-    //         s.refresh($('.main'));
-    //     } else {
- 
-    //     // Init Skrollr
-    //     var s = skrollr.init();
-    //     s.destroy();
-    //     }
-    // }
+        if(winW >= 768) {
+            var s = skrollr.init();
+            s.refresh($('.main'));
+        } else {
+            var s = skrollr.init();
+            s.destroy();
+        }
+    };
 
-    // if(Modernizr.touch) {
-    //     var s = skrollr.init();
-    //     s.destroy();
-    // }
+    function initAdjustWindow() {
+        return {
+            match : function() {
+                adjustWindow();
+            },
+            unmatch : function() {
+                adjustWindow();
+            }
+        };
+    };
 
-    (function($){
-        var s = skrollr.init({
-        });
-    })(jQuery);
+    enquire.register("screen and (min-width : 768px)", initAdjustWindow(), false);
 });
 
 $(function(){
