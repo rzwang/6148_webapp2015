@@ -1,1 +1,16 @@
-@import '_constants' 
+@import '_constants';
+
+section.register {
+    .container {
+        .wrapper {
+            .title {
+                color: black;
+                text-align: center;
+            }
+
+            .signup-form {
+
+            }
+        }
+    }
+}
