@@ -78,6 +78,8 @@ nav.navbar {
     .navbar #clear a, .navbar #collapsed a {
       color: black;
       transition: all 300ms ease; }
+    .navbar #clear a:hover, .navbar #collapsed a:hover {
+      color: #4b9cc3; }
     .navbar #clear .container-fluid, .navbar #collapsed .container-fluid {
       max-width: 1500px; }
       .navbar #clear .container-fluid .collapse.navbar-collapse, .navbar #collapsed .container-fluid .collapse.navbar-collapse {
