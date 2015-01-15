@@ -5,6 +5,10 @@ html, body {
     height: auto;
     top: 0;
     left: 0;
+
+    section {
+        width: 100vw;
+    }
 }
 
 
@@ -96,6 +100,7 @@ nav.navbar {
 
                 a {
                     font-size: 1.25em;
+                    text-align: right;
                 }
             }
         }
@@ -132,9 +137,9 @@ nav.navbar {
             @extend #clear;
             padding: 0 10px;
             background: black;
-            -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
-            -moz-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
-            transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
+            -webkit-transition: all .5s ease-in-out;
+            -moz-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out;
 
             a {
                 color: white;
@@ -147,7 +152,6 @@ nav.navbar {
 // SECTIONS
 section.main {
     height: 100vh;
-    width: 100vw;
     background: url("../images/blurred.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -156,7 +160,6 @@ section.main {
     .container {
         position: relative;
         top: 15vh;
-        width: 100vw;
 
         .wrapper {
             
@@ -169,29 +172,34 @@ section.main {
                 color: black;
                 text-align: center;
             }
+        }
+    }
 
-            .button {
+    .button-container {
+        width: 100vw;
+        position: absolute;
+        top: 60vh;
+
+        .wrapper {
+            width: 300px;
+            margin: auto;
+
+            button {
+                font-size: 30px;
+                font-weight: 300;
                 width: 300px;
-                margin: auto;
+                border-radius: 15px;
+                padding: 8px;
+                color: white;
+                background: black;
+                border: solid white 2px;
+                opacity: .75;
+                transition: all 500ms ease;
+            }
 
-                button {
-                    font-size: 30px;
-                    font-weight: 300;
-                    width: 300px;
-                    border-radius: 10px;
-                    padding: 8px;
-                    margin-top: 25vh;
-                    color: white;
-                    background: black;
-                    border: solid white 2px;
-                    opacity: .75;
-                    transition: all 500ms ease;
-                }
-
-                button:hover {
-                    background: white;
-                    color: black;
-                }
+            button:hover {
+                color: black;
+                background: white;
             }
         }
     }
@@ -199,13 +207,11 @@ section.main {
 
 section.about {
     height: 60vh;
-    width: 100vw;
     background: white;
 }
 
 section.test {
     height: 100vh;
-    width: 100vw;
     background: url("../images/street.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
