@@ -53,54 +53,42 @@ nav.navbar {
   position: fixed;
   z-index: 9; }
   nav.navbar .navbar-fixed-top {
-    background: black; }
+    background: black;
+    font-family: "Open Sans", sans-serif; }
     nav.navbar .navbar-fixed-top a {
       font-weight: 300;
       font-size: 2.5em;
-      color: white;
-      transition: all 300ms ease; }
-    nav.navbar .navbar-fixed-top .container-fluid {
-      font-family: "Open Sans", sans-serif;
-      max-width: 1500px; }
-      nav.navbar .navbar-fixed-top .container-fluid .navbar-header button .icon-bar {
-        background-color: white; }
-      nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse a {
-        font-size: 1.25em; }
+      color: white; }
+    nav.navbar .navbar-fixed-top a:hover {
+      text-decoration: none;
+      color: #4b9cc3;
+      background: transparent; }
+    nav.navbar .navbar-fixed-top .container-fluid .navbar-header button .icon-bar {
+      background-color: white; }
+    nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse a {
+      font-size: 1.25em; }
 
 @media only screen and (min-width: 768px) {
-  .navbar {
-    position: fixed;
-    z-index: 9; }
-    .navbar #clear, .navbar #collapsed {
-      padding: 15px 10px;
-      background: transparent;
-      -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
-      -moz-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
-      transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
-      font-family: "Open Sans", sans-serif; }
-      .navbar #clear a, .navbar #collapsed a {
-        font-weight: 300;
-        font-size: 2.5em;
-        color: black;
-        transition: all 300ms ease; }
-      .navbar #clear a:hover, .navbar #collapsed a:hover {
-        text-decoration: none;
-        color: #4b9cc3; }
-      .navbar #clear .container-fluid, .navbar #collapsed .container-fluid {
-        max-width: 1500px; }
-        .navbar #clear .container-fluid .collapse.navbar-collapse, .navbar #collapsed .container-fluid .collapse.navbar-collapse {
-          padding-right: 10px; }
-          .navbar #clear .container-fluid .collapse.navbar-collapse a, .navbar #collapsed .container-fluid .collapse.navbar-collapse a {
-            font-size: 1.25em; }
-    .navbar #collapsed {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 0px 10px;
-      background: black; }
-      .navbar #collapsed a {
-        color: white; } }
+  .navbar #clear, .navbar #collapsed {
+    padding: 15px 10px;
+    background: transparent; }
+    .navbar #clear a, .navbar #collapsed a {
+      color: black;
+      transition: all 300ms ease; }
+    .navbar #clear .container-fluid, .navbar #collapsed .container-fluid {
+      max-width: 1500px; }
+      .navbar #clear .container-fluid .collapse.navbar-collapse, .navbar #collapsed .container-fluid .collapse.navbar-collapse {
+        padding-right: 10px; }
+        .navbar #clear .container-fluid .collapse.navbar-collapse a, .navbar #collapsed .container-fluid .collapse.navbar-collapse a {
+          font-size: 1.25em; }
+  .navbar #collapsed {
+    padding: 0 10px;
+    background: black;
+    -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
+    transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out; }
+    .navbar #collapsed a {
+      color: white; } }
 section.main {
   height: 100vh;
   width: 100vw;
@@ -145,7 +133,7 @@ section.about {
 section.test {
   height: 100vh;
   width: 100vw;
-  background: url("../images/montgomery.png") no-repeat center center fixed;
+  background: url("../images/street.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover; }

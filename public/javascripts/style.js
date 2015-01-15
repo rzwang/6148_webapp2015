@@ -5,13 +5,8 @@ $(document).ready(function(){
         var winH = $(window).height();
         var winW = $(window).width();
 
-        if(winH <= 550) {
-            winH=550;
-        }
-
         if(winW >= 768) {
             var s = skrollr.init();
-            s.refresh($('.main'));
         } else {
             var s = skrollr.init();
             s.destroy();
