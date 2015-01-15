@@ -103,6 +103,7 @@ nav.navbar {
 }
 
 @media only screen and (min-width: 768px) {
+
     .navbar {
         
         #clear {
@@ -131,12 +132,9 @@ nav.navbar {
             @extend #clear;
             padding: 0 10px;
             background: black;
-
-
             -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
             -moz-transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
             transition: background .5s ease-in-out, padding .5s ease-in-out, height .5s ease-in-out;
-
 
             a {
                 color: white;
@@ -150,7 +148,6 @@ nav.navbar {
 section.main {
     height: 100vh;
     width: 100vw;
-
     background: url("../images/blurred.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;

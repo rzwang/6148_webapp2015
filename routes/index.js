@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var app = express();
 
 // Inport models file into the router TEST
 // var models = require('../models/models');
@@ -30,16 +31,11 @@ router.get('/login', function(req, res) {
     res.render('login', {title: 'Login'});
 });
 
-// router.post('/signup', function(req, res) {
-//     console.log(req.body);
-// });
-
+router.get('/request', function(req, res){
+    res.render('request', {title: 'hitch me a ride!'});
+});
 
 // // ADD THESE BACK IN WHEN THE VIEWS FILES ARE CREATED
-
-// router.get('/request_match', function(req, res) {
-//     res.render('request_match', {title: 'Request Match'});
-// });
 
 // router.get('/results', function(req, res) {
 //     res.render('results', {title: 'Results'});
