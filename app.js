@@ -8,9 +8,8 @@ var routes = require('./routes/index');
 var app = express();
 
 // Database configuration and connect to it using Mongoose APIs
-var dbConfig = require('./db.js');
 var mongoose = require('mongoose');
-mongoose.connect(dbConfig.url);
+mongoose.connect('mongodb://localhost/passport');
 
 // Configuring Passport
 var passport = require('passport');
