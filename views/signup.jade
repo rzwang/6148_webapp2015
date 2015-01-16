@@ -33,19 +33,25 @@ block content
                 div.signup-form
                     form.form-horizontal
                         div.form-group
+                            label.col-sm-2.control-label(for='firstname') First Name:
+                            div.col-sm-10
+                                input#firstname.form-control(type='text')
+                        div.form-group
+                            label.col-sm-2.control-label(for='lastname') Last Name:
+                            div.col-sm-10
+                                input#lastname.form-control(type='text')
+                        div.form-group
                             label.col-sm-2.control-label(for='email') Email:    
                             div.col-sm-10
-                                input#email.form-control(type='email', placeholder='Enter email')
+                                input#email.form-control(type='email')
+                        div.form-group
+                            label.col-sm-2.control-label(for='phone') Phone:
+                            div.col-sm-10
+                                input#phone.form-control(type='text', placeholder='xxx.xxx.xxxx')
                         div.form-group
                             label.col-sm-2.control-label(for='pwd') Password:
                             div.col-sm-10
-                                input#pwd.form-control(type='password', placeholder='Enter password')
-                        div.form-group
-                            div.col-sm-10.col-sm-offset-2
-                                div.checkbox
-                                    label
-                                        input(type="checkbox")
-                                        p Remember me
+                                input#pwd.form-control(type='password')
                         div.form-group
                             div.col-sm-10.col-sm-offset-2
                                 button.btn.btn-default(type='submit') Submit

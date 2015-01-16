@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var app = express();
+var passport = require('passport');
 
-// Inport models file into the router TEST
+// Import models file into the router TEST
 // var models = require('../models/models');
 // models.Photo
 
@@ -15,6 +16,7 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'hitch' });
 });
 
+/* GET sign up page */
 router.get('/signup', function(req, res) {
     res.render('signup', {title: 'Sign Up'});
     // THIS IS PART OF THE TEST - need to write route to render image 
@@ -23,10 +25,26 @@ router.get('/signup', function(req, res) {
     // });
 });
 
+/* Handle sign up POST */
+router.post('/signup', passport.authenticate('signup', {
+    successRedirect: '/request',
+    failureRedirect: '/signup',
+    failureFlash: true
+}));
+
+/* GET login page */
 router.get('/login', function(req, res) {
     res.render('login', {title: 'Login'});
 });
 
+/* Handle login POST */
+router.post('/login', passport.authenticate('login', {
+    successRedirect: '/request',
+    failureRedirect: '/login',
+    failureFlash: true
+}));
+
+/* GET request page */
 router.get('/request', function(req, res){
     res.render('request', {title: 'hitch me a ride!'});
 });

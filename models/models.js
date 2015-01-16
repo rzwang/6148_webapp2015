@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 // Define a schema
 var photoSchema = mongoose.Schema({
     caption: String,
-    url: String
+    url: Sqtring
 });
 
 // Compile the scheme into a model
