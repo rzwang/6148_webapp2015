@@ -1,12 +1,46 @@
 extends layout
 
+block header
+    script(src='/javascripts/style.js')
+
 block content
+    nav.navbar#navbar
+        div.navbar-fixed-top(
+                data-start="@id:clear"
+                data-0p="@id:collapsed"
+                data-anchor-target="#navbar")
+            div.container-fluid
+                div.navbar-header
+                    a.navbar-brand.page-scroll(href="/") hitch
+                    button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                div.collapse.navbar-collapse#basic_nav
+                    ul.nav.navbar-nav.navbar-right
+                        li: a(href="login") LOGIN
+                        li: a(href="signup") SIGN UP
+
     section.main#main
         div.container
             div.wrapper
                 div.title
                     h1 hitch
-                div.description
-                    h3 Making ridesharing easier than ever.
-            button.login(href='login') Login
-            button.login(href='http://google.com') Sign Up
+                div.subtitle
+                    //- FIX THIS
+                    h3 hitch a ride to
+                    span.typed
+        div.button-container
+            div.wrapper
+                a(href="request")
+                    button HITCH ME A RIDE
+
+    section.about#about
+        div.container
+            div.wrapper
+                h3 Making ridesharing easier than ever.
+
+    section.test
+        div.container
+            div.wrapper
+                h3 Hello this is a street

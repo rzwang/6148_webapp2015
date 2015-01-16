@@ -1,10 +1,7 @@
 extends layout
 
-block header
-    script(src='/javascripts/style.js')
-
 block stylesheets
-    link(rel="stylesheet", href="/stylesheets/signup.css")
+    link(rel="stylesheet", href="/stylesheets/register.css")
 
 block content
     nav.navbar#navbar
@@ -23,13 +20,13 @@ block content
                     ul.nav.navbar-nav.navbar-right
                         li: a(href="login") LOGIN
                         li: a(href="signup") SIGN UP
-
-    section.signup#login
+    
+    section.register#register
         div.container
             div.wrapper
                 div.title
-                    h3 Login
-                div.login-form
+                    h3 Sign Up
+                div.reg-form
                     form.form-horizontal
                         div.form-group
                             label.col-sm-2.control-label(for='email') Email:    
@@ -45,6 +42,8 @@ block content
                                     label
                                         input(type="checkbox")
                                         p Remember me
-                        div.form-group
+                         div.form-group
                             div.col-sm-10.col-sm-offset-2
-                                button.btn.btn-default(type='submit') Submit
+                                button.btn.btn-default(type='submit') Register
+
+ 

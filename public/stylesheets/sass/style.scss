@@ -1,0 +1,223 @@
+@import '_constants';
+
+html, body {
+    max-width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+
+    section {
+        width: 100vw;
+    }
+}
+
+
+// TYPOGRAPHY
+h1 {
+    font-family: $opensans;
+    font-weight: 300;
+    font-size: 7em;
+}
+
+h3 {
+    font-family: $opensans;
+    font-weight: 300;
+    font-size: 3em;
+}
+
+.typed-cursor{
+    opacity: 1;
+    font-weight: 300;
+    font-size: 3em;
+    -webkit-animation: blink .75s infinite;
+    -moz-animation: blink .75s infinite;
+    animation: blink .75s infinite;
+}
+
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+
+// HIGHLIGHTING
+::selection {
+    background: $testcolor;
+}
+
+::-moz-selection {
+    background: $testcolor;
+}
+
+
+// NAVBAR
+nav.navbar {
+    position: fixed;
+    z-index: 9;
+
+    .navbar-fixed-top {
+        background: black;
+        font-family: $opensans;
+
+        a {
+            font-weight: 300;
+            font-size: 2.5em;
+            color: white;
+        }
+        
+        a:hover {
+            text-decoration: none;
+            color: $testcolor;
+            background: transparent;
+        }
+
+        .container-fluid {
+
+            .navbar-header {
+
+                button {
+
+                    .icon-bar {
+                        background-color: white;
+                    }
+                }
+            }
+
+            .collapse.navbar-collapse {
+
+                a {
+                    font-size: 1.25em;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .navbar {
+        
+        #clear {
+            padding: 15px 10px;
+            background: transparent;
+
+            a {
+                color: black;
+                transition: all 300ms ease;
+            }
+
+            a:hover {
+                color: $testcolor;
+            }
+            
+            .container-fluid {
+                max-width: 1500px;
+
+                .collapse.navbar-collapse {
+                    padding-right: 10px;
+
+                    a {
+                        font-size: 1.25em;
+                    }
+                }
+            }
+        }
+
+        #collapsed {
+            @extend #clear;
+            padding: 0 10px;
+            background: black;
+            -webkit-transition: all .5s ease-in-out;
+            -moz-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out;
+
+            a {
+                color: white;
+            }
+        }
+    } 
+}
+
+
+// SECTIONS
+section.main {
+    height: 100vh;
+    background: url("../images/blurred.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+
+    .container {
+        position: relative;
+        top: 15vh;
+
+        .wrapper {
+            
+            .title {
+                color: black;
+                text-align: center;
+            }
+
+            .subtitle {
+                color: black;
+                text-align: center;
+            }
+        }
+    }
+
+    .button-container {
+        width: 100vw;
+        position: absolute;
+        top: 60vh;
+
+        .wrapper {
+            width: 300px;
+            margin: auto;
+
+            button {
+                font-size: 30px;
+                font-weight: 300;
+                width: 300px;
+                border-radius: 15px;
+                padding: 8px;
+                color: white;
+                background: black;
+                border: solid white 2px;
+                opacity: .75;
+                transition: all 500ms ease;
+            }
+
+            button:hover {
+                color: black;
+                background: white;
+            }
+        }
+    }
+}
+
+section.about {
+    height: 60vh;
+    background: white;
+}
+
+section.test {
+    height: 100vh;
+    background: url("../images/street.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
