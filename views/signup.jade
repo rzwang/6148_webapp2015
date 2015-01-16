@@ -31,27 +31,27 @@ block content
                 div.title
                     h3 Sign Up
                 div.signup-form
-                    form.form-horizontal
+                    form.form-horizontal(method='post')
                         div.form-group
                             label.col-sm-2.control-label(for='firstname') First Name:
                             div.col-sm-10
-                                input#firstname.form-control(type='text')
+                                input#firstname.form-control(type='text', placeholder='First Name', required, autofocus)
                         div.form-group
                             label.col-sm-2.control-label(for='lastname') Last Name:
                             div.col-sm-10
-                                input#lastname.form-control(type='text')
+                                input#lastname.form-control(type='text', placeholder='Last Name', required)
                         div.form-group
-                            label.col-sm-2.control-label(for='email') Email:    
+                            label.col-sm-2.control-label(for='username') Email:    
                             div.col-sm-10
-                                input#email.form-control(type='email')
+                                input#username.form-control(type='email', placeholder='example@example.com', required)
                         div.form-group
                             label.col-sm-2.control-label(for='phone') Phone:
                             div.col-sm-10
-                                input#phone.form-control(type='text', placeholder='xxx.xxx.xxxx')
+                                input#phone.form-control(type='text', placeholder='xxx.xxx.xxxx', required)
                         div.form-group
-                            label.col-sm-2.control-label(for='pwd') Password:
+                            label.col-sm-2.control-label(for='password') Password:
                             div.col-sm-10
-                                input#pwd.form-control(type='password')
+                                input#password.form-control(type='password', placeholder='Password', required)
                         div.form-group
                             div.col-sm-10.col-sm-offset-2
                                 button.btn.btn-default(type='submit') Submit

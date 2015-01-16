@@ -3,13 +3,15 @@ var User = require('../models/user');
 var bCrypt = require('bcrypt-nodejs');
 
 // Registration/Sign Up strategy
-var signup = function(passport){
+module.exports = function(passport){
+
     passport.use('signup', new LocalStrategy({
         passReqToCallback: true
     },
     function(req, username, password, done){
         
         findOrCreateUser = function(){
+            console.log('called findOrCreateUser YAY');
             // find a user in Mongo with provided username
             User.findOne({'username' : username}, function(err, user){
                 // In case of error 
@@ -59,4 +61,4 @@ var signup = function(passport){
 };
 
 // Export
-module.exports = signup;
+// module.exports = signup;

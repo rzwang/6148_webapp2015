@@ -18,7 +18,7 @@ router.get('/', function(req, res) {
 
 /* GET sign up page */
 router.get('/signup', function(req, res) {
-    res.render('signup', {title: 'Sign Up'});
+    res.render('signup', {title: 'hitch | Sign Up', message: req.flash('message')});
     // THIS IS PART OF THE TEST - need to write route to render image 
     // models.Photo.findOne({_id: photoId}, function(err, result) {
     //     res.render('photo', {photo: result});
@@ -34,7 +34,7 @@ router.post('/signup', passport.authenticate('signup', {
 
 /* GET login page */
 router.get('/login', function(req, res) {
-    res.render('login', {title: 'Login'});
+    res.render('login', {title: 'hitch | Login', message: req.flash('message')});
 });
 
 /* Handle login POST */
@@ -51,8 +51,22 @@ router.get('/request', function(req, res){
 
 // // ADD THESE BACK IN WHEN THE VIEWS FILES ARE CREATED
 
-// router.get('/results', function(req, res) {
-//     res.render('results', {title: 'Results'});
+/*
+var isAuthenticated = function (req, res, next){
+    // if user is authenticated in the session, call the next() to call the next request handler
+    // Passport adds this method to request object.
+    // A middleware is allowed to add properties to req and rsp objects
+    if (req.isAuthenticated())
+        return next();
+
+    // if user is not authenticatd, redirect to login page
+    res.redirect('/login');
+}
+*/
+
+/* GET results page */
+// router.get('/results', isAuthenticated, function(req, res) {
+//     res.render('results', {title: 'hitch | Results'});
 // });
 
 // THIS IS PART OF THE TEST
