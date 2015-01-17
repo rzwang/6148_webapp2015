@@ -114,7 +114,13 @@ section.main {
       text-align: center; }
     section.main .container .wrapper .subtitle {
       color: black;
-      text-align: center; }
+      text-align: center;
+      position: relative;
+      left: 32%; }
+      section.main .container .wrapper .subtitle ul li {
+        list-style-type: none;
+        float: left;
+        padding: 0 6px; }
     section.main .container .wrapper .button {
       width: 300px;
       margin: auto; }

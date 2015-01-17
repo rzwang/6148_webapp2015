@@ -186,6 +186,16 @@ section.main {
             .subtitle {
                 color: black;
                 text-align: center;
+                position: relative;
+                left: 32%;
+
+                ul {          
+                    li {
+                        list-style-type: none; 
+                        float: left;
+                        padding: 0 6px;
+                    }
+                }
             }
 
             .button {
