@@ -7,25 +7,24 @@ module.exports = function(passport){
     passport.use('signup', new LocalStrategy({
             passReqToCallback : true // allows us to pass back the entire request to the callback
         },
-        function(req, username, password, done) {
+        function(req, email, password, done) {
 
             findOrCreateUser = function(){
-                User.findOne({ 'username' :  username }, function(err, user) {
+                User.findOne({ 'email' :  email }, function(err, user) {
                     if (err){
                         console.log('Error in SignUp: '+err);
                         return done(err);
                     }
                     if (user) {
-                        console.log('User already exists with username: '+username);
+                        console.log('User already exists with email: '+email);
                         return done(null, false);
                     } else {
                         var newUser = new User();
 
-                        newUser.username = username;
+                        newUser.fullname = req.param('fullname');;
+                        newUser.email = email;
                         newUser.password = createHash(password);
-                        newUser.email = req.param('email');
-                        newUser.firstName = req.param('firstName');
-                        newUser.lastName = req.param('lastName');
+                        newUser.phone = req.param('phone');
 
                         newUser.save(function(err) {
                             if (err){
