@@ -16,35 +16,6 @@ h3 {
   font-weight: 300;
   font-size: 3em; }
 
-.typed-cursor {
-  opacity: 1;
-  font-weight: 300;
-  font-size: 3em;
-  -webkit-animation: blink .75s infinite;
-  -moz-animation: blink .75s infinite;
-  animation: blink .75s infinite; }
-
-@-webkit-keyframes blink {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-@-moz-keyframes blink {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-@keyframes blink {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
 ::selection {
   background: #4b9cc3; }
 

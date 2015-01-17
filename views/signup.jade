@@ -29,24 +29,22 @@ block content
             div.wrapper
                 div.title
                     h3 Sign Up
-                div.signup-form
-                    form.form-horizontal
-                        div.form-group
-                            label.col-sm-2.control-label(for='email') Email:    
-                            div.col-sm-10
-                                input#email.form-control(type='email', placeholder='Enter email')
-                        div.form-group
-                            label.col-sm-2.control-label(for='pwd') Password:
-                            div.col-sm-10
-                                input#pwd.form-control(type='password', placeholder='Enter password')
-                        div.form-group
-                            div.col-sm-10.col-sm-offset-2
-                                div.checkbox
-                                    label
-                                        input(type="checkbox")
-                                        p Remember me
-                        div.form-group
-                            div.col-sm-10.col-sm-offset-2
-                                button.btn.btn-default(type='submit') Submit
+                div.signup-wall
+                    form.form-signin(action='/signup', method='POST')
+                        input(type='text', name='username', class='form-control', placeholder='Username',required, autofocus)
+                        input(type='password', name='password', class='form-control', placeholder='Password', required)
+                        input(type='email', name='email', class='form-control', placeholder='Email',required)
+                        input(type='text', name='firstName', class='form-control', placeholder='First Name',required)
+                        input(type='text', name='lastName', class='form-control', placeholder='Last Name',required)
+                        button(class='btn btn-lg btn-primary btn-block', type='submit') SignUp
+                        //- div.form-group
+                        //-     div.col-sm-10.col-sm-offset-2
+                        //-         div.checkbox
+                        //-             label
+                        //-                 input(type="checkbox")
+                        //-                 p Remember me
+                        //- div.form-group
+                        //-     div.col-sm-10.col-sm-offset-2
+                        //-         button.btn.btn-default(type='submit') Submit
 
  

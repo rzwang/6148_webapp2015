@@ -1,57 +1,63 @@
 var express = require('express');
 var router = express.Router();
-var app = express();
 
-// Inport models file into the router TEST
-// var models = require('../models/models');
-// models.Photo
 
-// Connect to the database over Mongoose TEST
-// var mongoose = require('mongoose')
-// mongoose.connect('mongodb://localhost/test') // CHANGE THIS LATER!!! run 'mongod' on terminal
+var isAuthenticated = function (req, res, next) {
+    // if user is authenticated in the session, call the next() to call the next request handler 
+    // Passport adds this method to request object. A middleware is allowed to add properties to
+    // request and response objects
+    if (req.isAuthenticated())
+        return next();
+    // if the user is not authenticated then redirect him to the login page
+    res.redirect('/login');
+}
 
-/* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'hitch' });
-});
+module.exports = function(passport){
 
-router.get('/signup', function(req, res) {
-    res.render('signup', {title: 'hitch | Sign Up'});
-    // THIS IS PART OF THE TEST - need to write route to render image 
-    // models.Photo.findOne({_id: photoId}, function(err, result) {
-    //     res.render('photo', {photo: result});
+    /* GET home page. */
+    router.get('/', function(req, res) {
+      res.render('index', { title: 'hitch' });
+    });
+
+    /* GET signup page. */
+    router.get('/signup', function(req, res) {
+        res.render('signup', {title: 'hitch | Sign Up'});
+    });
+
+    /* Handle signup POST. */
+    router.post('/signup', passport.authenticate('signup', {
+        successRedirect: '/request',
+        failureRedirect: '/signup'
+    }));
+
+    /* GET login page. */
+    router.get('/login', function(req, res) {
+        res.render('login', {title: 'hitch | Login'});
+    });
+
+    /* Handle login POST. */
+    router.post('/login', passport.authenticate('login', {
+        successRedirect: '/request',
+        failureRedirect: '/login'
+    }));
+
+    /* Handle Logout */
+    router.get('/signout', function(req, res) {
+        req.logout();
+        res.redirect('/');
+    });
+
+    /* GET request page. */
+    router.get('/request', function(req, res){
+        res.render('request', {title: 'hitch me a ride!'});
+    });
+
+    // // ADD THESE BACK IN WHEN THE VIEWS FILES ARE CREATED
+
+    // /* GET results page. */
+    // router.get('/results', function(req, res) {
+    //     res.render('results', {title: 'Results'});
     // });
-});
 
-router.get('/login', function(req, res) {
-    res.render('login', {title: 'hitch | Login'});
-});
-
-router.get('/login', function(req, res) {
-    res.render('login', {title: 'Login'});
-});
-
-router.get('/request', function(req, res){
-    res.render('request', {title: 'hitch me a ride!'});
-});
-
-// // ADD THESE BACK IN WHEN THE VIEWS FILES ARE CREATED
-
-// router.get('/results', function(req, res) {
-//     res.render('results', {title: 'Results'});
-// });
-
-// THIS IS PART OF THE TEST
-// router.post('/signup', function(req, res) {
-//     // create a new photos object
-//     var newPhoto = new models.Photo({
-//         url: req.body['submitted-url'],
-//         caption: req.body['caption']
-//     });
-
-//     newPhoto.save(function(err, result) {
-//         res.redirect('/photos/' + result._id)
-//     })
-// });
-
-module.exports = router;
+    return router;
+}
