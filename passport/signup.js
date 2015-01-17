@@ -52,13 +52,14 @@ module.exports = function(passport){
         // Delay the execution of findOrCreateUser and execute the method
         // in the next tick of the event loop
         process.nextTick(findOrCreateUser);
-    }));
+    })
+);
 
     // Generates hash using bCrypt
     var createHash = function(password){
         return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
     }
-};
+}
 
 // Export
 // module.exports = signup;

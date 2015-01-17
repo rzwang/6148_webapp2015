@@ -16,38 +16,42 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'hitch' });
 });
 
-/* GET sign up page */
-router.get('/signup', function(req, res) {
-    res.render('signup', {title: 'hitch | Sign Up', message: req.flash('message')});
-    // THIS IS PART OF THE TEST - need to write route to render image 
-    // models.Photo.findOne({_id: photoId}, function(err, result) {
-    //     res.render('photo', {photo: result});
-    // });
-});
+module.exports = function(passport){
+    /* GET sign up page */
+    router.get('/signup', function(req, res) {
+        res.render('signup', {title: 'hitch | Sign Up'});
+        // THIS IS PART OF THE TEST - need to write route to render image 
+        // models.Photo.findOne({_id: photoId}, function(err, result) {
+        //     res.render('photo', {photo: result});
+        // });
+    });
 
-/* Handle sign up POST */
-router.post('/signup', passport.authenticate('signup', {
-    successRedirect: '/request',
-    failureRedirect: '/signup',
-    failureFlash: true
-}));
+    /* Handle sign up POST */
+    router.post('/signup', passport.authenticate('signup', {
+            successRedirect: '/request',
+            failureRedirect: '/signup',
+            failureFlash: true
+    }));
 
-/* GET login page */
-router.get('/login', function(req, res) {
-    res.render('login', {title: 'hitch | Login', message: req.flash('message')});
-});
+    /* GET login page */
+    router.get('/login', function(req, res) {
+        res.render('login', {title: 'hitch | Login'});
+    });
 
-/* Handle login POST */
-router.post('/login', passport.authenticate('login', {
-    successRedirect: '/request',
-    failureRedirect: '/login',
-    failureFlash: true
-}));
+    /* Handle login POST */
+    router.post('/login', passport.authenticate('login', {
+        successRedirect: '/request',
+        failureRedirect: '/login',
+        failureFlash: true
+    }));
 
-/* GET request page */
-router.get('/request', function(req, res){
-    res.render('request', {title: 'hitch me a ride!'});
-});
+    /* GET request page */
+    router.get('/request', function(req, res){
+        res.render('request', {title: 'hitch me a ride!'});
+    });
+
+    return router;
+}
 
 // // ADD THESE BACK IN WHEN THE VIEWS FILES ARE CREATED
 
@@ -82,4 +86,4 @@ var isAuthenticated = function (req, res, next){
 //     })
 // });
 
-module.exports = router;
+// module.exports = router;
