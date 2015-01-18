@@ -58,7 +58,7 @@ section.main {
     height: 100%;
     width: 100%;
     padding: 0;
-    background: url("../images/blurry.png") no-repeat bottom center fixed;
+    background: url("../images/blurry.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover; }
@@ -70,28 +70,39 @@ section.main {
       opacity: .4; }
     section.main .container .wrapper {
       position: relative;
-      top: 25%; }
+      top: 20%;
+      padding: 0 0 0 30%; }
       section.main .container .wrapper .title {
         color: white;
-        text-align: center; }
+        text-align: left; }
       section.main .container .wrapper .subtitle {
         color: white;
-        text-align: center; }
+        text-align: left; }
+        section.main .container .wrapper .subtitle ul {
+          list-style-type: none;
+          padding: 0; }
+        section.main .container .wrapper .subtitle h3 {
+          margin-bottom: 0; }
+        section.main .container .wrapper .subtitle .typed h3 {
+          color: white;
+          margin-top: 5px;
+          width: 250px;
+          border-bottom: 2px solid white; }
   section.main .button-container {
     width: 100%;
     position: absolute;
     top: 75%; }
     section.main .button-container .wrapper {
-      width: 350px;
-      margin: auto; }
+      width: 300px;
+      margin-left: 30%; }
       section.main .button-container .wrapper button {
         font-size: 30px;
         font-weight: 300;
-        width: 350px;
+        width: 300px;
         border-radius: 15px;
         padding: 8px;
         color: white;
-        background: black;
+        background: transparent;
         border: solid white 2px;
         opacity: .8;
         transition: all 500ms ease; }
@@ -109,7 +120,7 @@ section.test {
     height: 100%;
     width: 100%;
     padding: 0;
-    background: url("../images/street.png") no-repeat bottom center fixed;
+    background: url("../images/street.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover; }
