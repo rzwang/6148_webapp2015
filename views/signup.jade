@@ -4,7 +4,7 @@ block header
     script(src='/javascripts/style.js')
 
 block stylesheets
-    link(rel="stylesheet", href="/stylesheets/signup.css")
+    link(rel="stylesheet", href="/stylesheets/register.css")
 
 block content
     nav.navbar#navbar
@@ -34,6 +34,7 @@ block content
                         input.form-control(type='text', name='fullname', placeholder='Name', required, autofocus)
                         input.form-control(type='email', name='username', placeholder='Email', required)
                         input.form-control(type='password', name='password', placeholder='Password', required)
+                        input.form-control(type='password', placeholder='Retype password', required)
                         input.form-control(type='tel', name='phone', placeholder='Phone', required)
                         button(class='btn btn-lg btn-primary btn-block', type='submit') SignUp
                         //- div.form-group

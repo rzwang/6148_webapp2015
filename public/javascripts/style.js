@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-// FIX RESPONSIVENESS
     function adjustWindow(){
         var winH = $(window).height();
         var winW = $(window).width();

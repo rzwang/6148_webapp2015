@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 var passport = require('passport');
 var expressSession = require('express-session');
 
-app.use(expressSession({secret: 'mySecretKey'}));
+app.use(expressSession({secret: 'maroon5fan123'}));
 app.use(passport.initialize());
 app.use(passport.session());
 
