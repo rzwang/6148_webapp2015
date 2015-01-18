@@ -65,6 +65,14 @@ module.exports = function(passport){
         res.render('request', {title: 'hitch me a ride!', message: req.flash('notice')});
     });
 
+    /* Handle request POST */
+    router.post('/request', passport.authenticate('request', {
+            successRedirect: '/results',
+            failureRedirect: '/request',
+            failureFlash: true,
+            successFlash: true
+    }));
+
     return router;
 }
 

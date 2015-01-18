@@ -31,11 +31,11 @@ block content
                 div.title
                     h3 Login
                 div.signup-wall
-                    form.signup-form
+                    form.form-signin(method='post')
                         div.form-group  
-                            input#email.form-control(type='email', name='email', placeholder='Enter email')
+                            input#username.form-control(type='email', name='username', placeholder='Enter email', required, autofocus)
                         div.form-group
-                            input#pwd.form-control(type='password', name='password', placeholder='Enter password')
+                            input#pwd.form-control(type='password', name='password', placeholder='Enter password', required)
                         //- div.form-group
                         //-     div.col-sm-10.col-sm-offset-2
                         //-         div.checkbox
@@ -45,4 +45,4 @@ block content
                         div.form-group
                             button Submit
                     if message && message.length > 0
-                        p.alert.alert-danger(role='alert') #{message}
+                        p#alert.alert.alert-danger(role='alert') #{message}

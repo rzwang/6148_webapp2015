@@ -2,6 +2,7 @@ extends layout
 
 block header
     script(src='/javascripts/style.js')
+    script(src='/javascripts/constraintvalidation.js')
 
 block stylesheets
     link(rel="stylesheet", href="/stylesheets/signup.css")
@@ -33,16 +34,21 @@ block content
                 div.signup-wall
                     form.form-signin(method='post')
                         div.form-group
-                            input#fullName.form-control(type='text', name='fullName', placeholder='Full Name', required, autofocus)
-                        div.form-group    
+                            input#firstName.form-control(type='text', name='firstName', placeholder='First Name', required, autofocus)
+                        div.form-group
+                            input#lastName.form-control(type='text', name='lastName', placeholder='Last Name', required)
+                        div.form-group.has-error    
                             input#username.form-control(type='email', name='username', placeholder='Username', required)
                         div.form-group
                             input#password.form-control(type='password', name='password', placeholder='Password', required)
                         div.form-group
-                            input#phone.form-control(type='tel', name='phone', placeholder='xxx.xxx.xxxx', required)
+                            input#confirmpw.form-control(type='password', name='confirmpw', placeholder='Confirm Password', required)
+                        div.form-group.has-error
+                            input#phone.form-control(type='tel', pattern='^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$',
+                                                     name='phone', placeholder='xxx-xxx-xxxx', required)
                         div.form-group
                             button Submit
                     if message && message.length > 0
-                        p.alert.alert-danger(role='alert') #{message}
+                        p#alert.alert.alert-danger(role='alert') #{message}
 
  
