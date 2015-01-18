@@ -26,30 +26,26 @@ block content
                 data-center="background-position: 50% 0%"
                 data-top-bottom="background-position: 50% 150%"
                 data-anchor-target="#main")
-            div.filter
-            div.wrapper
+            div.wrapper#box(
+                    data-top="opacity:1"
+                    data-top-center="opacity:0"
+                    data-anchor-target="#box")
                 div.title
                     h1 hitch
                 div.subtitle
-                    //- FIX THIS
-                    ul
-                        li: h3 hitch a ride to
-                        li: span.typed
-        div.button-container
-            div.wrapper
-                a(href="request")
-                    button HITCH ME A RIDE
-        div.button-container
-            div.wrapper(style="margin-left:auto; margin-right:30%;")
-                a(href="signup")
-                    button SIGN UP
+                    h3 hitch a ride to
+                    span.typed
+                div.button-wrapper
+                    div.button
+                        a(href="request")
+                            button HITCH ME A RIDE                
 
     section.about#about
         div.container
             div.wrapper
                 h3 Making ridesharing easier than ever.
 
-    section.test
+    section.request#request
         div.container
             div.wrapper
                 h3 Hello this is a street

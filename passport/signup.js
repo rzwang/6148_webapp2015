@@ -21,7 +21,8 @@ module.exports = function(passport){
                     } else {
                         var newUser = new User();
 
-                        newUser.fullname = req.param('fullname');;
+                        newUser.firstname = req.param('firstname');
+                        newUser.lastname = req.param('lastname');
                         newUser.email = email;
                         newUser.password = createHash(password);
                         newUser.phone = req.param('phone');

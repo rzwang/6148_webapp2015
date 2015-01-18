@@ -31,7 +31,7 @@ $(function(){
         strings: ["<h3>the airport.", "<h3> work.", "<h3>a concert.", "<h3>anywhere."],
         typeSpeed: 40,
         backSpeed: 20,
-        startDelay: 1000,
+        startDelay: 500,
         backDelay: 1500,
         showCursor: false,
     });
