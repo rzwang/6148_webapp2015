@@ -30,22 +30,19 @@ block content
             div.wrapper
                 div.title
                     h3 Login
-                div.login-form
-                    form.form-horizontal
+                div.signup-wall
+                    form.signup-form
+                        div.form-group  
+                            input#email.form-control(type='email', name='email', placeholder='Enter email')
                         div.form-group
-                            label.col-sm-2.control-label(for='email') Email:    
-                            div.col-sm-10
-                                input#email.form-control(type='email', placeholder='Enter email')
+                            input#pwd.form-control(type='password', name='password', placeholder='Enter password')
+                        //- div.form-group
+                        //-     div.col-sm-10.col-sm-offset-2
+                        //-         div.checkbox
+                        //-             label
+                        //-                 input(type="checkbox")
+                        //-                 p Remember me
                         div.form-group
-                            label.col-sm-2.control-label(for='pwd') Password:
-                            div.col-sm-10
-                                input#pwd.form-control(type='password', placeholder='Enter password')
-                        div.form-group
-                            div.col-sm-10.col-sm-offset-2
-                                div.checkbox
-                                    label
-                                        input(type="checkbox")
-                                        p Remember me
-                        div.form-group
-                            div.col-sm-10.col-sm-offset-2
-                                button.btn.btn-default(type='submit') Submit
+                            button Submit
+                    if message && message.length > 0
+                        p.alert.alert-danger(role='alert') #{message}

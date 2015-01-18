@@ -8,32 +8,31 @@ module.exports = function(passport){
     passport.use('signup', new LocalStrategy({
         passReqToCallback: true
     },
-    function(req, username, password, done){
+    function(req, email, password, done){
         
         findOrCreateUser = function(){
             console.log('called findOrCreateUser YAY');
-            // find a user in Mongo with provided username
-            User.findOne({'username' : username}, function(err, user){
+            // find a user in Mongo with provided email
+            User.findOne({'email' : email}, function(err, user){
                 // In case of error 
                 if (err){
                     console.log('Error in SignUp: ' + err);
-                    return done(err);
+                    return done(err, req.flash('notice',  'Error in sign up.'));
                 }
 
-                // username already exists
+                // email already exists
                 if (user){
                     console.log('User already exists');
-                    return done(null, false, req.flash('message', 'User Already Exists'));
+                    return done(null, false, req.flash('notice','User already exists.'));
                 } else {
                     // if there is no user with that email
                     // create the user
                     var newUser = new User();
 
                     // set the user's local credentials
-                    newUser.username = username;
-                    newUser.password = createHash(password);
-                    newUser.firstname = req.param('firstname');
-                    newUser.lastname = req.param('lastname');
+                    newUser.fullName = req.param('fullName');
+                    newUser.email = email;
+                    newUser.password = createHash(password);;
                     newUser.phone = req.param('phone');
 
                     // save the user
@@ -43,7 +42,7 @@ module.exports = function(passport){
                             throw err;
                         }
                         console.log('User Registration successful');
-                        return done(null, newUser);
+                        return done(null, newUser, req.flash('notice','User registration successful.'));
                     });
                 }
             });

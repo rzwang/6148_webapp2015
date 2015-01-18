@@ -3,10 +3,10 @@ var User = require('../models/user');
 var bCrypt = require('bcrypt-nodejs');
 
 // Login strategy
-var login = function(passport){
+module.exports = function(passport){
 
     passport.use('login', new LocalStrategy({
-    passReqToCallback : true
+        passReqToCallback : true
     },
     function(req, username, password, done){
         // check in mongo if a user with username exists or not
@@ -32,13 +32,13 @@ var login = function(passport){
                 return done(null, user);
             }
         );
-    }))
-
+    })
+);
     // Encrypt passwords before saving to db
     var isValidPassword = function(user, password){
         return bCrypt.compareSync(password, user.password);
     } 
-};
+}
 
-// Export
-module.exports = login;
+// // Export
+// module.exports = login;

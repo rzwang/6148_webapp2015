@@ -1,15 +1,58 @@
 @import '_constants';
 
-section.register {
+section.signup {
+    height: 100vh;
+
     .container {
+        height: 100%;
+        width: 100%;
+        background: url("../images/nystreet.png") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+
+        p.alert{
+            width: 100%;
+
+            .alert-danger {
+
+            }
+        }
         .wrapper {
             .title {
                 color: black;
                 text-align: center;
+                position: relative;
+                top: 70px;
             }
 
-            .signup-form {
+            .signup-wall {
+                max-width: 400px;
+                margin: auto;
+                padding: 0;
+                position: relative;
+                top: 100px;
 
+                .form-group {
+                    button {
+                        font-size: 18px;
+                        font-weight: 300;
+                        width: 100%;
+                        border-radius: 7px;
+                        padding: 8px;
+                        color: white;
+                        background: black;
+                        border: solid white 2px;
+                        opacity: .8;
+                        transition: all 500ms ease;
+                    }
+
+                    button:hover {
+                        color: white;
+                        background: $darkblue;
+                    }
+        
+                }
             }
         }
     }
