@@ -21,24 +21,26 @@ module.exports = function(passport){
 
     /* GET signup page. */
     router.get('/signup', function(req, res) {
-        res.render('signup', {title: 'hitch | Sign Up'});
+        res.render('signup', {title: 'hitch | Sign Up', message: req.flash('error')});
     });
 
     /* Handle signup POST. */
     router.post('/signup', passport.authenticate('signup', {
         successRedirect: '/request',
-        failureRedirect: '/signup'
+        failureRedirect: '/signup',
+        failureFlash: true
     }));
 
     /* GET login page. */
     router.get('/login', function(req, res) {
-        res.render('login', {title: 'hitch | Login'});
+        res.render('login', {title: 'hitch | Login', message: req.flash('error')});
     });
 
     /* Handle login POST. */
     router.post('/login', passport.authenticate('login', {
         successRedirect: '/request',
-        failureRedirect: '/login'
+        failureRedirect: '/login',
+        failureFlash: true
     }));
 
     /* Handle Logout */

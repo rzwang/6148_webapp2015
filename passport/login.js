@@ -13,12 +13,12 @@ module.exports = function(passport){
                     if (err)
                         return done(err);
                     if (!user){
-                        console.log('User Not Found with email '+email);
-                        return done(null, false);                 
+                        console.log('User not found with email '+email);
+                        return done(null, false, { message: 'User not found with email '+email });
                     }
                     if (!isValidPassword(user, password)){
-                        console.log('Invalid Password');
-                        return done(null, false);
+                        console.log('Invalid password');
+                        return done(null, false, { message: 'Invalid password' });
                     }
                     return done(null, user);
                 }

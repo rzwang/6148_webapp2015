@@ -27,66 +27,60 @@ nav.navbar {
       font-weight: 300;
       font-size: 2.5em;
       color: white;
-      text-shadow: none; }
+      text-shadow: none;
+      transition: all 300ms ease; }
     nav.navbar .navbar-fixed-top a:hover {
       text-decoration: none;
       color: #4fa0c4;
       background: transparent; }
-    nav.navbar .navbar-fixed-top .container-fluid .navbar-header button .icon-bar {
-      background-color: white; }
-    nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse a {
-      font-size: 1.25em;
-      text-align: right; }
+    nav.navbar .navbar-fixed-top .container-fluid {
+      padding: 0 5px; }
+      nav.navbar .navbar-fixed-top .container-fluid .icon-bar {
+        background-color: white; }
+      nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse a {
+        font-size: 1.25em; }
 
 @media only screen and (min-width: 768px) {
   .navbar #clear, .navbar #collapsed {
-    padding: 15px 10px;
-    background: transparent; }
-    .navbar #clear a, .navbar #collapsed a {
-      color: white;
-      transition: all 300ms ease; }
-    .navbar #clear a:hover, .navbar #collapsed a:hover {
-      color: #4fa0c4; }
+    background: transparent;
+    padding: 15px 25px 15px 15px; }
     .navbar #clear .container-fluid, .navbar #collapsed .container-fluid {
       max-width: 1500px; }
-      .navbar #clear .container-fluid .collapse.navbar-collapse, .navbar #collapsed .container-fluid .collapse.navbar-collapse {
-        padding-right: 10px; }
-        .navbar #clear .container-fluid .collapse.navbar-collapse a, .navbar #collapsed .container-fluid .collapse.navbar-collapse a {
-          font-size: 1.25em; }
   .navbar #collapsed {
-    padding: 0 10px;
+    padding: 0 25px 0 15px;
     background: black;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out; }
-    .navbar #collapsed a {
-      color: white; } }
+    transition: all .5s ease-in-out; } }
 section.main {
-  height: 100vh;
-  background: url("../images/blurry.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  min-height: 100%; }
-  section.main .filter {
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    background-color: black;
-    opacity: .4; }
+  height: 100vh; }
   section.main .container {
-    position: relative;
-    top: 25vh; }
-    section.main .container .wrapper .title {
-      color: white;
-      text-align: center; }
-    section.main .container .wrapper .subtitle {
-      color: white;
-      text-align: center; }
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    background: url("../images/blurry.png") no-repeat bottom center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover; }
+    section.main .container .filter {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      background-color: black;
+      opacity: .4; }
+    section.main .container .wrapper {
+      position: relative;
+      top: 25%; }
+      section.main .container .wrapper .title {
+        color: white;
+        text-align: center; }
+      section.main .container .wrapper .subtitle {
+        color: white;
+        text-align: center; }
   section.main .button-container {
-    width: 100vw;
+    width: 100%;
     position: absolute;
-    top: 75vh; }
+    top: 75%; }
     section.main .button-container .wrapper {
       width: 350px;
       margin: auto; }
@@ -110,10 +104,14 @@ section.about {
   background: white; }
 
 section.test {
-  height: 100vh;
-  background: url("../images/street.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover; }
+  height: 100vh; }
+  section.test .container {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    background: url("../images/street.png") no-repeat bottom center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover; }
 
 /*# sourceMappingURL=style.css.map */

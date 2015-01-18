@@ -23,6 +23,9 @@ block content
                     ul.nav.navbar-nav.navbar-right
                         li: a(href="login") LOGIN
                         li: a(href="signup") SIGN UP
+    
+    if message
+        div.alert.alert-danger-message(role="alert") #{message}
 
     section.signup#login
         div.container
@@ -30,7 +33,7 @@ block content
                 div.title
                     h3 Login
                 div.signup-wall
-                    form.form-signin(action='/login', method='POST')
+                    form.form-signin(method='POST')
                         input.form-control(type='email', name='username', placeholder='Email', required, autofocus)
                         input.form-control(type='password', name='password', placeholder='Password', required)
                         button(class='btn btn-lg btn-primary btn-block', type='submit') Login

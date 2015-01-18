@@ -12,12 +12,12 @@ module.exports = function(passport){
             findOrCreateUser = function(){
                 User.findOne({ 'email' :  email }, function(err, user) {
                     if (err){
-                        console.log('Error in SignUp: '+err);
+                        console.log('Error in signup: '+err);
                         return done(err);
                     }
                     if (user) {
                         console.log('User already exists with email: '+email);
-                        return done(null, false);
+                        return done(null, false, { message: 'User already exists with email: '+email });
                     } else {
                         var newUser = new User();
 

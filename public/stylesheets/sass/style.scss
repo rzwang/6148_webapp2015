@@ -41,6 +41,7 @@ nav.navbar {
             font-size: 2.5em;
             color: white;
             text-shadow: none;
+            transition: all 300ms ease;
         }
         
         a:hover {
@@ -50,22 +51,16 @@ nav.navbar {
         }
 
         .container-fluid {
+            padding: 0 5px;
 
-            .navbar-header {
-
-                button {
-
-                    .icon-bar {
-                        background-color: white;
-                    }
-                }
+            .icon-bar {
+                background-color: white;
             }
 
             .collapse.navbar-collapse {
 
                 a {
                     font-size: 1.25em;
-                    text-align: right;
                 }
             }
         }
@@ -77,42 +72,21 @@ nav.navbar {
     .navbar {
         
         #clear {
-            padding: 15px 10px;
             background: transparent;
+            padding: 15px 25px 15px 15px;
 
-            a {
-                color: white;
-                transition: all 300ms ease;
-            }
-
-            a:hover {
-                color: $lightblue;
-            }
-            
             .container-fluid {
                 max-width: 1500px;
-
-                .collapse.navbar-collapse {
-                    padding-right: 10px;
-
-                    a {
-                        font-size: 1.25em;
-                    }
-                }
             }
         }
 
         #collapsed {
             @extend #clear;
-            padding: 0 10px;
+            padding: 0 25px 0 15px;
             background: black;
             -webkit-transition: all .5s ease-in-out;
             -moz-transition: all .5s ease-in-out;
             transition: all .5s ease-in-out;
-
-            a {
-                color: white;
-            }
         }
     } 
 }
@@ -121,26 +95,28 @@ nav.navbar {
 // SECTIONS
 section.main {
     height: 100vh;
-    background: url("../images/blurry.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    min-height:100%;
-        
-    .filter {
-        height: 100vh;
-        width: 100vw;
-        position: absolute;
-        background-color: black;
-        opacity: .4;
-    }
     
     .container {
-        position: relative;
-        top: 25vh;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        background: url("../images/blurry.png") no-repeat bottom center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+
+        .filter {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background-color: black;
+            opacity: .4;
+        }
 
         .wrapper {
-            
+            position: relative;
+            top: 25%;
+
             .title {
                 color: white;
                 text-align: center;
@@ -154,9 +130,9 @@ section.main {
     }
 
     .button-container {
-        width: 100vw;
+        width: 100%;
         position: absolute;
-        top: 75vh;
+        top: 75%;
 
         .wrapper {
             width: 350px;
@@ -190,8 +166,14 @@ section.about {
 
 section.test {
     height: 100vh;
-    background: url("../images/street.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
+
+    .container {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        background: url("../images/street.png") no-repeat bottom center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+    }
 }

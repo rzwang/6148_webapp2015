@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var flash = require('connect-flash');
 
 // mongoose
 var mongoose = require('mongoose');
@@ -30,6 +31,7 @@ var expressSession = require('express-session');
 app.use(expressSession({secret: 'maroon5fan123'}));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 // passport init
 var initPassport = require('./passport/init');
