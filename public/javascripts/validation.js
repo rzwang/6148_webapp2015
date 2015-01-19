@@ -1,41 +1,39 @@
 $.webshims.polyfill();
 
+// VALIDATING PHONE NUMBER
 // $("mobile-number").intlTelInput();
-
-var telInput = $("#phone"),
-  errorMsg = $("#error-msg"),
-  validMsg = $("#valid-msg");
+var telInput = $("#phone");
 
 // initialise plugin
 telInput.intlTelInput({
   utilsScript: "../../lib/libphonenumber/build/utils.js"
 });
 
-// on blur: validate
-telInput.blur(function() {
+// on keydown: validate
+telInput.keydown(function() {
   if ($.trim(telInput.val())) {
     if (telInput.intlTelInput("isValidNumber")) {
-      validMsg.removeClass("hide");
+        telInput.addClass("success");
+
     } else {
-      telInput.addClass("error");
-      errorMsg.removeClass("hide");
-      validMsg.addClass("hide");
+        telInput.addClass("error");
     }
   }
 });
 
 // on keydown: reset
-telInput.keydown(function() {
-  telInput.removeClass("error");
-  errorMsg.addClass("hide");
-  validMsg.addClass("hide");
-});
+// telInput.blur(function() {
+//   telInput.removeClass("erorr");
+// });
 
-// var form = document.getElementById("signupform");
+//===============================================================================
+// VALIDATING PASSWORDS
+
+var form = document.getElementById("signupform");
 // form.noValidate = true;
 
 // // set handler to validate the form
-// // onsubmti used for easier cross-browser compatibility
+// // onsubmit used for easier cross-browser compatibility
 // form.onsubmit = validateForm;
 
 // function validateForm(event) {
@@ -75,37 +73,61 @@ telInput.keydown(function() {
 //     }
 // }
 
-// $("#signupform").validate({
-//     showErrors: function(errorMap, errorList) {
-//         $.each(this.validElements(), function(index, element) {
-//             var $element = $(element);
+$("#signupform").validate({
+    rules: {
+        firstName: "required",
+        lastName: "required",
+        username: {
+            required: true,
+            email: true
+        },
+        password2: {
+            equalTo: "#password"
+        },
+    },
 
-//             $element.data("title", "")
-//             .removeClass("error")
-//             .tooltip("destroy");
-//         });
+    messages: {
+        firstName: "Please specify your first name",
+        lastName: "Please specify your last name",
+        username: {
+            required: "We need your email address to confirm your sign up.",
+            email: "Your email address must be in the form of example@example.com"
+        },
+        password2: {
+            equalTo: "Passwords must match!!"
+        }
+    }
 
-//         $.each(errorList, function(index, error) {
-//             var $element = $(error.element);
-//             $element.tooltip("destroy")
-//             .data("title", error.message)
-//             .addClass("error")
-//             .tooltip();
-//         });
-//     },
 
-//     submitHandler: function(form) {
-//         alert("This is a valid form!");
-//     }
-// });
+
+    // showErrors: function(errorMap, errorList) {
+    //     $.each(this.validElements(), function(index, element) {
+    //         var $element = $(element);
+
+    //         $element.data("title", "")
+    //         .removeClass("error")
+    //         .tooltip("destroy");
+    //     });
+
+    //     $.each(errorList, function(index, error) {
+    //         var $element = $(error.element);
+    //         $element.tooltip("destroy")
+    //         .data("title", error.message)
+    //         .addClass("error")
+    //         .tooltip();
+    //     });
+    // },
+
+    // submitHandler: function(form) {
+    //     alert("This is a valid form!");
+    // }
+});
 
 
 // =================
 // Check that passwords match
 // var password = document.getElementById('password');
 // var password2 = document.getElementById('password2');
-// var email = document.getElementById('email');
-// var phone = document.getElementById('phone');
 // var form = document.getElementById("signupform");
 
 // function validatePassword() {

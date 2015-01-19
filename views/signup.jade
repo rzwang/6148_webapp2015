@@ -24,9 +24,6 @@ block content
                     ul.nav.navbar-nav.navbar-right
                         li: a(href="login") LOGIN
                         li: a(href="signup") SIGN UP
-    
-    if message
-        div.alert.alert-danger-message(role="alert") #{message}
 
     section.signup#signup
         div.container(
@@ -50,48 +47,18 @@ block content
                                     input#firstName.form-control(type="text", name="firstName", placeholder="First Name", required, autofocus)
                                 div.col-sm-6
                                     input#lastName.form-control(type="text", name="lastName", placeholder="Last Name", required)
-                            input#username.form-control(type='text', name='username', placeholder='Username', required)
+                            input#username.form-control(type='email', name='username', placeholder='Email', required)
                             input#password.form-control(type='password', name='password', placeholder='Password', required)
                             input#password2.form-control(type='password', name='password2', placeholder='Retype password', required)
                             input#phone.form-control(type='tel', name='phone', placeholder='Phone', required)
-                            span#valid-msg.hide ✓ Valid
-                            span#error-msg.hide Invalid number
                             div.button-wrapper
                                 button Submit
-                        //- button(class='btn btn-lg btn-primary btn-block') Sign Up
+
+                    //- Server side validation error display
                     if message && message.length > 0
                         p#alert.alert.alert-danger(role='alert') #{message}
-                        //- div.form-group
-                        //-     div.col-sm-10.col-sm-offset-2
-                        //-         div.checkbox
-                        //-             label
-                        //-                 input(type="checkbox")
-                        //-                 p Remember me
-                        //- div.form-group
-                        //-     div.col-sm-10.col-sm-offset-2
-                        //-         button.btn.btn-default(type='submit') Submit
 
-                    //- form#signupform.form-signin(method='post')
-                    //-     div.form-group
-                    //-         input#firstName.form-control(type='text', name='firstName', placeholder='First Name', required, autofocus)
-                    //-     div.form-group
-                    //-         input#lastName.form-control(type='text', name='lastName', placeholder='Last Name', required)
-                    //-     div.form-group   
-                    //-         input#username.form-control(type='email', name='username', placeholder='Email', required)
-                    //-     div.form-group
-                    //-         input#password.form-control(type='password', name='password', placeholder='Password', required)
-                    //-     div.form-group
-                    //-         input#password2.form-control(type='password', name='password2', placeholder='Confirm Password', required)
-                    //-     div.form-group
-                    //-         input#phone.form-control(type='tel', name='phone', placeholder='xxx-xxx-xxxx', required)
-                    //-         span#valid-msg.hide ✓ Valid
-                    //-         span#error-msg.hide Invalid number
-                    //-     div.form-group
-                    //-         button Submit
-                    //- //- Server side validation error display
-                    //- if message && message.length > 0
-                    //-     p#alert.alert.alert-danger(role='alert') #{message}
-                    //- //- Client side validation error display
-                    //- //- p.error 
+                    //- Client side validation error display
+                    //- p.error 
 
-    script(src='/javascripts/constraintvalidation.js')
+    script(src='/javascripts/validation.js')
