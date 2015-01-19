@@ -13,41 +13,28 @@ var isAuthenticated = function (req, res, next){
     // A middleware is allowed to add properties to req and rsp objects
     if (req.isAuthenticated())
         return next();
-
-    // if user is not authenticatd, redirect to login page
+    // if the user is not authenticated then redirect him to the login page
     res.redirect('/login');
 }
 
-// Import models file into the router TEST
-// var models = require('../models/models');
-// models.Photo
-
-// Connect to the database over Mongoose TEST
-// var mongoose = require('mongoose')
-// mongoose.connect('mongodb://localhost/test') // CHANGE THIS LATER!!! run 'mongod' on terminal
-
 module.exports = function(passport){
 
-    /* GET home page. */
+    /* GET home page */
     router.get('/', function(req, res) {
       res.render('index', { title: 'hitch' });
     });
 
-    /* GET sign up page */
+    /* GET signup page */
     router.get('/signup', function(req, res) {
         res.render('signup', {title: 'hitch | Sign Up', message: req.flash('notice')});
-        // THIS IS PART OF THE TEST - need to write route to render image 
-        // models.Photo.findOne({_id: photoId}, function(err, result) {
-        //     res.render('photo', {photo: result});
-        // });
     });
 
-    /* Handle sign up POST */
+    /* Handle signup POST */
     router.post('/signup', passport.authenticate('signup', {
-            successRedirect: '/request',
-            failureRedirect: '/signup',
-            failureFlash: true,
-            successFlash: true
+        successRedirect: '/request',
+        failureRedirect: '/signup',
+        failureFlash: true,
+        successFlash: true
     }));
 
     /* GET login page */
@@ -56,13 +43,20 @@ module.exports = function(passport){
     });
 
     /* Handle login POST */
+    //req.login()?
     router.post('/login', passport.authenticate('login', {
         successRedirect: '/request',
         failureRedirect: '/login',
         failureFlash: true
     }));
 
-    /* GET request page */
+    /* Handle Logout */
+    // router.get('/signout', function(req, res) {
+    //     req.logout(); 
+    //     res.redirect('/');
+    // });
+
+    /* GET request page. */
     router.get('/request', isAuthenticated, function(req, res){
         res.render('request', {title: 'hitch me a ride!', message: req.flash('notice')});
     });
@@ -86,6 +80,19 @@ module.exports = function(passport){
             res.redirect('/results' + result._id);
         });
     });
+
+    // /* GET results page. */
+    // router.get('/results', function(req, res) { // ADD isAuthenticated BACK IN LATER
+    //     // res.render('results', {title: 'hitch | Results'});
+    //     var map = {};
+    //     Request.find({}, function(err, results) {
+    //         results.forEach(function(result) {
+    //             map[result.firstname] = result;
+    //         });
+    //     });
+    //     console.log(map);
+    //     // res.render('results', {title: 'hitch | Results' })
+    // });
 
     /* GET results page */
     router.get('/results', function(req, res) {
@@ -116,4 +123,5 @@ module.exports = function(passport){
 //     })
 // });
 
-// module.exports = router;
+// for user specificity: user: req.user
+// geo: geoNear and geoSearch

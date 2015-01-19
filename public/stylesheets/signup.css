@@ -34,7 +34,7 @@ section.signup {
         opacity: .8; }
       section.signup .container .wrapper .signup-wall .form-group button:hover {
         color: white;
-        background: #27576d; }
+        background: rgba(39, 87, 109, 0.7); }
       section.signup .container .wrapper .signup-wall p.alert {
         width: 100%; }
       section.signup .container .wrapper .signup-wall .error {

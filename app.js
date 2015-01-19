@@ -5,11 +5,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var app = express();
+var flash = require('connect-flash');
 
-// Database configuration and connect to it using Mongoose APIs
+// mongoose
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/passport');
+mongoose.connect('mongodb://localhost/passport')
+
+var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,22 +24,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(flash());
 
-// Configuring Passport
+// passport config
 var passport = require('passport');
 var expressSession = require('express-session');
-app.use(expressSession({secret: 'mySecretKey'}));
+
+app.use(expressSession({secret: 'maroon5fan123'}));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
-// Initialize Passport
+// passport init
 var initPassport = require('./passport/init');
 initPassport(passport);
 
 var routes = require('./routes/index')(passport);
 app.use('/', routes);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

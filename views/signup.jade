@@ -2,18 +2,16 @@ extends layout
 
 block header
     script(src='/javascripts/style.js')
-    //- script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
     script(src="build/js/intlTelInput.js")
 
 block stylesheets
-    link(rel="stylesheet", href="/stylesheets/signup.css")
+    link(rel="stylesheet", href="/stylesheets/register.css")
 
 block content
     nav.navbar#navbar
-        //- FIX RESPONSIVENESS
-        div.navbar-fixed-clear(
-                data-top="@class:navbar-fixed-top-clear"
-                data--0p-top="@class:navbar-fixed-top"
+        div.navbar-fixed-top(
+                data-start="@id:clear"
+                data-0p="@id:collapsed"
                 data-anchor-target="#navbar")
             div.container-fluid
                 div.navbar-header
@@ -27,33 +25,58 @@ block content
                         li: a(href="login") LOGIN
                         li: a(href="signup") SIGN UP
     
+    if message
+        div.alert.alert-danger-message(role="alert") #{message}
+
     section.signup#signup
         div.container
             div.wrapper
                 div.title
                     h3 Sign Up
                 div.signup-wall
-                    form#signupform.form-signin(method='post')
-                        div.form-group
-                            input#firstName.form-control(type='text', name='firstName', placeholder='First Name', required, autofocus)
-                        div.form-group
-                            input#lastName.form-control(type='text', name='lastName', placeholder='Last Name', required)
-                        div.form-group   
-                            input#username.form-control(type='email', name='username', placeholder='Email', required)
-                        div.form-group
-                            input#password.form-control(type='password', name='password', placeholder='Password', required)
-                        div.form-group
-                            input#password2.form-control(type='password', name='password2', placeholder='Confirm Password', required)
-                        div.form-group
-                            input#phone.form-control(type='tel', name='phone', placeholder='xxx-xxx-xxxx', required)
-                            span#valid-msg.hide ✓ Valid
-                            span#error-msg.hide Invalid number
-                        div.form-group
-                            button Submit
-                    //- Server side validation error display
+                    form.basic-form(method='POST')
+                        input.form-control(type='text', name='firstname', placeholder='First Name', required, autofocus)
+                        input.form-control(type='text', name='lastname', placeholder='Last Name', required)
+                        input.form-control(type='text', name='username', placeholder='Username', required)
+                        input.form-control(type='password', name='password', placeholder='Password', required)
+                        input.form-control(type='password', placeholder='Retype password', required)
+                        input.form-control(type='tel', name='phone', placeholder='Phone', required)
+                        span#valid-msg.hide ✓ Valid
+                        span#error-msg.hide Invalid number
+                        button(class='btn btn-lg btn-primary btn-block') SignUp
                     if message && message.length > 0
                         p#alert.alert.alert-danger(role='alert') #{message}
-                    //- Client side validation error display
-                    //- p.error 
+                        //- div.form-group
+                        //-     div.col-sm-10.col-sm-offset-2
+                        //-         div.checkbox
+                        //-             label
+                        //-                 input(type="checkbox")
+                        //-                 p Remember me
+                        //- div.form-group
+                        //-     div.col-sm-10.col-sm-offset-2
+                        //-         button.btn.btn-default(type='submit') Submit
+
+                    //- form#signupform.form-signin(method='post')
+                    //-     div.form-group
+                    //-         input#firstName.form-control(type='text', name='firstName', placeholder='First Name', required, autofocus)
+                    //-     div.form-group
+                    //-         input#lastName.form-control(type='text', name='lastName', placeholder='Last Name', required)
+                    //-     div.form-group   
+                    //-         input#username.form-control(type='email', name='username', placeholder='Email', required)
+                    //-     div.form-group
+                    //-         input#password.form-control(type='password', name='password', placeholder='Password', required)
+                    //-     div.form-group
+                    //-         input#password2.form-control(type='password', name='password2', placeholder='Confirm Password', required)
+                    //-     div.form-group
+                    //-         input#phone.form-control(type='tel', name='phone', placeholder='xxx-xxx-xxxx', required)
+                    //-         span#valid-msg.hide ✓ Valid
+                    //-         span#error-msg.hide Invalid number
+                    //-     div.form-group
+                    //-         button Submit
+                    //- //- Server side validation error display
+                    //- if message && message.length > 0
+                    //-     p#alert.alert.alert-danger(role='alert') #{message}
+                    //- //- Client side validation error display
+                    //- //- p.error 
 
     script(src='/javascripts/constraintvalidation.js')

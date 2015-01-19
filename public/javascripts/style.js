@@ -1,46 +1,40 @@
 $(document).ready(function(){
 
-// FIX RESPONSIVENESS
-    // function adjustWindow(){
-    //     winH = $(window).height();
-    //     winW = $(window).width();
-
-    //     if(winH <= 550) {
-    //         winH=550;
-    //     }
-
-    //     if(winW >= 768) {
-    //         var s = skrollr.init({
-    //             forceHeight: false
-    //         })(jQuery);
-    //         $section.height(winH);
-    //         s.refresh($('.main'));
-    //     } else {
- 
-    //     // Init Skrollr
-    //     var s = skrollr.init();
-    //     s.destroy();
-    //     }
-    // }
-
-    // if(Modernizr.touch) {
-    //     var s = skrollr.init();
-    //     s.destroy();
-    // }
-
-    (function($){
-        var s = skrollr.init({
+    if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+        skrollr.init({
+            forceHeight: false
         });
-    })(jQuery);
+    }
+
+    $("a").hover(function(){
+        $("hr.line").css("width","50%");
+        },function(){
+        $("hr.line").css("width","30%");
+    });
+
+    $("button").hover(function(){
+        $("hr.line").css("width","50%");
+        },function(){
+        $("hr.line").css("width","30%");
+    });
 });
 
 $(function(){
     $(".typed").typed({
-        strings: ["<h3>the airport.", "<h3> work.", "<h3>a concert.", "<h3>anywhere."],
+        strings: ["<h3>the airport.", "<h3>work.", "<h3>a concert.", "<h3>anywhere."],
         typeSpeed: 40,
         backSpeed: 20,
-        startDelay: 1000,
+        startDelay: 500,
         backDelay: 1500,
         showCursor: false,
     });
 });
+
+window.setTimeout(function() {
+    $("#alert").fadeTo(1000, 0, function() {
+        $(this).remove();
+    });
+}, 3000);
+
+// var $email = $("#email"); // refers to the jQuery object representation of the dom object
+// var email_field = $("#email").get(0); // refers to the dom object itself

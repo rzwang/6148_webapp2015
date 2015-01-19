@@ -8,10 +8,9 @@ block stylesheets
 
 block content
     nav.navbar#navbar
-        //- FIX RESPONSIVENESS
-        div.navbar-fixed-clear(
-                data-top="@class:navbar-fixed-top-clear"
-                data--0p-top="@class:navbar-fixed-top"
+        div.navbar-fixed-top(
+                data-start="@id:clear"
+                data-0p="@id:collapsed"
                 data-anchor-target="#navbar")
             div.container-fluid
                 div.navbar-header
@@ -48,5 +47,20 @@ block content
                             span#error-msg.hide Invalid number
                         div.form-group
                             button Submit
+
+                //- div.signup-wall
+                //-     form.basic-form(method='POST')
+                //-         div.row
+                //-             div.col-sm-6
+                //-                 input.form-control(type='text', name='firstname', placeholder='First Name', required, autofocus)
+                //-             div.col-sm-6
+                //-                 input.form-control(type='text', name='lastname', placeholder='Last Name', required)
+                //-         input.form-control(type='text', name='pickup', placeholder='Pickup', required)
+                //-         input.form-control(type='text', name='dropoff', placeholder='Dropoff', required)
+                //-         input.form-control(type='datetime-local', name='time', placeholder='When?', required)
+                //-         input.form-control(type='tel', name='phone', placeholder='Phone', required)
+                //-         div.button-wrapper
+                //-             button request
+
                     if message && message.length > 0
                         p#alert.alert.alert-success(role='alert') #{message}

@@ -8,10 +8,9 @@ block stylesheets
 
 block content
     nav.navbar#navbar
-        //- FIX RESPONSIVENESS
-        div.navbar-fixed-clear(
-                data-top="@class:navbar-fixed-top-clear"
-                data--0p-top="@class:navbar-fixed-top"
+        div.navbar-fixed-top(
+                data-start="@id:clear"
+                data-0p="@id:collapsed"
                 data-anchor-target="#navbar")
             div.container-fluid
                 div.navbar-header
@@ -24,6 +23,9 @@ block content
                     ul.nav.navbar-nav.navbar-right
                         li: a(href="login") LOGIN
                         li: a(href="signup") SIGN UP
+    
+    if message
+        div.alert.alert-danger-message(role="alert") #{message}
 
     section.signup#login
         div.container
@@ -31,18 +33,18 @@ block content
                 div.title
                     h3 Login
                 div.signup-wall
-                    form.form-signin(method='post')
-                        div.form-group  
-                            input#username.form-control(type='email', name='username', placeholder='Enter email', required, autofocus)
-                        div.form-group
-                            input#pwd.form-control(type='password', name='password', placeholder='Enter password', required)
+                    form.basic-form(method='POST')
+                        input.form-control(type='text', name='username', placeholder='Username', required, autofocus)
+                        input.form-control(type='password', name='password', placeholder='Password', required)
+                        button(class='btn btn-lg btn-primary btn-block') Login
+                    if message && message.length > 0
+                        p#alert.alert.alert-danger(role='alert') #{message}
                         //- div.form-group
                         //-     div.col-sm-10.col-sm-offset-2
                         //-         div.checkbox
                         //-             label
                         //-                 input(type="checkbox")
                         //-                 p Remember me
-                        div.form-group
-                            button Submit
-                    if message && message.length > 0
-                        p#alert.alert.alert-danger(role='alert') #{message}
+                        //- div.form-group
+                        //-     div.col-sm-10.col-sm-offset-2
+                        //-         button.btn.btn-default(type='submit') Submit
