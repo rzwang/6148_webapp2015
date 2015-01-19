@@ -29,7 +29,7 @@ telInput.keydown(function() {
 //===============================================================================
 // VALIDATING PASSWORDS
 
-var form = document.getElementById("signupform");
+// var form = document.getElementById("signupform");
 // form.noValidate = true;
 
 // // set handler to validate the form
@@ -73,30 +73,30 @@ var form = document.getElementById("signupform");
 //     }
 // }
 
-$("#signupform").validate({
-    rules: {
-        firstName: "required",
-        lastName: "required",
-        username: {
-            required: true,
-            email: true
-        },
-        password2: {
-            equalTo: "#password"
-        },
-    },
+// $("#signupform").validate({
+//     rules: {
+//         firstName: "required",
+//         lastName: "required",
+//         username: {
+//             required: true,
+//             email: true
+//         },
+//         password2: {
+//             equalTo: "#password"
+//         },
+//     },
 
-    messages: {
-        firstName: "Please specify your first name",
-        lastName: "Please specify your last name",
-        username: {
-            required: "We need your email address to confirm your sign up.",
-            email: "Your email address must be in the form of example@example.com"
-        },
-        password2: {
-            equalTo: "Passwords must match!!"
-        }
-    }
+//     messages: {
+//         firstName: "Please specify your first name",
+//         lastName: "Please specify your last name",
+//         username: {
+//             required: "We need your email address to confirm your sign up.",
+//             email: "Your email address must be in the form of example@example.com"
+//         },
+//         password2: {
+//             equalTo: "Passwords must match!!"
+//         }
+//     }
 
 
 
@@ -121,7 +121,7 @@ $("#signupform").validate({
     // submitHandler: function(form) {
     //     alert("This is a valid form!");
     // }
-});
+// });
 
 
 // =================

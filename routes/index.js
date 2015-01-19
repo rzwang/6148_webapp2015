@@ -5,7 +5,7 @@ var passport = require('passport');
 var flash = require('connect-flash');
 app.use(flash());
 
-var Request = require('../models/requestModel.js');
+var Request = require('../models/request.js');
 
 var isAuthenticated = function (req, res, next){
     // if user is authenticated in the session, call the next() to call the next request handler
@@ -26,7 +26,7 @@ module.exports = function(passport){
 
     /* GET signup page */
     router.get('/signup', function(req, res) {
-        res.render('signup', {title: 'hitch | Sign Up', message: req.flash('notice')});
+        res.render('signup', {title: 'hitch | Sign Up', message: req.flash('error')});
     });
 
     /* Handle signup POST */
@@ -39,11 +39,10 @@ module.exports = function(passport){
 
     /* GET login page */
     router.get('/login', function(req, res) {
-        res.render('login', {title: 'hitch | Login', message: req.flash('notice')});
+        res.render('login', {title: 'hitch | Login', message: req.flash('error')});
     });
 
     /* Handle login POST */
-    //req.login()?
     router.post('/login', passport.authenticate('login', {
         successRedirect: '/request',
         failureRedirect: '/login',
@@ -58,7 +57,7 @@ module.exports = function(passport){
 
     /* GET request page. */
     router.get('/request', isAuthenticated, function(req, res){
-        res.render('request', {title: 'hitch me a ride!', message: req.flash('notice')});
+        res.render('request', {title: 'hitch me a ride!', message: req.flash('error')});
     });
 
     /* Handle request POST */
@@ -66,18 +65,13 @@ module.exports = function(passport){
         var newReq = new Request({
             firstname: req.body['firstName'],
             lastname: req.body['lastName'],
-            // pickupLat: Number,
-            // pickupLong: Number,
-            // dropoffLat: Number,
-            // dropoffLong: Number, 
             pickup: req.body['pickup'],
             dropoff: req.body['dropoff'],
             time: req.body['time'],
             phone: req.body['phone']
         });
         newReq.save(function(err, result) {
-            console.log(result);
-            res.redirect('/results' + result._id);
+            res.redirect('/results');
         });
     });
 
@@ -94,34 +88,9 @@ module.exports = function(passport){
     //     // res.render('results', {title: 'hitch | Results' })
     // });
 
-    /* GET results page */
-    router.get('/results', function(req, res) {
-        Request.find({}, function(err, result) {
-            result.forEach(function() {
-                console.log(result);
-            })
-        });
-        // res.render('results', {title: 'hitch | Results'});
-    });
     return router;
 }
 
-// // ADD THESE BACK IN WHEN THE VIEWS FILES ARE CREATED
-
-
-
-// THIS IS PART OF THE TEST
-// router.post('/signup', function(req, res) {
-//     // create a new photos object
-//     var newPhoto = new models.Photo({
-//         url: req.body['submitted-url'],
-//         caption: req.body['caption']
-//     });
-
-//     newPhoto.save(function(err, result) {
-//         res.redirect('/photos/' + result._id)
-//     })
-// });
 
 // for user specificity: user: req.user
 // geo: geoNear and geoSearch
