@@ -17,6 +17,9 @@ $(document).ready(function(){
         },function(){
         $("hr.line").css("width","30%");
     });
+
+    $("#phone").mask("(000) 000-0000");
+    $("#time").mask("00/00/0000 00:00");
 });
 
 $(function(){

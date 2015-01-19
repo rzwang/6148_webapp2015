@@ -123,6 +123,8 @@ nav.navbar {
   border-bottom: 1px solid #b94a48; }
 .basic-form .success {
   border-bottom: 1px solid rbga(33, 94, 12, 1); }
+.basic-form .flash {
+  border-bottom: 1px solid #b94a48; }
 
 section.main {
   height: 100vh; }

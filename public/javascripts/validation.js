@@ -1,4 +1,34 @@
-$.webshims.polyfill();
+var password2 = $("#password2");
+
+password2.keydown(function {
+    if password2 != password: addClass error
+    else addClass success
+})
+
+$( "#myform" ).validate({
+  rules: {
+    password: "required",
+    password_again: {
+      equalTo: "#password"
+    }
+  }
+});
+
+
+var telInput = $("#phone");
+
+telInput.intlTelInput({
+  utilsScript: "../../lib/libphonenumber/build/utils.js"
+});
+
+telInput.on("invalidkey", function() {
+  telInput.addClass("flash");
+  setTimeout(function() {
+    telInput.removeClass("flash");
+  }, 100);
+});
+
+// $.webshims.polyfill();
 
 // VALIDATING PHONE NUMBER
 // $("mobile-number").intlTelInput();
