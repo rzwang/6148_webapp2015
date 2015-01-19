@@ -6,10 +6,10 @@ var telInput = $("#phone"),
   errorMsg = $("#error-msg"),
   validMsg = $("#valid-msg");
 
-// initialise plugin
-telInput.intlTelInput({
-  utilsScript: "../../lib/libphonenumber/build/utils.js"
-});
+// // initialise plugin
+// telInput.intlTelInput({
+//   utilsScript: "../../lib/libphonenumber/build/utils.js"
+// });
 
 // on blur: validate
 telInput.blur(function() {
