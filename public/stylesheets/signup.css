@@ -6,8 +6,6 @@ section.signup {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover; }
-    section.signup .container p.alert {
-      width: 100%; }
     section.signup .container .wrapper .title {
       color: black;
       text-align: center;
@@ -19,6 +17,10 @@ section.signup {
       padding: 0;
       position: relative;
       top: 100px; }
+      section.signup .container .wrapper .signup-wall .form-group #valid-msg {
+        color: green; }
+      section.signup .container .wrapper .signup-wall .form-group #error-msg {
+        color: red; }
       section.signup .container .wrapper .signup-wall .form-group button {
         font-size: 18px;
         font-weight: 300;
@@ -32,5 +34,14 @@ section.signup {
       section.signup .container .wrapper .signup-wall .form-group button:hover {
         color: white;
         background: #27576d; }
+      section.signup .container .wrapper .signup-wall p.alert {
+        width: 100%; }
+      section.signup .container .wrapper .signup-wall .error {
+        border: 1px solid #b94a48 !important;
+        background-color: #fee !important; }
+      section.signup .container .wrapper .signup-wall .submitted :invalid {
+        border: 1px solid red; }
+        section.signup .container .wrapper .signup-wall .submitted :invalid + .error {
+          display: block; }
 
 /*# sourceMappingURL=signup.css.map */

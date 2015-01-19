@@ -2,7 +2,8 @@ extends layout
 
 block header
     script(src='/javascripts/style.js')
-    script(src='/javascripts/constraintvalidation.js')
+    //- script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+    script(src="build/js/intlTelInput.js")
 
 block stylesheets
     link(rel="stylesheet", href="/stylesheets/signup.css")
@@ -32,23 +33,27 @@ block content
                 div.title
                     h3 Sign Up
                 div.signup-wall
-                    form.form-signin(method='post')
+                    form#signupform.form-signin(method='post')
                         div.form-group
                             input#firstName.form-control(type='text', name='firstName', placeholder='First Name', required, autofocus)
                         div.form-group
                             input#lastName.form-control(type='text', name='lastName', placeholder='Last Name', required)
-                        div.form-group.has-error    
-                            input#username.form-control(type='email', name='username', placeholder='Username', required)
+                        div.form-group   
+                            input#username.form-control(type='email', name='username', placeholder='Email', required)
                         div.form-group
                             input#password.form-control(type='password', name='password', placeholder='Password', required)
                         div.form-group
-                            input#confirmpw.form-control(type='password', name='confirmpw', placeholder='Confirm Password', required)
-                        div.form-group.has-error
-                            input#phone.form-control(type='tel', pattern='^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$',
-                                                     name='phone', placeholder='xxx-xxx-xxxx', required)
+                            input#password2.form-control(type='password', name='password2', placeholder='Confirm Password', required)
+                        div.form-group
+                            input#phone.form-control(type='tel', name='phone', placeholder='xxx-xxx-xxxx', required)
+                            span#valid-msg.hide ✓ Valid
+                            span#error-msg.hide Invalid number
                         div.form-group
                             button Submit
+                    //- Server side validation error display
                     if message && message.length > 0
                         p#alert.alert.alert-danger(role='alert') #{message}
+                    //- Client side validation error display
+                    //- p.error 
 
- 
+    script(src='/javascripts/constraintvalidation.js')

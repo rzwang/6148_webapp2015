@@ -11,13 +11,6 @@ section.signup {
         -moz-background-size: cover;
         background-size: cover;
 
-        p.alert{
-            width: 100%;
-
-            .alert-danger {
-
-            }
-        }
         .wrapper {
             .title {
                 color: black;
@@ -33,7 +26,20 @@ section.signup {
                 position: relative;
                 top: 100px;
 
+                // :invalid {
+                //   box-shadow: red;
+                // }
                 .form-group {
+                    #valid-msg {
+                        color: green;
+                        
+                    }
+
+                    #error-msg {
+                        color: red;
+
+                    }
+
                     button {
                         font-size: 18px;
                         font-weight: 300;
@@ -53,6 +59,26 @@ section.signup {
                     }
         
                 }
+
+                p.alert {
+                    width: 100%;
+
+                    .alert-danger {
+
+                    }
+                }
+
+                .error {
+                    border: 1px solid #b94a48!important;
+                    background-color: #fee!important;
+                }  
+
+                .submitted :invalid {
+                  + .error {
+                    display: block;
+                  }
+                  border: 1px solid red;
+                } 
             }
         }
     }
