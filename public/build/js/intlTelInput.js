@@ -1,5 +1,5 @@
 /*
-International Telephone Input v4.0.2
+International Telephone Input v4.0.1
 https://github.com/Bluefieldscom/intl-tel-input.git
 */
 // wrap in UMD - see https://github.com/umdjs/umd/blob/master/jqueryPlugin.js
@@ -651,7 +651,14 @@ https://github.com/Bluefieldscom/intl-tel-input.git
             var dialCode = this._getDialCode(number);
             if (dialCode) {
                 // check if one of the matching countries is already selected
-                var countryCodes = this.countryCodes[this._getNumeric(dialCode)], alreadySelected = this.selectedCountryData && $.inArray(this.selectedCountryData.iso2, countryCodes) != -1;
+                var countryCodes = this.countryCodes[this._getNumeric(dialCode)], alreadySelected = false;
+                if (this.selectedCountryData) {
+                    for (var i = 0; i < countryCodes.length; i++) {
+                        if (countryCodes[i] == this.selectedCountryData.iso2) {
+                            alreadySelected = true;
+                        }
+                    }
+                }
                 // if a matching country is not already selected (or this is an unknown NANP area code): choose the first in the list
                 if (!alreadySelected || this._isUnknownNanp(number, dialCode)) {
                     // if using onlyCountries option, countryCodes[0] may be empty, so we must find the first non-empty index
@@ -699,8 +706,9 @@ https://github.com/Bluefieldscom/intl-tel-input.git
             // and the input's placeholder
             this._updatePlaceholder();
             // update the active list item
+            var listItem = this.countryListItems.children(".iti-flag." + countryCode).first().parent();
             this.countryListItems.removeClass("active");
-            this.countryListItems.children(".iti-flag." + countryCode).first().parent().addClass("active");
+            listItem.addClass("active");
         },
         // update the input placeholder to an example number from the currently selected country
         _updatePlaceholder: function() {

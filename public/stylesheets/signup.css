@@ -21,25 +21,5 @@ section.signup {
         position: relative;
         top: 50px;
         margin-bottom: 30px; }
-      section.signup .container .wrapper .signup-wall {
-        max-width: 400px;
-        margin: auto;
-        padding: 25px;
-        position: relative;
-        top: 40px; }
-        section.signup .container .wrapper .signup-wall .form-group span#valid-msg {
-          color: green; }
-        section.signup .container .wrapper .signup-wall .form-group span#error-msg {
-          color: #b94a48 !important; }
-        section.signup .container .wrapper .signup-wall .form-group .button-wrapper {
-          width: 300px;
-          position: relative;
-          bottom: -20px;
-          margin: auto;
-          padding: 8px; }
-      section.signup .container .wrapper p.alert {
-        width: 100%; }
-      section.signup .container .wrapper .error {
-        border-bottom: 1px solid #b94a48 !important; }
 
 /*# sourceMappingURL=signup.css.map */

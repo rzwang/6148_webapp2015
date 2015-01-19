@@ -3,32 +3,26 @@ $.webshims.polyfill();
 // $("mobile-number").intlTelInput();
 
 var telInput = $("#phone"),
-  errorMsg = $("#error-msg"),
-  validMsg = $("#valid-msg");
 
 // // initialise plugin
-// telInput.intlTelInput({
-//   utilsScript: "../../lib/libphonenumber/build/utils.js"
-// });
+telInput.intlTelInput({
+  utilsScript: "../lib/libphonenumber/build/utils.js"
+});
 
 // on blur: validate
-telInput.blur(function() {
+telInput.keydown(function() {
   if ($.trim(telInput.val())) {
     if (telInput.intlTelInput("isValidNumber")) {
-      validMsg.removeClass("hide");
+      telInput.addClass("successs");
     } else {
       telInput.addClass("error");
-      errorMsg.removeClass("hide");
-      validMsg.addClass("hide");
     }
   }
 });
 
 // on keydown: reset
-telInput.keydown(function() {
+telInput.blur(function() {
   telInput.removeClass("error");
-  errorMsg.addClass("hide");
-  validMsg.addClass("hide");
 });
 
 // var form = document.getElementById("signupform");

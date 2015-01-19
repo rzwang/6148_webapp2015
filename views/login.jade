@@ -1,13 +1,12 @@
 extends layout
 
 block header
-    script(src='/javascripts/style.js')
 
 block stylesheets
     link(rel="stylesheet", href="/stylesheets/signup.css")
 
 block content
-    nav.navbar#navbar
+    //- nav.navbar#navbar
         div.navbar-fixed-top(
                 data-start="@id:clear"
                 data-0p="@id:collapsed"
@@ -23,9 +22,6 @@ block content
                     ul.nav.navbar-nav.navbar-right
                         li: a(href="login") LOGIN
                         li: a(href="signup") SIGN UP
-    
-    if message
-        div.alert.alert-danger-message(role="alert") #{message}
 
     section.signup#login
         div.container
@@ -37,8 +33,9 @@ block content
                         div.form-group
                             input#username.form-control(type='text', name='username', placeholder='Username', required, autofocus)
                             input#password.form-control(type='password', name='password', placeholder='Password', required)
-                        div.form-group
-                            button(class='btn btn-lg btn-primary btn-block') Login
+                        div.button-wrapper
+                            button Login
+
                     if message && message.length > 0
                         p#alert.alert.alert-danger(role='alert') #{message}
                         //- div.form-group
