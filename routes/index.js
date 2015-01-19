@@ -1,12 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var Request = require('../models/request');
+var app = express();
+var passport = require('passport');
+var flash = require('connect-flash');
+app.use(flash());
 
+var Request = require('../models/requestModel.js');
 
-var isAuthenticated = function (req, res, next) {
-    // if user is authenticated in the session, call the next() to call the next request handler 
-    // Passport adds this method to request object. A middleware is allowed to add properties to
-    // request and response objects
+var isAuthenticated = function (req, res, next){
+    // if user is authenticated in the session, call the next() to call the next request handler
+    // Passport adds this method to request object.
+    // A middleware is allowed to add properties to req and rsp objects
     if (req.isAuthenticated())
         return next();
     // if the user is not authenticated then redirect him to the login page
@@ -39,6 +43,7 @@ module.exports = function(passport){
     });
 
     /* Handle login POST */
+    //req.login()?
     router.post('/login', passport.authenticate('login', {
         successRedirect: '/request',
         failureRedirect: '/login',
@@ -46,10 +51,10 @@ module.exports = function(passport){
     }));
 
     /* Handle Logout */
-    router.get('/signout', function(req, res) {
-        req.logout();
-        res.redirect('/');
-    });
+    // router.get('/signout', function(req, res) {
+    //     req.logout(); 
+    //     res.redirect('/');
+    // });
 
     /* GET request page. */
     router.get('/request', isAuthenticated, function(req, res){
@@ -57,40 +62,66 @@ module.exports = function(passport){
     });
 
     /* Handle request POST */
-    router.post('/request', function(req, res){
-        var newRequest = new Request({
-            firstname: req.body['firstname'],
-            lastname: req.body['lastname'],
+    router.post('/request', isAuthenticated, function(req, res){
+        var newReq = new Request({
+            firstname: req.body['firstName'],
+            lastname: req.body['lastName'],
+            // pickupLat: Number,
+            // pickupLong: Number,
+            // dropoffLat: Number,
+            // dropoffLong: Number, 
             pickup: req.body['pickup'],
             dropoff: req.body['dropoff'],
             time: req.body['time'],
             phone: req.body['phone']
         });
-        newRequest.save(function(err, result) {
-            res.redirect('/results') // CHANGE THIS LINK
+        newReq.save(function(err, result) {
+            console.log(result);
+            res.redirect('/results' + result._id);
         });
     });
 
-    /* GET results page. */
-    router.get('/results', function(req, res) { // ADD isAuthenticated BACK IN LATER
+    // /* GET results page. */
+    // router.get('/results', function(req, res) { // ADD isAuthenticated BACK IN LATER
+    //     // res.render('results', {title: 'hitch | Results'});
+    //     var map = {};
+    //     Request.find({}, function(err, results) {
+    //         results.forEach(function(result) {
+    //             map[result.firstname] = result;
+    //         });
+    //     });
+    //     console.log(map);
+    //     // res.render('results', {title: 'hitch | Results' })
+    // });
+
+    /* GET results page */
+    router.get('/results', function(req, res) {
+        Request.find({}, function(err, result) {
+            result.forEach(function() {
+                console.log(result);
+            })
+        });
         // res.render('results', {title: 'hitch | Results'});
-        var map = {};
-        Request.find({}, function(err, results) {
-            results.forEach(function(result) {
-                map[result.firstname] = result;
-            });
-        });
-        console.log(map);
-        // res.render('results', {title: 'hitch | Results' })
-
-        // Request.find().forEach( function(err, result) {
-        //     res.render('results', {title: 'hitch | Results', message: result });
-        // });
     });
-
     return router;
 }
 
+// // ADD THESE BACK IN WHEN THE VIEWS FILES ARE CREATED
+
+
+
+// THIS IS PART OF THE TEST
+// router.post('/signup', function(req, res) {
+//     // create a new photos object
+//     var newPhoto = new models.Photo({
+//         url: req.body['submitted-url'],
+//         caption: req.body['caption']
+//     });
+
+//     newPhoto.save(function(err, result) {
+//         res.redirect('/photos/' + result._id)
+//     })
+// });
 
 // for user specificity: user: req.user
 // geo: geoNear and geoSearch

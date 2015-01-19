@@ -21,12 +21,14 @@ module.exports = function(passport){
                     } else {
                         var newUser = new User();
 
-                        newUser.firstname = req.param('firstname');
-                        newUser.lastname = req.param('lastname');
-                        newUser.username = username;
+                        // set the user's local credentials
+                        newUser.firstName = req.param('firstName');
+                        newUser.lastName = req.param('lastName');
+                        newUser.email = email;
                         newUser.password = createHash(password);
                         newUser.phone = req.param('phone');
-                        newUser.hasrequests = false;
+                        newUser.hasReq = false;
+
 
                         newUser.save(function(err) {
                             if (err){

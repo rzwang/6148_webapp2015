@@ -8,7 +8,8 @@ var User = new Schema({
     username: String,
     password: String,
     phone: String,
-    hasrequests: Boolean
+    hasReq: Boolean
+
 });
 
 module.exports = mongoose.model('User', User);
