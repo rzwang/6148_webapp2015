@@ -18,8 +18,8 @@ block content
                         span.icon-bar
                 div.collapse.navbar-collapse#basic_nav
                     ul.nav.navbar-nav.navbar-right
-                        li: a(href="login") LOGIN
-                        li: a(href="signup") SIGN UP
+                        li: a(href="login") login
+                        li: a(href="signup") sign up
 
     section.main#main
         div.container(
@@ -28,7 +28,7 @@ block content
                 data-anchor-target="#main")
             div.wrapper#box(
                     data-top="opacity:1"
-                    data-top-center="opacity:0"
+                    data-top-bottom="opacity:0"
                     data-anchor-target="#box")
                 div.title
                     h1 hitch
@@ -37,30 +37,41 @@ block content
                     h3 hitch a ride to
                     span.typed
                 div.button-wrapper
-                    div.button
-                        a(href="#request")
-                            button HITCH ME A RIDE
+                    a(href="#request")
+                        button hitch me a ride
 
     section.about#about
         div.container
             div.wrapper
                 div.title
-                    h3 MAKING RIDESHARE EASIER THAN EVER.
+                    h3 making ridesharing easier than ever
                 hr.sep
                 div.subtitle
-                    h4 hitch finds people for you to share rides with, so you can travel with ease. it's fast, easy, and best of all, it saves you money.
+                    h4 hitch finds people for you to share rides with. It's fast, simple, and best of all, it saves you money.
 
     section.request#request
-        div.container
-            div.wrapper
+        div.container(
+                data-bottom-top="background-position: 50% 100px"
+                data--50-center="background-position: 50% 0px"
+                data-anchor-target="#request")
+            div.wrapper#formbox(
+                    data-bottom-top="opacity:0"
+                    data-bottom="opacity:1"
+                    data-anchor-target="#formbox")
                 div.title
-                    h2 Hello this is a street
+                    h2 hitch a ride
+                hr.sep
                 div.signup-wall
-                    //- form.form-signin(action='/signup', method='POST')
+                    //- form.form-signin(action='/request', method='POST')
                     form.form-signin
                         input.form-control(type='text', name='fullname', placeholder='Name', required, autofocus)
-                        input.form-control(type='text', name='pickup', placeholder='Pickup From', required)
+                        input.form-control(type='text', name='pickup', placeholder='Pickup', required)
                         input.form-control(type='text', name='dropoff', placeholder='Dropoff', required)
-                        input.form-control(type='time', name='time', placeholder='When?', required)
+                        input.form-control(type='datetime', name='time', placeholder='When?', required)
                         input.form-control(type='tel', name='phone', placeholder='Phone', required)
-                        button(class='btn btn-lg btn-primary btn-block', type='submit') Request
+                        div.button-wrapper
+                            button request
+
+    section.footer#footer
+        div.container
+            h5 brought to you by WWW

@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 $(function(){
     $(".typed").typed({
-        strings: ["<h3>the airport.", "<h3> work.", "<h3>a concert.", "<h3>anywhere."],
+        strings: ["<h3>the airport.", "<h3>work.", "<h3>a concert.", "<h3>anywhere."],
         typeSpeed: 40,
         backSpeed: 20,
         startDelay: 500,
