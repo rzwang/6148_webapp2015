@@ -29,16 +29,6 @@ block content
         div.container
             div.wrapper
                 div.title
-                    h3 Hitch me a ride
-                div.req-form
-                    form.form-horizontal
-                        div.form-group
-                            input#fullName.form-control(type='text', placeholder='Enter full name.')
-                        div.form-group
-                            input#pickup.form-control(type='text', placeholder='e.g. 305 Memorial Drive Cambridge, MA 02139')
-                        div.form-group
-                            input#dropoff.form-control(type='text', placeholder= 'e.g. Boston Logan Airport')
-                        div.form-group
-                            button(type='submit') Submit
+                    h3 Your hitchers!
                     if message && message.length > 0
                         p#alert.alert.alert-success(role='alert') #{message}

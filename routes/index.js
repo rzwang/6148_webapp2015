@@ -5,6 +5,8 @@ var passport = require('passport');
 var flash = require('connect-flash');
 app.use(flash());
 
+var Request = require('../models/requestModel.js');
+
 var isAuthenticated = function (req, res, next){
     // if user is authenticated in the session, call the next() to call the next request handler
     // Passport adds this method to request object.
@@ -61,27 +63,45 @@ module.exports = function(passport){
     }));
 
     /* GET request page */
-    router.get('/request', function(req, res){
+    router.get('/request', isAuthenticated, function(req, res){
         res.render('request', {title: 'hitch me a ride!', message: req.flash('notice')});
     });
 
     /* Handle request POST */
-    router.post('/request', passport.authenticate('request', {
-            successRedirect: '/results',
-            failureRedirect: '/request',
-            failureFlash: true,
-            successFlash: true
-    }));
+    router.post('/request', isAuthenticated, function(req, res){
+        var newReq = new Request({
+            firstname: req.body['firstName'],
+            lastname: req.body['lastName'],
+            // pickupLat: Number,
+            // pickupLong: Number,
+            // dropoffLat: Number,
+            // dropoffLong: Number, 
+            pickup: req.body['pickup'],
+            dropoff: req.body['dropoff'],
+            time: req.body['time'],
+            phone: req.body['phone']
+        });
+        newReq.save(function(err, result) {
+            console.log(result);
+            res.redirect('/results' + result._id);
+        });
+    });
 
+    /* GET results page */
+    router.get('/results', function(req, res) {
+        Request.find({}, function(err, result) {
+            result.forEach(function() {
+                console.log(result);
+            })
+        });
+        // res.render('results', {title: 'hitch | Results'});
+    });
     return router;
 }
 
 // // ADD THESE BACK IN WHEN THE VIEWS FILES ARE CREATED
 
-/* GET results page */
-// router.get('/results', isAuthenticated, function(req, res) {
-//     res.render('results', {title: 'hitch | Results'});
-// });
+
 
 // THIS IS PART OF THE TEST
 // router.post('/signup', function(req, res) {

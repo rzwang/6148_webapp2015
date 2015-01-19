@@ -7,7 +7,8 @@ var userSchema = new Schema({
     lastname: String,
     email: String,
     password: String,
-    phone: String
+    phone: String,
+    hasReq: Boolean
 });
 
 //MODEL

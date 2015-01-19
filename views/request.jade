@@ -33,11 +33,19 @@ block content
                 div.req-form
                     form.form-horizontal
                         div.form-group
-                            input#fullName.form-control(type='text', placeholder='Enter full name.')
+                            input#firstName.form-control(type='text', name='firstName', placeholder='First Name', required, autofocus)
                         div.form-group
-                            input#pickup.form-control(type='text', placeholder='e.g. 305 Memorial Drive Cambridge, MA 02139')
+                            input#lastName.form-control(type='text', name='lastName', placeholder='Last Name', required)
                         div.form-group
-                            input#dropoff.form-control(type='text', placeholder= 'e.g. Boston Logan Airport')
+                            input#pickup.form-control(type='text', placeholder='Pickup', required)
+                        div.form-group
+                            input#dropoff.form-control(type='text', placeholder= 'Dropoff', required)
+                        div.form-group
+                            input#time.form-control(type='datetime-local', placeholder= 'When?', required)
+                        div.form-group
+                            input#phone.form-control(type='tel', name='phone', placeholder='xxx-xxx-xxxx', required)
+                            span#valid-msg.hide ✓ Valid
+                            span#error-msg.hide Invalid number
                         div.form-group
                             button Submit
                     if message && message.length > 0
