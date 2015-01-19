@@ -32,7 +32,7 @@ block content
                     data-anchor-target="#box")
                 div.title
                     h1 hitch
-                hr.sep
+                hr.line
                 div.subtitle
                     h3 hitch a ride to
                     span.typed
@@ -45,7 +45,7 @@ block content
             div.wrapper
                 div.title
                     h3 making ridesharing easier than ever
-                hr.sep
+                hr.line
                 div.subtitle
                     h4 hitch finds people for you to share rides with. It's fast, simple, and best of all, it saves you money.
 
@@ -60,10 +60,10 @@ block content
                     data-anchor-target="#formbox")
                 div.title
                     h2 hitch a ride
-                hr.sep
+                hr.line
                 div.signup-wall
-                    //- form.form-signin(action='/request', method='POST')
-                    form.form-signin
+                    //- form.form-layout(action='/request', method='POST')
+                    form.form-layout
                         input.form-control(type='text', name='fullname', placeholder='Name', required, autofocus)
                         input.form-control(type='text', name='pickup', placeholder='Pickup', required)
                         input.form-control(type='text', name='dropoff', placeholder='Dropoff', required)
@@ -74,4 +74,4 @@ block content
 
     section.footer#footer
         div.container
-            h5 brought to you by WWW
+            h5 brought to you by WWW 2015

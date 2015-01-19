@@ -6,10 +6,16 @@ $(document).ready(function(){
         });
     }
 
-    $("button").hover(function(){
-        $("hr.sep").css("width","50%");
+    $("a").hover(function(){
+        $("hr.line").css("width","50%");
         },function(){
-        $("hr.sep").css("width","30%");
+        $("hr.line").css("width","30%");
+    });
+
+    $("button").hover(function(){
+        $("hr.line").css("width","50%");
+        },function(){
+        $("hr.line").css("width","30%");
     });
 });
 
