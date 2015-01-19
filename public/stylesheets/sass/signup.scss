@@ -6,25 +6,34 @@ section.signup {
     .container {
         height: 100%;
         width: 100%;
-        background: url("../images/nystreet.png") no-repeat center center fixed;
+        background: url("../images/newyorkstreet.png") no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
 
         .wrapper {
+            height: 550px;
+            width: 500px;
+            position: relative;
+            top: 10%;
+            margin: auto;
+            padding: 25px;
+            background-color: $filter;
+
             .title {
-                color: black;
+                color: white;
                 text-align: center;
                 position: relative;
-                top: 70px;
+                top: 50px;
+                margin-bottom: 30px;
             }
 
             .signup-wall {
                 max-width: 400px;
                 margin: auto;
-                padding: 0;
+                padding: 25px;
                 position: relative;
-                top: 100px;
+                top: 40px;
 
                 // :invalid {
                 //   box-shadow: red;
@@ -38,46 +47,37 @@ section.signup {
                         color: red;
                     }
 
-                    button {
-                        font-size: 18px;
-                        font-weight: 300;
-                        width: 100%;
-                        border-radius: 7px;
+                    // why does it have to be here?
+                    .button-wrapper {
+                        width: 300px;
+                        position: relative;
+                        bottom: -20px;
+                        margin: auto;
                         padding: 8px;
-                        color: white;
-                        background: black;
-                        border: solid white 2px;
-                        opacity: .8;
-                        // transition: all 2s ease;
                     }
-
-                    button:hover {
-                        color: white;
-                        background: $darkblue;
-                    }
+                }
         
-                }
-
-                p.alert {
-                    width: 100%;
-
-                    .alert-danger {
-
-                    }
-                }
-
-                .error {
-                    border: 1px solid #b94a48!important;
-                    background-color: #fee!important;
-                }  
-
-                .submitted :invalid {
-                  + .error {
-                    display: block;
-                  }
-                  border: 1px solid red;
-                } 
             }
+
+            p.alert {
+                width: 100%;
+
+                .alert-danger {
+
+                }
+            }
+
+            .error {
+                border: 1px solid #b94a48!important;
+                background-color: #fee!important;
+            }  
+
+            .submitted :invalid {
+              + .error {
+                display: block;
+              }
+              border: 1px solid red;
+            } 
         }
     }
 }
