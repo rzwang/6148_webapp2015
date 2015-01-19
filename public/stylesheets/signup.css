@@ -1,0 +1,47 @@
+section.signup {
+  height: 100vh; }
+  section.signup .container {
+    height: 100%;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover; }
+    section.signup .container .wrapper .title {
+      color: black;
+      text-align: center;
+      position: relative;
+      top: 70px; }
+    section.signup .container .wrapper .signup-wall {
+      max-width: 400px;
+      margin: auto;
+      padding: 0;
+      position: relative;
+      top: 100px; }
+      section.signup .container .wrapper .signup-wall .form-group #valid-msg {
+        color: green; }
+      section.signup .container .wrapper .signup-wall .form-group #error-msg {
+        color: red; }
+      section.signup .container .wrapper .signup-wall .form-group button {
+        font-size: 18px;
+        font-weight: 300;
+        width: 100%;
+        border-radius: 7px;
+        padding: 8px;
+        color: white;
+        background: black;
+        border: solid white 2px;
+        opacity: .8; }
+      section.signup .container .wrapper .signup-wall .form-group button:hover {
+        color: white;
+        background: rgba(39, 87, 109, 0.7); }
+      section.signup .container .wrapper .signup-wall p.alert {
+        width: 100%; }
+      section.signup .container .wrapper .signup-wall .error {
+        border: 1px solid #b94a48 !important;
+        background-color: #fee !important; }
+      section.signup .container .wrapper .signup-wall .submitted :invalid {
+        border: 1px solid red; }
+        section.signup .container .wrapper .signup-wall .submitted :invalid + .error {
+          display: block; }
+
+/*# sourceMappingURL=signup.css.map */

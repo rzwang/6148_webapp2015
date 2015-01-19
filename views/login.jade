@@ -4,7 +4,7 @@ block header
     script(src='/javascripts/style.js')
 
 block stylesheets
-    link(rel="stylesheet", href="/stylesheets/register.css")
+    link(rel="stylesheet", href="/stylesheets/signup.css")
 
 block content
     nav.navbar#navbar
@@ -33,10 +33,12 @@ block content
                 div.title
                     h3 Login
                 div.signup-wall
-                    form.form-signin(method='POST')
+                    form.basic-form(method='POST')
                         input.form-control(type='text', name='username', placeholder='Username', required, autofocus)
                         input.form-control(type='password', name='password', placeholder='Password', required)
                         button(class='btn btn-lg btn-primary btn-block') Login
+                    if message && message.length > 0
+                        p#alert.alert.alert-danger(role='alert') #{message}
                         //- div.form-group
                         //-     div.col-sm-10.col-sm-offset-2
                         //-         div.checkbox

@@ -1,0 +1,85 @@
+@import '_constants';
+
+section.signup {
+    height: 100vh;
+
+    .container {
+        height: 100%;
+        width: 100%;
+        // background: url("../images/nystreet.png") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+
+        .wrapper {
+            .title {
+                color: black;
+                text-align: center;
+                position: relative;
+                top: 70px;
+            }
+
+            .signup-wall {
+                max-width: 400px;
+                margin: auto;
+                padding: 0;
+                position: relative;
+                top: 100px;
+
+                // :invalid {
+                //   box-shadow: red;
+                // }
+                .form-group {
+                    #valid-msg {
+                        color: green;
+                        
+                    }
+
+                    #error-msg {
+                        color: red;
+
+                    }
+
+                    button {
+                        font-size: 18px;
+                        font-weight: 300;
+                        width: 100%;
+                        border-radius: 7px;
+                        padding: 8px;
+                        color: white;
+                        background: black;
+                        border: solid white 2px;
+                        opacity: .8;
+                        // transition: all 2s ease;
+                    }
+
+                    button:hover {
+                        color: white;
+                        background: $darkblue;
+                    }
+        
+                }
+
+                p.alert {
+                    width: 100%;
+
+                    .alert-danger {
+
+                    }
+                }
+
+                .error {
+                    border: 1px solid #b94a48!important;
+                    background-color: #fee!important;
+                }  
+
+                .submitted :invalid {
+                  + .error {
+                    display: block;
+                  }
+                  border: 1px solid red;
+                } 
+            }
+        }
+    }
+}

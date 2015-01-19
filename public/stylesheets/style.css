@@ -177,7 +177,7 @@ section.about {
           font-weight: 400;
           line-height: 1.25em;
           text-transform: uppercase; }
-      section.about .container .wrapper hr.sep {
+      section.about .container .wrapper hr.line {
         border: 1px solid #4fa0c4; }
       section.about .container .wrapper .subtitle {
         color: black;

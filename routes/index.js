@@ -15,29 +15,30 @@ var isAuthenticated = function (req, res, next) {
 
 module.exports = function(passport){
 
-    /* GET home page. */
+    /* GET home page */
     router.get('/', function(req, res) {
       res.render('index', { title: 'hitch' });
     });
 
-    /* GET signup page. */
+    /* GET signup page */
     router.get('/signup', function(req, res) {
-        res.render('signup', {title: 'hitch | Sign Up', message: req.flash('error')});
+        res.render('signup', {title: 'hitch | Sign Up', message: req.flash('notice')});
     });
 
-    /* Handle signup POST. */
+    /* Handle signup POST */
     router.post('/signup', passport.authenticate('signup', {
         successRedirect: '/request',
         failureRedirect: '/signup',
-        failureFlash: true
+        failureFlash: true,
+        successFlash: true
     }));
 
-    /* GET login page. */
+    /* GET login page */
     router.get('/login', function(req, res) {
-        res.render('login', {title: 'hitch | Login', message: req.flash('error')});
+        res.render('login', {title: 'hitch | Login', message: req.flash('notice')});
     });
 
-    /* Handle login POST. */
+    /* Handle login POST */
     router.post('/login', passport.authenticate('login', {
         successRedirect: '/request',
         failureRedirect: '/login',
@@ -52,10 +53,10 @@ module.exports = function(passport){
 
     /* GET request page. */
     router.get('/request', isAuthenticated, function(req, res){
-        res.render('request', {title: 'hitch me a ride!'});
+        res.render('request', {title: 'hitch me a ride!', message: req.flash('notice')});
     });
 
-    /* Handle Logout */
+    /* Handle request POST */
     router.post('/request', function(req, res){
         var newRequest = new Request({
             firstname: req.body['firstname'],
