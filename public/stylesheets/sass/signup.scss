@@ -1,5 +1,6 @@
 @import '_constants';
 
+
 section.signup {
     height: 100vh;
 
@@ -39,15 +40,16 @@ section.signup {
                 //   box-shadow: red;
                 // }
                 .form-group {
-                    #valid-msg {
+
+                    // change the location of messages
+                    span#valid-msg {
                         color: green;  
                     }
 
-                    #error-msg {
-                        color: red;
+                    span#error-msg {
+                        color: #b94a48!important;
                     }
 
-                    // why does it have to be here?
                     .button-wrapper {
                         width: 300px;
                         position: relative;
@@ -68,16 +70,16 @@ section.signup {
             }
 
             .error {
-                border: 1px solid #b94a48!important;
-                background-color: #fee!important;
+                border-bottom: 1px solid #b94a48!important;
+                // color: #b94a48!important;
             }  
 
-            .submitted :invalid {
-              + .error {
-                display: block;
-              }
-              border: 1px solid red;
-            } 
+            // .submitted :invalid {
+            //   + .error {
+            //     display: block;
+            //   }
+            //   border: 1px solid red;
+            // } 
         }
     }
 }
