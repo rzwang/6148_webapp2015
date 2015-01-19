@@ -10,12 +10,33 @@ h1 {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   font-size: 7em;
-  text-shadow: none; }
+  text-align: center; }
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 5em;
+  text-align: center; }
 
 h3 {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  font-size: 3em; }
+  font-size: 3em;
+  text-align: center; }
+
+h4 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 2em;
+  text-align: center;
+  line-height: 1.5em; }
+
+hr.sep {
+  display: block;
+  width: 30%;
+  margin: 1em auto;
+  border: 1px solid white;
+  transition: all 500ms ease; }
 
 nav.navbar {
   position: fixed;
@@ -64,6 +85,7 @@ section.main {
     background-size: cover; }
     section.main .container .wrapper {
       height: 60%;
+      min-height: 450px;
       width: 450px;
       position: relative;
       top: 20%;
@@ -75,8 +97,7 @@ section.main {
         text-align: center;
         margin-bottom: 20px; }
       section.main .container .wrapper .subtitle {
-        color: white;
-        text-align: center; }
+        color: white; }
         section.main .container .wrapper .subtitle h3 {
           margin: 5px; }
       section.main .container .wrapper .button-wrapper {
@@ -97,18 +118,30 @@ section.main {
             transition: all 500ms ease; }
           section.main .container .wrapper .button-wrapper .button button:hover {
             color: white;
-            background: #27576d; }
+            background: rgba(39, 87, 109, 0.7); }
 
 section.about {
   height: 60vh;
   background: white; }
+  section.about .container {
+    padding: 25px; }
+    section.about .container .wrapper {
+      width: 90%;
+      margin: 10% auto; }
+      section.about .container .wrapper .title {
+        margin: 25px;
+        line-height: 1.25em; }
+      section.about .container .wrapper hr.sep {
+        border: 1px solid #4fa0c4; }
+      section.about .container .wrapper .subtitle {
+        margin: 25px; }
 
 section.request {
   height: 100vh; }
   section.request .container {
     height: 100%;
     width: 100%;
-    padding: 0;
+    padding: 25px;
     background: url("../images/street.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;

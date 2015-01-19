@@ -23,8 +23,8 @@ block content
 
     section.main#main
         div.container(
-                data-center="background-position: 50% 0%"
-                data-top-bottom="background-position: 50% 150%"
+                data-center="background-position: 50% 0px"
+                data-top-bottom="background-position: 50% -100px"
                 data-anchor-target="#main")
             div.wrapper#box(
                     data-top="opacity:1"
@@ -32,20 +32,35 @@ block content
                     data-anchor-target="#box")
                 div.title
                     h1 hitch
+                hr.sep
                 div.subtitle
                     h3 hitch a ride to
                     span.typed
                 div.button-wrapper
                     div.button
-                        a(href="request")
-                            button HITCH ME A RIDE                
+                        a(href="#request")
+                            button HITCH ME A RIDE
 
     section.about#about
         div.container
             div.wrapper
-                h3 Making ridesharing easier than ever.
+                div.title
+                    h3 MAKING RIDESHARE EASIER THAN EVER.
+                hr.sep
+                div.subtitle
+                    h4 hitch finds people for you to share rides with, so you can travel with ease. it's fast, easy, and best of all, it saves you money.
 
     section.request#request
         div.container
             div.wrapper
-                h3 Hello this is a street
+                div.title
+                    h2 Hello this is a street
+                div.signup-wall
+                    //- form.form-signin(action='/signup', method='POST')
+                    form.form-signin
+                        input.form-control(type='text', name='fullname', placeholder='Name', required, autofocus)
+                        input.form-control(type='text', name='pickup', placeholder='Pickup From', required)
+                        input.form-control(type='text', name='dropoff', placeholder='Dropoff', required)
+                        input.form-control(type='time', name='time', placeholder='When?', required)
+                        input.form-control(type='tel', name='phone', placeholder='Phone', required)
+                        button(class='btn btn-lg btn-primary btn-block', type='submit') Request

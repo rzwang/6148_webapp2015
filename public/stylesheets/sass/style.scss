@@ -17,13 +17,37 @@ h1 {
     font-family: $opensans;
     font-weight: 300;
     font-size: 7em;
-    text-shadow: none;
+    text-align: center;
+}
+
+h2 {
+    font-family: $opensans;
+    font-weight: 300;
+    font-size: 5em;
+    text-align: center;
 }
 
 h3 {
     font-family: $opensans;
     font-weight: 300;
     font-size: 3em;
+    text-align: center;
+}
+
+h4 {
+    font-family: $opensans;
+    font-weight: 300;
+    font-size: 2em;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+hr.sep {
+    display: block;
+    width: 30%;
+    margin: 1em auto;
+    border: 1px solid white;
+    transition: all 500ms ease;
 }
 
 
@@ -107,6 +131,7 @@ section.main {
 
         .wrapper {
             height: 60%;
+            min-height: 450px;
             width: 450px;
             position: relative;
             top: 20%;
@@ -122,7 +147,6 @@ section.main {
 
             .subtitle {
                 color: white;
-                text-align: center;
 
                 h3 {
                     margin: 5px;
@@ -162,6 +186,28 @@ section.main {
 section.about {
     height: 60vh;
     background: white;
+
+    .container {
+        padding: 25px;
+
+        .wrapper {
+            width: 90%;
+            margin: 10% auto;
+
+            .title {
+                margin: 25px;
+                line-height: 1.25em;
+            }
+
+            hr.sep {
+                border: 1px solid $lightblue;
+            }
+
+            .subtitle {
+                margin: 25px;
+            }
+        }
+    }
 }
 
 section.request {
@@ -170,10 +216,21 @@ section.request {
     .container {
         height: 100%;
         width: 100%;
-        padding: 0;
+        padding: 25px;
         background: url("../images/street.png") no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
+
+        .wrapper {
+
+            .title {
+
+            }
+
+            .signup-wall {
+
+            }
+        }
     }
 }
