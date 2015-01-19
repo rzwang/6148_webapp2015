@@ -30,28 +30,16 @@ block content
                 div.title
                     h3 Hitch me a ride
                 div.signup-wall
-                    //- form.form-signin(action='/signup', method='POST')
-                    form.form-signin
-                        input.form-control(type='text', name='fullname', placeholder='Name', required, autofocus)
-                        input.form-control(type='text', name='pickup', placeholder='Pickup From', required)
+                    div.signup-wall
+                    form.basic-form(method='POST')
+                        div.row
+                            div.col-sm-6
+                                input.form-control(type='text', name='firstname', placeholder='First Name', required, autofocus)
+                            div.col-sm-6
+                                input.form-control(type='text', name='lastname', placeholder='Last Name', required)
+                        input.form-control(type='text', name='pickup', placeholder='Pickup', required)
                         input.form-control(type='text', name='dropoff', placeholder='Dropoff', required)
-                        input.form-control(type='datetime', name='time', placeholder='When?', required)
+                        input.form-control(type='datetime-local', name='time', placeholder='When?', required)
                         input.form-control(type='tel', name='phone', placeholder='Phone', required)
-                        button(class='btn btn-lg btn-primary btn-block', type='submit') Request
-                //- div.req-form
-                //-     form.form-horizontal
-                //-         div.form-group
-                //-             label.col-sm-2.control-label(for='name') Name:
-                //-             div.col-sm-10
-                //-                 input#name.form-control(type='text', placeholder='e.g. Jane Doe')
-                //-         div.form-group
-                //-             label.col-sm-2.control-label(for='pickup') Pickup from:
-                //-             div.col-sm-10
-                //-                 input#pickup.form-control(type='text', placeholder='e.g. 305 Memorial Drive Cambridge, MA 02139')
-                //-         div.form-group
-                //-             label.col-sm-2.control-label(for='dropoff') Dropoff at:
-                //-             div.col-sm-10
-                //-                 input#dropoff.form-control(type='text', placeholder= 'e.g. Boston Logan Airport')
-                //-         div.form-group
-                //-             div.col-sm-10.col-sm-offset-2
-                //-                 button.btn.btn-default(type='submit') Submit
+                        div.button-wrapper
+                            button request

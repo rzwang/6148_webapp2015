@@ -5,8 +5,9 @@ var Request = new Schema({
     id: String,
     firstname: String,
     lastname: String,
-    email: String,
-    password: String,
+    pickup: String,
+    dropoff: String,
+    time: String, // CHANGE THIS TO Date LATER
     phone: String
 });
 

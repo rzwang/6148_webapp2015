@@ -39,7 +39,8 @@ h4 {
 
 h5 {
     @extend h1;
-    font-size: 1.25em;
+    font-size: 1em;
+    text-transform: uppercase;
 }
 
 ::-webkit-input-placeholder {
@@ -139,7 +140,7 @@ nav.navbar {
 
 
 // FORM
-.form-layout {
+.basic-form {
 
     .form-control {
         background: transparent;
@@ -314,11 +315,20 @@ section.request {
 }
 
 section.footer {
-    height: 50px;
+    height: 60px;
     background: $filter;
     color: white;
 
     .container {
         padding-top: 5px;
+        margin: 0 auto;
+
+        h5 {
+            margin: 0;
+        }
+
+        .icon {
+            height: 50px;
+        }
     }
 }

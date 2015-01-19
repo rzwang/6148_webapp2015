@@ -1,7 +1,7 @@
 extends layout
 
 block header
-    script(src='/javascripts/style.js')
+    script(src="/javascripts/style.js")
 
 block content
     nav.navbar#navbar
@@ -47,12 +47,12 @@ block content
                     h3 making ridesharing easier than ever
                 hr.line
                 div.subtitle
-                    h4 hitch finds people for you to share rides with. It's fast, simple, and best of all, it saves you money.
+                    h4 hitch finds people for you to share rides with. It"s fast, simple, and best of all, it saves you money.
 
     section.request#request
         div.container(
                 data-bottom-top="background-position: 50% 100px"
-                data--50-center="background-position: 50% 0px"
+                data--60-center="background-position: 50% 0px"
                 data-anchor-target="#request")
             div.wrapper#formbox(
                     data-bottom-top="opacity:0"
@@ -62,16 +62,22 @@ block content
                     h2 hitch a ride
                 hr.line
                 div.signup-wall
-                    //- form.form-layout(action='/request', method='POST')
-                    form.form-layout
-                        input.form-control(type='text', name='fullname', placeholder='Name', required, autofocus)
-                        input.form-control(type='text', name='pickup', placeholder='Pickup', required)
-                        input.form-control(type='text', name='dropoff', placeholder='Dropoff', required)
-                        input.form-control(type='datetime', name='time', placeholder='When?', required)
-                        input.form-control(type='tel', name='phone', placeholder='Phone', required)
+                    form.basic-form(action="/request", method="POST")
+                        div.row
+                            div.col-sm-6
+                                input.form-control(type="text", name="firstname", placeholder="First Name", required, autofocus)
+                            div.col-sm-6
+                                input.form-control(type="text", name="lastname", placeholder="Last Name", required)
+                        input.form-control(type="text", name="pickup", placeholder="Pickup", required)
+                        input.form-control(type="text", name="dropoff", placeholder="Dropoff", required)
+                        input.form-control(type="datetime-local", name="time", placeholder="When?", required)
+                        input.form-control(type="tel", name="phone", placeholder="Phone", required)
                         div.button-wrapper
                             button request
 
     section.footer#footer
         div.container
-            h5 brought to you by WWW 2015
+            h5
+                | wistful worldly wanderers 
+                img.icon(src="/images/3w.png")
+                |  2015

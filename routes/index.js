@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var Request = require('../models/request');
 
 
 var isAuthenticated = function (req, res, next) {
@@ -50,16 +51,45 @@ module.exports = function(passport){
     });
 
     /* GET request page. */
-    router.get('/request', function(req, res){
+    router.get('/request', isAuthenticated, function(req, res){
         res.render('request', {title: 'hitch me a ride!'});
     });
 
-    // // ADD THESE BACK IN WHEN THE VIEWS FILES ARE CREATED
+    /* Handle Logout */
+    router.post('/request', function(req, res){
+        var newRequest = new Request({
+            firstname: req.body['firstname'],
+            lastname: req.body['lastname'],
+            pickup: req.body['pickup'],
+            dropoff: req.body['dropoff'],
+            time: req.body['time'],
+            phone: req.body['phone']
+        });
+        newRequest.save(function(err, result) {
+            res.redirect('/results') // CHANGE THIS LINK
+        });
+    });
 
-    // /* GET results page. */
-    // router.get('/results', function(req, res) {
-    //     res.render('results', {title: 'Results'});
-    // });
+    /* GET results page. */
+    router.get('/results', function(req, res) { // ADD isAuthenticated BACK IN LATER
+        // res.render('results', {title: 'hitch | Results'});
+        var map = {};
+        Request.find({}, function(err, results) {
+            results.forEach(function(result) {
+                map[result.firstname] = result;
+            });
+        });
+        console.log(map);
+        // res.render('results', {title: 'hitch | Results' })
+
+        // Request.find().forEach( function(err, result) {
+        //     res.render('results', {title: 'hitch | Results', message: result });
+        // });
+    });
 
     return router;
 }
+
+
+// for user specificity: user: req.user
+// geo: geoNear and geoSearch
