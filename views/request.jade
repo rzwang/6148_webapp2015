@@ -41,7 +41,14 @@ block content
                         input#time.form-control(type='datetime-local', name='time', placeholder='mm/dd/yyyy hh:mm', required)
                         input#phone.form-control(type='tel', name='phone', placeholder='Phone', required)
                         div.button-wrapper
-                            button request
+                            button(type="submit") request
 
                     if message && message.length > 0
                         p#alert.alert.alert-success(role='alert') #{message}
+
+    section.footer#footer
+        div.container
+            h5
+                | wistful worldly wanderers 
+                img.icon(src="/images/3w.png")
+                |  2015
