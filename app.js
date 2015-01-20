@@ -11,7 +11,11 @@ var config = require('./config');
 // mongoose
 var mongoURI = process.env.MONGOHQ_URL || "mongodb://localhost/passport";
 var mongoose = require('mongoose');
-mongoose.connect(mongoURI);
+var uriUtil = require('mongodb-uri');
+var mongodbUri = 'mongodb://user:pass@host:port/db';
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+mongoose.connect(mongooseUri);
 
 var app = express();
 
@@ -74,8 +78,8 @@ app.use(function(err, req, res, next) {
     });
 });
 
-app.set('port', process.env.PORT || 3000);
+// app.set('port', process.env.PORT || 3000);
 
-var server = app.listen(app.get('port'));
+// var server = app.listen(app.get('port'));
 
 module.exports = app;
