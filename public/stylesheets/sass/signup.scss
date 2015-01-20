@@ -30,13 +30,13 @@ section.signup {
             }
 
             .signup-wall {
+                
+                .success {
+                    border-bottom: 1px solid $green;
+                }
 
                 .error {
                     border-bottom: 1px solid $red;
-                }
-
-                .success {
-                    border-bottom: 1px solid $green;
                 }
             }
         }

@@ -30,26 +30,31 @@ $(function(){
         backDelay: 1500,
         showCursor: false,
     });
-    
-    // FORM VALIDATION
-    var password = $("#password");
-    var password2 = $("#password2");
 
     $("#phone").mask("(000) 000-0000");
     $("#time").mask("00/00/0000 00:00");
 
-    password2.keyup(function() {
-        if (password2.val() !== password.val()) {
-            password2.removeClass("success").addClass("error");
-        } else {
-            password2.removeClass("error").addClass("success");
-        }
+    // FORM VALIDATION
+    $("form").submit(function() {
+        var isFormFilled = true;
+        $("input").each(function() {
+            if ($.trim($(this).val()).length == 0) {
+                $(this).addClass("error");
+                isFormFilled = false;
+            } else {
+                $(this).removeClass("error");
+            }
+        });
+        return isFormFilled;
     });
 
-    password2.blur(function() {
-        password2.removeClass("success");
+    $("input").each(function() {
+        $(this).keyup(function() {
+            if ($(this).hasClass("error")) {
+                $(this).removeClass("error");
+            }
+        });
     });
-
 });
 
 window.setTimeout(function() {
@@ -57,6 +62,3 @@ window.setTimeout(function() {
         $(this).remove();
     });
 }, 3000);
-
-// var $email = $("#email"); // refers to the jQuery object representation of the dom object
-// var email_field = $("#email").get(0); // refers to the dom object itself
