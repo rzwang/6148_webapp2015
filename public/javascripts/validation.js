@@ -1,4 +1,4 @@
-$.webshims.polyfill();
+// $.webshims.polyfill();
 
 // VALIDATING PHONE NUMBER
 // $("#phone").intlTelInput();
@@ -36,56 +36,126 @@ telInput.keydown(function() {
 // });
 
 
+// PREVENT SUBMISSION
+$("form").submit(function() {
+    var isFormFilled = false;
+    $("input").each(function() {
+        if ($.trim($(this).val()).length === 0) {
+            $(this).addClass("error");
+        } else {
+            $(this).removeClass("error");
+            isFormFilled = true;
+        }
+    });
+    return isFormFilled;
+});
+
+// Change underlinings
+$("input").keydown(function () {
+    if ($.trim($(this).val()).length !== 0) {
+        $(this).removeClass("error");
+    };
+}
 //===============================================================================
 // VALIDATING PASSWORDS
 
 var password = $("#password");
 var password2 = $("#password2");
 
-password2.blur(function() {
+password.blur(function() {
     if (password.val() !== "" && password2.val() !== "") {
         if (password2.val() !== password.val()) {
-            // console.log(password2.value);
             password.addClass("error");
             password2.addClass("error");
+            password.removeClass("correct");
+            password2.removeClass("correct");
         } else {
-            // console.log(password2.value);
             password.addClass("correct");
             password2.addClass("correct");
+            password.removeClass("error");
+            password2.removeClass("error");
         }
     } else {
         password.removeClass("error");
         password2.removeClass("error");
-        // password.removeClass("success");
-        // password2.removeClass("success");
+        password.removeClass("correct");
+        password2.removeClass("correct");
     }
 });
 
-// password2.keyup(function() {
-//     if (password.val() != "" && password2.val() != "") {
-//         if (password2.val() != password.val()) {
-//             // console.log(password2.value);
-//             password.addClass("error");
-//             password2.addClass("error");
-//         } else {
-//             // console.log(password2.value);
-//             password.addClass("success");
-//             password2.addClass("success");
-//         }
-//     } else {
-//         password.removeClass("error");
-//         password2.removeClass("error");
-//         // password.removeClass("success");
-//         // password2.removeClass("success");
-//     }
-// });
+password2.blur(function() {
+    if (password.val() !== "" && password2.val() !== "") {
+        if (password2.val() !== password.val()) {
+            password.addClass("error");
+            password2.addClass("error");
+            password.removeClass("correct");
+            password2.removeClass("correct");
+        } else {
+            password.addClass("correct");
+            password2.addClass("correct");
+            password.removeClass("error");
+            password2.removeClass("error");
+        }
+    } else {
+        password.removeClass("error");
+        password2.removeClass("error");
+        password.removeClass("correct");
+        password2.removeClass("correct");  
+    }
+});
+
+password.keyup(function() {
+    if (password.val() != "" && password2.val() != "") {
+        if (password2.val() != password.val()) {
+            password.addClass("error");
+            password2.addClass("error");
+            password.removeClass("correct");
+            password2.removeClass("correct");
+        } else {
+            password.addClass("correct");
+            password2.addClass("correct");
+            password.removeClass("error");
+            password2.removeClass("error");
+        }
+    } else {
+        password.removeClass("error");
+        password2.removeClass("error");
+        password.removeClass("correct");
+        password2.removeClass("correct");
+    }
+});
+
+password2.keyup(function() {
+    if (password.val() != "" && password2.val() != "") {
+        if (password2.val() != password.val()) {
+            password.addClass("error");
+            password2.addClass("error");
+            password.removeClass("correct");
+            password2.removeClass("correct");
+        } else {
+            password.addClass("correct");
+            password2.addClass("correct");
+            password.removeClass("error");
+            password2.removeClass("error");
+        }
+    } else {
+        password.removeClass("error");
+        password2.removeClass("error");
+        password.removeClass("correct");
+        password2.removeClass("correct");   
+    }
+});
 
 password.keydown(function() {
   password.removeClass("error");
   password2.removeClass("error");
+  password.removeClass("correct");
+  password2.removeClass("correct");
 });
 
 password2.keydown(function() {
   password.removeClass("error");
   password2.removeClass("error");
+  password.removeClass("correct");
+  password2.removeClass("correct");
 });

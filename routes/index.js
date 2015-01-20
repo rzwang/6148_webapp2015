@@ -51,10 +51,10 @@ module.exports = function(passport){
     }));
 
     /* Handle Logout */
-    // router.get('/signout', function(req, res) {
-    //     req.logout(); 
-    //     res.redirect('/');
-    // });
+    router.get('/signout', function(req, res) {
+        req.logout(); 
+        res.redirect('/');
+    });
 
     /* GET request page. */
     router.get('/request', isAuthenticated, function(req, res){
