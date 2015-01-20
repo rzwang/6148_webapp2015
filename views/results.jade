@@ -27,13 +27,13 @@ block content
         div.container
             div.wrapper
                 div.title
-                    h3 Your hitchers!
+                    h3 Your results!
                     
                     if results.length
-                        each request in results
-                            p #{request.firstname} #{request.lastname} #{request}
+                        each result in results
+                            p #{result.firstname} #{result.lastname} #{result}
                     else
-                        p No one is in your database!
+                        p you don't have any results :(
 
 
     section.footer#footer

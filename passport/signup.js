@@ -29,7 +29,6 @@ module.exports = function(passport){
                         newUser.phone = req.param('phone');
                         newUser.hasReq = false;
 
-
                         newUser.save(function(err) {
                             if (err){
                                 console.log('Error in saving user: '+err);  

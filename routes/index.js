@@ -21,17 +21,27 @@ module.exports = function(passport){
 
     /* GET home page */
     router.get('/', function(req, res) {
-      res.render('index', { title: 'hitch' });
+        if (!req.user) {
+            res.render('index', { title: 'hitch' });
+        } else if (req.user.hasReq) {
+            res.redirect('/results');
+        } else {
+            res.redirect('/request');
+        }
     });
 
     /* GET signup page */
     router.get('/signup', function(req, res) {
-        res.render('signup', { title: 'hitch | Sign Up', message: req.flash('message') });
+        if (req.user) {
+            res.redirect('/request');
+        } else {
+            res.render('signup', { title: 'hitch | Sign Up', message: req.flash('message') });
+        }
     });
 
     /* handle signup POST */
     router.post('/signup', passport.authenticate('signup', {
-        successRedirect: '/request',
+        successRedirect: '/#request',
         failureRedirect: '/signup',
         failureFlash: true,
         successFlash: true
@@ -39,7 +49,13 @@ module.exports = function(passport){
 
     /* GET login page */
     router.get('/login', function(req, res) {
-        res.render('login', { title: 'hitch | Login', message: req.flash('message') });
+        if (!req.user) {
+            res.render('login', { title: 'hitch | Login', message: req.flash('message') });
+        } else if (req.user.hasReq) {
+            res.redirect('/results');
+        } else {
+            res.redirect('/request');
+        }
     });
 
     /* handle login POST */
@@ -50,14 +66,18 @@ module.exports = function(passport){
     }));
 
     /* handle logout */
-    // router.get('/signout', function(req, res) {
-    //     req.logout(); 
-    //     res.redirect('/');
-    // });
+    router.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
+    });
 
     /* GET request page. */
     router.get('/request', isAuthenticated, function(req, res){
-        res.render('request', { title: 'hitch me a ride!', message: req.flash('message') });
+        if (req.user.hasReq) {
+            res.redirect('/results')
+        } else {
+            res.render('request', { title: 'hitch me a ride!', message: req.flash('message'), logout: true });
+        }
     });
 
     /* handle request POST */
@@ -68,27 +88,43 @@ module.exports = function(passport){
             pickup: req.body['pickup'],
             dropoff: req.body['dropoff'],
             time: req.body['time'],
-            phone: req.body['phone']
+            phone: req.body['phone'],
+            results: []
         });
+        if (req.user) {
+            req.user.hasReq = true;
+            req.user.save();
+        };
         newRequest.save(function(err, result) {
             res.redirect('/results');
         });
     });
 
     /* GET results page. */
-    router.get('/results', function(req, res) { // ADD isAuthenticated BACK IN LATER
-        var allrequests = [];
-        Request.find({}, function(err, results) {
-            results.forEach(function(request) {
-                allrequests.push(request);
+    router.get('/results', function(req, res) {
+        if (!req.user) {
+            var allrequests = [];
+            Request.find({firstname: 'test'}, function(err, results) {
+                results.forEach(function(request) {
+                    allrequests.push(request);
+                });
+                res.render('results', { title: 'hitch | Results', results: allrequests });
             });
-            res.render('results', { title: 'hitch | Results', results: allrequests });
-        });
+        } else if (!req.user.hasReq) {
+            res.redirect('/request');
+        } else {
+            var allrequests = [];
+            Request.find({pickup: 'MIT'}, function(err, results) {
+                results.forEach(function(request) {
+                    allrequests.push(request);
+                });
+                res.render('results', { title: 'hitch | Results', results: allrequests, logout: true });
+            });
+        }
     });
 
     return router;
 }
 
 
-// for user specificity: user: req.user
 // geo: geoNear and geoSearch
