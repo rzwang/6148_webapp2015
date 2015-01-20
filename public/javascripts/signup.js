@@ -15,11 +15,13 @@ $(function(){
     });
 
     password2.keyup(function() {
-        if (password2.val() !== password.val()) {
-            password2.removeClass("success").addClass("error");
-        } else {
-            password2.removeClass("error").addClass("success");
-        }
+        if (password2.val() !== "") {
+            if (password2.val() !== password.val()) {
+                password2.removeClass("success").addClass("error");
+            } else {
+                password2.removeClass("error").addClass("success");
+            };
+        };
     });
 
     password2.blur(function() {
