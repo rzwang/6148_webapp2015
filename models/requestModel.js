@@ -3,17 +3,14 @@ var Schema = mongoose.Schema;
 
 var requestSchema = new Schema({
     id: String,
-    firstname: String,
-    lastname: String,
-    // pickupLat: Number,
-    // pickupLong: Number,
-    // dropoffLat: Number,
-    // dropoffLong: Number, 
+    firstName: String,
+    lastName: String,
     pickup: String,
     dropoff: String,
     time: String, // change to Date later
-    phone: String
+    phone: String,
+    results: []
 });
 
-//MODEL
+//MODELs
 module.exports = mongoose.model('Request', requestSchema);

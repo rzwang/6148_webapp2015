@@ -4,6 +4,7 @@ block header
     script(src='/javascripts/style.js')
 
 block stylesheets
+    link(rel="stylesheet", href="/stylesheets/style.css")
     link(rel="stylesheet", href="/stylesheets/request.css")
 
 block content
@@ -28,21 +29,18 @@ block content
         div.container
             div.wrapper
                 div.title
-                    h3 Hitch me a ride
+                    h6 hitch me a ride
+                    hr.line
                  div.signup-wall
                     form.basic-form(method='POST')
                         div.form-group
-                            div.row
-                                div.col-sm-6
-                                    input.form-control(type='text', name='firstname', placeholder='First Name', required, autofocus)
-                                div.col-sm-6
-                                    input.form-control(type='text', name='lastname', placeholder='Last Name', required)
-                            input.form-control(type='text', name='pickup', placeholder='Pickup', required)
-                            input.form-control(type='text', name='dropoff', placeholder='Dropoff', required)
-                            input.form-control(type='datetime-local', name='time', placeholder='When?', required)
-                            input.form-control(type='tel', name='phone', placeholder='Phone', required)
+                            input#pickup.form-control(type='text', name='pickup', placeholder='Pickup', required)
+                            input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff', required)
+                            input#time.form-control(type='datetime-local', name='time', placeholder='When?', required)
                             div.button-wrapper
                                 button request
 
                     if message && message.length > 0
                         p#alert.alert.alert-success(role='alert') #{message}
+
+    script(src='/javascripts/reqValidation.js')

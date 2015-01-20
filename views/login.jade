@@ -23,9 +23,6 @@ block content
                     ul.nav.navbar-nav.navbar-right
                         li: a(href="login") LOGIN
                         li: a(href="signup") SIGN UP
-    
-    if message
-        div.alert.alert-danger-message(role="alert") #{message}
 
     section.signup#login
         div.container
@@ -47,3 +44,5 @@ block content
                         //-             label
                         //-                 input(type="checkbox")
                         //-                 p Remember me
+
+    script(src='/javascripts/validation.js')

@@ -1,0 +1,47 @@
+@import '_constants';
+
+section.results {
+    height: 100vh;
+
+    .container {
+        height: 100%;
+        width: 100%;
+        background: url("../images/bridge.png") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+
+        .wrapper {
+            height: 550px;
+            width: 500px;
+            position: relative;
+            top: 10%;
+            margin: auto;
+            padding: 25px;
+            background-color: $filter;
+
+            .title {
+                color: white;
+                text-align: center;
+                position: relative;
+                top: 50px;
+                margin-bottom: 30px;
+            }
+
+            .match {
+                height: 50px;
+                width: 50px;
+                position: relative;
+                top: 15%;
+                margin: auto;
+                padding: 25px;
+                background-color: $darkblue;
+
+                p {
+                    text-align: center;
+                    text-color: white;
+                }                
+            }
+        }
+    }
+}

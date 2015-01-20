@@ -26,7 +26,7 @@ module.exports = function(passport){
 
     /* GET signup page */
     router.get('/signup', function(req, res) {
-        res.render('signup', {title: 'hitch | Sign Up', message: req.flash('notice')});
+        res.render('signup', {title: 'hitch | Sign Up', message: req.flash('message')});
     });
 
     /* Handle signup POST */
@@ -39,7 +39,7 @@ module.exports = function(passport){
 
     /* GET login page */
     router.get('/login', function(req, res) {
-        res.render('login', {title: 'hitch | Login', message: req.flash('notice')});
+        res.render('login', {title: 'hitch | Login', message: req.flash('message')});
     });
 
     /* Handle login POST */
@@ -51,57 +51,44 @@ module.exports = function(passport){
     }));
 
     /* Handle Logout */
-    router.get('/signout', function(req, res) {
+    router.get('/logout', function(req, res) {
         req.logout(); 
         res.redirect('/');
     });
 
     /* GET request page. */
-    router.get('/request', isAuthenticated, function(req, res){
-        res.render('request', {title: 'hitch me a ride!', message: req.flash('notice')});
+    //isAuthenticated
+    router.get('/request', function(req, res){
+        res.render('request', {title: 'hitch me a ride!', message: req.flash('message')});
     });
 
     /* Handle request POST */
-    router.post('/request', isAuthenticated, function(req, res){
+    router.post('/request', function(req, res){
         var newReq = new Request({
             firstname: req.body['firstName'],
-            lastname: req.body['lastName'],
-            // pickupLat: Number,
-            // pickupLong: Number,
-            // dropoffLat: Number,
-            // dropoffLong: Number, 
+            lastname: req.body['lastName'], 
             pickup: req.body['pickup'],
             dropoff: req.body['dropoff'],
             time: req.body['time'],
             phone: req.body['phone']
         });
         newReq.save(function(err, result) {
-            console.log(result);
-            res.redirect('/results' + result._id);
+            res.redirect('/results');
         });
     });
 
-    // /* GET results page. */
-    // router.get('/results', function(req, res) { // ADD isAuthenticated BACK IN LATER
-    //     // res.render('results', {title: 'hitch | Results'});
-    //     var map = {};
-    //     Request.find({}, function(err, results) {
-    //         results.forEach(function(result) {
-    //             map[result.firstname] = result;
-    //         });
-    //     });
-    //     console.log(map);
-    //     // res.render('results', {title: 'hitch | Results' })
-    // });
-
     /* GET results page */
     router.get('/results', function(req, res) {
-        Request.find({}, function(err, result) {
-            result.forEach(function() {
+        Request.find({}, function(err, results) {
+            results.forEach(function(result) {
                 console.log(result);
+                // var iDiv = window.content.document.createElement('div');
+                // iDiv.id = 'match';
+                // iDiv.className = 'match';
+                // window.content.document.body.appendChild(iDiv);
             })
         });
-        // res.render('results', {title: 'hitch | Results'});
+        res.render('results', {title: 'hitch | Results'});
     });
     return router;
 }
@@ -123,5 +110,4 @@ module.exports = function(passport){
 //     })
 // });
 
-// for user specificity: user: req.user
 // geo: geoNear and geoSearch

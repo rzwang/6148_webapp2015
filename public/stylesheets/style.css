@@ -6,7 +6,7 @@ html, body {
   html section, body section {
     width: 100vw; }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   font-size: 7em;
@@ -26,6 +26,9 @@ h4 {
 h5 {
   font-size: 1em;
   text-transform: uppercase; }
+
+h6 {
+  font-size: 4em; }
 
 ::-webkit-input-placeholder {
   font-weight: 300;
