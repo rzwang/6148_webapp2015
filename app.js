@@ -6,11 +6,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var flash = require('connect-flash');
-
+var config = require('./config');
 
 // mongoose
+var mongoURI = process.env.MONGOHQ_URL || "mongodb://localhost/passport";
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/passport')
+mongoose.connect(mongoURI);
 
 var app = express();
 
@@ -72,5 +73,9 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'));
 
 module.exports = app;
