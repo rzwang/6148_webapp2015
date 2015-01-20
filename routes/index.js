@@ -95,6 +95,7 @@ module.exports = function(passport){
             req.user.hasReq = true;
             req.user.save();
         };
+        // SEARCH ALGORITHM HERE (NEWREQUEST.RESULTS = FROMSEARCH)
         newRequest.save(function(err, result) {
             res.redirect('/results');
         });
@@ -102,7 +103,7 @@ module.exports = function(passport){
 
     /* GET results page. */
     router.get('/results', function(req, res) {
-        if (!req.user) {
+        if (!req.user) { // SHOULD NOT BE ABLE TO SEE IF I DON'T HAVE A REQUEST
             var allrequests = [];
             Request.find({firstname: 'test'}, function(err, results) {
                 results.forEach(function(request) {
