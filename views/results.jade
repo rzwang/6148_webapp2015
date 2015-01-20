@@ -3,6 +3,7 @@ extends layout
 block header
 
 block stylesheets
+    link(rel="stylesheet", href="/stylesheets/results.css")
 
 block content
     //- nav.navbar#navbar
@@ -22,8 +23,15 @@ block content
                     ul.nav.navbar-nav.navbar-right
                         li: a(href="login") LOGIN
                         li: a(href="signup") SIGN UP
+    if message && message.length
+        p#alert.alert.alert-danger(role="alert") #{message}
 
-    section.result#result
+    if logout
+        div.logout
+            a(href="/logout")
+                button logout
+
+    section.results#results
         div.container
             div.wrapper
                 div.title
@@ -34,7 +42,6 @@ block content
                             p #{result.firstname} #{result.lastname} #{result}
                     else
                         p you don't have any results :(
-
 
     section.footer#footer
         div.container

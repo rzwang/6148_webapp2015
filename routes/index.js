@@ -21,7 +21,7 @@ module.exports = function(passport){
     /* GET home page */
     router.get('/', function(req, res) {
         if (!req.user) {
-            res.render('index', { title: 'hitch' });
+            res.render('index', { title: 'hitch', message: req.flash('message') });
         } else if (req.user.hasReq) {
             res.redirect('/results');
         } else {
@@ -31,10 +31,12 @@ module.exports = function(passport){
 
     /* GET signup page */
     router.get('/signup', function(req, res) {
-        if (req.user) {
-            res.redirect('/request');
-        } else {
+        if (!req.user) {
             res.render('signup', { title: 'hitch | Sign Up', message: req.flash('message') });
+        } else if (req.user.hasReq) {
+            res.redirect('/results');
+        } else {
+            res.redirect('/request');
         }
     });
 
@@ -67,6 +69,7 @@ module.exports = function(passport){
     /* handle logout */
     router.get('/logout', function(req, res) {
         req.logout();
+        req.flash( 'message', 'You have been successfully logged out' );
         res.redirect('/');
     });
 
@@ -75,7 +78,7 @@ module.exports = function(passport){
         if (req.user.hasReq) {
             res.redirect('/results')
         } else {
-            res.render('request', { title: 'hitch me a ride!', message: req.flash('message'), logout: true });
+            res.render('request', { title: 'hitch me a ride!', message: req.flash('message') });
         }
     });
 
@@ -103,22 +106,22 @@ module.exports = function(passport){
     /* GET results page. */
     router.get('/results', function(req, res) {
         if (!req.user) { // SHOULD NOT BE ABLE TO SEE IF I DON'T HAVE A REQUEST
-            var allrequests = [];
+            var allresults = [];
             Request.find({firstname: 'test'}, function(err, results) { // REDIFINE SEARCH PARAMETERS
-                results.forEach(function(request) {
-                    allrequests.push(request);
+                results.forEach(function(result) {
+                    allresults.push(result);
                 });
-                res.render('results', { title: 'hitch | Results', results: allrequests });
+                res.render('results', { title: 'hitch | Results', results: allresults, message: req.flash('message') });
             });
         } else if (!req.user.hasReq) {
             res.redirect('/request');
         } else {
-            var allrequests = [];
+            var allresults = [];
             Request.find({pickup: 'MIT'}, function(err, results) { // REDIFINE SEARCH PARAMETERS
-                results.forEach(function(request) {
-                    allrequests.push(request);
+                results.forEach(function(result) {
+                    allresults.push(result);
                 });
-                res.render('results', { title: 'hitch | Results', results: allrequests, logout: true });
+                res.render('results', { title: 'hitch | Results', results: allresults, message: req.flash('message'), logout: true });
             });
         }
     });

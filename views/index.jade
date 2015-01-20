@@ -20,6 +20,9 @@ block content
                         li: a(href="login") login
                         li: a(href="signup") sign up
 
+    if message && message.length
+        p#alert.alert.alert-danger(role="alert") #{message}
+
     section.main#main
         div.container(
                 data-center="background-position: 50% 0px"
