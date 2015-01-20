@@ -1,5 +1,3 @@
-// Validation for each request
-
 // PREVENT SUBMISSION
 $("form").submit(function() {
     var isFormFilled = true;
@@ -23,4 +21,3 @@ $("input").keyup(function () {
         $(this).removeClass("error");
     };
 });
-

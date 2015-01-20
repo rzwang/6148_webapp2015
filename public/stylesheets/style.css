@@ -209,6 +209,10 @@ section.request {
         margin-bottom: 30px; }
       section.request .container .wrapper .signup-wall {
         padding: 25px; }
+        section.request .container .wrapper .signup-wall .correct {
+          border-bottom: 1px solid green; }
+        section.request .container .wrapper .signup-wall .error {
+          border-bottom: 1px solid #b94a48; }
 
 section.footer {
   height: 60px;

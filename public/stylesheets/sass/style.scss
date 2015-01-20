@@ -314,7 +314,16 @@ section.request {
 
             .signup-wall {
                 padding: 25px;
+
+                .correct {
+                    border-bottom: 1px solid green;
+                }  
+
+                .error {
+                    border-bottom: 1px solid $red;
+                }  
             }
+
         }
     }
 }
