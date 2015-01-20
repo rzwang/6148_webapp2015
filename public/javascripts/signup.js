@@ -1,7 +1,6 @@
 $(function(){    
 
     var phoneformat = /^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$/;
-    var timeformat = /^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$/;
     var password = $("#password");
     var password2 = $("#password2");
     var phone = $("#phone");

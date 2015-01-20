@@ -14,11 +14,11 @@ module.exports = function(passport){
                         return done(err);
                     if (!user){
                         console.log('User not found with username '+username);
-                        return done(null, false, { message: 'User not found with username '+username });
+                        return done(null, false, req.flash( 'message', 'User not found with username '+username ));
                     }
                     if (!isValidPassword(user, password)){
                         console.log('Invalid password');
-                        return done(null, false, { message: 'Invalid password' });
+                        return done(null, false, req.flash( 'message', 'Invalid password' ));
                     }
                     return done(null, user);
                 }

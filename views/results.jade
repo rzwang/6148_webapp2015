@@ -28,8 +28,13 @@ block content
             div.wrapper
                 div.title
                     h3 Your hitchers!
-                    if message && message.length > 0
-                        p#alert.alert.alert-success(role='alert') #{message}
+                    
+                    if results.length
+                        each request in results
+                            p #{request.firstname} #{request.lastname} #{request}
+                    else
+                        p No one is in your database!
+
 
     section.footer#footer
         div.container

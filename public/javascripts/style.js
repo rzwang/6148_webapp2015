@@ -51,11 +51,11 @@ $(function(){
                 $(this).removeClass("error");
             }
         });
-        if (!phoneformat.test(phone.val())) {
+        if (phone.length() && !phoneformat.test(phone.val())) {
             phone.addClass("error");
             isFormFilled = false;
         };
-        if (!timeformat.test(time.val())) {
+        if (time.length() && !timeformat.test(time.val())) {
             time.addClass("error");
             isFormFilled = false;
         };

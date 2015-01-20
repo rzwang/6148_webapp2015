@@ -36,7 +36,7 @@ block content
                         div.button-wrapper
                             button(type="submit") login
 
-                    if message && message.length > 0
+                    if message && message.length
                         p#alert.alert.alert-danger(role='alert') #{message}
                         //- div.form-group
                         //-     div.col-sm-10.col-sm-offset-2
@@ -44,9 +44,6 @@ block content
                         //-             label
                         //-                 input(type="checkbox")
                         //-                 p Remember me
-                        //- div.form-group
-                        //-     div.col-sm-10.col-sm-offset-2
-                        //-         button.btn.btn-default(type='submit') Submit
 
     section.footer#footer
         div.container

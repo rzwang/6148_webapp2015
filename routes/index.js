@@ -26,7 +26,7 @@ module.exports = function(passport){
 
     /* GET signup page */
     router.get('/signup', function(req, res) {
-        res.render('signup', {title: 'hitch | Sign Up', message: req.flash('error')});
+        res.render('signup', { title: 'hitch | Sign Up', message: req.flash('message') });
     });
 
     /* handle signup POST */
@@ -39,7 +39,7 @@ module.exports = function(passport){
 
     /* GET login page */
     router.get('/login', function(req, res) {
-        res.render('login', {title: 'hitch | Login', message: req.flash('error')});
+        res.render('login', { title: 'hitch | Login', message: req.flash('message') });
     });
 
     /* handle login POST */
@@ -57,7 +57,7 @@ module.exports = function(passport){
 
     /* GET request page. */
     router.get('/request', isAuthenticated, function(req, res){
-        res.render('request', {title: 'hitch me a ride!', message: req.flash('error')});
+        res.render('request', { title: 'hitch me a ride!', message: req.flash('message') });
     });
 
     /* handle request POST */
@@ -77,13 +77,13 @@ module.exports = function(passport){
 
     /* GET results page. */
     router.get('/results', function(req, res) { // ADD isAuthenticated BACK IN LATER
+        var allrequests = [];
         Request.find({}, function(err, results) {
-            results.forEach(function(result) {
-                console.log("firstname: " + result.firstname);
-                // res.send(result.firstname);
+            results.forEach(function(request) {
+                allrequests.push(request);
             });
+            res.render('results', { title: 'hitch | Results', results: allrequests });
         });
-        res.render('results', {title: 'hitch | Results' } );
     });
 
     return router;
