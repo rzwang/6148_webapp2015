@@ -105,7 +105,7 @@ module.exports = function(passport){
     router.get('/results', function(req, res) {
         if (!req.user) { // SHOULD NOT BE ABLE TO SEE IF I DON'T HAVE A REQUEST
             var allrequests = [];
-            Request.find({firstname: 'test'}, function(err, results) {
+            Request.find({firstname: 'test'}, function(err, results) { // REDIFINE SEARCH PARAMETERS
                 results.forEach(function(request) {
                     allrequests.push(request);
                 });
@@ -115,7 +115,7 @@ module.exports = function(passport){
             res.redirect('/request');
         } else {
             var allrequests = [];
-            Request.find({pickup: 'MIT'}, function(err, results) {
+            Request.find({pickup: 'MIT'}, function(err, results) { // REDIFINE SEARCH PARAMETERS
                 results.forEach(function(request) {
                     allrequests.push(request);
                 });
