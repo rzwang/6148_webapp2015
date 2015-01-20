@@ -129,8 +129,8 @@ nav.navbar {
 
         #collapsed {
             @extend #clear;
-            padding: 0 25px 0 15px;
             background: black;
+            padding: 0 25px 0 15px;
             -webkit-transition: all .5s ease-in-out;
             -moz-transition: all .5s ease-in-out;
             transition: all .5s ease-in-out;

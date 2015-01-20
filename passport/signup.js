@@ -21,8 +21,8 @@ module.exports = function(passport){
                         var newUser = new User();
 
                         // set the user's local credentials
-                        newUser.firstName = req.param('firstName');
-                        newUser.lastName = req.param('lastName');
+                        newUser.firstname = req.param('firstname');
+                        newUser.lastname = req.param('lastname');
                         newUser.username = username;
                         newUser.password = createHash(password);
                         newUser.phone = req.param('phone');
@@ -33,7 +33,7 @@ module.exports = function(passport){
                                 console.log('Error in saving user: '+err);  
                                 throw err;  
                             };
-                            return done(null, newUser, req.flash( 'message', 'Welcome, '+newUser.firstName ));
+                            return done(null, newUser, req.flash( 'message', 'Welcome, '+newUser.firstname ));
                         });
                     };
                 });
