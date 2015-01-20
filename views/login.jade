@@ -1,13 +1,12 @@
 extends layout
 
 block header
-    script(src='/javascripts/style.js')
 
 block stylesheets
     link(rel="stylesheet", href="/stylesheets/signup.css")
 
 block content
-    nav.navbar#navbar
+    //- nav.navbar#navbar
         div.navbar-fixed-top(
                 data-start="@id:clear"
                 data-0p="@id:collapsed"
@@ -29,22 +28,22 @@ block content
             div.wrapper
                 div.title
                     h3 Login
-                div.login-form
-                    form.form-horizontal
+                div.signup-wall
+                    form.basic-form(method='POST')
                         div.form-group
-                            label.col-sm-2.control-label(for='email') Email:    
-                            div.col-sm-10
-                                input#email.form-control(type='email', placeholder='Enter email')
-                        div.form-group
-                            label.col-sm-2.control-label(for='pwd') Password:
-                            div.col-sm-10
-                                input#pwd.form-control(type='password', placeholder='Enter password')
-                        div.form-group
-                            div.col-sm-10.col-sm-offset-2
-                                div.checkbox
-                                    label
-                                        input(type="checkbox")
-                                        p Remember me
-                        div.form-group
-                            div.col-sm-10.col-sm-offset-2
-                                button.btn.btn-default(type='submit') Submit
+                            input#username.form-control(type='text', name='username', placeholder='Username', required, autofocus)
+                            input#password.form-control(type='password', name='password', placeholder='Password', required)
+                        div.button-wrapper
+                            button Login
+
+                    if message && message.length > 0
+                        p#alert.alert.alert-danger(role='alert') #{message}
+                        //- div.form-group
+                        //-     div.col-sm-10.col-sm-offset-2
+                        //-         div.checkbox
+                        //-             label
+                        //-                 input(type="checkbox")
+                        //-                 p Remember me
+                        //- div.form-group
+                        //-     div.col-sm-10.col-sm-offset-2
+                        //-         button.btn.btn-default(type='submit') Submit

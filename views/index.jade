@@ -1,7 +1,6 @@
 extends layout
 
 block header
-    script(src='/javascripts/style.js')
 
 block content
     nav.navbar#navbar
@@ -18,29 +17,66 @@ block content
                         span.icon-bar
                 div.collapse.navbar-collapse#basic_nav
                     ul.nav.navbar-nav.navbar-right
-                        li: a(href="login") LOGIN
-                        li: a(href="signup") SIGN UP
+                        li: a(href="login") login
+                        li: a(href="signup") sign up
 
     section.main#main
-        div.container
-            div.wrapper
+        div.container(
+                data-center="background-position: 50% 0px"
+                data-top-bottom="background-position: 50% -100px"
+                data-anchor-target="#main")
+            div.wrapper#box(
+                    data-top="opacity:1"
+                    data-top-bottom="opacity:0"
+                    data-anchor-target="#box")
                 div.title
                     h1 hitch
+                hr.line
                 div.subtitle
-                    //- FIX THIS
                     h3 hitch a ride to
                     span.typed
-        div.button-container
-            div.wrapper
-                a(href="request")
-                    button HITCH ME A RIDE
+                div.button-wrapper
+                    a(href="#request")
+                        button hitch me a ride
 
     section.about#about
         div.container
             div.wrapper
-                h3 Making ridesharing easier than ever.
+                div.title
+                    h3 making ridesharing easier than ever
+                hr.line
+                div.subtitle
+                    h4 hitch finds people for you to share rides with. it's fast, simple, and best of all, it saves you money.
 
-    section.test
+    section.request#request
+        div.container(
+                data-bottom-top="background-position: 50% 100px"
+                data--60-center="background-position: 50% 0px"
+                data-anchor-target="#request")
+            div.wrapper#formbox(
+                    data-bottom-top="opacity:0"
+                    data-bottom="opacity:1"
+                    data-anchor-target="#formbox")
+                div.title
+                    h2 hitch a ride
+                hr.line
+                div.signup-wall
+                    form.basic-form(action="/request", method="POST")
+                        div.row
+                            div.col-sm-6
+                                input#firsname.form-control(type="text", name="firstname", placeholder="First Name", required, autofocus)
+                            div.col-sm-6
+                                input#lastname.form-control(type="text", name="lastname", placeholder="Last Name", required)
+                        input#pickup.form-control(type="text", name="pickup", placeholder="Pickup", required)
+                        input#dropoff.form-control(type="text", name="dropoff", placeholder="Dropoff", required)
+                        input#time.form-control(type="datetime-local", name="time", placeholder="mm/dd/yyyy hh:mm", required)
+                        input#phone.form-control(type="tel", name="phone", placeholder="Phone", required)
+                        div.button-wrapper
+                            button request
+
+    section.footer#footer
         div.container
-            div.wrapper
-                h3 Hello this is a street
+            h5
+                | wistful worldly wanderers 
+                img.icon(src="/images/3w.png")
+                |  2015

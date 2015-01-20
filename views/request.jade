@@ -1,13 +1,12 @@
 extends layout
 
 block header
-    script(src='/javascripts/style.js')
 
 block stylesheets
     link(rel="stylesheet", href="/stylesheets/request.css")
 
 block content
-    nav.navbar#navbar
+    //- nav.navbar#navbar
         div.navbar-fixed-top(
                 data-start="@id:clear"
                 data-0p="@id:collapsed"
@@ -29,20 +28,20 @@ block content
             div.wrapper
                 div.title
                     h3 Hitch me a ride
-                div.req-form
-                    form.form-horizontal
-                        div.form-group
-                            label.col-sm-2.control-label(for='name') Name:
-                            div.col-sm-10
-                                input#name.form-control(type='text', placeholder='e.g. Jane Doe')
-                        div.form-group
-                            label.col-sm-2.control-label(for='pickup') Pickup from:
-                            div.col-sm-10
-                                input#pickup.form-control(type='text', placeholder='e.g. 305 Memorial Drive Cambridge, MA 02139')
-                        div.form-group
-                            label.col-sm-2.control-label(for='dropoff') Dropoff at:
-                            div.col-sm-10
-                                input#dropoff.form-control(type='text', placeholder= 'e.g. Boston Logan Airport')
-                        div.form-group
-                            div.col-sm-10.col-sm-offset-2
-                                button.btn.btn-default(type='submit') Submit
+                
+                div.signup-wall
+                    form.basic-form(method='POST')
+                        div.row
+                            div.col-sm-6
+                                input#firstname.form-control(type='text', name='firstname', placeholder='First Name', required, autofocus)
+                            div.col-sm-6
+                                input#lastname.form-control(type='text', name='lastname', placeholder='Last Name', required)
+                        input#pickup.form-control(type='text', name='pickup', placeholder='Pickup', required)
+                        input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff', required)
+                        input#time.form-control(type='datetime-local', name='time', placeholder='mm/dd/yyyy hh:mm', required)
+                        input#phone.form-control(type='tel', name='phone', placeholder='Phone', required)
+                        div.button-wrapper
+                            button request
+
+                    if message && message.length > 0
+                        p#alert.alert.alert-success(role='alert') #{message}

@@ -1,39 +1,64 @@
 $(document).ready(function(){
 
-// FIX RESPONSIVENESS
-    function adjustWindow(){
-        var winH = $(window).height();
-        var winW = $(window).width();
+    if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+        skrollr.init({
+            forceHeight: false
+        });
+    }
 
-        if(winW >= 768) {
-            var s = skrollr.init();
-        } else {
-            var s = skrollr.init();
-            s.destroy();
-        }
-    };
+    $("a").hover(function(){
+        $("hr.line").css("width","50%");
+        },function(){
+        $("hr.line").css("width","30%");
+    });
 
-    function initAdjustWindow() {
-        return {
-            match : function() {
-                adjustWindow();
-            },
-            unmatch : function() {
-                adjustWindow();
-            }
-        };
-    };
+    $("button").hover(function(){
+        $("hr.line").css("width","50%");
+        },function(){
+        $("hr.line").css("width","30%");
+    });
 
-    enquire.register("screen and (min-width : 768px)", initAdjustWindow(), false);
 });
 
 $(function(){
+    
     $(".typed").typed({
-        strings: ["<h3>the airport.", "<h3> work.", "<h3>a concert.", "<h3>anywhere."],
+        strings: ["<h3>the airport.", "<h3>work.", "<h3>a concert.", "<h3>anywhere."],
         typeSpeed: 40,
         backSpeed: 20,
-        startDelay: 1000,
+        startDelay: 500,
         backDelay: 1500,
         showCursor: false,
     });
+
+    $("#phone").mask("(000) 000-0000");
+    $("#time").mask("00/00/0000 00:00");
+
+    // FORM VALIDATION
+    $("form").submit(function() {
+        var isFormFilled = true;
+        $("input").each(function() {
+            if ($.trim($(this).val()).length == 0) {
+                $(this).addClass("error");
+                isFormFilled = false;
+            } else {
+                $(this).removeClass("error");
+            }
+        });
+        return isFormFilled;
+    });
+
+    $("input").each(function() {
+        $(this).keyup(function() {
+            if ($(this).hasClass("error")) {
+                $(this).removeClass("error");
+            }
+        });
+    });
 });
+
+window.setTimeout(function() {
+    $("#alert").fadeTo(1000, 0, function() {
+        $(this).remove();
+    });
+}, 3000);

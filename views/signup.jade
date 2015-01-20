@@ -1,13 +1,13 @@
 extends layout
 
 block header
-    script(src='/javascripts/style.js')
+    script(src="/javascripts/signup.js")
 
 block stylesheets
     link(rel="stylesheet", href="/stylesheets/signup.css")
 
 block content
-    nav.navbar#navbar
+    //- nav.navbar#navbar
         div.navbar-fixed-top(
                 data-start="@id:clear"
                 data-0p="@id:collapsed"
@@ -23,30 +23,42 @@ block content
                     ul.nav.navbar-nav.navbar-right
                         li: a(href="login") LOGIN
                         li: a(href="signup") SIGN UP
-    
+
     section.signup#signup
-        div.container
-            div.wrapper
+        div.container(
+            data-bottom-top="background-position: 50% 100px"
+            data--60-center="background-position: 50% 0px"
+            data-anchor-target="#signup")
+
+            div.wrapper#formbox(
+                data-bottom-top="opacity:0"
+                data-bottom="opacity:1"
+                data-anchor-target="#formbox")
                 div.title
                     h3 Sign Up
-                div.signup-form
-                    form.form-horizontal
-                        div.form-group
-                            label.col-sm-2.control-label(for='email') Email:    
-                            div.col-sm-10
-                                input#email.form-control(type='email', placeholder='Enter email')
-                        div.form-group
-                            label.col-sm-2.control-label(for='pwd') Password:
-                            div.col-sm-10
-                                input#pwd.form-control(type='password', placeholder='Enter password')
-                        div.form-group
-                            div.col-sm-10.col-sm-offset-2
-                                div.checkbox
-                                    label
-                                        input(type="checkbox")
-                                        p Remember me
-                        div.form-group
-                            div.col-sm-10.col-sm-offset-2
-                                button.btn.btn-default(type='submit') Submit
+                    hr.line
+                div.signup-wall
+                    form.basic-form(method="POST")
+                        div.row
+                            div.col-sm-6
+                                input#firstname.form-control(type="text", name="firstName", placeholder="First Name", autofocus)
+                            div.col-sm-6
+                                input#lastname.form-control(type="text", name="lastName", placeholder="Last Name")
+                        input#username.form-control(type="text", name="username", placeholder="Username")
+                        input#password.form-control(type="password", name="password", placeholder="Password")
+                        input#password2.form-control(type="password", name="password2", placeholder="Retype password")
+                        input#phone.form-control(type="tel", name="phone", placeholder="Phone")
+                        div.button-wrapper
+                            button(type="submit") Submit
 
- 
+                    if message && message.length > 0
+                        p#alert.alert.alert-danger(role="alert") #{message}
+                        //- div.form-group
+                        //-     div.col-sm-10.col-sm-offset-2
+                        //-         div.checkbox
+                        //-             label
+                        //-                 input(type="checkbox")
+                        //-                 p Remember me
+                        //- div.form-group
+                        //-     div.col-sm-10.col-sm-offset-2
+                        //-         button.btn.btn-default(type="submit") Submit
