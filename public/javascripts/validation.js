@@ -1,6 +1,5 @@
 $(function(){
 
-    // FORM VALIDATION
     var phoneformat = /\(\d{3}\) \d{3}-\d{4}/;
     var timeformat = /(0[1-9]|1[0-2])\/(0[1-9]|[1-2]\d|3[0-1])\/\d{2} (0[1-9]|1[0-2]):([0-5]\d)/;
     var time = $('#time');
@@ -33,8 +32,7 @@ $(function(){
 
     $('input').each(function() {
         $(this).keyup(function() {
-            if ($(this).hasClass('error')) {
-                $(this).removeClass('error');
-            };
+            $(this).removeClass('error');
         });
     });
+});
