@@ -29,7 +29,7 @@ module.exports = function(passport){
         res.render('signup', {title: 'hitch | Sign Up', message: req.flash('error')});
     });
 
-    /* Handle signup POST */
+    /* handle signup POST */
     router.post('/signup', passport.authenticate('signup', {
         successRedirect: '/request',
         failureRedirect: '/signup',
@@ -42,14 +42,14 @@ module.exports = function(passport){
         res.render('login', {title: 'hitch | Login', message: req.flash('error')});
     });
 
-    /* Handle login POST */
+    /* handle login POST */
     router.post('/login', passport.authenticate('login', {
         successRedirect: '/request',
         failureRedirect: '/login',
         failureFlash: true
     }));
 
-    /* Handle Logout */
+    /* handle logout */
     // router.get('/signout', function(req, res) {
     //     req.logout(); 
     //     res.redirect('/');
@@ -60,11 +60,11 @@ module.exports = function(passport){
         res.render('request', {title: 'hitch me a ride!', message: req.flash('error')});
     });
 
-    /* Handle request POST */
+    /* handle request POST */
     router.post('/request', function(req, res){
         var newRequest = new Request({
-            firstname: req.body['firstName'],
-            lastname: req.body['lastName'],
+            firstname: req.body['firstname'],
+            lastname: req.body['lastname'],
             pickup: req.body['pickup'],
             dropoff: req.body['dropoff'],
             time: req.body['time'],
@@ -77,14 +77,13 @@ module.exports = function(passport){
 
     /* GET results page. */
     router.get('/results', function(req, res) { // ADD isAuthenticated BACK IN LATER
-        // var map = {};
-        // Request.find({}, function(err, results) {
-        //     results.forEach(function(result) {
-        //         map[result.firstname] = result;
-        //     });
-        // });
-        // console.log(map);
-        res.render('results', {title: 'hitch | Results' })
+        Request.find({}, function(err, results) {
+            results.forEach(function(result) {
+                console.log("firstname: " + result.firstname);
+                // res.send(result.firstname);
+            });
+        });
+        res.render('results', {title: 'hitch | Results' } );
     });
 
     return router;

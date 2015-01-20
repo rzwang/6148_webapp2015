@@ -37,7 +37,7 @@ $(function(){
 
     // FORM VALIDATION
     var phoneformat = /\(\d{3}\) \d{3}-\d{4}/;
-    var timeformat = /[0-1][1-9]\/[0-3][1-9]\/[0-9][0-9] [0-2][0-9]:[0-5][0-9]/;
+    var timeformat = /(0[1-9]|1[0-2])\/(0[1-9]|[1-2]\d|3[0-1])\/\d{2} (0[1-9]|1[0-2]):([0-5]\d)/;
     var time = $("#time");
     var phone = $("#phone");
 
