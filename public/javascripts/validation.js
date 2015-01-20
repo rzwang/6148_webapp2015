@@ -25,6 +25,17 @@ telInput.keydown(function() {
   telInput.removeClass("error");
 });
 
+//EMAIL VALIDATION
+// var email = $("#username");
+// email.blur(function() {
+//     if ($.trim(email.val()){
+//         if (email !== /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/) {
+//             alert('Input valid email.');
+//         }
+//     })
+// });
+
+
 //===============================================================================
 // VALIDATING PASSWORDS
 
