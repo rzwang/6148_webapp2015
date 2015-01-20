@@ -4,20 +4,19 @@ $(document).ready(function(){
         skrollr.init({
             forceHeight: false
         });
+
+        $('a').hover(function(){
+            $('hr.line').css('width','50%');
+            },function(){
+            $('hr.line').css('width','30%');
+        });
+
+        $('button').hover(function(){
+            $('hr.line').css('width','50%');
+            },function(){
+            $('hr.line').css('width','30%');
+        });
     }
-
-    $('a').hover(function(){
-        $('hr.line').css('width','50%');
-        },function(){
-        $('hr.line').css('width','30%');
-    });
-
-    $('button').hover(function(){
-        $('hr.line').css('width','50%');
-        },function(){
-        $('hr.line').css('width','30%');
-    });
-
 });
 
 $(function(){
