@@ -61,8 +61,8 @@ module.exports = function(passport){
     });
 
     /* Handle request POST */
-    router.post('/request', isAuthenticated, function(req, res){
-        var newReq = new Request({
+    router.post('/request', function(req, res){
+        var newRequest = new Request({
             firstname: req.body['firstName'],
             lastname: req.body['lastName'],
             pickup: req.body['pickup'],
@@ -70,23 +70,22 @@ module.exports = function(passport){
             time: req.body['time'],
             phone: req.body['phone']
         });
-        newReq.save(function(err, result) {
+        newRequest.save(function(err, result) {
             res.redirect('/results');
         });
     });
 
-    // /* GET results page. */
-    // router.get('/results', function(req, res) { // ADD isAuthenticated BACK IN LATER
-    //     // res.render('results', {title: 'hitch | Results'});
-    //     var map = {};
-    //     Request.find({}, function(err, results) {
-    //         results.forEach(function(result) {
-    //             map[result.firstname] = result;
-    //         });
-    //     });
-    //     console.log(map);
-    //     // res.render('results', {title: 'hitch | Results' })
-    // });
+    /* GET results page. */
+    router.get('/results', function(req, res) { // ADD isAuthenticated BACK IN LATER
+        // var map = {};
+        // Request.find({}, function(err, results) {
+        //     results.forEach(function(result) {
+        //         map[result.firstname] = result;
+        //     });
+        // });
+        // console.log(map);
+        res.render('results', {title: 'hitch | Results' })
+    });
 
     return router;
 }

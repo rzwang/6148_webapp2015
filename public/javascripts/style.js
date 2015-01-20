@@ -31,10 +31,16 @@ $(function(){
         showCursor: false,
     });
 
+    // MASKS
     $("#phone").mask("(000) 000-0000");
-    $("#time").mask("00/00/0000 00:00");
+    $("#time").mask("00/00/00 00:00");
 
     // FORM VALIDATION
+    var phoneformat = /\(\d{3}\) \d{3}-\d{4}/;
+    var timeformat = /[0-1][1-9]\/[0-3][1-9]\/[0-9][0-9] [0-2][0-9]:[0-5][0-9]/;
+    var time = $("#time");
+    var phone = $("#phone");
+
     $("form").submit(function() {
         var isFormFilled = true;
         $("input").each(function() {
@@ -45,6 +51,14 @@ $(function(){
                 $(this).removeClass("error");
             }
         });
+        if (!phoneformat.test(phone.val())) {
+            phone.addClass("error");
+            isFormFilled = false;
+        };
+        if (!timeformat.test(time.val())) {
+            time.addClass("error");
+            isFormFilled = false;
+        };
         return isFormFilled;
     });
 
