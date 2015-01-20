@@ -1,12 +1,16 @@
 extends layout
 
 block header
+<<<<<<< HEAD
+=======
+    script(src="/javascripts/signup.js")
+>>>>>>> 8125bab397129dbc45b5ca953055cc5aabca72f2
 
 block stylesheets
     link(rel="stylesheet", href="/stylesheets/signup.css")
 
 block content
-    nav.navbar#navbar
+    //- nav.navbar#navbar
         div.navbar-fixed-top(
                 data-start="@id:clear"
                 data-0p="@id:collapsed"
@@ -29,7 +33,6 @@ block content
             data--60-center="background-position: 50% 0px"
             data-anchor-target="#signup")
 
-            //- got rid of #formbox, navbar and background image discrepancy fixed
             div.wrapper#formbox(
                 data-bottom-top="opacity:0"
                 data-bottom="opacity:1"
@@ -38,27 +41,40 @@ block content
                     h3 Sign Up
                     hr.line
                 div.signup-wall
-                    form.basic-form(method='POST')
-                        div.form-group
-                            div.row
-                                div.col-sm-6
-                                    input#firstName.form-control(type="text", name="firstName", placeholder="First Name", required, autofocus)
-                                div.col-sm-6
-                                    input#lastName.form-control(type="text", name="lastName", placeholder="Last Name", required)
-                            input#username.form-control(type='email', name='username', placeholder='Email', required)
-                            input#password.form-control(type='password', name='password', placeholder='Password', required)
-                            input#password2.form-control(type='password', name='password2', placeholder='Retype password', required)
-                            input#phone.form-control(type='tel', name='phone', placeholder='Phone', required)
-                            div.button-wrapper
-                                button Submit
+                    form.basic-form(method="POST")
+                        div.row
+                            div.col-sm-6
+                                input#firstname.form-control(type="text", name="firstName", placeholder="First Name", autofocus)
+                            div.col-sm-6
+                                input#lastname.form-control(type="text", name="lastName", placeholder="Last Name")
+                        input#username.form-control(type="text", name="username", placeholder="Username")
+                        input#password.form-control(type="password", name="password", placeholder="Password")
+                        input#password2.form-control(type="password", name="password2", placeholder="Retype password")
+                        input#phone.form-control(type="tel", name="phone", placeholder="Phone")
+                        div.button-wrapper
+                            button(type="submit") submit
 
-                    //- Server side validation error display
-                    if message && message.length > 0
-                        p#alert.alert.alert-danger(role='alert') #{message}
+                    if message && message.length
+                        p#alert.alert.alert-danger(role="alert") #{message}
+                        //- div.form-group
+                        //-     div.col-sm-10.col-sm-offset-2
+                        //-         div.checkbox
+                        //-             label
+                        //-                 input(type="checkbox")
+                        //-                 p Remember me
 
+<<<<<<< HEAD
                     //- Client side validation error display
                     //- p.error 
 
 
     script(src="build/js/intlTelInput.js")
     script(src='/javascripts/validation.js')
+=======
+    section.footer#footer
+        div.container
+            h5
+                | wistful worldly wanderers 
+                img.icon(src="/images/3w.png")
+                |  2015
+>>>>>>> 8125bab397129dbc45b5ca953055cc5aabca72f2

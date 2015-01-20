@@ -8,7 +8,8 @@ var Request = new Schema({
     pickup: String,
     dropoff: String,
     time: String, // CHANGE THIS TO Date LATER
-    phone: String
+    phone: String,
+    results: Array
 });
 
 module.exports = mongoose.model('Request', Request);

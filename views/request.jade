@@ -1,13 +1,12 @@
 extends layout
 
 block header
-    script(src='/javascripts/style.js')
 
 block stylesheets
     link(rel="stylesheet", href="/stylesheets/request.css")
 
 block content
-    nav.navbar#navbar
+    //- nav.navbar#navbar
         div.navbar-fixed-top(
                 data-start="@id:clear"
                 data-0p="@id:collapsed"
@@ -29,20 +28,31 @@ block content
             div.wrapper
                 div.title
                     h3 Hitch me a ride
-                 div.signup-wall
+                
+                div.signup-wall
                     form.basic-form(method='POST')
-                        div.form-group
-                            div.row
-                                div.col-sm-6
-                                    input.form-control(type='text', name='firstname', placeholder='First Name', required, autofocus)
-                                div.col-sm-6
-                                    input.form-control(type='text', name='lastname', placeholder='Last Name', required)
-                            input.form-control(type='text', name='pickup', placeholder='Pickup', required)
-                            input.form-control(type='text', name='dropoff', placeholder='Dropoff', required)
-                            input.form-control(type='datetime-local', name='time', placeholder='When?', required)
-                            input.form-control(type='tel', name='phone', placeholder='Phone', required)
-                            div.button-wrapper
-                                button request
+                        div.row
+                            div.col-sm-6
+                                input#firstname.form-control(type='text', name='firstname', placeholder='First Name', autofocus)
+                            div.col-sm-6
+                                input#lastname.form-control(type='text', name='lastname', placeholder='Last Name')
+                        input#pickup.form-control(type='text', name='pickup', placeholder='Pickup')
+                        input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff')
+                        input#time.form-control(type='text', name='time', placeholder='mm/dd/yy hh:mm')
+                        input#phone.form-control(type='tel', name='phone', placeholder='Phone')
+                        div.button-wrapper
+                            button(type="submit") request
 
-                    if message && message.length > 0
-                        p#alert.alert.alert-success(role='alert') #{message}
+                    if message && message.length
+                        p#alert.alert.alert-success(role="alert") #{message}
+
+    div.logout
+        a(href="/logout")
+            button logout
+
+    section.footer#footer
+        div.container
+            h5
+                | wistful worldly wanderers 
+                img.icon(src="/images/3w.png")
+                |  2015

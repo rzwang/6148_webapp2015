@@ -21,6 +21,7 @@ section.signup {
         position: relative;
         top: 50px;
         margin-bottom: 30px; }
+<<<<<<< HEAD
       section.signup .container .wrapper .signup-wall {
         max-width: 400px;
         margin: auto;
@@ -39,5 +40,11 @@ section.signup {
           border-bottom: 1px solid #b94a48; }
       section.signup .container .wrapper p.alert {
         width: 100%; }
+=======
+      section.signup .container .wrapper .basic-form .success {
+        border-bottom: 1px solid #41c057; }
+      section.signup .container .wrapper .basic-form .error {
+        border-bottom: 1px solid #a63b37; }
+>>>>>>> 8125bab397129dbc45b5ca953055cc5aabca72f2
 
 /*# sourceMappingURL=signup.css.map */

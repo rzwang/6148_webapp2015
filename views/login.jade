@@ -1,13 +1,12 @@
 extends layout
 
 block header
-    script(src='/javascripts/style.js')
 
 block stylesheets
     link(rel="stylesheet", href="/stylesheets/signup.css")
 
 block content
-    nav.navbar#navbar
+    //- nav.navbar#navbar
         div.navbar-fixed-top(
                 data-start="@id:clear"
                 data-0p="@id:collapsed"
@@ -23,9 +22,6 @@ block content
                     ul.nav.navbar-nav.navbar-right
                         li: a(href="login") LOGIN
                         li: a(href="signup") SIGN UP
-    
-    if message
-        div.alert.alert-danger-message(role="alert") #{message}
 
     section.signup#login
         div.container
@@ -35,11 +31,13 @@ block content
                 div.signup-wall
                     form.basic-form(method='POST')
                         div.form-group
-                            input#username.form-control(type='text', name='username', placeholder='Username', required, autofocus)
-                            input#password.form-control(type='password', name='password', placeholder='Password', required)
+                            input#username.form-control(type='text', name='username', placeholder='Username', autofocus)
+                            input#password.form-control(type='password', name='password', placeholder='Password')
                         div.button-wrapper
-                            button Login
-                    if message && message.length > 0
+                            button(type="submit") login
+                a(href="/signup") don't have an account?
+
+                    if message && message.length
                         p#alert.alert.alert-danger(role='alert') #{message}
                         //- div.form-group
                         //-     div.col-sm-10.col-sm-offset-2
@@ -47,6 +45,10 @@ block content
                         //-             label
                         //-                 input(type="checkbox")
                         //-                 p Remember me
-                        //- div.form-group
-                        //-     div.col-sm-10.col-sm-offset-2
-                        //-         button.btn.btn-default(type='submit') Submit
+
+    section.footer#footer
+        div.container
+            h5
+                | wistful worldly wanderers 
+                img.icon(src="/images/3w.png")
+                |  2015

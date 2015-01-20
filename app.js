@@ -6,10 +6,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var flash = require('connect-flash');
+var config = require('./config');
 
 // mongoose
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/passport')
+var uriUtil = require('mongodb-uri');
+var mongodbUri = 'mongodb://heroku_app33380250:j71copckd4tl1vqhvj20nroolp@ds031551.mongolab.com:31551/heroku_app33380250' || "mongodb://localhost/passport";
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+mongoose.connect(mongooseUri);
 
 var app = express();
 
@@ -29,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 var passport = require('passport');
 var expressSession = require('express-session');
 
-app.use(expressSession({secret: 'maroon5fan123'}));
+app.use(expressSession({secret: 'thisisasecret'}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -71,5 +76,9 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'));
 
 module.exports = app;

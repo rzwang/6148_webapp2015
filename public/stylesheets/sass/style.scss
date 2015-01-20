@@ -129,8 +129,8 @@ nav.navbar {
 
         #collapsed {
             @extend #clear;
-            padding: 0 25px 0 15px;
             background: black;
+            padding: 0 25px 0 15px;
             -webkit-transition: all .5s ease-in-out;
             -moz-transition: all .5s ease-in-out;
             transition: all .5s ease-in-out;
@@ -140,10 +140,31 @@ nav.navbar {
 
 
 // FORM
+<<<<<<< HEAD
 .signup-wall {
     .correct {
         border-bottom: 1px solid green;
     }  
+=======
+form.basic-form {
+
+    .form-control {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        margin: 3px 0;
+        border-bottom: 1px solid white;
+        font-family: $opensans;
+        color: white;
+    }
+
+    .form-control:focus {
+        border-bottom: 1px solid $lightblue;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+>>>>>>> 8125bab397129dbc45b5ca953055cc5aabca72f2
 
     .error {
         border-bottom: 1px solid $red;
@@ -167,6 +188,7 @@ nav.navbar {
             box-shadow: none;
         }
 
+<<<<<<< HEAD
         .button-wrapper {
             width: 300px;
             position: absolute;
@@ -190,6 +212,14 @@ nav.navbar {
                 background: $darkblue;
             }
         }
+=======
+    .error {
+        border-bottom: 1px solid $red;
+    }
+
+    p.alert {
+        width: 100%;
+>>>>>>> 8125bab397129dbc45b5ca953055cc5aabca72f2
     }
 }
 

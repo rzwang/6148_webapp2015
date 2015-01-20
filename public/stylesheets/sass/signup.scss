@@ -28,6 +28,7 @@ section.signup {
                 margin-bottom: 30px;
             }
 
+<<<<<<< HEAD
             .signup-wall {
                 max-width: 400px;
                 margin: auto;
@@ -53,14 +54,18 @@ section.signup {
 
             p.alert {
                 width: 100%;
-            }
+=======
+            .basic-form {
+                
+                .success {
+                    border-bottom: 1px solid $green;
+                }
 
-            // .submitted :invalid {
-            //   + .error {
-            //     display: block;
-            //   }
-            //   border: 1px solid red;
-            // } 
+                .error {
+                    border-bottom: 1px solid $red;
+                }
+>>>>>>> 8125bab397129dbc45b5ca953055cc5aabca72f2
+            }
         }
     }
 }

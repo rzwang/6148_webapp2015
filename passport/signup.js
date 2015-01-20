@@ -11,34 +11,36 @@ module.exports = function(passport){
 
             findOrCreateUser = function(){
                 User.findOne({ 'username' :  username }, function(err, user) {
-                    if (err){
+                    if (err) {
                         console.log('Error in signup: '+err);
                         return done(err);
-                    }
+                    };
                     if (user) {
-                        console.log('User already exists with username: '+username);
-                        return done(null, false, { message: 'User already exists with username: '+username });
+                        return done(null, false, req.flash( 'message', 'User already exists with username: '+username ));
                     } else {
                         var newUser = new User();
 
                         // set the user's local credentials
+<<<<<<< HEAD
                         newUser.firstName = req.param('firstName');
                         newUser.lastName = req.param('lastName');
+=======
+                        newUser.firstname = req.param('firstname');
+                        newUser.lastname = req.param('lastname');
+>>>>>>> 8125bab397129dbc45b5ca953055cc5aabca72f2
                         newUser.username = username;
                         newUser.password = createHash(password);
                         newUser.phone = req.param('phone');
                         newUser.hasReq = false;
 
-
                         newUser.save(function(err) {
-                            if (err){
-                                console.log('Error in Saving user: '+err);  
+                            if (err) {
+                                console.log('Error in saving user: '+err);  
                                 throw err;  
-                            }
-                            console.log('User Registration succesful');    
-                            return done(null, newUser);
+                            };
+                            return done(null, newUser, req.flash( 'message', 'Welcome, '+newUser.firstname ));
                         });
-                    }
+                    };
                 });
             };
             // Delay the execution of findOrCreateUser and execute the method
