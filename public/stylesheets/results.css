@@ -1,7 +1,7 @@
 /*
 Error: Invalid CSS after "...ba(185,74,72,1)": expected "{", was ";"
         on line 5 of public/stylesheets/sass/_constants.scss
-        from line 1 of public/stylesheets/sass/request.scss
+        from line 1 of public/stylesheets/sass/results.scss
 
 1: $lightblue: rgba(79,160,196,1);
 2: $darkblue: rgba(39,87,109,.7);
@@ -16,7 +16,7 @@ Error: Invalid CSS after "...ba(185,74,72,1)": expected "{", was ";"
 
 Backtrace:
 public/stylesheets/sass/_constants.scss:5
-public/stylesheets/sass/request.scss:1
+public/stylesheets/sass/results.scss:1
 /Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1165:in `expected'
 /Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1101:in `expected'
 /Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1096:in `tok!'
@@ -71,4 +71,4 @@ public/stylesheets/sass/request.scss:1
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...ba(185,74,72,1)\": expected \"{\", was \";\"\A         on line 5 of public/stylesheets/sass/_constants.scss\A         from line 1 of public/stylesheets/sass/request.scss\A \A 1: $lightblue: rgba(79,160,196,1);\A 2: $darkblue: rgba(39,87,109,.7);\A 3: $filter: rgba(0,0,0,.7);\A 4: <<<<<<< HEAD\A 5: $red: rgba(185,74,72,1);\A 6: $green: rgba(61,184,93,1);\A 7: \A 8: =======\A 9: $red: #b94a48;\A 10: $green: rgba(33,94,12,1);"; }
+  content: "Error: Invalid CSS after \"...ba(185,74,72,1)\": expected \"{\", was \";\"\A         on line 5 of public/stylesheets/sass/_constants.scss\A         from line 1 of public/stylesheets/sass/results.scss\A \A 1: $lightblue: rgba(79,160,196,1);\A 2: $darkblue: rgba(39,87,109,.7);\A 3: $filter: rgba(0,0,0,.7);\A 4: <<<<<<< HEAD\A 5: $red: rgba(185,74,72,1);\A 6: $green: rgba(61,184,93,1);\A 7: \A 8: =======\A 9: $red: #b94a48;\A 10: $green: rgba(33,94,12,1);"; }

@@ -43,6 +43,11 @@ h5 {
     text-transform: uppercase;
 }
 
+h6 {
+    @extend h1;
+    font-size: 4em;
+}
+
 ::-webkit-input-placeholder {
    font-weight: 300;
    text-transform: uppercase;
@@ -140,8 +145,12 @@ nav.navbar {
 
 
 // FORM
+<<<<<<< HEAD
 form.basic-form {
 
+=======
+.basic-form {
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
     .form-control {
         background: transparent;
         border: none;
@@ -182,6 +191,7 @@ form.basic-form {
             background: $darkblue;
         }
     }
+<<<<<<< HEAD
 
     .error {
         border-bottom: 1px solid $red;
@@ -190,7 +200,10 @@ form.basic-form {
     p.alert {
         width: 100%;
     }
+=======
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
 }
+
 
 
 // SECTIONS
@@ -317,7 +330,16 @@ section.request {
 
             .signup-wall {
                 padding: 25px;
+
+                .correct {
+                    border-bottom: 1px solid green;
+                }  
+
+                .error {
+                    border-bottom: 1px solid $red;
+                }  
             }
+
         }
     }
 }

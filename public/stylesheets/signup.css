@@ -1,29 +1,64 @@
-section.signup {
-  height: 100vh; }
-  section.signup .container {
-    height: 100%;
-    width: 100%;
-    background: url("../images/newyorkstreet.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover; }
-    section.signup .container .wrapper {
-      height: 550px;
-      width: 500px;
-      position: relative;
-      top: 10%;
-      margin: auto;
-      padding: 25px;
-      background-color: rgba(0, 0, 0, 0.7); }
-      section.signup .container .wrapper .title {
-        color: white;
-        text-align: center;
-        position: relative;
-        top: 50px;
-        margin-bottom: 30px; }
-      section.signup .container .wrapper .signup-wall .success {
-        border-bottom: 1px solid #3db85d; }
-      section.signup .container .wrapper .signup-wall .error {
-        border-bottom: 1px solid #b94a48; }
+/*
+Error: Invalid CSS after "...ax-width: 400px": expected "{", was ";"
+        on line 42 of public/stylesheets/sass/signup.scss
 
-/*# sourceMappingURL=signup.css.map */
+37: 
+38:                 .error {
+39:                     border-bottom: 1px solid $red;
+40:                 }
+41: =======
+42:                 max-width: 400px;
+43:                 margin: auto;
+44:                 padding: 25px;
+45:                 position: relative;
+46:                 top: 40px;
+47: 
+
+Backtrace:
+public/stylesheets/sass/signup.scss:42
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1165:in `expected'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1101:in `expected'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1096:in `tok!'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:641:in `block'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:661:in `block_child'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:642:in `block'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:661:in `block_child'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:642:in `block'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:661:in `block_child'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:642:in `block'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:661:in `block_child'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:642:in `block'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:635:in `ruleset'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:660:in `block_child'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:117:in `stylesheet'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:42:in `parse'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/engine.rb:393:in `_to_tree'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/vendor/listen/lib/listen/adapter.rb:254:in `call'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...ax-width: 400px\": expected \"{\", was \";\"\A         on line 42 of public/stylesheets/sass/signup.scss\A \A 37: \A 38:                 .error {\A 39:                     border-bottom: 1px solid $red;\A 40:                 }\A 41: =======\A 42:                 max-width: 400px;\A 43:                 margin: auto;\A 44:                 padding: 25px;\A 45:                 position: relative;\A 46:                 top: 40px;\A 47: "; }

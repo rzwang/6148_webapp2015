@@ -26,7 +26,11 @@ module.exports = function(passport){
 
     /* GET signup page */
     router.get('/signup', function(req, res) {
+<<<<<<< HEAD
         res.render('signup', {title: 'hitch | Sign Up', message: req.flash('error')});
+=======
+        res.render('signup', {title: 'hitch | Sign Up', message: req.flash('message')});
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
     });
 
     /* Handle signup POST */
@@ -39,7 +43,11 @@ module.exports = function(passport){
 
     /* GET login page */
     router.get('/login', function(req, res) {
+<<<<<<< HEAD
         res.render('login', {title: 'hitch | Login', message: req.flash('error')});
+=======
+        res.render('login', {title: 'hitch | Login', message: req.flash('message')});
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
     });
 
     /* Handle login POST */
@@ -50,21 +58,31 @@ module.exports = function(passport){
     }));
 
     /* Handle Logout */
-    // router.get('/signout', function(req, res) {
-    //     req.logout(); 
-    //     res.redirect('/');
-    // });
+    router.get('/logout', function(req, res) {
+        req.logout(); 
+        res.redirect('/');
+    });
 
     /* GET request page. */
+<<<<<<< HEAD
     router.get('/request', isAuthenticated, function(req, res){
         res.render('request', {title: 'hitch me a ride!', message: req.flash('error')});
+=======
+    //isAuthenticated
+    router.get('/request', function(req, res){
+        res.render('request', {title: 'hitch me a ride!', message: req.flash('message')});
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
     });
 
     /* Handle request POST */
-    router.post('/request', isAuthenticated, function(req, res){
+    router.post('/request', function(req, res){
         var newReq = new Request({
             firstname: req.body['firstName'],
+<<<<<<< HEAD
             lastname: req.body['lastName'],
+=======
+            lastname: req.body['lastName'], 
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
             pickup: req.body['pickup'],
             dropoff: req.body['dropoff'],
             time: req.body['time'],
@@ -75,6 +93,7 @@ module.exports = function(passport){
         });
     });
 
+<<<<<<< HEAD
     // /* GET results page. */
     // router.get('/results', function(req, res) { // ADD isAuthenticated BACK IN LATER
     //     // res.render('results', {title: 'hitch | Results'});
@@ -88,9 +107,23 @@ module.exports = function(passport){
     //     // res.render('results', {title: 'hitch | Results' })
     // });
 
+=======
+    /* GET results page */
+    router.get('/results', function(req, res) {
+        Request.find({}, function(err, results) {
+            results.forEach(function(result) {
+                console.log(result);
+                // var iDiv = window.content.document.createElement('div');
+                // iDiv.id = 'match';
+                // iDiv.className = 'match';
+                // window.content.document.body.appendChild(iDiv);
+            })
+        });
+        res.render('results', {title: 'hitch | Results'});
+    });
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
     return router;
 }
 
 
-// for user specificity: user: req.user
 // geo: geoNear and geoSearch

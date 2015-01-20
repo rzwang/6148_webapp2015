@@ -1,7 +1,10 @@
 extends layout
 
 block header
+<<<<<<< HEAD
     script(src="/javascripts/signup.js")
+=======
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
 
 block stylesheets
     link(rel="stylesheet", href="/stylesheets/signup.css")
@@ -38,6 +41,7 @@ block content
                     h3 Sign Up
                     hr.line
                 div.signup-wall
+<<<<<<< HEAD
                     form.basic-form(method="POST")
                         div.row
                             div.col-sm-6
@@ -50,8 +54,24 @@ block content
                         input#phone.form-control(type="tel", name="phone", placeholder="Phone")
                         div.button-wrapper
                             button(type="submit") Submit
+=======
+                    form.basic-form(method='POST')
+                        div.form-group
+                            div.row
+                                div.col-sm-6
+                                    input#firstName.form-control(type="text", name="firstName", placeholder="First Name", required, autofocus)
+                                div.col-sm-6
+                                    input#lastName.form-control(type="text", name="lastName", placeholder="Last Name", required)
+                            input#username.form-control(type='text', name='username', placeholder='Username', required)
+                            input#password.form-control(type='password', name='password', placeholder='Password', required)
+                            input#password2.form-control(type='password', name='password2', placeholder='Retype password', required)
+                            input#phone.form-control(type='tel', name='phone', placeholder='Phone', required)
+                            div.button-wrapper
+                                button Submit
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
 
                     if message && message.length > 0
+<<<<<<< HEAD
                         p#alert.alert.alert-danger(role="alert") #{message}
                         //- div.form-group
                         //-     div.col-sm-10.col-sm-offset-2
@@ -62,3 +82,12 @@ block content
                         //- div.form-group
                         //-     div.col-sm-10.col-sm-offset-2
                         //-         button.btn.btn-default(type="submit") Submit
+=======
+                        p#alert.alert.alert-danger(role='alert') #{message}
+
+    script(src="build/js/intlTelInput.js")
+    script(src='/javascripts/phoneValidation.js')
+    script(src='/javascripts/dateValidation.js')
+    script(src='javascripts/passwordValidation.js')
+    script(src='/javascripts/submitValidation.js')
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e

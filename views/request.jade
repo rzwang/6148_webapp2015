@@ -3,6 +3,7 @@ extends layout
 block header
 
 block stylesheets
+    link(rel="stylesheet", href="/stylesheets/style.css")
     link(rel="stylesheet", href="/stylesheets/request.css")
 
 block content
@@ -27,6 +28,7 @@ block content
         div.container
             div.wrapper
                 div.title
+<<<<<<< HEAD
                     h3 Hitch me a ride
                 
                 div.signup-wall
@@ -42,6 +44,21 @@ block content
                         input#phone.form-control(type='tel', name='phone', placeholder='Phone', required)
                         div.button-wrapper
                             button request
+=======
+                    h6 hitch me a ride
+                    hr.line
+                 div.signup-wall
+                    form.basic-form(method='POST')
+                        div.form-group
+                            input#pickup.form-control(type='text', name='pickup', placeholder='Pickup', required)
+                            input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff', required)
+                            input#time.form-control(type='datetime-local', name='time', placeholder='When?', required)
+                            div.button-wrapper
+                                button request
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
 
                     if message && message.length > 0
                         p#alert.alert.alert-success(role='alert') #{message}
+
+    script(src='/javascripts/dateValidation.js')
+    script(src='/javascripts/submitValidation.js')

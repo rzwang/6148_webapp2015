@@ -1,6 +1,10 @@
 /**
  * jquery.mask.js
+<<<<<<< HEAD
  * @version: v1.7.7
+=======
+ * @version: v1.11.2
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
  * @author: Igor Escobar
  *
  * Created by Igor Escobar on 2012-03-10. Please report any bug at http://blog.igorescobar.com
@@ -46,12 +50,23 @@
 }(function ($) {
     "use strict";
     var Mask = function (el, mask, options) {
+<<<<<<< HEAD
         var jMask = this, old_value, regexMask;
         el = $(el);
 
         mask = typeof mask === "function" ? mask(el.val(), undefined, el,  options) : mask;
 
         var p = {
+=======
+        el = $(el);
+
+        var jMask = this, old_value = el.val(), regexMask;
+    
+        mask = typeof mask === "function" ? mask(el.val(), undefined, el,  options) : mask;
+
+        var p = {
+            invalid: [],
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
             getCaret: function () {
                 try {
                     var sel,
@@ -61,7 +76,11 @@
                         cSelStart = ctrl.selectionStart;
 
                     // IE Support
+<<<<<<< HEAD
                     if (dSel && !~navigator.appVersion.indexOf("MSIE 10")) {
+=======
+                    if (dSel && navigator.appVersion.indexOf("MSIE 10") === -1) {
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
                         sel = dSel.createRange();
                         sel.moveStart('character', el.is("input") ? -el.val().length : -el.text().length);
                         pos = sel.text.length;
@@ -92,16 +111,21 @@
                 } catch (e) {}
             },
             events: function() {
+<<<<<<< HEAD
                 el
                 .on('keydown.mask', function() {
                     old_value = p.val();
                 })
+=======
+                el                
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
                 .on('keyup.mask', p.behaviour)
                 .on("paste.mask drop.mask", function() {
                     setTimeout(function() {
                         el.keydown().keyup();
                     }, 100);
                 })
+<<<<<<< HEAD
                 .on("change.mask", function() {
                     el.data("changed", true);
                 })
@@ -110,6 +134,27 @@
                         el.trigger("change");
                     }
                     el.data("changed", false);
+=======
+                .on('change.mask', function(){
+                    el.data('changed', true);
+                })
+                .on("blur.mask", function(){
+                    if (old_value !== el.val() && !el.data('changed')) {
+                        el.trigger("change");
+                    }
+                    el.data('changed', false);
+                })
+                // it's very important that this callback remains in this position
+                // otherwhise old_value it's going to work buggy
+                .on('keydown.mask, blur.mask', function() {
+                    old_value = el.val();
+                })
+                // select all text on focus
+                .on('focus.mask', function (e) {
+                    if (options.selectOnFocus === true) {
+                        $(e.target).select();
+                    }
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
                 })
                 // clear the value if it not complete the mask
                 .on("focusout.mask", function() {
@@ -152,6 +197,7 @@
                 return new RegExp(r);
             },
             destroyEvents: function() {
+<<<<<<< HEAD
                 el.off(['keydown', 'keyup', 'paste', 'drop', 'change', 'blur', 'focusout', 'DOMNodeInserted', ''].join('.mask '))
                 .removeData("changeCalled");
             },
@@ -160,6 +206,25 @@
                 return arguments.length > 0 
                     ? (isInput ? el.val(v) : el.text(v)) 
                     : (isInput ? el.val() : el.text());
+=======
+                el.off(['keydown', 'keyup', 'paste', 'drop', 'blur', 'focusout', ''].join('.mask '));
+            },
+            val: function(v) {
+                var isInput = el.is('input'),
+                    method = isInput ? 'val' : 'text',
+                    r;
+
+                if (arguments.length > 0) {
+                    if (el[method]() !== v) {
+                        el[method](v);
+                    }
+                    r = el;
+                } else {
+                    r = el[method]();
+                }
+
+                return r;
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
             },
             getMCharsBeforeCount: function(index, onCleanVal) {
                 for (var count = 0, i = 0, maskL = mask.length; i < maskL && i < index; i++) {
@@ -178,6 +243,10 @@
             },
             behaviour: function(e) {
                 e = e || window.event;
+<<<<<<< HEAD
+=======
+                p.invalid = [];
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
                 var keyCode = e.keyCode || e.which;
                 if ($.inArray(keyCode, jMask.byPassKeys) === -1) {
 
@@ -189,9 +258,13 @@
                         newValL = newVal.length,
                         maskDif = p.getMCharsBeforeCount(newValL - 1) - p.getMCharsBeforeCount(currValL - 1);
 
+<<<<<<< HEAD
                     if (newVal !== currVal) {
                         p.val(newVal);
                     }
+=======
+                    p.val(newVal);
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
 
                     // change caret but avoid CTRL+A
                     if (changeCaret && !(keyCode === 65 && e.ctrlKey)) {
@@ -254,6 +327,15 @@
                         } else if (translation.optional) {
                             m += offset;
                             v -= offset;
+<<<<<<< HEAD
+=======
+                        } else if (translation.fallback) {
+                            buf[addMethod](translation.fallback);
+                            m += offset;
+                            v -= offset;
+                        } else {
+                          p.invalid.push({p: v, v: valDigit, e: translation.pattern});
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
                         }
                         v += offset;
                     } else {
@@ -278,6 +360,7 @@
             },
             callbacks: function (e) {
                 var val = p.val(),
+<<<<<<< HEAD
                     changed = val !== old_value;
                 if (changed === true) {
                     if (typeof options.onChange === "function") {
@@ -292,6 +375,20 @@
                 if (typeof options.onComplete === "function" && val.length === mask.length) {
                     options.onComplete(val, e, el, options);
                 }
+=======
+                    changed = val !== old_value,
+                    defaultArgs = [val, e, el, options],
+                    callback = function(name, criteria, args) {
+                        if (typeof options[name] === "function" && criteria) {
+                            options[name].apply(this, args);
+                        }
+                    };
+
+                callback('onChange', changed === true, defaultArgs);
+                callback('onKeyPress', changed === true, defaultArgs);
+                callback('onComplete', val.length === mask.length, defaultArgs);
+                callback('onInvalid', p.invalid.length > 0, [val, e, el, p.invalid, options]);
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
             }
         };
 
@@ -300,11 +397,17 @@
         jMask.mask = mask;
         jMask.options = options;
         jMask.remove = function() {
+<<<<<<< HEAD
             var caret;
             p.destroyEvents();
             p.val(jMask.getCleanVal()).removeAttr('maxlength');
             
             caret = p.getCaret();
+=======
+            var caret = p.getCaret();
+            p.destroyEvents();
+            p.val(jMask.getCleanVal());
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
             p.setCaret(caret - p.getMCharsBeforeCount(caret));
             return el;
         };
@@ -314,6 +417,7 @@
            return p.getMasked(true);
         };
 
+<<<<<<< HEAD
        jMask.init = function() {
             options = options || {};
 
@@ -325,11 +429,20 @@
                 'A': {pattern: /[a-zA-Z0-9]/},
                 'S': {pattern: /[a-zA-Z]/}
             };
+=======
+       jMask.init = function(only_mask) {
+            only_mask = only_mask || false;
+            options = options || {};
+
+            jMask.byPassKeys = $.jMaskGlobals.byPassKeys;
+            jMask.translation = $.jMaskGlobals.translation;
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
 
             jMask.translation = $.extend({}, jMask.translation, options.translation);
             jMask = $.extend(true, {}, jMask, options);
 
             regexMask = p.getRegexMask();
+<<<<<<< HEAD
 
             if (options.maxlength !== false) {
                 el.attr('maxlength', mask.length);
@@ -358,11 +471,47 @@
             var input = $(this),
                 options = {},
                 prefix = "data-mask-";
+=======
+            
+            if (only_mask === false) {
+                
+                if (options.placeholder) {
+                    el.attr('placeholder' , options.placeholder);
+                }
+                
+                // autocomplete needs to be off. we can't intercept events
+                // the browser doesn't  fire any kind of event when something is 
+                // selected in a autocomplete list so we can't sanitize it.
+                el.attr('autocomplete', 'off');
+                p.destroyEvents();
+                p.events();
+
+                var caret = p.getCaret();
+                p.val(p.getMasked());
+                p.setCaret(caret + p.getMCharsBeforeCount(caret, true));
+
+            } else {
+                p.events();
+                p.val(p.getMasked());
+            }
+        };
+
+        jMask.init(!el.is("input"));
+    };
+
+    $.maskWatchers = {};
+    var HTMLAttributes = function () {
+            var input = $(this),
+                options = {},
+                prefix = "data-mask-",
+                mask = input.attr('data-mask');
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
 
             if (input.attr(prefix + 'reverse')) {
                 options.reverse = true;
             }
 
+<<<<<<< HEAD
             if (input.attr(prefix + 'maxlength') === 'false') {
                 options.maxlength = false;
             }
@@ -402,16 +551,108 @@
                 $(this).data('mask').remove().removeData('mask');
             });
         } catch(e) {};
+=======
+            if (input.attr(prefix + 'clearifnotmatch')) {
+                options.clearIfNotMatch = true;
+            }
+            
+            if (input.attr(prefix + 'selectonfocus') === 'true') {
+               options.selectOnFocus = true;
+            }
+
+            if (notSameMaskObject(input, mask, options)) {
+                return input.data('mask', new Mask(this, mask, options));
+            }
+        },
+        notSameMaskObject = function(field, mask, options) {
+            options = options || {};
+            var maskObject = $(field).data('mask'), 
+                stringify = JSON.stringify,
+                value = $(field).val() || $(field).text();
+            try {
+                if (typeof mask === "function") {
+                    mask = mask(value);
+                }
+                return typeof maskObject !== "object" || stringify(maskObject.options) !== stringify(options) || maskObject.mask !== mask;
+            } catch (e) {}
+        };
+
+
+    $.fn.mask = function(mask, options) {
+        options = options || {};
+        var selector = this.selector,
+            globals = $.jMaskGlobals,
+            interval = $.jMaskGlobals.watchInterval,
+            maskFunction = function() {
+                if (notSameMaskObject(this, mask, options)) {
+                    return $(this).data('mask', new Mask(this, mask, options));
+                }
+            };
+
+        $(this).each(maskFunction);
+
+        if (selector && selector !== "" && globals.watchInputs) {
+            clearInterval($.maskWatchers[selector]);
+            $.maskWatchers[selector] = setInterval(function(){
+                $(document).find(selector).each(maskFunction);
+            }, interval);
+        }
+        return this;
+    };
+
+    $.fn.unmask = function() {
+        clearInterval($.maskWatchers[this.selector]);
+        delete $.maskWatchers[this.selector];
+        return this.each(function() {
+            var dataMask = $(this).data('mask');
+            if (dataMask) {
+                dataMask.remove().removeData('mask');
+            }
+        });
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
     };
 
     $.fn.cleanVal = function() {
         return this.data('mask').getCleanVal();
     };
 
+<<<<<<< HEAD
     // looking for inputs with data-mask attribute
     $('*[data-mask]').each(HTMLAttributes);
 
     // dynamically added elements with data-mask html notation.
     $(document).on(live, '*[data-mask]', HTMLAttributes);
 
+=======
+    $.applyDataMask = function() {
+      $(document).find($.jMaskGlobals.maskElements).filter(globals.dataMaskAttr).each(HTMLAttributes);
+    }
+
+    var globals = {
+        maskElements: 'input,td,span,div',
+        dataMaskAttr: '*[data-mask]',
+        dataMask: true,
+        watchInterval: 300,
+        watchInputs: true,
+        watchDataMask: false,
+        byPassKeys: [9, 16, 17, 18, 36, 37, 38, 39, 40, 91],
+        translation: {
+            '0': {pattern: /\d/},
+            '9': {pattern: /\d/, optional: true},
+            '#': {pattern: /\d/, recursive: true},
+            'A': {pattern: /[a-zA-Z0-9]/},
+            'S': {pattern: /[a-zA-Z]/}
+        }
+    };
+
+    $.jMaskGlobals = $.jMaskGlobals || {};
+    globals = $.jMaskGlobals = $.extend(true, {}, globals, $.jMaskGlobals);
+    
+    // looking for inputs with data-mask attribute
+    if (globals.dataMask) { $.applyDataMask(); }
+
+    setInterval(function(){
+        if ($.jMaskGlobals.watchDataMask) { $.applyDataMask(); }
+    }, globals.watchInterval);
+>>>>>>> 5f1d12e9dcf7b0dc20c40f605960614ee0a5a25e
 }));
