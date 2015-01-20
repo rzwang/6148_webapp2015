@@ -21,12 +21,28 @@ module.exports = function(passport){
 
     /* GET home page */
     router.get('/', function(req, res) {
-      res.render('index', { title: 'hitch' });
+        if (!req.user) {
+            res.render('index', { title: 'hitch' });
+        }
+        else if (req.user.hasReq) {
+            res.redirect('/results');
+        }
+        else {
+            res.redirect('/request');
+        }
     });
 
     /* GET signup page */
     router.get('/signup', function(req, res) {
-        res.render('signup', {title: 'hitch | Sign Up', message: req.flash('message')});
+        if (!req.user) {
+            res.render('signup', {title: 'hitch | Sign Up', message: req.flash('message')});
+        }
+        else if (req.user.hasReq) {
+            res.redirect('/results');
+        }
+        else {
+            res.redirect('/request');
+        }      
     });
 
     /* Handle signup POST */
@@ -39,11 +55,18 @@ module.exports = function(passport){
 
     /* GET login page */
     router.get('/login', function(req, res) {
-        res.render('login', {title: 'hitch | Login', message: req.flash('message')});
+        if (!req.user) {
+            res.render('login', {title: 'hitch | Login', message: req.flash('message')});
+        }
+        else if (req.user.hasReq) {
+            res.redirect('/results');
+        }
+        else {
+            res.redirect('/request');
+        }  
     });
 
     /* Handle login POST */
-    //req.login()?
     router.post('/login', passport.authenticate('login', {
         successRedirect: '/request',
         failureRedirect: '/login',
@@ -57,9 +80,13 @@ module.exports = function(passport){
     });
 
     /* GET request page. */
-    //isAuthenticated
-    router.get('/request', function(req, res){
-        res.render('request', {title: 'hitch me a ride!', message: req.flash('message')});
+    router.get('/request', isAuthenticated, function(req, res){
+        if (req.user.hasReq) {
+            res.redirect('/results');
+        }
+        else {
+            res.render('request', {title: 'hitch me a ride!', message: req.flash('message'), logout: true});
+        }
     });
 
     /* Handle request POST */
@@ -79,35 +106,36 @@ module.exports = function(passport){
 
     /* GET results page */
     router.get('/results', function(req, res) {
-        Request.find({}, function(err, results) {
-            results.forEach(function(result) {
-                console.log(result);
-                // var iDiv = window.content.document.createElement('div');
-                // iDiv.id = 'match';
-                // iDiv.className = 'match';
-                // window.content.document.body.appendChild(iDiv);
-            })
-        });
-        res.render('results', {title: 'hitch | Results'});
+        if (!req.user) { 
+            Request.find({}, function(err, results) {
+                results.forEach(function(result) {
+                    console.log(result);
+                });
+            });
+            res.render('results', {title: 'hitch | Results', message: req.flash('message')})
+        }
+        else if (!req.user.hasReq) {
+            res.redirect('/request')
+        }
+        else {
+            Request.find({}, function(err, results) {
+                results.forEach(function(result) {
+                    console.log(result);
+                });
+            });
+            res.render('results', {title: 'hitch | Results', message: req.flash('message'), logout: true});
+        }
     });
+
     return router;
 }
 
 // // ADD THESE BACK IN WHEN THE VIEWS FILES ARE CREATED
 
+// var iDiv = window.content.document.createElement('div');
+// iDiv.id = 'match';
+// iDiv.className = 'match';
+// window.content.document.body.appendChild(iDiv);
 
-
-// THIS IS PART OF THE TEST
-// router.post('/signup', function(req, res) {
-//     // create a new photos object
-//     var newPhoto = new models.Photo({
-//         url: req.body['submitted-url'],
-//         caption: req.body['caption']
-//     });
-
-//     newPhoto.save(function(err, result) {
-//         res.redirect('/photos/' + result._id)
-//     })
-// });
 
 // geo: geoNear and geoSearch
