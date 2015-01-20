@@ -11,12 +11,11 @@ module.exports = function(passport){
 
             findOrCreateUser = function(){
                 User.findOne({ 'username' :  username }, function(err, user) {
-                    if (err){
+                    if (err) {
                         console.log('Error in signup: '+err);
                         return done(err);
-                    }
+                    };
                     if (user) {
-                        console.log('User already exists with username: '+username);
                         return done(null, false, req.flash( 'message', 'User already exists with username: '+username ));
                     } else {
                         var newUser = new User();
@@ -30,14 +29,13 @@ module.exports = function(passport){
                         newUser.hasReq = false;
 
                         newUser.save(function(err) {
-                            if (err){
+                            if (err) {
                                 console.log('Error in saving user: '+err);  
                                 throw err;  
-                            }
-                            console.log('User registration succesful');    
-                            return done(null, newUser, req.flash( 'message', 'User registration successful' ));
+                            };
+                            return done(null, newUser, req.flash( 'message', 'Welcome, '+newUser.firstName ));
                         });
-                    }
+                    };
                 });
             };
             // Delay the execution of findOrCreateUser and execute the method

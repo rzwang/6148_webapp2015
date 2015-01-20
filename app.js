@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var flash = require('connect-flash');
 
+
 // mongoose
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/passport')
