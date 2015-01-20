@@ -18,11 +18,10 @@ $(document).ready(function(){
         $("hr.line").css("width","30%");
     });
 
-    $("#phone").mask("(000) 000-0000");
-    $("#time").mask("00/00/0000 00:00");
 });
 
 $(function(){
+    
     $(".typed").typed({
         strings: ["<h3>the airport.", "<h3>work.", "<h3>a concert.", "<h3>anywhere."],
         typeSpeed: 40,
@@ -31,6 +30,26 @@ $(function(){
         backDelay: 1500,
         showCursor: false,
     });
+    
+    // FORM VALIDATION
+    var password = $("#password");
+    var password2 = $("#password2");
+
+    $("#phone").mask("(000) 000-0000");
+    $("#time").mask("00/00/0000 00:00");
+
+    password2.keyup(function() {
+        if (password2.val() !== password.val()) {
+            password2.removeClass("success").addClass("error");
+        } else {
+            password2.removeClass("error").addClass("success");
+        }
+    });
+
+    password2.blur(function() {
+        password2.removeClass("success");
+    });
+
 });
 
 window.setTimeout(function() {

@@ -28,6 +28,17 @@ section.signup {
                 top: 50px;
                 margin-bottom: 30px;
             }
+
+            .signup-wall {
+
+                .error {
+                    border-bottom: 1px solid $red;
+                }
+
+                .success {
+                    border-bottom: 1px solid $green;
+                }
+            }
         }
     }
 }

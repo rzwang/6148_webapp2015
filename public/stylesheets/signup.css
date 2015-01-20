@@ -21,5 +21,9 @@ section.signup {
         position: relative;
         top: 50px;
         margin-bottom: 30px; }
+      section.signup .container .wrapper .signup-wall .error {
+        border-bottom: 1px solid #b94a48; }
+      section.signup .container .wrapper .signup-wall .success {
+        border-bottom: 1px solid #3db85d; }
 
 /*# sourceMappingURL=signup.css.map */
