@@ -31,8 +31,8 @@ $(function(){
         showCursor: false,
     });
 
-    $("#phone").mask("(000) 000-0000");
-    $("#time").mask("00/00/0000 00:00");
+    // $("#phone").mask("(000) 000-0000");
+    // $("#time").mask("00/00/0000 00:00");
 
     // FORM VALIDATION
     $("form").submit(function() {
@@ -61,8 +61,4 @@ window.setTimeout(function() {
     $("#alert").fadeTo(1000, 0, function() {
         $(this).remove();
     });
-<<<<<<< HEAD
 }, 3000);
-=======
-}, 3000);
->>>>>>> d3eb7ed9c1b1dafd9ff2574476fc30a870108d5e
