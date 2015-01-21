@@ -1,6 +1,5 @@
 @import '_constants';
 
-
 section.signup {
     height: 100vh;
 
@@ -29,6 +28,33 @@ section.signup {
                 margin-bottom: 30px;
             }
 
+<<<<<<< HEAD
+            .signup-wall {
+                max-width: 400px;
+                margin: auto;
+                padding: 25px;
+                position: relative;
+                top: 40px;
+
+                .button-wrapper {
+                    width: 300px;
+                    position: relative;
+                    bottom: -20px;
+                    margin: auto;
+                    padding: 8px;
+                }
+                .correct {
+                    border-bottom: 1px solid green;
+                }  
+
+                .error {
+                    border-bottom: 1px solid $red;
+                }                 
+            }
+
+            p.alert {
+                width: 100%;
+=======
             .basic-form {
                 
                 .success {
@@ -38,6 +64,7 @@ section.signup {
                 .error {
                     border-bottom: 1px solid $red;
                 }
+>>>>>>> 8125bab397129dbc45b5ca953055cc5aabca72f2
             }
         }
     }

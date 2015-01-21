@@ -86,7 +86,15 @@ nav.navbar {
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out; } }
+<<<<<<< HEAD
+.signup-wall .correct {
+  border-bottom: 1px solid green; }
+.signup-wall .error {
+  border-bottom: 1px solid #b94a48; }
+.signup-wall .basic-form .form-control {
+=======
 form.basic-form .form-control {
+>>>>>>> 8125bab397129dbc45b5ca953055cc5aabca72f2
   background: transparent;
   border: none;
   border-radius: 0;
@@ -94,17 +102,29 @@ form.basic-form .form-control {
   border-bottom: 1px solid white;
   font-family: "Open Sans", sans-serif;
   color: white; }
+<<<<<<< HEAD
+.signup-wall .basic-form .form-control:focus {
+=======
 form.basic-form .form-control:focus {
+>>>>>>> 8125bab397129dbc45b5ca953055cc5aabca72f2
   border-bottom: 1px solid #4fa0c4;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none; }
+<<<<<<< HEAD
+.signup-wall .basic-form .button-wrapper {
+=======
 form.basic-form .button-wrapper {
+>>>>>>> 8125bab397129dbc45b5ca953055cc5aabca72f2
   width: 300px;
   position: absolute;
   bottom: 65px;
   margin: 0 50px; }
+<<<<<<< HEAD
+  .signup-wall .basic-form .button-wrapper button {
+=======
   form.basic-form .button-wrapper button {
+>>>>>>> 8125bab397129dbc45b5ca953055cc5aabca72f2
     font-size: 30px;
     font-weight: 300;
     width: 100%;
@@ -114,6 +134,11 @@ form.basic-form .button-wrapper {
     background: transparent;
     border: solid white 2px;
     transition: all 500ms ease; }
+<<<<<<< HEAD
+  .signup-wall .basic-form .button-wrapper button:hover {
+    color: white;
+    background: rgba(39, 87, 109, 0.7); }
+=======
   form.basic-form .button-wrapper button:hover {
     color: white;
     background: rgba(39, 87, 109, 0.7); }
@@ -121,6 +146,7 @@ form.basic-form .error {
   border-bottom: 1px solid #a63b37; }
 form.basic-form p.alert {
   width: 100%; }
+>>>>>>> 8125bab397129dbc45b5ca953055cc5aabca72f2
 
 section.main {
   height: 100vh; }
