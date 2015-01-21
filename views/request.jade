@@ -1,6 +1,7 @@
 extends layout
 
 block header
+    script(src="/javascripts/request.js")
 
 block stylesheets
     link(rel="stylesheet", href="/stylesheets/request.css")
@@ -28,18 +29,12 @@ block content
             div.wrapper
                 div.title
                     h3 Hitch me a ride
-                
+                hr.line
                 div.signup-wall
                     form.basic-form(method='POST')
-                        div.row
-                            div.col-sm-6
-                                input#firstname.form-control(type='text', name='firstname', placeholder='First Name', autofocus)
-                            div.col-sm-6
-                                input#lastname.form-control(type='text', name='lastname', placeholder='Last Name')
-                        input#pickup.form-control(type='text', name='pickup', placeholder='Pickup')
-                        input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff')
-                        input#time.form-control(type='text', name='time', placeholder='mm/dd/yy hh:mm')
-                        input#phone.form-control(type='tel', name='phone', placeholder='Phone')
+                        input#pickup.form-control(type="text", name="pickup", placeholder="Pickup", autofocus)
+                        input#dropoff.form-control(type="text", name="dropoff", placeholder="Dropoff")
+                        input#time.form-control(type="text", name="time", placeholder="mm/dd/yy hh:mm")
                         div.button-wrapper
                             button(type="submit") request
 

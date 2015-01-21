@@ -26,7 +26,7 @@ module.exports = function(passport){
             res.redirect('/results');
         } else {
             res.redirect('/request');
-        }
+        };
     });
 
     /* GET signup page */
@@ -37,7 +37,7 @@ module.exports = function(passport){
             res.redirect('/results');
         } else {
             res.redirect('/request');
-        }
+        };
     });
 
     /* handle signup POST */
@@ -56,7 +56,7 @@ module.exports = function(passport){
             res.redirect('/results');
         } else {
             res.redirect('/request');
-        }
+        };
     });
 
     /* handle login POST */
@@ -79,18 +79,18 @@ module.exports = function(passport){
             res.redirect('/results')
         } else {
             res.render('request', { title: 'hitch me a ride!', message: req.flash('message') });
-        }
+        };
     });
 
     /* handle request POST */
     router.post('/request', function(req, res){
         var newRequest = new Request({
-            firstname: req.body['firstname'],
-            lastname: req.body['lastname'],
+            firstname: req.user.firstname,
+            lastname: req.user.lastname,
             pickup: req.body['pickup'],
             dropoff: req.body['dropoff'],
             time: req.body['time'],
-            phone: req.body['phone'],
+            phone: req.user.phone,
             results: []
         });
         if (req.user) {
@@ -104,16 +104,8 @@ module.exports = function(passport){
     });
 
     /* GET results page. */
-    router.get('/results', function(req, res) {
-        if (!req.user) { // SHOULD NOT BE ABLE TO SEE IF I DON'T HAVE A REQUEST
-            var allresults = [];
-            Request.find({firstname: 'test'}, function(err, results) { // REDIFINE SEARCH PARAMETERS
-                results.forEach(function(result) {
-                    allresults.push(result);
-                });
-                res.render('results', { title: 'hitch | Results', results: allresults, message: req.flash('message') });
-            });
-        } else if (!req.user.hasReq) {
+    router.get('/results', isAuthenticated, function(req, res) {
+        if (!req.user.hasReq) {
             res.redirect('/request');
         } else {
             var allresults = [];
@@ -121,9 +113,9 @@ module.exports = function(passport){
                 results.forEach(function(result) {
                     allresults.push(result);
                 });
-                res.render('results', { title: 'hitch | Results', results: allresults, message: req.flash('message'), logout: true });
+                res.render('results', { title: 'hitch | Results', results: allresults, message: req.flash('message') });
             });
-        }
+        };
     });
 
     return router;

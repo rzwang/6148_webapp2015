@@ -1,5 +1,36 @@
-section.request .container .wrapper .title {
-  color: black;
-  text-align: center; }
+section.results {
+  height: 100vh; }
+  section.results .container {
+    height: 100%;
+    width: 100%;
+    background: url("../images/bridge.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover; }
+    section.results .container .wrapper {
+      height: 550px;
+      width: 500px;
+      position: relative;
+      top: 10%;
+      margin: auto;
+      padding: 25px;
+      background-color: rgba(0, 0, 0, 0.7); }
+      section.results .container .wrapper .title {
+        color: white;
+        text-align: center;
+        position: relative;
+        top: 50px;
+        margin-bottom: 30px; }
+      section.results .container .wrapper .match {
+        height: 50px;
+        width: 50px;
+        position: relative;
+        top: 15%;
+        margin: auto;
+        padding: 25px;
+        background-color: rgba(39, 87, 109, 0.7); }
+        section.results .container .wrapper .match p {
+          text-align: center;
+          text-color: white; }
 
 /*# sourceMappingURL=results.css.map */

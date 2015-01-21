@@ -1,9 +1,9 @@
 $(function(){
 
     var phoneformat = /\(\d{3}\) \d{3}-\d{4}/;
-    var timeformat = /(0[1-9]|1[0-2])\/(0[1-9]|[1-2]\d|3[0-1])\/\d{2} (0[1-9]|1[0-2]):([0-5]\d)/;
-    var time = $('#time');
     var phone = $('#phone');
+    var password = $('#password');
+    var password2 = $('#password2');
 
     $('form').submit(function() {
         var isFormFilled = true;
@@ -22,10 +22,12 @@ $(function(){
             phone.blur();
             isFormFilled = false;
         };
-        if (time.length && !timeformat.test(time.val())) {
-            time.addClass('error');
-            time.blur();
-            isFormFilled = false;
+        
+        if (password.length && password2.length) {
+            if (password.val() !== password2.val()) {
+                password2.addClass('error');
+                isFormFilled = false;
+            };
         };
         return isFormFilled;
     });
@@ -35,4 +37,19 @@ $(function(){
             $(this).removeClass('error');
         });
     });
+
+    password2.keyup(function() {
+        if (password2.val() !== '') {
+            if (password2.val() !== password.val()) {
+                password2.removeClass('success').addClass('error');
+            } else {
+                password2.removeClass('error').addClass('success');
+            };
+        };
+    });
+
+    password2.blur(function() {
+        password2.removeClass('success');
+    });
+
 });

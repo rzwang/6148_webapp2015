@@ -26,10 +26,9 @@ block content
     if message && message.length
         p#alert.alert.alert-danger(role="alert") #{message}
 
-    if logout
-        div.logout
-            a(href="/logout")
-                button logout
+    div.logout
+        a(href="/logout")
+            button logout
 
     section.results#results
         div.container

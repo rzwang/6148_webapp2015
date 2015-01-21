@@ -39,13 +39,6 @@ h5 {
   font-weight: 300;
   text-transform: uppercase; }
 
-hr.line {
-  display: block;
-  width: 30%;
-  margin: 1em auto;
-  border: 1px solid white;
-  transition: all 500ms ease; }
-
 nav.navbar {
   position: fixed;
   z-index: 9; }
@@ -117,9 +110,15 @@ form.basic-form .button-wrapper {
   form.basic-form .button-wrapper button:hover {
     color: white;
     background: rgba(39, 87, 109, 0.7); }
-form.basic-form .error {
-  border-bottom: 1px solid #a63b37; }
-form.basic-form p.alert {
+
+hr.line {
+  display: block;
+  width: 30%;
+  margin: 1em auto;
+  border: 1px solid white;
+  transition: all 500ms ease; }
+
+p.alert {
   width: 100%; }
 
 section.main {
@@ -187,9 +186,9 @@ section.about {
         color: black;
         margin: 25px; }
 
-section.request {
+section.signup {
   height: 100vh; }
-  section.request .container {
+  section.signup .container {
     height: 100%;
     width: 100%;
     padding: 25px;
@@ -197,7 +196,7 @@ section.request {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover; }
-    section.request .container .wrapper {
+    section.signup .container .wrapper {
       height: 550px;
       width: 500px;
       position: relative;
@@ -205,11 +204,15 @@ section.request {
       margin: auto;
       padding: 25px;
       background-color: rgba(0, 0, 0, 0.7); }
-      section.request .container .wrapper .title {
+      section.signup .container .wrapper .title {
         color: white;
         margin-bottom: 30px; }
-      section.request .container .wrapper .signup-wall {
+      section.signup .container .wrapper .signup-wall {
         padding: 25px; }
+        section.signup .container .wrapper .signup-wall .success {
+          border-bottom: 1px solid #41c057; }
+        section.signup .container .wrapper .signup-wall .error {
+          border-bottom: 1px solid #a63b37; }
 
 section.footer {
   height: 60px;
