@@ -11,7 +11,7 @@ var config = require('./config');
 // mongoose
 var mongoose = require('mongoose');
 var uriUtil = require('mongodb-uri');
-var mongodbUri = 'mongodb://heroku_app33380250:j71copckd4tl1vqhvj20nroolp@ds031551.mongolab.com:31551/heroku_app33380250' || "mongodb://localhost/passport";
+var mongodbUri = 'mongodb://heroku_app33358623:h19pmao8h31kfqld7fsohe6kof@ds031751.mongolab.com:31751/heroku_app33358623' || "mongodb://localhost/passport";
 var mongooseUri = uriUtil.formatMongoose(mongodbUri);
 
 mongoose.connect(mongooseUri);
