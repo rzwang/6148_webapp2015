@@ -107,8 +107,8 @@ module.exports = function(passport){
         };
     });
 
-    /* handle delRequest */
-    router.get('/delRequest', function(req, res){
+    /* handle delete */
+    router.get('/delete', function(req, res){
         // DELETE THE REQUEST
         req.user.hasReq = false;
         req.user.save();
