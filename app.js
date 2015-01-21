@@ -6,7 +6,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var flash = require('connect-flash');
-var config = require('./config');
 
 // mongoose
 var mongoose = require('mongoose');
