@@ -7,7 +7,9 @@ var Request = new Schema({
     lastname: String,
     pickup: String,
     dropoff: String,
-    time: String, // CHANGE THIS TO Date LATER
+    date: String,
+    time: String,
+    ap: String,
     phone: String,
     results: Array
 });

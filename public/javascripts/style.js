@@ -31,7 +31,8 @@ $(function(){
     });
 
     $('#phone').mask('(000) 000-0000');
-    $('#time').mask('00/00/00 00:00');
+    $('#date').mask('00/00/00');
+    $('#time').mask('00:00');
 });
 
 window.setTimeout(function() {

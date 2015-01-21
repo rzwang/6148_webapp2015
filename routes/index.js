@@ -31,19 +31,13 @@ module.exports = function(passport){
 
     /* GET signup page */
     router.get('/signup', function(req, res) {
-        if (!req.user) {
-            res.render('signup', { title: 'hitch | Sign Up', message: req.flash('message') });
-        } else if (req.user.hasReq) {
-            res.redirect('/results');
-        } else {
-            res.redirect('/request');
-        };
+        res.redirect('/#signup');
     });
 
-    /* handle signup POST */
+    /* handle  signup POST */
     router.post('/signup', passport.authenticate('signup', {
-        successRedirect: '/#request',
-        failureRedirect: '/signup',
+        successRedirect: '/request',
+        failureRedirect: '/#signup',
         failureFlash: true,
         successFlash: true
     }));
@@ -89,7 +83,9 @@ module.exports = function(passport){
             lastname: req.user.lastname,
             pickup: req.body['pickup'],
             dropoff: req.body['dropoff'],
+            date: req.body['date'],
             time: req.body['time'],
+            ap: req.body['ap'],
             phone: req.user.phone,
             results: []
         });
@@ -107,7 +103,7 @@ module.exports = function(passport){
             res.redirect('/request');
         } else {
             var allresults = [];
-            Request.find({pickup: 'MIT'}, function(err, results) { // REDIFINE SEARCH PARAMETERS
+            Request.find({}, function(err, results) { // REDIFINE SEARCH PARAMETERS
                 results.forEach(function(result) {
                     allresults.push(result);
                 });
@@ -118,6 +114,5 @@ module.exports = function(passport){
 
     return router;
 }
-
 
 // geo: geoNear and geoSearch

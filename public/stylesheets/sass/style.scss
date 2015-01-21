@@ -132,7 +132,7 @@ nav.navbar {
 // FORM
 form.basic-form {
 
-    .form-control {
+    input.form-control {
         background: transparent;
         border: none;
         border-radius: 0;
@@ -142,11 +142,21 @@ form.basic-form {
         color: white;
     }
 
-    .form-control:focus {
-        border-bottom: 1px solid $lightblue;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
+    input.form-control:focus {
+            border-bottom: 1px solid $lightblue;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+
+    select.form-control{
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        margin: 3px 0;
+        border-bottom: 1px solid white;
+        font-family: $opensans;
+        color: white;
     }
 
     .button-wrapper {

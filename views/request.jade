@@ -34,7 +34,20 @@ block content
                     form.basic-form(method='POST')
                         input#pickup.form-control(type="text", name="pickup", placeholder="Pickup", autofocus)
                         input#dropoff.form-control(type="text", name="dropoff", placeholder="Dropoff")
-                        input#time.form-control(type="text", name="time", placeholder="mm/dd/yy hh:mm")
+                        div.row
+                            div.col-sm-6
+                                input#date.form-control(type="text", name="date", placeholder="mm/dd/yy")
+                            div.col-sm-6
+                                input#time.form-control(type="text", name="time", placeholder="hh:mm")
+                                div.input-group-btn
+                                    button.btn.btn-default.dropdown-toggle(type="button" data-toggle="dropdown") test <span class="caret"></span>
+                                        ul.dropdown-menu.dropdown-menu-right(role="menu")
+                                            li AM
+                                            li PM
+                            //- div.col-sm-2
+                            //-     select#ap.form-control(name="ap", placeholder="AM/PM")
+                            //-         option AM
+                            //-         option PM
                         div.button-wrapper
                             button(type="submit") request
 

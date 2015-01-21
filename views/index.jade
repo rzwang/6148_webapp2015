@@ -20,7 +20,7 @@ block content
                 div.collapse.navbar-collapse#basic_nav
                     ul.nav.navbar-nav.navbar-right
                         li: a(href="login") login
-                        li: a(href="signup") sign up
+                        li: a(href="/#signup") sign up
 
     if message && message.length
         p#alert.alert.alert-danger(role="alert") #{message}
@@ -41,7 +41,7 @@ block content
                     h3 hitch a ride to
                     span.typed
                 div.button-wrapper
-                    a(href="#signup")
+                    a(href="/#signup")
                         button get started
 
     section.about#about
@@ -69,7 +69,7 @@ block content
                     form.basic-form(action="/signup", method="POST")
                         div.row
                             div.col-sm-6
-                                input#firstname.form-control(type="text", name="firstname", placeholder="First Name")
+                                input#firstname.form-control(type="text", name="firstname", placeholder="First Name", autofocus)
                             div.col-sm-6
                                 input#lastname.form-control(type="text", name="lastname", placeholder="Last Name")
                         input#username.form-control(type="text", name="username", placeholder="Username")
