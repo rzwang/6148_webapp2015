@@ -61,4 +61,8 @@ window.setTimeout(function() {
     $("#alert").fadeTo(1000, 0, function() {
         $(this).remove();
     });
+<<<<<<< HEAD
 }, 3000);
+=======
+}, 3000);
+>>>>>>> d3eb7ed9c1b1dafd9ff2574476fc30a870108d5e

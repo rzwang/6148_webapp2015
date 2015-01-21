@@ -64,13 +64,13 @@ block content
                     form.basic-form(action="/request", method="POST")
                         div.row
                             div.col-sm-6
-                                input#firsname.form-control(type="text", name="firstname", placeholder="First Name", required, autofocus)
+                                input#firstname.form-control(type="text", name="firstname", placeholder="First Name", autofocus)
                             div.col-sm-6
-                                input#lastname.form-control(type="text", name="lastname", placeholder="Last Name", required)
-                        input#pickup.form-control(type="text", name="pickup", placeholder="Pickup", required)
-                        input#dropoff.form-control(type="text", name="dropoff", placeholder="Dropoff", required)
-                        input#time.form-control(type="datetime-local", name="time", placeholder="mm/dd/yyyy hh:mm", required)
-                        input#phone.form-control(type="tel", name="phone", placeholder="Phone", required)
+                                input#lastname.form-control(type="text", name="lastname", placeholder="Last Name")
+                        input#pickup.form-control(type="text", name="pickup", placeholder="Pickup")
+                        input#dropoff.form-control(type="text", name="dropoff", placeholder="Dropoff")
+                        input#time.form-control(type="datetime-local", name="time", placeholder="mm/dd/yyyy hh:mm")
+                        input#phone.form-control(type="tel", name="phone", placeholder="Phone")
                         div.button-wrapper
                             button request
 
@@ -80,3 +80,8 @@ block content
                 | wistful worldly wanderers 
                 img.icon(src="/images/3w.png")
                 |  2015
+
+    script(src='build/js/intlTelInput.js')
+    script(src='/javascripts/phoneValidation.js')
+    script(src='/javascripts/dateValidation.js')
+    script(src='/javascripts/submitValidation.js')

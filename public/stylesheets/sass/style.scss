@@ -43,6 +43,11 @@ h5 {
     text-transform: uppercase;
 }
 
+h6 {
+    @extend h1;
+    font-size: 4em;
+}
+
 ::-webkit-input-placeholder {
    font-weight: 300;
    text-transform: uppercase;
@@ -140,7 +145,8 @@ nav.navbar {
 
 
 // FORM
-form.basic-form {
+
+.basic-form {
 
     .form-control {
         background: transparent;
@@ -182,15 +188,8 @@ form.basic-form {
             background: $darkblue;
         }
     }
-
-    .error {
-        border-bottom: 1px solid $red;
-    }
-
-    p.alert {
-        width: 100%;
-    }
 }
+
 
 
 // SECTIONS
@@ -317,7 +316,16 @@ section.request {
 
             .signup-wall {
                 padding: 25px;
+
+                .correct {
+                    border-bottom: 1px solid green;
+                }  
+
+                .error {
+                    border-bottom: 1px solid $red;
+                }  
             }
+
         }
     }
 }

@@ -1,6 +1,5 @@
 @import '_constants';
 
-
 section.signup {
     height: 100vh;
 
@@ -30,14 +29,30 @@ section.signup {
             }
 
             .signup-wall {
-                
-                .success {
-                    border-bottom: 1px solid $green;
+                max-width: 400px;
+                margin: auto;
+                padding: 25px;
+                position: relative;
+                top: 40px;
+
+                .button-wrapper {
+                    width: 300px;
+                    position: relative;
+                    bottom: -20px;
+                    margin: auto;
+                    padding: 8px;
                 }
+                .correct {
+                    border-bottom: 1px solid green;
+                }  
 
                 .error {
                     border-bottom: 1px solid $red;
-                }
+                }                 
+            }
+
+            p.alert {
+                width: 100%;
             }
         }
     }

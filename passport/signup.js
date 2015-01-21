@@ -17,7 +17,7 @@ module.exports = function(passport){
                     }
                     if (user) {
                         console.log('User already exists with username: '+username);
-                        return done(null, false, { message: 'User already exists with username: '+username });
+                        return done(null, false, req.flash('message', 'User already exists with username: '+ username ));
                     } else {
                         var newUser = new User();
 
@@ -36,7 +36,7 @@ module.exports = function(passport){
                                 throw err;  
                             }
                             console.log('User Registration succesful');    
-                            return done(null, newUser);
+                            return done(null, newUser, req.flash('message', "User Registration succesful"));
                         });
                     }
                 });
