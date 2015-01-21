@@ -93,10 +93,8 @@ module.exports = function(passport){
             phone: req.user.phone,
             results: []
         });
-        if (req.user) {
-            req.user.hasReq = true;
-            req.user.save();
-        };
+        req.user.hasReq = true;
+        req.user.save();
         // SEARCH ALGORITHM HERE (NEWREQUEST.RESULTS = FROMSEARCH)
         newRequest.save(function(err, result) {
             res.redirect('/results');
