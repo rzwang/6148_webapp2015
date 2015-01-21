@@ -31,29 +31,26 @@ $(function(){
         showCursor: false,
     });
 
-    // $("#phone").mask("(000) 000-0000");
-    // $("#time").mask("00/00/0000 00:00");
-
-    // FORM VALIDATION
+    // PREVENT SUBMISSION
     $("form").submit(function() {
-        var isFormFilled = true;
+        var isFormFilled = false;
         $("input").each(function() {
-            if ($.trim($(this).val()).length == 0) {
+            if ($.trim($(this).val()).length === 0 || $(this).hasClass("error")) {
                 $(this).addClass("error");
-                isFormFilled = false;
             } else {
                 $(this).removeClass("error");
+                isFormFilled = true;
             }
         });
+
         return isFormFilled;
     });
 
-    $("input").each(function() {
-        $(this).keyup(function() {
-            if ($(this).hasClass("error")) {
-                $(this).removeClass("error");
-            }
-        });
+    // Change underlinings
+    $("input").keydown(function () {
+        if ($.trim($(this).val()).length !== 0) {
+            $(this).removeClass("error");
+        };
     });
 });
 

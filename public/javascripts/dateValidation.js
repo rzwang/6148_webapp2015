@@ -23,6 +23,7 @@ function checkTime(time)
 }
 
 var time = $('#time');
+
 // on blur: validate
 time.blur(function() {
   if ($.trim(time.val())) {
