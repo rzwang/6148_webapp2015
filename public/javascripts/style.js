@@ -16,7 +16,9 @@ $(document).ready(function(){
             },function(){
             $('hr.line').css('width','30%');
         });
-    }
+    };
+
+    $(this).scrollTop(0);
 });
 
 $(function(){

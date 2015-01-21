@@ -107,6 +107,14 @@ module.exports = function(passport){
         };
     });
 
+    /* handle delRequest */
+    router.get('/delRequest', function(req, res){
+        // DELETE THE REQUEST
+        req.user.hasReq = false;
+        req.user.save();
+        res.redirect('/request');
+    });
+
     return router;
 }
 
