@@ -1,6 +1,7 @@
 extends layout
 
 block header
+    script(src="/javascripts/typed.js")
 
 block stylesheets
 
@@ -19,7 +20,7 @@ block content
                         span.icon-bar
                 div.collapse.navbar-collapse#basic_nav
                     ul.nav.navbar-nav.navbar-right
-                        li: a(href="login") login
+                        li: a(href="/login") login
                         li: a(href="/#signup") sign up
 
     if message && message.length

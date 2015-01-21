@@ -7,22 +7,22 @@ block stylesheets
 
 block content
     //- nav.navbar#navbar
-        //- FIX RESPONSIVENESS
-        div.navbar-fixed-clear(
-                data-top="@class:navbar-fixed-top-clear"
-                data--0p-top="@class:navbar-fixed-top"
-                data-anchor-target="#navbar")
-            div.container-fluid
-                div.navbar-header
-                    a.navbar-brand.page-scroll(href="/") hitch
-                    button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
-                        span.icon-bar
-                        span.icon-bar
-                        span.icon-bar
-                div.collapse.navbar-collapse#basic_nav
-                    ul.nav.navbar-nav.navbar-right
-                        li: a(href="login") LOGIN
-                        li: a(href="signup") SIGN UP
+    //-     div.navbar-fixed-top(
+    //-             data-start="@id:clear"
+    //-             data-0p="@id:collapsed"
+    //-             data-anchor-target="#navbar")
+    //-         div.container-fluid
+    //-             div.navbar-header
+    //-                 a.navbar-brand.page-scroll(href="/") hitch
+    //-                 button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
+    //-                     span.icon-bar
+    //-                     span.icon-bar
+    //-                     span.icon-bar
+    //-             div.collapse.navbar-collapse#basic_nav
+    //-                 ul.nav.navbar-nav.navbar-right
+    //-                     li: a(href="/login") login
+    //-                     li: a(href="/#signup") sign up
+
     if message && message.length
         p#alert.alert.alert-danger(role="alert") #{message}
 

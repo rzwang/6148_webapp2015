@@ -1,28 +1,34 @@
 extends layout
 
 block header
+    script(src="/javascripts/datepicker/picker.js")
+    script(src="/javascripts/datepicker/picker.date.js")
+    script(src="/javascripts/datepicker/picker.time.js")
     script(src="/javascripts/request.js")
 
 block stylesheets
+    link(rel="stylesheet", href="/stylesheets/datepicker/default.css")
+    link(rel="stylesheet", href="/stylesheets/datepicker/default.date.css")
+    link(rel="stylesheet", href="/stylesheets/datepicker/default.time.css")
     link(rel="stylesheet", href="/stylesheets/request.css")
 
 block content
     //- nav.navbar#navbar
-        div.navbar-fixed-top(
-                data-start="@id:clear"
-                data-0p="@id:collapsed"
-                data-anchor-target="#navbar")
-            div.container-fluid
-                div.navbar-header
-                    a.navbar-brand.page-scroll(href="/") hitch
-                    button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
-                        span.icon-bar
-                        span.icon-bar
-                        span.icon-bar
-                div.collapse.navbar-collapse#basic_nav
-                    ul.nav.navbar-nav.navbar-right
-                        li: a(href="login") LOGIN
-                        li: a(href="signup") SIGN UP
+    //-     div.navbar-fixed-top(
+    //-             data-start="@id:clear"
+    //-             data-0p="@id:collapsed"
+    //-             data-anchor-target="#navbar")
+    //-         div.container-fluid
+    //-             div.navbar-header
+    //-                 a.navbar-brand.page-scroll(href="/") hitch
+    //-                 button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
+    //-                     span.icon-bar
+    //-                     span.icon-bar
+    //-                     span.icon-bar
+    //-             div.collapse.navbar-collapse#basic_nav
+    //-                 ul.nav.navbar-nav.navbar-right
+    //-                     li: a(href="/login") login
+    //-                     li: a(href="/#signup") sign up
 
     section.request#request
         div.container
@@ -36,18 +42,9 @@ block content
                         input#dropoff.form-control(type="text", name="dropoff", placeholder="Dropoff")
                         div.row
                             div.col-sm-6
-                                input#date.form-control(type="text", name="date", placeholder="mm/dd/yy") glyphicon glyphicon-chevron-down
+                                input#date.form-control(type="text", name="date", placeholder="mm/dd/yy")
                             div.col-sm-6
                                 input#time.form-control(type="text", name="time", placeholder="hh:mm")
-                                div.input-group-btn
-                                    button.btn.btn-default.dropdown-toggle(type="button" data-toggle="dropdown") test <span class="caret"></span>
-                                        ul.dropdown-menu.dropdown-menu-right(role="menu")
-                                            li AM
-                                            li PM
-                            //- div.col-sm-2
-                            //-     select#ap.form-control(name="ap", placeholder="AM/PM")
-                            //-         option AM
-                            //-         option PM
                         div.button-wrapper
                             button(type="submit") request
 

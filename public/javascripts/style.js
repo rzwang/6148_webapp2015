@@ -21,18 +21,18 @@ $(document).ready(function(){
 
 $(function(){
     
-    $('.typed').typed({
-        strings: ['<h3>the airport.', '<h3>work.', '<h3>a concert.', '<h3>anywhere.'],
-        typeSpeed: 40,
-        backSpeed: 20,
-        startDelay: 500,
-        backDelay: 1500,
-        showCursor: false,
-    });
+    if ($('.typed').length) {
+        $('.typed').typed({
+            strings: ['<h3>the airport.', '<h3>work.', '<h3>a concert.', '<h3>anywhere.'],
+            typeSpeed: 40,
+            backSpeed: 20,
+            startDelay: 500,
+            backDelay: 1500,
+            showCursor: false,
+        });
+    };
 
     $('#phone').mask('(000) 000-0000');
-    $('#date').mask('00/00/00');
-    $('#time').mask('00:00');
 });
 
 window.setTimeout(function() {
