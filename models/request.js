@@ -9,7 +9,6 @@ var Request = new Schema({
     dropoff: String,
     date: String,
     time: String,
-    ap: String,
     phone: String,
     results: Array
 });
