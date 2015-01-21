@@ -76,7 +76,7 @@ app.use(function(err, req, res, next) {
     });
 });
 
-app.set('port', process.env.PORT || 3000);
-var server = app.listen(app.get('port'));
+// app.set('port', process.env.PORT || 3000);
+// var server = app.listen(app.get('port'));
 
 module.exports = app;

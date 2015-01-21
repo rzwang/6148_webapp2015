@@ -5,7 +5,7 @@ var passport = require('passport');
 var flash = require('connect-flash');
 app.use(flash());
 
-var Request = require('../models/request.js');
+var Request = require('../models/requestModel.js');
 
 var isAuthenticated = function (req, res, next){
     // if user is authenticated in the session, call the next() to call the next request handler

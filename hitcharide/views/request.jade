@@ -1,0 +1,58 @@
+extends layout
+
+block header
+
+block stylesheets
+    link(rel="stylesheet", href="/stylesheets/request.css")
+
+block content
+    //- nav.navbar#navbar
+        div.navbar-fixed-top(
+                data-start="@id:clear"
+                data-0p="@id:collapsed"
+                data-anchor-target="#navbar")
+            div.container-fluid
+                div.navbar-header
+                    a.navbar-brand.page-scroll(href="/") hitch
+                    button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                div.collapse.navbar-collapse#basic_nav
+                    ul.nav.navbar-nav.navbar-right
+                        li: a(href="login") LOGIN
+                        li: a(href="signup") SIGN UP
+
+    section.request#request
+        div.container
+            div.wrapper
+                div.title
+                    h3 Hitch me a ride
+                
+                div.signup-wall
+                    form.basic-form(method='POST')
+                        div.row
+                            div.col-sm-6
+                                input#firstname.form-control(type='text', name='firstname', placeholder='First Name', autofocus)
+                            div.col-sm-6
+                                input#lastname.form-control(type='text', name='lastname', placeholder='Last Name')
+                        input#pickup.form-control(type='text', name='pickup', placeholder='Pickup')
+                        input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff')
+                        input#time.form-control(type='text', name='time', placeholder='mm/dd/yy hh:mm')
+                        input#phone.form-control(type='tel', name='phone', placeholder='Phone')
+                        div.button-wrapper
+                            button(type="submit") request
+
+                    if message && message.length
+                        p#alert.alert.alert-success(role="alert") #{message}
+
+    div.logout
+        a(href="/logout")
+            button logout
+
+    section.footer#footer
+        div.container
+            h5
+                | wistful worldly wanderers 
+                img.icon(src="/images/3w.png")
+                |  2015
