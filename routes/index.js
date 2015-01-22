@@ -3,8 +3,9 @@ var router = express.Router();
 var app = express();
 var passport = require('passport');
 
+var Request = require('../models/requestModel');
+var Geo = require('../public/javascripts/geo');
 
-var Request = require('../models/request.js');
 
 var isAuthenticated = function (req, res, next){
     if (req.isAuthenticated())
@@ -78,7 +79,9 @@ module.exports = function(passport){
             firstname: req.user.firstname,
             lastname: req.user.lastname,
             pickup: req.body['pickup'],
+            pickup_loc: Geo.pickup_loc,
             dropoff: req.body['dropoff'],
+            dropoff_loc: Geo.dropoff_loc,
             date: req.body['date'],
             time_disp: req.body['time'],
             time_calc: req.body['time_calc'],

@@ -1,3 +1,8 @@
+function findDistance(loc1, loc2) {
+    // GOOGLE MAGIC HERE
+    return (loc1.lon - loc2.lon) * (loc1.lon - loc2.lon)
+}
+
 distance = (loca, locb)
     // GOOGLE MAGIC HERE
     return (lon1-lon2)**2 + (lat1-lat2)**2
