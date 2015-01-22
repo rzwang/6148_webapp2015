@@ -22,9 +22,7 @@ module.exports = function(passport){
     /* GET home page */
     router.get('/', function(req, res) {
         if (!req.user) {
-            console.log("get home page")
-            res.render('index', { title: 'hitch' });
-            console.log("page not rendered")
+            res.render('index', { title: 'hitch', message: req.flash('message')});
         }
         else if (req.user.hasReq) {
             res.redirect('/results');
@@ -51,7 +49,7 @@ module.exports = function(passport){
     /* Handle signup POST */
     router.post('/', passport.authenticate('signup', {
         successRedirect: '/request',
-        failureRedirect: '/login',
+        failureRedirect: '/#signup',
         failureFlash: true,
         successFlash: true
     }));
