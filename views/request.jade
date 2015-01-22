@@ -3,7 +3,6 @@ extends layout
 block header
 
 block stylesheets
-    link(rel="stylesheet", href="/stylesheets/style.css")
     link(rel="stylesheet", href="/stylesheets/request.css")
 
 block content
@@ -37,7 +36,7 @@ block content
                             input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff')
                             input#time.form-control(type='datetime-local', name='time', placeholder='Pickup Time: mm/dd/yyyy hh:mm')
                             div.button-wrapper
-                                button request
+                                button(type="submit") request
 
                     if message && message.length > 0
                         p#alert.alert.alert-success(role='alert') #{message}

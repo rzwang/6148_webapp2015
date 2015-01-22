@@ -7,9 +7,10 @@ var requestSchema = new Schema({
     lastName: String,
     pickup: String,
     dropoff: String,
+    // date: String, // change to Date later
     time: String, // change to Date later
     phone: String,
-    results: []
+    results: Array
 });
 
 //MODELs

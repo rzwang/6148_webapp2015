@@ -87,10 +87,11 @@ module.exports = function(passport){
             time: req.body['time'],
             phone: req.body['phone']
         });
-        newReq.save(function(err, result) {
+        req.user.hasReq = true;
+        req.user.save();
+        newReq.save(function(err, result) {         
             res.redirect('/results');
         });
-        req.user.hasReq = true;
     });
 
     /* GET results page */

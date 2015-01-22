@@ -3,13 +3,13 @@ extends layout
 block header
 
 block stylesheets
+    link(rel="stylesheet", href="/stylesheets/results.css")
 
 block content
     nav.navbar#navbar
-        //- FIX RESPONSIVENESS
-        div.navbar-fixed-clear(
-                data-top="@class:navbar-fixed-top-clear"
-                data--0p-top="@class:navbar-fixed-top"
+        div.navbar-fixed-top(
+                data-start="@id:clear"
+                data-0p="@id:collapsed"
                 data-anchor-target="#navbar")
             div.container-fluid
                 div.navbar-header
