@@ -28,19 +28,31 @@ section.results {
                 margin-bottom: 30px;
             }
 
-            .match {
-                height: 50px;
-                width: 50px;
+            ul {
                 position: relative;
-                top: 15%;
-                margin: auto;
-                padding: 25px;
-                background-color: $darkblue;
+                top: 30px;
+                list-style-type: decimal;
 
+                li {
+                    color: white;
+                    .match {
+                        // height: 50px;
+                        // width: 50px;
+                        // position: relative;
+                        // top: 15%;
+                        // margin: auto;
+                        // padding: 25px;
+                        // background-color: $darkblue;
+                    
+                    }  
+                }
                 p {
-                    text-align: center;
-                    text-color: white;
-                }                
+                    text-align: left;
+                    font-size: 1em;
+                }     
+            }
+            h4 {
+                color: white;
             }
         }
     }

@@ -21,16 +21,16 @@ section.results {
         position: relative;
         top: 50px;
         margin-bottom: 30px; }
-      section.results .container .wrapper .match {
-        height: 50px;
-        width: 50px;
+      section.results .container .wrapper ul {
         position: relative;
-        top: 15%;
-        margin: auto;
-        padding: 25px;
-        background-color: rgba(39, 87, 109, 0.7); }
-        section.results .container .wrapper .match p {
-          text-align: center;
-          text-color: white; }
+        top: 30px;
+        list-style-type: decimal; }
+        section.results .container .wrapper ul li {
+          color: white; }
+        section.results .container .wrapper ul p {
+          text-align: left;
+          font-size: 1em; }
+      section.results .container .wrapper h4 {
+        color: white; }
 
 /*# sourceMappingURL=results.css.map */

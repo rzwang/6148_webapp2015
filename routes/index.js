@@ -73,19 +73,20 @@ module.exports = function(passport){
             res.redirect('/results');
         }
         else {
-            res.render('request', {title: 'hitch me a ride!', message: req.flash('message')}); //, logout: true});
+            res.render('request', {title: 'hitch me a ride!', message: req.flash('message')});
         }
     });
 
     /* Handle request POST */
     router.post('/request', function(req, res){
         var newReq = new Request({
-            firstname: req.body['firstname'],
-            lastname: req.body['lastname'], 
+            firstname: req.user.firstname,
+            lastname: req.user.lastname, 
             pickup: req.body['pickup'],
             dropoff: req.body['dropoff'],
             time: req.body['time'],
-            phone: req.body['phone']
+            phone: req.user.phone,
+            results: []
         });
         req.user.hasReq = true;
         req.user.save();
@@ -100,11 +101,12 @@ module.exports = function(passport){
             var matches = [];
             Request.find({}, function(err, results) {
                 results.forEach(function(result) {
-                    console.log(result);
+                    // console.log(result);
                     matches.push(result);
                 });
+                console.log(matches);
+                res.render('results', {title: 'hitch | Results', results: matches, message: req.flash('message')});
             });
-            res.render('results', {title: 'hitch | Results', message: req.flash('message')}); //, logout: true});
         }
         else {
             res.redirect('/request');

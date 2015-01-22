@@ -29,6 +29,13 @@ block content
                     h3 Your hitchers!
                     hr.line
                 div.result-wall
+                    if results && results.length > 0  
+                        ul   
+                            each result in results
+                                li: p.match #{result.firstname} #{result.lasname} #{result}
+                    else
+                        h4 no results
+
 
                 if message && message.length > 0
                     p#alert.alert.alert-success(role='alert') #{message}
