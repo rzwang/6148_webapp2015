@@ -1,6 +1,6 @@
 function initialize() {
-    var pickup = document.getElementsByName('pickup');
-    var dropoff = document.getElementsByName('dropoff');
+    var pickup = document.getElementById('pickup');
+    var dropoff = document.getElementById('dropoff');
     var auto_pickup = new google.maps.places.Autocomplete(pickup);
     var auto_dropoff = new google.maps.places.Autocomplete(dropoff);
 
@@ -8,10 +8,10 @@ function initialize() {
 
     // })
 
-    // var pickupAddress = autopickup.getPlace().formatted_address;
-    // var dropoffAddress = autodropoff.getPlace().formatted_address;
-    // req.requests.pickup = pickupAddress;
-    // req.requests.dropoff = dropoffAddress;
+    // var pickup_address = auto_pickup.getPlace().formatted_address;
+    // var dropoff_address = auto_dropoff.getPlace().formatted_address;
+    // req.requests.pickup = pickup_address;
+    // req.requests.dropoff = dropoff_address;
 
     // // GEOCODE THAT CONVERTS ADDRESS TO LATLNG
     // // USE LATLNG TO DETERMINE PERIMETER AND VALIDATE IF OTHER PICKUP/DROPOFF LOCATIONS FALL IN THE RANGE OF LATS AND LNGS
@@ -19,12 +19,3 @@ function initialize() {
     // var pickupLatLng = geocoder.geocode(pickupAddress);
     // var dropoffLatLng = geocoder.geocode(dropoffAddress);
 }
-
-// function loadScript() {
-//   var script = document.createElement('script');
-//   script.type = 'text/javascript';
-//   script.src = 'https://maps.googleapis.com/maps/api/js?libraries=places' + 'callback=initialize';
-//   document.body.appendChild(script);
-// }
-
-// window.onload = loadScript;

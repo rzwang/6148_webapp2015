@@ -1,8 +1,7 @@
 extends layout
 
 block header
-    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCar9D1i5MRtmP_fhJ9HE5t-JVF8B8kSp8')
-    script(type='text/javacript', src='https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false')
+    script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places")
     script(src='/javascripts/locationFiller.js')
 
 block stylesheets
@@ -17,7 +16,7 @@ block content
                 data-anchor-target="#navbar")
             div.container-fluid
                 div.navbar-header
-                    a.navbar-brand.page-scroll(href="/#main") hitch
+                    a.navbar-brand.page-scroll(href="/") hitch
                     button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
                         span.icon-bar
                         span.icon-bar
@@ -35,8 +34,8 @@ block content
                  div.signup-wall
                     form.basic-form(method='POST')
                         div.form-group
-                            input#pickup.form-control(type='text', name='pickup', placeholder='Pickup', onfocus='initialize()')
-                            input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff', oninput='initialize()')
+                            input#pickup.form-control(type='text', name='pickup', placeholder='Pickup', onfocus='initialize()', autofocus)
+                            input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff')
                             input#time.form-control(type='datetime-local', name='time', placeholder='Pickup Time: mm/dd/yyyy hh:mm')
                             div.button-wrapper
                                 button(type="submit") request
@@ -44,4 +43,5 @@ block content
                     if message && message.length > 0
                         p#alert.alert.alert-success(role='alert') #{message}
 
+block scripts 
     script(src='/javascripts/dateValidation.js')
