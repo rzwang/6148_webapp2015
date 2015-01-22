@@ -14,6 +14,7 @@ block stylesheets
     link(rel="stylesheet", href="/stylesheets/request.css")
 
 block content
+    body(onload="initialize()")
     //- nav.navbar#navbar
     //-     div.navbar-fixed-top(
     //-             data-start="@id:clear"
@@ -31,7 +32,7 @@ block content
     //-                     li: a(href="/login") login
     //-                     li: a(href="/#signup") sign up
 
-    section.request#request
+    section.request#request(onload="initialize()")
         div.container
             div.wrapper
                 div.title
