@@ -5,10 +5,13 @@ var requestSchema = new Schema({
     id: String,
     firstname: String,
     lastname: String,
-    pickup: String,  // change to latlng??
+    pickup: String,
+    pickup_loc: String, 
     dropoff: String,
-    // date: String, // change to Date later
-    time: String, // change to Date later
+    dropoff_loc: String,
+    date: String,
+    time_disp: String, 
+    time_calc: Number,
     phone: String,
     results: Array
 });

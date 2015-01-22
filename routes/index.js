@@ -6,6 +6,7 @@ var flash = require('connect-flash');
 app.use(flash());
 
 var Request = require('../models/requestModel.js');
+var Loc = require('../public/javascripts/locationFiller.js');
 
 var isAuthenticated = function (req, res, next){
     // if user is authenticated in the session, call the next() to call the next request handler
@@ -83,8 +84,11 @@ module.exports = function(passport){
             firstname: req.user.firstname,
             lastname: req.user.lastname, 
             pickup: req.body['pickup'],
+            pickup_loc: Loc.auto_pickup,
             dropoff: req.body['dropoff'],
-            time: req.body['time'],
+            dropoff_loc: Loc.auto_dropoff,
+            time_disp: req.body['time'],
+            time_calc: req.body['time_calc'],
             phone: req.user.phone,
             results: []
         });
@@ -110,6 +114,14 @@ module.exports = function(passport){
         else {
             res.redirect('/request');
         }
+    });
+
+    /* Handle delete GET - Drop request */
+    router.get('/delete', function (req, res) {
+        req.user.hasReq = false;
+        req.user.save();
+        // TAKE USER'S REQUEST OUT OF DATABASE
+        res.redirect('/request');
     });
 
     return router;
