@@ -1,6 +1,9 @@
 extends layout
 
 block header
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCar9D1i5MRtmP_fhJ9HE5t-JVF8B8kSp8')
+    script(type='text/javacript', src='https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false')
+    script(src='/javascripts/locationFiller.js')
 
 block stylesheets
     link(rel="stylesheet", href="/stylesheets/request.css")
@@ -32,8 +35,8 @@ block content
                  div.signup-wall
                     form.basic-form(method='POST')
                         div.form-group
-                            input#pickup.form-control(type='text', name='pickup', placeholder='Pickup')
-                            input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff')
+                            input#pickup.form-control(type='text', name='pickup', placeholder='Pickup', onfocus='initialize()')
+                            input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff', oninput='initialize()')
                             input#time.form-control(type='datetime-local', name='time', placeholder='Pickup Time: mm/dd/yyyy hh:mm')
                             div.button-wrapper
                                 button(type="submit") request

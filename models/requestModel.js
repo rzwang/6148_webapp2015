@@ -5,7 +5,7 @@ var requestSchema = new Schema({
     id: String,
     firstname: String,
     lastname: String,
-    pickup: String,
+    pickup: String,  // change to latlng??
     dropoff: String,
     // date: String, // change to Date later
     time: String, // change to Date later
