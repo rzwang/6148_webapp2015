@@ -42,6 +42,14 @@ section.request {
                     margin: auto;
                     padding: 8px;
                 }
+
+                .correct {
+                    border-bottom: 1px solid green;
+                }  
+
+                .error {
+                    border-bottom: 1px solid $red;
+                }  
             }
         }
     }

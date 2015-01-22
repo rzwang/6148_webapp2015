@@ -33,5 +33,9 @@ section.request {
           bottom: -20px;
           margin: auto;
           padding: 8px; }
+        section.request .container .wrapper .signup-wall .correct {
+          border-bottom: 1px solid green; }
+        section.request .container .wrapper .signup-wall .error {
+          border-bottom: 1px solid #b94a48; }
 
 /*# sourceMappingURL=request.css.map */
