@@ -101,7 +101,6 @@ module.exports = function(passport){
             var matches = [];
             Request.find({}, function(err, results) {
                 results.forEach(function(result) {
-                    // console.log(result);
                     matches.push(result);
                 });
                 console.log(matches);

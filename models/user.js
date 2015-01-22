@@ -3,8 +3,8 @@ var Schema = mongoose.Schema;
 
 var User = new Schema({
     id: String,
-    firstName: String,
-    lastName: String,
+    firstname: String,
+    lastname: String,
     username: String,
     password: String,
     phone: String,

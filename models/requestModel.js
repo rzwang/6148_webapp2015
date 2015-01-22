@@ -3,8 +3,8 @@ var Schema = mongoose.Schema;
 
 var requestSchema = new Schema({
     id: String,
-    firstName: String,
-    lastName: String,
+    firstname: String,
+    lastname: String,
     pickup: String,
     dropoff: String,
     // date: String, // change to Date later

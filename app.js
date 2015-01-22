@@ -11,8 +11,12 @@ var app = express();
 // mongoose
 // INCORPORATE DIFFERENT CONFIGURAIONS
 var mongoose = require('mongoose');
-var uriUtil = require('mongodb-uri');  
 
+// CONNECTS MONGOOSE TO LOCALHOST/PASSPORT
+// mongoose.connect('mongdb://localhost/passport');
+
+// CONNECT MONGOOSE TO MONGOLAB, SERVER DB
+var uriUtil = require('mongodb-uri');  
 var mongodbUri = 'mongodb://heroku_app33360347:ch4n9qs8keqcrtcnifsda7i6va@ds031671.mongolab.com:31671/heroku_app33360347';
 var mongooseUri = uriUtil.formatMongoose(mongodbUri);
 mongoose.connect(mongooseUri);
