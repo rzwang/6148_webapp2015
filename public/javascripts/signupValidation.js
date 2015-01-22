@@ -16,16 +16,21 @@ telInput.intlTelInput({
 telInput.blur(function() {
   if ($.trim(telInput.val())) {
     if (telInput.intlTelInput("isValidNumber")) {
-        telInput.addClass("correct");
+        telInput.removeClass("error").addClass("correct");
     } else {
-        telInput.addClass("error");
+        telInput.removeClass("correct").addClass("error");
     }
   }
 });
 
-// on keydown: reset
-telInput.keydown(function() {
-  telInput.removeClass("error");
+telInput.keyup(function() {
+  if ($.trim(telInput.val())) {
+    if (telInput.intlTelInput("isValidNumber")) {
+        telInput.removeClass("error").addClass("correct");
+    } else {
+        telInput.removeClass("correct").addClass("error");
+    }
+  }
 });
 
 //EMAIL VALIDATION
@@ -39,64 +44,46 @@ telInput.keydown(function() {
 // });
 
 
-// VALIDATING PASSWORDS
-$(function(){    
+// VALIDATING PASSWORDS   
 var password = $("#password");
 var password2 = $("#password2");
 
 password.keyup(function() {
-    if (password.val() === "" || password2.val() === "" || password2.val() !== password.val()) {
-        password.addClass("error");
-        password2.addClass("error");
-        password.removeClass("correct");
-        password2.removeClass("correct");
+    if (password2.val() === "" || password2.val() !== password.val()) {
+        password.removeClass("correct").addClass("error");
+        password2.removeClass("correct").addClass("error");
     } else {
-        password.addClass("correct");
-        password2.addClass("correct");
-        password.removeClass("error");
-        password2.removeClass("error");
+        password.removeClass("error").addClass("correct");
+        password2.removeClass("error").addClass("correct");
     }
 });
 
 password2.keyup(function() {
-    if (password.val() === "" || password2.val() === "" || password2.val() !== password.val()) {
-        password.addClass("error");
-        password2.addClass("error");
-        password.removeClass("correct");
-        password2.removeClass("correct");
+    if (password2.val() === "" || password2.val() !== password.val()) {
+        password.removeClass("correct").addClass("error");
+        password2.removeClass("correct").addClass("error");
     } else {
-        password.addClass("correct");
-        password2.addClass("correct");
-        password.removeClass("error");
-        password2.removeClass("error");
+        password.removeClass("error").addClass("correct");
+        password2.removeClass("error").addClass("correct");
     }
 });
 
 password.blur(function() {
-    if (password.val() === "" || password2.val() === "" || password2.val() !== password.val()) {
-        password.addClass("error");
-        password2.addClass("error");
-        password.removeClass("correct");
-        password2.removeClass("correct");
+    if (password2.val() === "" || password2.val() !== password.val()) {
+        password.removeClass("correct").addClass("error");
+        password2.removeClass("correct").addClass("error");
     } else {
-        password.removeClass("error");
-        password2.removeClass("error");
-        password.removeClass("correct");
-        password2.removeClass("correct");
+        password.removeClass("correct").removeClass("error");
+        password2.removeClass("correct").removeClass("error");
     }
 });
 
 password2.blur(function() {
-    if (password.val() === "" || password2.val() === "" || password2.val() !== password.val()) {
-        password.addClass("error");
-        password2.addClass("error");
-        password.removeClass("correct");
-        password2.removeClass("correct");
+    if (password2.val() === "" || password2.val() !== password.val()) {
+        password.removeClass("correct").addClass("error");
+        password2.removeClass("correct").addClass("error");
     } else {
-        password.removeClass("error");
-        password2.removeClass("error");
-        password.removeClass("correct");
-        password2.removeClass("correct");
+        password.removeClass("correct").removeClass("error");
+        password2.removeClass("correct").removeClass("error");
     }
-});
 });
