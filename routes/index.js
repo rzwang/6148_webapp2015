@@ -80,7 +80,8 @@ module.exports = function(passport){
             pickup: req.body['pickup'],
             dropoff: req.body['dropoff'],
             date: req.body['date'],
-            time: req.body['time'],
+            time_disp: req.body['time'],
+            time_calc: req.body['time_calc'],
             phone: req.user.phone,
             results: []
         });
@@ -108,7 +109,7 @@ module.exports = function(passport){
     });
 
     /* handle delete */
-    router.get('/delete', function(req, res){
+    router.get('/delete', isAuthenticated, function(req, res){
         // DELETE THE REQUEST
         req.user.hasReq = false;
         req.user.save();

@@ -34,6 +34,7 @@ $(document).ready(function(){
         format: 'h:i A',
         formatSubmit: 'HHi',
         interval: 15,
+        hiddenSuffix: '_calc'
         // klass: {
         //     FOR FORMATTING
         // }
