@@ -18,7 +18,7 @@ block content
                 div.collapse.navbar-collapse#basic_nav
                     ul.nav.navbar-nav.navbar-right
                         li: a(href="login") login
-                        li: a(href="signup") sign up
+                        li: a(href="#signup") sign up
 
     section.main#main
         div.container(
@@ -48,31 +48,8 @@ block content
                 div.subtitle
                     h4 hitch finds people for you to share rides with. it's fast, simple, and best of all, it saves you money.
 
-    section.request#request
-        div.container(
-                data-bottom-top="background-position: 50% 100px"
-                data--60-center="background-position: 50% 0px"
-                data-anchor-target="#request")
-            div.wrapper#formbox(
-                    data-bottom-top="opacity:0"
-                    data-bottom="opacity:1"
-                    data-anchor-target="#formbox")
-                div.title
-                    h2 hitch a ride
-                hr.line
-                div.signup-wall
-                    form.basic-form(action="/request", method="POST")
-                        div.row
-                            div.col-sm-6
-                                input#firstname.form-control(type="text", name="firstname", placeholder="First Name", autofocus)
-                            div.col-sm-6
-                                input#lastname.form-control(type="text", name="lastname", placeholder="Last Name")
-                        input#pickup.form-control(type="text", name="pickup", placeholder="Pickup")
-                        input#dropoff.form-control(type="text", name="dropoff", placeholder="Dropoff")
-                        input#time.form-control(type="datetime-local", name="time", placeholder="mm/dd/yyyy hh:mm")
-                        input#phone.form-control(type="tel", name="phone", placeholder="Phone")
-                        div.button-wrapper
-                            button request
+    #signup
+        include signup.jade
 
     section.footer#footer
         div.container
@@ -81,7 +58,29 @@ block content
                 img.icon(src="/images/3w.png")
                 |  2015
 
-    script(src='build/js/intlTelInput.js')
-    script(src='/javascripts/phoneValidation.js')
-    script(src='/javascripts/dateValidation.js')
-    script(src='/javascripts/submitValidation.js')
+    //- ONE TIME REQUEST FEATURE
+        section.request#request
+            div.container(
+                    data-bottom-top="background-position: 50% 100px"
+                    data--60-center="background-position: 50% 0px"
+                    data-anchor-target="#request")
+                div.wrapper#formbox(
+                        data-bottom-top="opacity:0"
+                        data-bottom="opacity:1"
+                        data-anchor-target="#formbox")
+                    div.title
+                        h2 hitch a ride
+                    hr.line
+                    div.signup-wall
+                        form.basic-form(action="/request", method="POST")
+                            div.row
+                                div.col-sm-6
+                                    input#firstname.form-control(type="text", name="firstname", placeholder="First Name", autofocus)
+                                div.col-sm-6
+                                    input#lastname.form-control(type="text", name="lastname", placeholder="Last Name")
+                            input#pickup.form-control(type="text", name="pickup", placeholder="Pickup")
+                            input#dropoff.form-control(type="text", name="dropoff", placeholder="Dropoff")
+                            input#time.form-control(type="datetime-local", name="time", placeholder="mm/dd/yyyy hh:mm")
+                            input#phone.form-control(type="tel", name="phone", placeholder="Phone")
+                            div.button-wrapper
+                                button request

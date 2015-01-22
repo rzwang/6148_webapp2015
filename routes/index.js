@@ -33,22 +33,23 @@ module.exports = function(passport){
     });
 
     /* GET signup page */
-    router.get('/signup', function(req, res) {
-        if (!req.user) {
-            res.render('signup', {title: 'hitch | Sign Up', message: req.flash('message')});
-        }
-        else if (req.user.hasReq) {
-            res.redirect('/results');
-        }
-        else {
-            res.redirect('/request');
-        }      
-    });
+    //- ADD IN SEPARATE SIGNUP PAGE LATER
+        // router.get('/signup', function(req, res) {
+        //     if (!req.user) {
+        //         res.render('signup', {title: 'hitch | Sign Up', message: req.flash('message')});
+        //     }
+        //     else if (req.user.hasReq) {
+        //         res.redirect('/results');
+        //     }
+        //     else {
+        //         res.redirect('/request');
+        //     }      
+        // });
 
     /* Handle signup POST */
     router.post('/signup', passport.authenticate('signup', {
         successRedirect: '/request',
-        failureRedirect: '/signup',
+        failureRedirect: '#signup',
         failureFlash: true,
         successFlash: true
     }));
