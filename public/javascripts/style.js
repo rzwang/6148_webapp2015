@@ -33,13 +33,13 @@ $(function(){
 
     // PREVENT SUBMISSION
     $("form").submit(function() {
-        var isFormFilled = false;
+        var isFormFilled = true;
         $("input").each(function() {
             if ($.trim($(this).val()).length === 0 || $(this).hasClass("error")) {
                 $(this).addClass("error");
+                isFormFilled = false;
             } else {
                 $(this).removeClass("error");
-                isFormFilled = true;
             }
         });
 

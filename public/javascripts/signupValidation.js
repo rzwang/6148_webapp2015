@@ -44,61 +44,59 @@ $(function(){
 var password = $("#password");
 var password2 = $("#password2");
 
-password.addClass("correct");
+password.keyup(function() {
+    if (password.val() === "" || password2.val() === "" || password2.val() !== password.val()) {
+        password.addClass("error");
+        password2.addClass("error");
+        password.removeClass("correct");
+        password2.removeClass("correct");
+    } else {
+        password.addClass("correct");
+        password2.addClass("correct");
+        password.removeClass("error");
+        password2.removeClass("error");
+    }
+});
 
-// password.keyup(function() {
-//     if (password.val() === "" || password2.val() === "" || password2.val() !== password.val()) {
-//         password.addClass("error");
-//         password2.addClass("error");
-//         password.removeClass("correct");
-//         password2.removeClass("correct");
-//     } else {
-//         password.addClass("correct");
-//         password2.addClass("correct");
-//         password.removeClass("error");
-//         password2.removeClass("error");
-//     }
-// });
+password2.keyup(function() {
+    if (password.val() === "" || password2.val() === "" || password2.val() !== password.val()) {
+        password.addClass("error");
+        password2.addClass("error");
+        password.removeClass("correct");
+        password2.removeClass("correct");
+    } else {
+        password.addClass("correct");
+        password2.addClass("correct");
+        password.removeClass("error");
+        password2.removeClass("error");
+    }
+});
 
-// password2.keyup(function() {
-//     if (password.val() === "" || password2.val() === "" || password2.val() !== password.val()) {
-//         password.addClass("error");
-//         password2.addClass("error");
-//         password.removeClass("correct");
-//         password2.removeClass("correct");
-//     } else {
-//         password.addClass("correct");
-//         password2.addClass("correct");
-//         password.removeClass("error");
-//         password2.removeClass("error");
-//     }
-// });
+password.blur(function() {
+    if (password.val() === "" || password2.val() === "" || password2.val() !== password.val()) {
+        password.addClass("error");
+        password2.addClass("error");
+        password.removeClass("correct");
+        password2.removeClass("correct");
+    } else {
+        password.removeClass("error");
+        password2.removeClass("error");
+        password.removeClass("correct");
+        password2.removeClass("correct");
+    }
+});
 
-// password.blur(function() {
-//     if (password.val() === "" || password2.val() === "" || password2.val() !== password.val()) {
-//         password.addClass("error");
-//         password2.addClass("error");
-//         password.removeClass("correct");
-//         password2.removeClass("correct");
-//     } else {
-//         password.removeClass("error");
-//         password2.removeClass("error");
-//         password.removeClass("correct");
-//         password2.removeClass("correct");
-//     }
-// });
-
-// password2.blur(function() {
-//     if (password.val() === "" || password2.val() === "" || password2.val() !== password.val()) {
-//         password.addClass("error");
-//         password2.addClass("error");
-//         password.removeClass("correct");
-//         password2.removeClass("correct");
-//     } else {
-//         password.removeClass("error");
-//         password2.removeClass("error");
-//         password.removeClass("correct");
-//         password2.removeClass("correct");
-//     }
-// });
+password2.blur(function() {
+    if (password.val() === "" || password2.val() === "" || password2.val() !== password.val()) {
+        password.addClass("error");
+        password2.addClass("error");
+        password.removeClass("correct");
+        password2.removeClass("correct");
+    } else {
+        password.removeClass("error");
+        password2.removeClass("error");
+        password.removeClass("correct");
+        password2.removeClass("correct");
+    }
+});
 });

@@ -80,8 +80,12 @@ module.exports = function(passport){
     });
 
     /* GET request page. */
-    router.get('/request', isAuthenticated, function(req, res){
-        if (req.user.hasReq) {
+    //, isAuthenticated
+    router.get('/request', function(req, res){
+        if (!req.user){
+            res.render('request', {title: 'hitch me a ride!', message: req.flash('message'), logout: true});
+        }
+        else if (req.user.hasReq) {
             res.redirect('/results');
         }
         else {
