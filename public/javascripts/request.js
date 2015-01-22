@@ -1,8 +1,8 @@
 function initialize() {
     var pickup = (document.getElementById('pickup'));
     var dropoff = (document.getElementById('dropoff'));
-    auto_pickup = new google.maps.places.Autocomplete(pickup);
-    auto_dropoff = new google.maps.places.Autocomplete(dropoff);
+    var auto_pickup = new google.maps.places.Autocomplete(pickup);
+    var auto_dropoff = new google.maps.places.Autocomplete(dropoff);
 
     // Bias the autocomplete object to the user's geographical location,
     // as supplied by the browser's 'navigator.geolocation' object.

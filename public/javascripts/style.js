@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    $(this).scrollTop(0);
+
     if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
         skrollr.init({
             forceHeight: false
@@ -17,8 +19,6 @@ $(document).ready(function(){
             $('hr.line').css('width','30%');
         });
     };
-
-    $(this).scrollTop(0);
 });
 
 $(function(){
