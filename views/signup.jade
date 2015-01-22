@@ -1,3 +1,5 @@
+//- NOT USED FOR VERSION 1
+
 extends layout
 
 block header
@@ -37,7 +39,7 @@ block content
                     h3 Sign Up
                     hr.line
                 div.signup-wall
-                    form.basic-form(method="POST")
+                    form.basic-form(action="/", method="POST")
                         div.row
                             div.col-sm-6
                                 input#firstname.form-control(type="text", name="firstname", placeholder="First Name", autofocus)
@@ -50,10 +52,9 @@ block content
                         div.button-wrapper
                             button(type="submit") Submit
 
-
                     if message && message.length > 0
                         p#alert.alert.alert-danger(role='alert') #{message}
 
-    script(src="build/js/intlTelInput.js")
+    script(src="build/js/intlTelInput.min.js")
     script(src="/javascripts/signupValidation.js")
 

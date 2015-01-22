@@ -288,47 +288,48 @@ section.about {
     }
 }
 
-section.request {
-    height: 100vh;
+// SINGLE REQUEST FORMATTING
+// section.request {
+//     height: 100vh;
 
-    .container {
-        height: 100%;
-        width: 100%;
-        padding: 25px;
-        background: url("../images/street.png") no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
+//     .container {
+//         height: 100%;
+//         width: 100%;
+//         padding: 25px;
+//         background: url("../images/street.png") no-repeat center center fixed;
+//         -webkit-background-size: cover;
+//         -moz-background-size: cover;
+//         background-size: cover;
 
-        .wrapper {
-            height: 550px;
-            width: 500px;
-            position: relative;
-            top: 15%;
-            margin: auto;
-            padding: 25px;
-            background-color: $filter;
+//         .wrapper {
+//             height: 550px;
+//             width: 500px;
+//             position: relative;
+//             top: 15%;
+//             margin: auto;
+//             padding: 25px;
+//             background-color: $filter;
 
-            .title {
-                color: white;
-                margin-bottom: 30px;
-            }
+//             .title {
+//                 color: white;
+//                 margin-bottom: 30px;
+//             }
 
-            .signup-wall {
-                padding: 25px;
+//             .signup-wall {
+//                 padding: 25px;
 
-                .correct {
-                    border-bottom: 1px solid green;
-                }  
+//                 .correct {
+//                     border-bottom: 1px solid green;
+//                 }  
 
-                .error {
-                    border-bottom: 1px solid $red;
-                }  
-            }
+//                 .error {
+//                     border-bottom: 1px solid $red;
+//                 }  
+//             }
 
-        }
-    }
-}
+//         }
+//     }
+// }
 
 section.footer {
     height: 60px;
