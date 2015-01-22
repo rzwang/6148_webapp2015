@@ -6,50 +6,49 @@ block stylesheets
     link(rel="stylesheet", href="/stylesheets/results.css")
 
 block content
-    body
-        //- nav.navbar#navbar
-        //-     div.navbar-fixed-top(
-        //-             data-start="@id:clear"
-        //-             data-0p="@id:collapsed"
-        //-             data-anchor-target="#navbar")
-        //-         div.container-fluid
-        //-             div.navbar-header
-        //-                 a.navbar-brand.page-scroll(href="/") hitch
-        //-                 button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
-        //-                     span.icon-bar
-        //-                     span.icon-bar
-        //-                     span.icon-bar
-        //-             div.collapse.navbar-collapse#basic_nav
-        //-                 ul.nav.navbar-nav.navbar-right
-        //-                     li: a(href="/login") login
-        //-                     li: a(href="/#signup") sign up
+    //- nav.navbar#navbar
+    //-     div.navbar-fixed-top(
+    //-             data-start="@id:clear"
+    //-             data-0p="@id:collapsed"
+    //-             data-anchor-target="#navbar")
+    //-         div.container-fluid
+    //-             div.navbar-header
+    //-                 a.navbar-brand.page-scroll(href="/") hitch
+    //-                 button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
+    //-                     span.icon-bar
+    //-                     span.icon-bar
+    //-                     span.icon-bar
+    //-             div.collapse.navbar-collapse#basic_nav
+    //-                 ul.nav.navbar-nav.navbar-right
+    //-                     li: a(href="/login") login
+    //-                     li: a(href="/#signup") sign up
 
-        if message.length
-            p#alert.alert.alert-danger(role="alert") #{message}
-        
-        div.delete
-        a(href="/delete")
-            button new request
+    if message.length
+        p#alert.alert.alert-danger(role="alert") #{message}
+    
+    div.delete
+    a(href="/delete")
+        button new request
 
-        div.logout
-            a(href="/logout")
-                button logout
+    div.logout
+        a(href="/logout")
+            button logout
 
-        section.results#results
-            div.container
-                div.wrapper
-                    div.title
-                        h3 Your results!
-                        
-                        if results.length
-                            each result in results
-                                p #{result.firstname} #{result.lastname} #{result}
-                        else
-                            p you don't have any results :(
+    section.results#results
+        div.container
+            div.wrapper
+                div.title
+                    h3 Your results!
+                    
+                    if results.length
+                        each result in results
+                            p #{result.firstname} #{result.lastname} #{result}
+                    else
+                        p you don't have any results :(
 
-        section.footer#footer
-            div.container
-                h5
-                    | wistful worldly wanderers 
-                    img.icon(src="/images/3w.png")
-                    |  2015
+    section.footer#footer
+        div.container
+            h5
+                | wistful worldly wanderers 
+                img.icon(src="/images/3w.png")
+                |  2015

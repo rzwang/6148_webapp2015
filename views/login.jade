@@ -6,50 +6,49 @@ block stylesheets
     link(rel="stylesheet", href="/stylesheets/login.css")
 
 block content
-    body
-        //- nav.navbar#navbar
-        //-     div.navbar-fixed-top(
-        //-             data-start="@id:clear"
-        //-             data-0p="@id:collapsed"
-        //-             data-anchor-target="#navbar")
-        //-         div.container-fluid
-        //-             div.navbar-header
-        //-                 a.navbar-brand.page-scroll(href="/") hitch
-        //-                 button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
-        //-                     span.icon-bar
-        //-                     span.icon-bar
-        //-                     span.icon-bar
-        //-             div.collapse.navbar-collapse#basic_nav
-        //-                 ul.nav.navbar-nav.navbar-right
-        //-                     li: a(href="/login") login
-        //-                     li: a(href="/#signup") sign up
+    //- nav.navbar#navbar
+    //-     div.navbar-fixed-top(
+    //-             data-start="@id:clear"
+    //-             data-0p="@id:collapsed"
+    //-             data-anchor-target="#navbar")
+    //-         div.container-fluid
+    //-             div.navbar-header
+    //-                 a.navbar-brand.page-scroll(href="/") hitch
+    //-                 button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
+    //-                     span.icon-bar
+    //-                     span.icon-bar
+    //-                     span.icon-bar
+    //-             div.collapse.navbar-collapse#basic_nav
+    //-                 ul.nav.navbar-nav.navbar-right
+    //-                     li: a(href="/login") login
+    //-                     li: a(href="/#signup") sign up
 
-        section.signup#login
-            div.container
-                div.wrapper
-                    div.title
-                        h3 Login
-                    div.signup-wall
-                        form.basic-form(method='POST')
-                            div.form-group
-                                input#username.form-control(type='text', name='username', placeholder='Username', autofocus)
-                                input#password.form-control(type='password', name='password', placeholder='Password')
-                            div.button-wrapper
-                                button(type="submit") login
-                    a(href="/#signup") don't have an account?
+    section.signup#login
+        div.container
+            div.wrapper
+                div.title
+                    h3 Login
+                div.signup-wall
+                    form.basic-form(method='POST')
+                        div.form-group
+                            input#username.form-control(type='text', name='username', placeholder='Username', autofocus)
+                            input#password.form-control(type='password', name='password', placeholder='Password')
+                        div.button-wrapper
+                            button(type="submit") login
+                a(href="/#signup") don't have an account?
 
-                        if message.length
-                            p#alert.alert.alert-danger(role='alert') #{message}
-                            //- div.form-group
-                            //-     div.col-sm-10.col-sm-offset-2
-                            //-         div.checkbox
-                            //-             label
-                            //-                 input(type="checkbox")
-                            //-                 p Remember me
+                    if message.length
+                        p#alert.alert.alert-danger(role='alert') #{message}
+                        //- div.form-group
+                        //-     div.col-sm-10.col-sm-offset-2
+                        //-         div.checkbox
+                        //-             label
+                        //-                 input(type="checkbox")
+                        //-                 p Remember me
 
-        section.footer#footer
-            div.container
-                h5
-                    | wistful worldly wanderers 
-                    img.icon(src="/images/3w.png")
-                    |  2015
+    section.footer#footer
+        div.container
+            h5
+                | wistful worldly wanderers 
+                img.icon(src="/images/3w.png")
+                |  2015

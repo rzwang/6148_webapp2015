@@ -17,7 +17,7 @@ module.exports = function(passport){
     /* GET home page */
     router.get('/', function(req, res) {
         if (!req.user) {
-            res.render('index', { title: 'hitch', message: req.flash('message') });
+            res.render('index', { title: 'hitch', message: req.flash('message') }); // FIX ERROR MESSAGING
         } else if (req.user.hasReq) {
             res.redirect('/results');
         } else {
@@ -41,7 +41,7 @@ module.exports = function(passport){
     /* GET login page */
     router.get('/login', function(req, res) {
         if (!req.user) {
-            res.render('login', { title: 'hitch | Login', message: req.flash('message') }); // FIX ERROR MESSAGING
+            res.render('login', { title: 'hitch | Login', message: req.flash('message') });
         } else if (req.user.hasReq) {
             res.redirect('/results');
         } else {
