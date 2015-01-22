@@ -8,22 +8,21 @@ block stylesheets
 
 block content
     //- NAV BAR SHOULD INCLUDE LOGO AND LOGOUT BUTTONS
-    //- nav.navbar#navbar
+    nav.navbar#navbar
         div.navbar-fixed-top(
                 data-start="@id:clear"
                 data-0p="@id:collapsed"
                 data-anchor-target="#navbar")
             div.container-fluid
                 div.navbar-header
-                    a.navbar-brand.page-scroll(href="/") hitch
+                    a.navbar-brand.page-scroll(href="/#main") hitch
                     button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
                         span.icon-bar
                         span.icon-bar
                         span.icon-bar
                 div.collapse.navbar-collapse#basic_nav
                     ul.nav.navbar-nav.navbar-right
-                        li: a(href="login") LOGIN
-                        li: a(href="signup") SIGN UP
+                        li: a(href="/logout") LOGOUT
 
     section.request#request
         div.container
@@ -36,7 +35,7 @@ block content
                         div.form-group
                             input#pickup.form-control(type='text', name='pickup', placeholder='Pickup')
                             input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff')
-                            input#time.form-control(type='datetime-local', name='time', placeholder='mm/dd/yyyy hh:mm')
+                            input#time.form-control(type='datetime-local', name='time', placeholder='Pickup Time: mm/dd/yyyy hh:mm')
                             div.button-wrapper
                                 button request
 

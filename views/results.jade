@@ -5,7 +5,7 @@ block header
 block stylesheets
 
 block content
-    //- nav.navbar#navbar
+    nav.navbar#navbar
         //- FIX RESPONSIVENESS
         div.navbar-fixed-clear(
                 data-top="@class:navbar-fixed-top-clear"
@@ -13,20 +13,22 @@ block content
                 data-anchor-target="#navbar")
             div.container-fluid
                 div.navbar-header
-                    a.navbar-brand.page-scroll(href="/") hitch
+                    a.navbar-brand.page-scroll(href="/#main") hitch
                     button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
                         span.icon-bar
                         span.icon-bar
                         span.icon-bar
                 div.collapse.navbar-collapse#basic_nav
                     ul.nav.navbar-nav.navbar-right
-                        li: a(href="login") LOGIN
-                        li: a(href="signup") SIGN UP
+                        li: a(href="/logout") LOGOUT
 
-    section.request#request
+    section.results#results
         div.container
             div.wrapper
                 div.title
                     h3 Your hitchers!
-                    if message && message.length > 0
-                        p#alert.alert.alert-success(role='alert') #{message}
+                    hr.line
+                div.result-wall
+
+                if message && message.length > 0
+                    p#alert.alert.alert-success(role='alert') #{message}

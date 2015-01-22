@@ -32,20 +32,6 @@ module.exports = function(passport){
         }
     });
 
-    /* GET signup page */
-    //- ADD IN SEPARATE SIGNUP PAGE LATER
-        // router.get('/signup', function(req, res) {
-        //     if (!req.user) {
-        //         res.render('signup', {title: 'hitch | Sign Up', message: req.flash('message')});
-        //     }
-        //     else if (req.user.hasReq) {
-        //         res.redirect('/results');
-        //     }
-        //     else {
-        //         res.redirect('/request');
-        //     }      
-        // });
-
     /* Handle signup POST */
     router.post('/', passport.authenticate('signup', {
         successRedirect: '/request',
@@ -71,7 +57,8 @@ module.exports = function(passport){
     router.post('/login', passport.authenticate('login', {
         successRedirect: '/request',
         failureRedirect: '/login',
-        failureFlash: true
+        failureFlash: true, 
+        successFlash: true
     }));
 
     /* Handle Logout */
@@ -81,24 +68,20 @@ module.exports = function(passport){
     });
 
     /* GET request page. */
-    //, isAuthenticated
-    router.get('/request', function(req, res){
-        if (!req.user){
-            res.render('request', {title: 'hitch me a ride!', message: req.flash('message'), logout: true});
-        }
-        else if (req.user.hasReq) {
+    router.get('/request', isAuthenticated, function(req, res){
+        if (req.user.hasReq) {
             res.redirect('/results');
         }
         else {
-            res.render('request', {title: 'hitch me a ride!', message: req.flash('message'), logout: true});
+            res.render('request', {title: 'hitch me a ride!', message: req.flash('message')}); //, logout: true});
         }
     });
 
     /* Handle request POST */
     router.post('/request', function(req, res){
         var newReq = new Request({
-            firstname: req.body['firstName'],
-            lastname: req.body['lastName'], 
+            firstname: req.body['firstname'],
+            lastname: req.body['lastname'], 
             pickup: req.body['pickup'],
             dropoff: req.body['dropoff'],
             time: req.body['time'],
@@ -107,28 +90,23 @@ module.exports = function(passport){
         newReq.save(function(err, result) {
             res.redirect('/results');
         });
+        req.user.hasReq = true;
     });
 
     /* GET results page */
-    router.get('/results', function(req, res) {
-        if (!req.user) { 
+    router.get('/results', isAuthenticated, function(req, res) {
+        if (req.user.hasReq) { 
+            var matches = [];
             Request.find({}, function(err, results) {
                 results.forEach(function(result) {
                     console.log(result);
+                    matches.push(result);
                 });
             });
-            res.render('results', {title: 'hitch | Results', message: req.flash('message')})
-        }
-        else if (!req.user.hasReq) {
-            res.redirect('/request')
+            res.render('results', {title: 'hitch | Results', message: req.flash('message')}); //, logout: true});
         }
         else {
-            Request.find({}, function(err, results) {
-                results.forEach(function(result) {
-                    console.log(result);
-                });
-            });
-            res.render('results', {title: 'hitch | Results', message: req.flash('message'), logout: true});
+            res.redirect('/request');
         }
     });
 
@@ -136,6 +114,20 @@ module.exports = function(passport){
 }
 
 // // ADD THESE BACK IN WHEN THE VIEWS FILES ARE CREATED
+
+/* GET signup page */
+//- ADD IN SEPARATE SIGNUP PAGE LATER
+    // router.get('/signup', function(req, res) {
+    //     if (!req.user) {
+    //         res.render('signup', {title: 'hitch | Sign Up', message: req.flash('message')});
+    //     }
+    //     else if (req.user.hasReq) {
+    //         res.redirect('/results');
+    //     }
+    //     else {
+    //         res.redirect('/request');
+    //     }      
+    // });
 
 // var iDiv = window.content.document.createElement('div');
 // iDiv.id = 'match';
