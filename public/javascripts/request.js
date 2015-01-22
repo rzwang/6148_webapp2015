@@ -1,6 +1,6 @@
 function initialize() {
-    var pickup = (document.getElementById('pickup'));
-    var dropoff = (document.getElementById('dropoff'));
+    var pickup = document.getElementById('pickup');
+    var dropoff = document.getElementById('dropoff');
     var auto_pickup = new google.maps.places.Autocomplete(pickup);
     var auto_dropoff = new google.maps.places.Autocomplete(dropoff);
 
