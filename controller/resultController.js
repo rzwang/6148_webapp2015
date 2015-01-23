@@ -24,17 +24,17 @@ var getResults = function(req, res) {
                 _id: { $ne: request._id },
                 date: request.date,
                 time_calc: { $gte: request.time_calc-100, $lte: request.time_calc+100 },
-                pickup_loc: { $gte: request.pickup_loc-0.1, $lte: request.pickup_loc+0.1 },
-                dropoff_loc: { $gte: request.dropoff_loc-0.1, $lte: request.dropoff_loc+0.1 }
+                // pickup_loc: { $gte: request.pickup_loc-0.000508204972, $lte: request.pickup_loc+0.000508204972 },
+                // dropoff_loc: { $gte: request.dropoff_loc-0.000508204972, $lte: request.dropoff_loc+0.000508204972 }
             }, function(err, results) {
                 if (results) {
                     results.forEach(function(result) {
                         allResults.push(result);
                     });
                 };
-            });
             // var sorted = sort(allResults);
             res.render('results', { title: 'hitch | Results', results: allResults, message: req.flash('message') });
+            });
         });
     } else {
         res.redirect('/request');
