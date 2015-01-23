@@ -37,7 +37,7 @@ block content
                     h6 hitch me a ride
                     hr.line
                  div.signup-wall
-                    form.basic-form(method='POST')
+                    form.basic-form(method="POST")
                         div.form-group
                             input#pickup.form-control(type='text', name='pickup', placeholder='Pickup', onfocus='initialize()', autofocus)
                             input#pickup_loc.form-control(type='hidden', name='pickup_loc')
@@ -45,9 +45,9 @@ block content
                             input#dropoff_loc.form-control(type='hidden', name='dropoff_loc')
                             div.row
                                 div.col-sm-6
-                                    input#date.form-control(type='datetime-local', name='date', placeholder='Pickup Date')
+                                    input#date.form-control(name='date', placeholder='Pickup Date')
                                 div.col-sm-6
-                                    input#time.form-control(type='datetime-local', name='time', placeholder='Pickup Time')
+                                    input#time.form-control(name='time', placeholder='Pickup Time')
                             div.button-wrapper
                                 button(type="submit") request
 

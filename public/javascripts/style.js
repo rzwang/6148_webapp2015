@@ -36,10 +36,14 @@ $(function(){
     $("form").submit(function() {
         var isFormFilled = true;
         $("input").each(function() {
-            if ($.trim($(this).val()).length === 0 || $(this).hasClass("error")) {
+            if ($.trim($(this).val()).length === 0) {
                 $(this).addClass("error");
                 isFormFilled = false;
-            } else {
+            }
+            if ($.trim($(this).val()).length === 0 && $(this).hasClass("error")){
+                isFormFilled = false;
+            }
+            else {
                 $(this).removeClass("error");
             }
         });
@@ -48,10 +52,16 @@ $(function(){
     });
 
     // Change underlinings
+    $("input").blur(function () {
+        $(this).removeClass("error");
+    }); 
+
     $("input").keydown(function () {
-        if ($.trim($(this).val()).length !== 0) {
-            $(this).removeClass("error");
-        };
+        $(this).removeClass("error");
+    }); 
+
+    $("input").mousedown(function () {
+        $(this).removeClass("error");
     });
 });
 
