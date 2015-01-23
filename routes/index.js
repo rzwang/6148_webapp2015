@@ -1,10 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var app = express();
 
 var route = require('../controller/routeController');
 var createRequest = require('../controller/requestController')
-// var getResults = require('../controller/resultController');
+var getResults = require('../controller/resultController');
 var deleteRequest = require('../controller/deleteController');
 
 
@@ -50,7 +49,7 @@ module.exports = function(passport){
     router.post('/request', createRequest);
 
     /* GET results page. */
-    // router.get('/results', isAuthenticated, getResults);
+    router.get('/results', isAuthenticated, getResults);
 
     /* handle delete */
     router.get('/delete', isAuthenticated, deleteRequest);
