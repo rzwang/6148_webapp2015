@@ -1,10 +1,6 @@
 // VALIDATING PHONE NUMBER
 // $("#phone").intlTelInput();
 
-$(document).ready(function() {
-    $("#phone").mask("(000) 000-0000");
-});
-
 var telInput = $("#phone");
 
 // initialise plugin

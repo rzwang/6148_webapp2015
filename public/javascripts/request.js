@@ -1,13 +1,13 @@
 function initialize() {
     var pickup = document.getElementById('pickup');
+    var pickup_loc = document.getElementById('pickup_loc');
     var dropoff = document.getElementById('dropoff');
+    var dropoff_loc = document.getElementById('dropoff_loc');
     var auto_pickup = new google.maps.places.Autocomplete(pickup);
     var auto_dropoff = new google.maps.places.Autocomplete(dropoff);
-    var pickup_loc;
-    var dropoff_loc;
-
+    
     google.maps.event.addListener(auto_pickup, 'place_changed', function() {
-        pickup_loc = auto_pickup.getPlace().geometry.location.toString();
+        pickup_loc.val = auto_pickup.getPlace().geometry.location.toString();
     });
 
     google.maps.event.addListener(auto_dropoff, 'place_changed', function() {
