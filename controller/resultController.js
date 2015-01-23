@@ -9,39 +9,31 @@ function distance(loc1, loc2) {
     return Math.sqrt(Math.pow(lat1-lat2, 2) + Math.pow(lng1-lng2, 2))
 };
 
-// function match(request) {
-//     var req_date = request.date;
-//     var req_time = request.time_calc;
-//     var req_pickup = request.pickup_loc;
-//     var req_dropoff = request.dropoff_loc;
-//     var allResults = ['test'];
+function sort(results) {
+    
+};
 
-//     Request.find({}, function(err, results) {
-//         results.forEach(function(result) {
-//             allResults.push('hello');
-//         });
-//         allResults.push('helloo');
-//     });
-//     allResults.push('hellooo');
-//     return allResults;
-// };
+// 0.000508204972 0.029118
 
 var getResults = function(req, res) {
     if (req.user.hasReq[0]) {
-        Request.findOne({ '_id': req.user.hasReq[1] }, function(err, request) {
-            var req_date = request.date;
-            var req_time = request.time_calc;
-            var req_pickup = request.pickup_loc;
-            var req_dropoff = request.dropoff_loc;
-            var allResults = ['test'];
+        Request.findOne({ _id: req.user.hasReq[1] }, function(err, request) {
+            var allResults = [];
 
-            Request.find({}, function(err, results) {
-                results.forEach(function(result) {
-                    allResults.push('hello');
-                });
-                allResults.push('helloo');
+            Request.find({
+                _id: { $ne: request._id },
+                date: request.date,
+                time_calc: { $gte: request.time_calc-100, $lte: request.time_calc+100 },
+                pickup_loc: { $gte: request.pickup_loc-0.1, $lte: request.pickup_loc+0.1 },
+                dropoff_loc: { $gte: request.dropoff_loc-0.1, $lte: request.dropoff_loc+0.1 }
+            }, function(err, results) {
+                if (results) {
+                    results.forEach(function(result) {
+                        allResults.push(result);
+                    });
+                };
             });
-            allResults.push('hellooo');
+            // var sorted = sort(allResults);
             res.render('results', { title: 'hitch | Results', results: allResults, message: req.flash('message') });
         });
     } else {

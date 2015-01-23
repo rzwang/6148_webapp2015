@@ -42,7 +42,7 @@ block content
                     
                     if results.length
                         each result in results
-                            p #{result}
+                            p #{result.firstname} #{result.lastname} #{result.pickup} #{result.dropoff} #{result.time_disp} #{result.phone}
                     else
                         p you don't have any results :(
 
