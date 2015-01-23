@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var app = express();
-var passport = require('passport');
 
-var Request = require('../models/requestModel');
+var route = require('../controller/routeController');
+var createRequest = require('../controller/requestController')
+// var getResults = require('../controller/resultController');
+var deleteRequest = require('../controller/deleteController');
 
 
 var isAuthenticated = function (req, res, next){
@@ -15,22 +17,12 @@ var isAuthenticated = function (req, res, next){
 module.exports = function(passport){
 
     /* GET home page */
-    router.get('/', function(req, res) {
-        if (!req.user) {
-            res.render('index', { title: 'hitch', message: req.flash('message') }); // FIX ERROR MESSAGING
-        } else if (req.user.hasReq) {
-            res.redirect('/results');
-        } else {
-            res.redirect('/request');
-        };
-    });
+    router.get('/', route.getHome);
 
     /* GET signup page */
-    router.get('/signup', function(req, res) {
-        res.redirect('/#signup');
-    });
+    router.get('/signup', route.getSignup);
 
-    /* handle  signup POST */
+    /* handle signup POST */
     router.post('/signup', passport.authenticate('signup', {
         successRedirect: '/request',
         failureRedirect: '/#signup',
@@ -39,15 +31,7 @@ module.exports = function(passport){
     }));
 
     /* GET login page */
-    router.get('/login', function(req, res) {
-        if (!req.user) {
-            res.render('login', { title: 'hitch | Login', message: req.flash('message') });
-        } else if (req.user.hasReq) {
-            res.redirect('/results');
-        } else {
-            res.redirect('/request');
-        };
-    });
+    router.get('/login', route.getLogin);
 
     /* handle login POST */
     router.post('/login', passport.authenticate('login', {
@@ -57,66 +41,19 @@ module.exports = function(passport){
     }));
 
     /* handle logout */
-    router.get('/logout', function(req, res) {
-        req.logout();
-        req.flash( 'message', 'You have been successfully logged out' );
-        res.redirect('/');
-    });
+    router.get('/logout', route.getLogout);
 
     /* GET request page. */
-    router.get('/request', isAuthenticated, function(req, res){
-        if (req.user.hasReq) {
-            res.redirect('/results')
-        } else {
-            res.render('request', { title: 'hitch me a ride!', message: req.flash('message') });
-        };
-    });
+    router.get('/request', isAuthenticated, route.getRequest);
 
     /* handle request POST */
-    router.post('/request', function(req, res){
-        var newRequest = new Request({
-            firstname: req.user.firstname,
-            lastname: req.user.lastname,
-            pickup: req.body['pickup'],
-            pickup_loc: req.body['pickup_loc'],
-            dropoff: req.body['dropoff'],
-            dropoff_loc: req.body['dropoff_loc'],
-            date: req.body['date'],
-            time_disp: req.body['time'],
-            time_calc: req.body['time_calc'],
-            phone: req.user.phone,
-            results: []
-        });
-        req.user.hasReq = true;
-        req.user.save();
-        // SEARCH ALGORITHM HERE (NEWREQUEST.RESULTS = FROMSEARCH)
-        newRequest.save(function(err, result) {
-            res.redirect('/results');
-        });
-    });
+    router.post('/request', createRequest);
 
     /* GET results page. */
-    router.get('/results', isAuthenticated, function(req, res) {
-        if (!req.user.hasReq) {
-            res.redirect('/request');
-        } else {
-            var allresults = [];
-            Request.find({}, function(err, results) { // REDIFINE SEARCH PARAMETERS
-                results.forEach(function(result) {
-                    allresults.push(result);
-                });
-                res.render('results', { title: 'hitch | Results', results: allresults, message: req.flash('message') });
-            });
-        };
-    });
+    // router.get('/results', isAuthenticated, getResults);
 
     /* handle delete */
-    router.get('/delete', isAuthenticated, function(req, res){
-        // DELETE THE REQUEST
-        req.user.hasReq = false;
-        req.user.save();
-        res.redirect('/request');
-    });
+    router.get('/delete', isAuthenticated, deleteRequest);
 
     return router;
 }

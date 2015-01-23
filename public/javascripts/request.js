@@ -24,11 +24,11 @@ function initialize() {
     };
 
     google.maps.event.addListener(auto_pickup, 'place_changed', function() {
-        pickup_loc.value = auto_pickup.getPlace().geometry.location.toString();
+        pickup_loc.value = auto_pickup.getPlace().geometry.location.toString().slice(1,-1);
     });
         
     google.maps.event.addListener(auto_dropoff, 'place_changed', function() {
-        dropoff_loc.value = auto_dropoff.getPlace().geometry.location.toString();
+        dropoff_loc.value = auto_dropoff.getPlace().geometry.location.toString().slice(1,-1);
     });
 };
 
