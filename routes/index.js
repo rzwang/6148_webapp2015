@@ -4,7 +4,6 @@ var app = express();
 var passport = require('passport');
 
 var Request = require('../models/requestModel');
-var Geo = require('../public/javascripts/geo');
 
 
 var isAuthenticated = function (req, res, next){
@@ -79,9 +78,9 @@ module.exports = function(passport){
             firstname: req.user.firstname,
             lastname: req.user.lastname,
             pickup: req.body['pickup'],
-            pickup_loc: Geo.pickup_loc,
+            pickup_loc: req.body['pickup_loc'],
             dropoff: req.body['dropoff'],
-            dropoff_loc: Geo.dropoff_loc,
+            dropoff_loc: req.body['dropoff_loc'],
             date: req.body['date'],
             time_disp: req.body['time'],
             time_calc: req.body['time_calc'],

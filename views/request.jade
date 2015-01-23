@@ -37,7 +37,9 @@ block content
                 div.signup-wall
                     form.basic-form(method='POST')
                         input#pickup.form-control(type="text", name="pickup", placeholder="Pickup", onfocus="initialize()", autofocus)
+                        input#pickup_loc.form-control(type="hidden", name="pickup_loc")
                         input#dropoff.form-control(type="text", name="dropoff", placeholder="Dropoff")
+                        input#dropoff_loc.form-control(type="hidden", name="dropoff_loc")
                         div.row
                             div.col-sm-6
                                 input#date.form-control(type="text", name="date", placeholder="mm/dd/yy")
@@ -60,9 +62,8 @@ block content
                 img.icon(src="/images/3w.png")
                 |  2015
     
+block scripts
     script(src="/javascripts/datepicker/picker.js")
     script(src="/javascripts/datepicker/picker.date.js")
     script(src="/javascripts/datepicker/picker.time.js")
     script(src="/javascripts/request.js")
-
-//- block scripts
