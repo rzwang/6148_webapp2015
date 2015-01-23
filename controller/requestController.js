@@ -11,8 +11,7 @@ var createRequest = function(req, res){
         date: req.body['date'],
         time_disp: req.body['time'],
         time_calc: req.body['time_calc'],
-        phone: req.user.phone,
-        results: []
+        phone: req.user.phone
     });
     newRequest.save();
     req.user.hasReq = [true, newRequest._id];

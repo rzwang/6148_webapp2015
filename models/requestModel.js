@@ -12,8 +12,7 @@ var Request = new Schema({
     date: String,
     time_disp: String,
     time_calc: Number,
-    phone: String,
-    results: Array
+    phone: String
 });
 
 module.exports = mongoose.model('Request', Request);

@@ -46,7 +46,7 @@ module.exports = function(passport){
     router.get('/request', isAuthenticated, route.getRequest);
 
     /* handle request POST */
-    router.post('/request', createRequest);
+    router.post('/request', isAuthenticated, createRequest);
 
     /* GET results page. */
     router.get('/results', isAuthenticated, getResults);
