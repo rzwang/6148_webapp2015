@@ -7,19 +7,16 @@ var Request = require('../models/requestModel');
 function match(request) {
     var req_date = request.date;
     var req_time = request.time_calc;
-    var req_pickup = request.pickup_loc.split(', ');
-    var req_dropoff = request.dropoff_loc.split(', ');
+    var req_pickup = request.pickup_loc;
+    var req_dropoff = request.dropoff_loc;
     var req_results = request.results;
 
-    // var pickup_lat = parseFloat(req_pickup.split(',')[0]);
-    // var pickup_lng = parseFloat(req_pickup.split(',')[1]);
-    // var dropoff_lat = parseFloat(req_dropoff.split(',')[0]);
-    // var dropoff_lng = parseFloat(req_dropoff.split(',')[1]);
-
-    Request.geoNear(req_pickup, { maxDistance : 0.000508204972, spherical : true }, function(err, results) {
-        console.log(results);
-        req_results.push(results);
+    Request.find({}, function(err, results) {
+        results.forEach(function(result) {
+            req_results.push("here");            
+        });
     });
+};
 
 
 
@@ -38,6 +35,10 @@ function match(request) {
     // console.log(req_results);
 //=====================
 
+    // var pickup_lat = parseFloat(req_pickup.split(',')[0]);
+    // var pickup_lng = parseFloat(req_pickup.split(',')[1]);
+    // var dropoff_lat = parseFloat(req_dropoff.split(',')[0]);
+    // var dropoff_lng = parseFloat(req_dropoff.split(',')[1]);
 
 
 
@@ -62,14 +63,18 @@ function match(request) {
     // sort results by cost
 
     // return sorted result
-};
+
+
+
+
 
 var getResults = function(req, res) {
     if (req.user.hasReq[0]) {
-        Request.findOne({ '_id': req.user.hasReq[1] }, function(err, res) {
-            match(res);
+        Request.findOne({ '_id': req.user.hasReq[1] }, function(err, result) {
+            match(result);
+            result.save();
+            res.render('results', { title: 'hitch | Results', results: result.results, message: req.flash('message') });
         });
-        res.render('results', { title: 'hitch | Results', results: res.results, message: req.flash('message') });
     } else {
         res.redirect('/request');
     };
