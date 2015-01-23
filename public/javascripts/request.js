@@ -7,11 +7,11 @@ function initialize() {
     var auto_dropoff = new google.maps.places.Autocomplete(dropoff);
     
     google.maps.event.addListener(auto_pickup, 'place_changed', function() {
-        pickup_loc.val = auto_pickup.getPlace().geometry.location.toString();
+        pickup_loc.value = auto_pickup.getPlace().geometry.location.toString().slice(1,-1);
     });
 
     google.maps.event.addListener(auto_dropoff, 'place_changed', function() {
-        dropoff_loc = auto_dropoff.getPlace().geometry.location.toString();
+        dropoff_loc.value = auto_dropoff.getPlace().geometry.location.toString().slice(1,-1);
     });
     
     // Bias the autocomplete object to the user's geographical location,

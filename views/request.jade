@@ -40,7 +40,9 @@ block content
                     form.basic-form(method='POST')
                         div.form-group
                             input#pickup.form-control(type='text', name='pickup', placeholder='Pickup', onfocus='initialize()', autofocus)
+                            input#pickup_loc.form-control(type='hidden', name='pickup_loc')
                             input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff')
+                            input#dropoff_loc.form-control(type='hidden', name='dropoff_loc')
                             div.row
                                 div.col-sm-6
                                     input#date.form-control(type='datetime-local', name='date', placeholder='Pickup Date')
