@@ -120,5 +120,3 @@ module.exports = function(passport){
 
     return router;
 }
-
-// geo: geoNear and geoSearch
