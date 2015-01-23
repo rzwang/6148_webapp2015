@@ -6,7 +6,6 @@ var flash = require('connect-flash');
 app.use(flash());
 
 var Request = require('../models/requestModel.js');
-var Loc = require('../public/javascripts/locationFiller.js');
 
 var isAuthenticated = function (req, res, next){
     // if user is authenticated in the session, call the next() to call the next request handler
@@ -84,9 +83,9 @@ module.exports = function(passport){
             firstname: req.user.firstname,
             lastname: req.user.lastname, 
             pickup: req.body['pickup'],
-            pickup_loc: Loc.auto_pickup,
+            pickup_loc: req.body['pickup_loc'],
             dropoff: req.body['dropoff'],
-            dropoff_loc: Loc.auto_dropoff,
+            dropoff_loc: req.body['dropoff_loc'],
             time_disp: req.body['time'],
             time_calc: req.body['time_calc'],
             phone: req.user.phone,

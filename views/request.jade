@@ -2,10 +2,16 @@ extends layout
 
 block header
     script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places")
-    script(src='/javascripts/locationFiller.js')
+    script(src='/javascripts/dateValidation/picker.js')
+    script(src='/javascripts/dateValidation/picker.date.js')    
+    script(src='/javascripts/dateValidation/picker.time.js')
+    script(src='/javascripts/request.js')
 
 block stylesheets
     link(rel="stylesheet", href="/stylesheets/request.css")
+    link(rel="stylesheet", href="/stylesheets/default.css")
+    link(rel="stylesheet", href="/stylesheets/default.date.css")
+    link(rel="stylesheet", href="/stylesheets/default.time.css")
 
 block content
     nav.navbar#navbar
@@ -35,12 +41,15 @@ block content
                         div.form-group
                             input#pickup.form-control(type='text', name='pickup', placeholder='Pickup', onfocus='initialize()', autofocus)
                             input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff')
-                            input#time.form-control(type='datetime-local', name='time', placeholder='Pickup Time: mm/dd/yyyy hh:mm')
+                            div.row
+                                div.col-sm-6
+                                    input#date.form-control(type='datetime-local', name='date', placeholder='Pickup Date')
+                                div.col-sm-6
+                                    input#time.form-control(type='datetime-local', name='time', placeholder='Pickup Time')
                             div.button-wrapper
                                 button(type="submit") request
 
                     if message && message.length > 0
                         p#alert.alert.alert-success(role='alert') #{message}
 
-block scripts 
-    script(src='/javascripts/dateValidation.js')
+block scripts
