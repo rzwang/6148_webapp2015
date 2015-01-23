@@ -1,6 +1,3 @@
-// var auto_pickup;
-// var auto_dropoff;
-
 function initialize() {
     var pickup = document.getElementById('pickup');
     var dropoff = document.getElementById('dropoff');
@@ -15,10 +12,18 @@ function initialize() {
         exports.auto_dropoff = auto_dropoff.getPlace().geometry.location.toString();
     });
     
-
-    // // GEOCODE THAT CONVERTS ADDRESS TO LATLNG
-    // // USE LATLNG TO DETERMINE PERIMETER AND VALIDATE IF OTHER PICKUP/DROPOFF LOCATIONS FALL IN THE RANGE OF LATS AND LNGS
-    // var geocoder = new Geocoder();
-    // var pickupLatLng = geocoder.geocode(pickupAddress);
-    // var dropoffLatLng = geocoder.geocode(dropoffAddress);
+    // Bias the autocomplete object to the user's geographical location,
+    // as supplied by the browser's 'navigator.geolocation' object.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var geolocation = new google.maps.LatLng(
+              position.coords.latitude, position.coords.longitude);
+          var circle = new google.maps.Circle({
+            center: geolocation,
+            radius: position.coords.accuracy
+          });
+          auto_pickup.setBounds(circle.getBounds());
+          auto_dropoff.setBounds(circle.getBounds());
+        });
+    }
 }
