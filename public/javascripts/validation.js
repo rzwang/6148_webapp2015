@@ -4,6 +4,10 @@ $(function(){
     var phone = $('#phone');
     var password = $('#password');
     var password2 = $('#password2');
+    var pickup = $('#pickup');
+    var pickup_loc = $('#pickup_loc');
+    var dropoff = $('#dropoff');
+    var dropoff_loc = $('#dropoff_loc');
 
     $('form').submit(function() {
         var isFormFilled = true;
@@ -17,6 +21,7 @@ $(function(){
                 $(this).blur();
             };
         });
+
         if (phone.length && !phoneformat.test(phone.val())) {
             phone.addClass('error');
             phone.blur();
@@ -29,13 +34,25 @@ $(function(){
                 isFormFilled = false;
             };
         };
+
+        // FIX SMALL ERRORS!!!!!!!!!!!!!!!!!!!!!!!!
+        if (pickup_loc.hasClass('error')) {
+            pickup.addClass('error');
+        };
+
+        if (dropoff_loc.hasClass('error')) {
+            dropoff.addClass('error');
+        };
+
         return isFormFilled;
     });
 
-    $('input').each(function() {
-        $(this).keyup(function() {
-            $(this).removeClass('error');
-        });
+    $('input').keyup(function() {
+        $(this).removeClass('error');
+    });
+
+    $('input').mousedown(function() {
+        $(this).removeClass('error');
     });
 
     password2.keyup(function() {
