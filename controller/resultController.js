@@ -7,27 +7,40 @@ var Request = require('../models/requestModel');
 function match(request) {
     var req_date = request.date;
     var req_time = request.time_calc;
-    var req_pickup = request.pickup_loc;
-    var req_dropoff = request.dropoff_loc;
+    var req_pickup = request.pickup_loc.split(', ');
+    var req_dropoff = request.dropoff_loc.split(', ');
     var req_results = request.results;
 
-    var pickup_lat = parseFloat(req_pickup.split(',')[0]);
-    var pickup_lng = parseFloat(req_pickup.split(',')[1]);
-    var dropoff_lat = parseFloat(req_dropoff.split(',')[0]);
-    var dropoff_lng = parseFloat(req_dropoff.split(',')[1]);
+    // var pickup_lat = parseFloat(req_pickup.split(',')[0]);
+    // var pickup_lng = parseFloat(req_pickup.split(',')[1]);
+    // var dropoff_lat = parseFloat(req_dropoff.split(',')[0]);
+    // var dropoff_lng = parseFloat(req_dropoff.split(',')[1]);
 
-    var pickup_options = { near: [pickup_lat, pickup_lng], maxDistance: 0.000508204972 }; //.029118 deg
-    Request.geoSearch({ 'date': req_date, 'time': { $gte: req_time-100, $lte: req_time+100 } }, pickup_options, function(err, res) {
-        console.log(res);
-        var dropoff_options = { near: [dropoff_lat, dropoff_lng], maxDistance: 0.000508204972 }; //.029118 deg
-        res.geoSearch({}, dropoff_options, function(err, results) {
-            console.log(results);
-            results.forEach(function(result) {
-                req_results.push(result);
-            });
-        });
+    Request.geoNear(req_pickup, { maxDistance : 0.000508204972, spherical : true }, function(err, results) {
+        console.log(results);
+        req_results.push(results);
     });
-    console.log(req_results);
+
+
+
+//=====================
+    // var pickup_options = { near: req_pickup, maxDistance: 0.000508204972 }; //.029118 deg
+    // Request.geoSearch({ 'date': req_date, 'time': { $gte: req_time-100, $lte: req_time+100 } }, pickup_options, function(err, res) {
+    //     console.log(res);
+    //     var dropoff_options = { near: req_dropoff, maxDistance: 0.000508204972 }; //.029118 deg
+    //     res.geoSearch({}, dropoff_options, function(err, results) {
+    //         console.log(results);
+    //         results.forEach(function(result) {
+    //             req_results.push(result);
+    //         });
+    //     });
+    // });
+    // console.log(req_results);
+//=====================
+
+
+
+
 
     // search Request database
     // // making results
