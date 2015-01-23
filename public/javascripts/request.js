@@ -44,3 +44,5 @@ $(document).ready( function() {
       hiddenSuffix: '_calc'
     });
 })
+
+//LOCATION INPUT VALIDATION

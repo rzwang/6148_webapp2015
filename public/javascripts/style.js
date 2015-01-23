@@ -56,7 +56,7 @@ $(function(){
         $(this).removeClass("error");
     }); 
 
-    $("input").keydown(function () {
+    $("input").keyup(function () {
         $(this).removeClass("error");
     }); 
 
