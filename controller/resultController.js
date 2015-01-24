@@ -1,19 +1,8 @@
 var Request = require('../models/requestModel');
 
-function distance(loc1, loc2) {
-    var lat1 = loc1[0];
-    var lng1 = loc1[1];
-    var lat2 = loc2[0];
-    var lng2 = loc2[1];
-
-    return Math.sqrt(Math.pow(lat1-lat2, 2) + Math.pow(lng1-lng2, 2))
-};
-
 function sort(results) {
     
 };
-
-// 0.000508204972 0.029118
 
 var getResults = function(req, res) {
     if (req.user.hasReq === "") {
@@ -26,10 +15,10 @@ var getResults = function(req, res) {
                 _id: { $ne: request._id },
                 date: request.date,
                 time_calc: { $gte: request.time_calc-100, $lte: request.time_calc+100 },
-                pickup_lat: { $gte: request.pickup_lat-0.029118, $lte: request.pickup_lat+0.029118 },
-                pickup_lng: { $gte: request.pickup_lng-0.019412, $lte: request.pickup_lng+0.019412 },
+                pickup_lat: { $gte: request.pickup_lat-0.029118, $lte: request.pickup_lat+0.029118 }, // 2 miles in degrees lat
+                pickup_lng: { $gte: request.pickup_lng-0.022708, $lte: request.pickup_lng+0.022708 }, // average of 2 miles in degrees lng
                 dropoff_lat: { $gte: request.dropoff_lat-0.029118, $lte: request.dropoff_lat+0.029118 },
-                dropoff_lng: { $gte: request.dropoff_lng-0.019412, $lte: request.dropoff_lng+0.019412 },
+                dropoff_lng: { $gte: request.dropoff_lng-0.022708, $lte: request.dropoff_lng+0.022708 },
             }, function(err, results) {
                 if (results) {
                     results.forEach(function(result) {
