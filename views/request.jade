@@ -11,22 +11,21 @@ block stylesheets
     link(rel="stylesheet", href="/stylesheets/request.css")
 
 block content
-    //- nav.navbar#navbar
-    //-     div.navbar-fixed-top(
-    //-             data-start="@id:clear"
-    //-             data-0p="@id:collapsed"
-    //-             data-anchor-target="#navbar")
-    //-         div.container-fluid
-    //-             div.navbar-header
-    //-                 a.navbar-brand.page-scroll(href="/") hitch
-    //-                 button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
-    //-                     span.icon-bar
-    //-                     span.icon-bar
-    //-                     span.icon-bar
-    //-             div.collapse.navbar-collapse#basic_nav
-    //-                 ul.nav.navbar-nav.navbar-right
-    //-                     li: a(href="/login") login
-    //-                     li: a(href="/#signup") sign up
+    nav.navbar#navbar
+        div.navbar-fixed-top(
+                data-start="@id:clear"
+                data-0p="@id:collapsed"
+                data-anchor-target="#navbar")
+            div.container-fluid
+                div.navbar-header
+                    a.navbar-brand.page-scroll(href="/") hitch
+                    button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                div.collapse.navbar-collapse#basic_nav
+                    ul.nav.navbar-nav.navbar-right
+                        li: a(href="/logout") logout
 
     section.request#request
         div.container
@@ -37,9 +36,9 @@ block content
                 div.signup-wall
                     form.basic-form(method='POST')
                         input#pickup.form-control(type="text", name="pickup", placeholder="Pickup", onfocus="initialize()", autofocus)
-                        input#pickup_loc.form-control(type="disabled", name="pickup_loc")
+                        input#pickup_loc.form-control(type="hidden", name="pickup_loc")
                         input#dropoff.form-control(type="text", name="dropoff", placeholder="Dropoff")
-                        input#dropoff_loc.form-control(type="disabled", name="dropoff_loc")
+                        input#dropoff_loc.form-control(type="hidden", name="dropoff_loc")
                         div.row
                             div.col-sm-6
                                 input#date.form-control(type="text", name="date", placeholder="mm/dd/yy")
@@ -50,10 +49,6 @@ block content
 
                     if message.length
                         p#alert.alert.alert-success(role="alert") #{message}
-
-    div.logout
-        a(href="/logout")
-            button logout
 
     section.footer#footer
         div.container

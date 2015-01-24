@@ -16,16 +16,20 @@ function sort(results) {
 // 0.000508204972 0.029118
 
 var getResults = function(req, res) {
-    if (req.user.hasReq !== "") {
+    if (req.user.hasReq === "") {
+        res.redirect('/request');
+    } else {
         Request.findOne({ _id: req.user.hasReq }, function(err, request) {
             var allResults = [];
 
             Request.find({
                 _id: { $ne: request._id },
                 date: request.date,
-                time_calc: { $gte: request.time_calc-100, $lte: request.time_calc+100 },
-                // pickup_loc: { $gte: request.pickup_loc-0.000508204972, $lte: request.pickup_loc+0.000508204972 },
-                // dropoff_loc: { $gte: request.dropoff_loc-0.000508204972, $lte: request.dropoff_loc+0.000508204972 }
+                time_calc: { $gte: request.time_calc-100, $lte: request.time_calc+100 }
+                // pickup_loc[0]: { $gte: request.pickup_loc[0]-0.000508204972, $lte: request.pickup_loc[0]+0.000508204972 },
+                // pickup_loc[1]: { $gte: request.pickup_loc[1]-0.000508204972, $lte: request.pickup_loc[1]+0.000508204972 },
+                // dropoff_loc[0]: { $gte: request.dropoff_loc[0]-0.000508204972, $lte: request.dropoff_loc[0]+0.000508204972 }
+                // dropoff_loc[1]: { $gte: request.dropoff_loc[1]-0.000508204972, $lte: request.dropoff_loc[1]+0.000508204972 }
             }, function(err, results) {
                 if (results) {
                     results.forEach(function(result) {
@@ -36,8 +40,6 @@ var getResults = function(req, res) {
             res.render('results', { title: 'hitch | Results', results: allResults, message: req.flash('message') });
             });
         });
-    } else {
-        res.redirect('/request');
     };
 };
 
