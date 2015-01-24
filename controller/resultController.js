@@ -1,5 +1,5 @@
 var Request = require('../models/requestModel');
-var hour = 100; // 1 hour * scale (2 mi = 5 min)
+var hour = 100; // 1 hour
 var lat2 = 0.03; // 2 miles in degrees lat
 var lng2 = 0.03; // average of 2 miles in degrees lng
 
@@ -23,15 +23,6 @@ function compare(request) {
     };
 };
 
-// var compare = function(a, b) {
-//     var timeDiff = Math.abs(a.time_calc - b.time_calc);
-//     var pickup_latDiff = Math.abs(a.pickup_lat - b.pickup_lat);
-//     var pickup_lngDiff = Math.abs(a.pickup_lng - b.pickup_lng);
-//     var dropoff_latDiff = Math.abs(a.dropoff_lat - b.dropoff_lat);
-//     var dropoff_lngDiff = Math.abs(a.dropoff_lng - b.dropoff_lng);
-//     return timeDiff/hour + pickup_latDiff/lat2 + pickup_lngDiff/lng2 + dropoff_latDiff/lat2 + dropoff_lngDiff/lng2;
-// };
-
 var getResults = function(req, res) {
     if (req.user.hasReq === "") {
         res.redirect('/request');
@@ -54,17 +45,3 @@ var getResults = function(req, res) {
 };
 
 module.exports = getResults;
-
-
-// =========================================
-
-    // // CHANGE THESE LATER
-    // timeweight: 1,
-    // pickupweight: 1,
-    // dropoffweight: 1,
-
-    // cost = (timeweight * timediff) + (pickupweight * pickupdist) + (dropoffweight * dropoffdist)
-
-    // sort results by cost
-
-    // return sorted result
