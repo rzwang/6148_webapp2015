@@ -25,11 +25,11 @@ var getResults = function(req, res) {
             Request.find({
                 _id: { $ne: request._id },
                 date: request.date,
-                time_calc: { $gte: request.time_calc-100, $lte: request.time_calc+100 }
-                // pickup_loc[0]: { $gte: request.pickup_loc[0]-0.000508204972, $lte: request.pickup_loc[0]+0.000508204972 },
-                // pickup_loc[1]: { $gte: request.pickup_loc[1]-0.000508204972, $lte: request.pickup_loc[1]+0.000508204972 },
-                // dropoff_loc[0]: { $gte: request.dropoff_loc[0]-0.000508204972, $lte: request.dropoff_loc[0]+0.000508204972 }
-                // dropoff_loc[1]: { $gte: request.dropoff_loc[1]-0.000508204972, $lte: request.dropoff_loc[1]+0.000508204972 }
+                time_calc: { $gte: request.time_calc-100, $lte: request.time_calc+100 },
+                pickup_lat: { $gte: request.pickup_lat-0.029118, $lte: request.pickup_lat+0.029118 },
+                pickup_lng: { $gte: request.pickup_lng-0.019412, $lte: request.pickup_lng+0.019412 },
+                dropoff_lat: { $gte: request.dropoff_lat-0.029118, $lte: request.dropoff_lat+0.029118 },
+                dropoff_lng: { $gte: request.dropoff_lng-0.019412, $lte: request.dropoff_lng+0.019412 },
             }, function(err, results) {
                 if (results) {
                     results.forEach(function(result) {
