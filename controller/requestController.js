@@ -14,7 +14,7 @@ var createRequest = function(req, res){
         phone: req.user.phone
     });
     newRequest.save();
-    req.user.hasReq = [true, newRequest._id];
+    req.user.hasReq = newRequest._id;
     req.user.save(function(err, result) {
         res.redirect('/results');
     });

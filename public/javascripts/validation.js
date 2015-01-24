@@ -54,16 +54,12 @@ $(function(){
         $(this).removeClass('error');
     });
 
-    pickup.keydown(function() {
-        // if (pickup_loc.val() !== 0) {
-        pickup_loc.val() = "";
-        // };
+    pickup.change(function() {
+        pickup_loc.val("");
     });
 
-    dropoff.keydown(function() {
-        // if (dropoff_loc.val() !== 0) {
-        dropoff_loc.val() = "";
-        // };
+    dropoff.change(function() {
+        dropoff_loc.val("");
     });    
 
     password2.keyup(function() {

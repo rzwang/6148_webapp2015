@@ -16,8 +16,8 @@ function sort(results) {
 // 0.000508204972 0.029118
 
 var getResults = function(req, res) {
-    if (req.user.hasReq[0]) {
-        Request.findOne({ _id: req.user.hasReq[1] }, function(err, request) {
+    if (req.user.hasReq !== "") {
+        Request.findOne({ _id: req.user.hasReq }, function(err, request) {
             var allResults = [];
 
             Request.find({

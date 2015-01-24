@@ -3,10 +3,10 @@ var route = {};
 route.getHome = function(req, res) {
     if (!req.user) {
         res.render('index', { title: 'hitch', message: req.flash('message') }); // FIX ERROR MESSAGING
-    } else if (req.user.hasReq[0]) {
-        res.redirect('/results');
-    } else {
+    } else if (req.user.hasReq === "") {
         res.redirect('/request');
+    } else {
+        res.redirect('/results');
     };
 };
 
@@ -17,10 +17,10 @@ route.getSignup = function(req, res) {
 route.getLogin = function(req, res) {
     if (!req.user) {
         res.render('login', { title: 'hitch | Login', message: req.flash('message') });
-    } else if (req.user.hasReq[0]) {
-        res.redirect('/results');
-    } else {
+    } else if (req.user.hasReq === "") {
         res.redirect('/request');
+    } else {
+        res.redirect('/results');
     };
 };
 
@@ -31,10 +31,10 @@ route.getLogout = function(req, res) {
 };
 
 route.getRequest = function(req, res){
-    if (req.user.hasReq[0]) {
-        res.redirect('/results')
-    } else {
+    if (req.user.hasReq === "") {
         res.render('request', { title: 'hitch me a ride!', message: req.flash('message') });
+    } else {
+        res.redirect('/results');
     };
 };
 
