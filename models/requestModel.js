@@ -11,8 +11,7 @@ var requestSchema = new Schema({
     date: String,
     time_disp: String, 
     time_calc: Number,
-    phone: String,
-    results: Array
+    phone: String
 });
 
 //MODELs

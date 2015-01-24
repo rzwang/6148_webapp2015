@@ -10,17 +10,16 @@ var createRequest = function(req, res){
         dropoff_loc: req.body['dropoff_loc'].split(', ').map(Number),
         time_disp: req.body['time'],
         time_calc: req.body['time_calc'],
-        phone: req.user.phone,
-        results: []
+        phone: req.user.phone
     });
     newReq.save(function(err, request) {
         if (err) {
-            req.user.hasReq = [false, ""];
+            req.user.hasReq = "";
             req.user.save();
             console.log(err);
         }
         if (request) {
-            req.user.hasReq = [true, request._id];
+            req.user.hasReq = request._id;
             req.user.save(function (err, result){
                 res.redirect('/results');
             });

@@ -21,9 +21,9 @@ function match(request) {
 }
 
 var getResults = function(req, res) {
-    if (req.user.hasReq[0]) { 
+    if (req.user.hasReq.length !== 0) { 
         var matches = [];
-        Request.find({ id: {$ne: req.user.hasReq[1]}}, function(err, results) {
+        Request.find({ id: {$ne: req.user.hasReq}}, function(err, results) {
             results.forEach(function(result) {
                 matches.push(result);
             });

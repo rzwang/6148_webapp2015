@@ -4,7 +4,7 @@ routes.getHome = function(req, res) {
         if (!req.user) {
             res.render('index', { title: 'hitch', message: req.flash('message')});
         }
-        else if (req.user.hasReq[0]) {
+        else if (req.user.hasReq.length !== 0) {
             res.redirect('/results');
         }
         else {
@@ -16,7 +16,7 @@ routes.getLogin = function(req, res) {
     if (!req.user) {
         res.render('login', {title: 'hitch | Login', message: req.flash('message')});
     }
-    else if (req.user.hasReq[0]) {
+    else if (req.user.hasReq.length !== 0) {
         res.redirect('/results');
     }
     else {
@@ -30,7 +30,7 @@ routes.getLogout = function(req, res) {
 }
 
 routes.getRequest = function(req, res){
-    if (req.user.hasReq[0]) {
+    if (req.user.hasReq.length !== 0) {
         res.redirect('/results');
     }
     else {
