@@ -32,9 +32,9 @@ block content
                 div.title
                     h3 Your results!
                     
-                    if results.length
-                        each result in results
-                            p #{result.firstname} #{result.lastname} #{result.pickup} #{result.dropoff} #{result.time_disp} #{result.phone}
+                    if matches.length
+                        each match in matches
+                            p #{match.firstname} #{match.lastname} #{match.pickup} #{match.dropoff} #{match.time_disp} #{match.phone}
                     else
                         p you don't have any results :(
 
