@@ -1,32 +1,40 @@
 var Request = require('../models/requestModel');
+var hour = 100; // 1 hour
+var lat2 = 0.029118; // 2 miles in degrees lat
+var lng2 = 0.022708; // average of 2 miles in degrees lng
 
-function sort(results) {
-    
+function compare(request, other) {
+    var timeDiff = Math.abs(request.time_calc - other.time_calc);
+    var pickup_latDiff = Math.abs(request.pickup_lat - other.pickup_lat);
+    var pickup_lngDiff = Math.abs(request.pickup_lng - other.pickup_lng);
+    var dropoff_latDiff = Math.abs(request.dropoff_lat - other.dropoff_lat);
+    var dropoff_lngDiff = Math.abs(request.dropoff_lng - other.dropoff_lng);
+    return timeDiff/hour + pickup_latDiff/lat2 + pickup_lngDiff/lng2 + dropoff_latDiff/lat2 + dropoff_lngDiff/lng2;
 };
 
 var getResults = function(req, res) {
     if (req.user.hasReq === "") {
         res.redirect('/request');
     } else {
-        Request.findOne({ _id: req.user.hasReq }, function(err, request) {
+        Request.findById(req.user.hasReq, function(err, request) {
             var allResults = [];
 
             Request.find({
                 _id: { $ne: request._id },
                 date: request.date,
-                time_calc: { $gte: request.time_calc-100, $lte: request.time_calc+100 },
-                pickup_lat: { $gte: request.pickup_lat-0.029118, $lte: request.pickup_lat+0.029118 }, // 2 miles in degrees lat
-                pickup_lng: { $gte: request.pickup_lng-0.022708, $lte: request.pickup_lng+0.022708 }, // average of 2 miles in degrees lng
-                dropoff_lat: { $gte: request.dropoff_lat-0.029118, $lte: request.dropoff_lat+0.029118 },
-                dropoff_lng: { $gte: request.dropoff_lng-0.022708, $lte: request.dropoff_lng+0.022708 },
+                time_calc: { $gte: request.time_calc-hour, $lte: request.time_calc+hour }, // difference of 1 hour
+                pickup_lat: { $gte: request.pickup_lat-lat2, $lte: request.pickup_lat+lat2 }, // difference of ~2 miles
+                pickup_lng: { $gte: request.pickup_lng-lng2, $lte: request.pickup_lng+lng2 },
+                dropoff_lat: { $gte: request.dropoff_lat-lat2, $lte: request.dropoff_lat+lat2 },
+                dropoff_lng: { $gte: request.dropoff_lng-lng2, $lte: request.dropoff_lng+lng2 },
             }, function(err, results) {
                 if (results) {
                     results.forEach(function(result) {
                         allResults.push(result);
                     });
                 };
-            // var sorted = sort(allResults);
-            res.render('results', { title: 'hitch | Results', results: allResults, message: req.flash('message') });
+            var sorted = allResults.sort(compare(request, other));
+            res.render('results', { title: 'hitch | Results', results: sorted, message: req.flash('message') });
             });
         });
     };
@@ -36,21 +44,6 @@ module.exports = getResults;
 
 
 // =========================================
-
-    // var pickup_lat = parseFloat(req_pickup.split(',')[0]);
-    // var pickup_lng = parseFloat(req_pickup.split(',')[1]);
-    // var dropoff_lat = parseFloat(req_dropoff.split(',')[0]);
-    // var dropoff_lng = parseFloat(req_dropoff.split(',')[1]);
-
-    // search Request database
-    // // making results
-    // timediff = newrequest.time_calc-time
-    // pickupdist = distance(pickup, newrequest.pickup)
-    // dropoffdist = distance(dropoff, newrequest.dropoff)
-
-    // for each newrequest:
-    //     if newrequest.date == date && timediff <= 100 && pickupdist <= 'NUMBER' && dropoffdist <= "NUMBER":
-    //         results += newrequest
 
     // // CHANGE THESE LATER
     // timeweight: 1,
