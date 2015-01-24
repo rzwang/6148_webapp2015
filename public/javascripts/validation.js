@@ -35,7 +35,6 @@ $(function(){
             };
         };
 
-        // FIX SMALL ERRORS!!!!!!!!!!!!!!!!!!!!!!!!
         if (pickup_loc.hasClass('error')) {
             pickup.addClass('error');
         };
@@ -54,6 +53,18 @@ $(function(){
     $('input').mousedown(function() {
         $(this).removeClass('error');
     });
+
+    pickup.keydown(function() {
+        // if (pickup_loc.val() !== 0) {
+        pickup_loc.val() = "";
+        // };
+    });
+
+    dropoff.keydown(function() {
+        // if (dropoff_loc.val() !== 0) {
+        dropoff_loc.val() = "";
+        // };
+    });    
 
     password2.keyup(function() {
         if (password2.val() !== '') {
