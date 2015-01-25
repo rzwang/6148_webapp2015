@@ -12,7 +12,8 @@ var Request = new Schema({
     dropoff_lat: Number,
     dropoff_lng: Number,
     date: String,
-    time_disp: String,
+    date_calc: Number,
+    time: String,
     time_calc: Number,
     phone: String
 });

@@ -32,12 +32,13 @@ function initialize() {
     });
 };
 
-
 $(document).ready(function(){    
 
     $('#date').pickadate({
         format: 'm/d/yy',
+        formatSubmit: 'mddyyyy',
         min: true,
+        hiddenSuffix: '_calc'
         // klass: {
         //     FOR FORMATTING
         // }

@@ -11,7 +11,8 @@ var createRequest = function(req, res){
         dropoff_lat: req.body['dropoff_loc'].split(', ')[0],
         dropoff_lng: req.body['dropoff_loc'].split(', ')[1],
         date: req.body['date'],
-        time_disp: req.body['time'],
+        date_calc: req.body['date_calc'],
+        time: req.body['time'],
         time_calc: req.body['time_calc'],
         phone: req.user.phone
     });

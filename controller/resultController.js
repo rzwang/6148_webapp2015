@@ -2,8 +2,8 @@ var Request = require('../models/requestModel');
 var hour = 100; // 1 hour
 var lat2 = 0.03; // 2 miles in degrees lat
 var lng2 = 0.03; // average of 2 miles in degrees lng
-var d = new Date();
-var currentTime = 100*d.getHours() + d.getMinutes();
+var date = new Date();
+var currentTime = 100*date.getHours() + date.getMinutes();
 
 function compare(request) {
     return function(a, b) {
