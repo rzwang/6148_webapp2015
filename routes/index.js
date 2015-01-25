@@ -74,10 +74,3 @@ module.exports = function(passport){
     //         res.redirect('/request');
     //     }      
     // });
-
-// var iDiv = window.content.document.createElement('div');
-// iDiv.id = 'match';
-// iDiv.className = 'match';
-// window.content.document.body.appendChild(iDiv);
-
-// geo: geoNear and geoSearch

@@ -33,7 +33,11 @@ block content
                     if results && results.length > 0  
                         ul   
                             each result in results
-                                li: p.match #{result.firstname} #{result.lasname} #{result}
+                                li: p.match #{result.firstname} #{result.lastname} <br/>
+                                    p #{result.pickup} <br/>
+                                    p #{result.dropoff} <br/>
+                                    p #{result.time_disp} <br/>
+                                    p #{result.phone} <br/>
                     else
                         h4 no results
 
@@ -42,3 +46,4 @@ block content
                     p#alert.alert.alert-success(role='alert') #{message}
 
 block scripts
+    

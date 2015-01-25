@@ -1,6 +1,4 @@
 // VALIDATING PHONE NUMBER
-// $("#phone").intlTelInput();
-
 var telInput = $("#phone");
 
 // initialise plugin
@@ -10,7 +8,7 @@ telInput.intlTelInput({
 
 // on blur: validate
 telInput.blur(function() {
-  if ($.trim(telInput.val())) {
+  if ($.trim(telInput.val()).length !== 0) {
     if (telInput.intlTelInput("isValidNumber")) {
         telInput.removeClass("error").addClass("correct");
     } else {
@@ -20,7 +18,7 @@ telInput.blur(function() {
 });
 
 telInput.keyup(function() {
-  if ($.trim(telInput.val())) {
+  if ($.trim(telInput.val()).length !== 0) {
     if (telInput.intlTelInput("isValidNumber")) {
         telInput.removeClass("error").addClass("correct");
     } else {
@@ -28,17 +26,6 @@ telInput.keyup(function() {
     }
   }
 });
-
-//EMAIL VALIDATION
-// var email = $("#username");
-// email.blur(function() {
-//     if ($.trim(email.val()){
-//         if (email !== /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/) {
-//             alert('Input valid email.');
-//         }
-//     })
-// });
-
 
 // VALIDATING PASSWORDS   
 var password = $("#password");

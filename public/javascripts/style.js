@@ -56,10 +56,6 @@ $(function(){
         $(this).removeClass("error");
     }); 
 
-    $("input").keyup(function () {
-        $(this).removeClass("error");
-    }); 
-
     $("input").mousedown(function () {
         $(this).removeClass("error");
     });
