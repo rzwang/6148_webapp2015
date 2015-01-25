@@ -5,9 +5,11 @@ var createRequest = function(req, res){
         firstname: req.user.firstname,
         lastname: req.user.lastname, 
         pickup: req.body['pickup'],
-        pickup_loc: req.body['pickup_loc'].split(', ').map(Number),
+        pickup_loc_lat: req.body['pickup_loc'].split(', ')[0],
+        pickup_loc_lng: req.body['pickup_loc'].split(', ')[1],
         dropoff: req.body['dropoff'],
-        dropoff_loc: req.body['dropoff_loc'].split(', ').map(Number),
+        dropoff_loc_lat: req.body['dropoff_loc'].split(', ')[0],
+        dropoff_loc_lng: req.body['dropoff_loc'].split(', ')[1],
         time_disp: req.body['time'],
         time_calc: req.body['time_calc'],
         phone: req.user.phone
