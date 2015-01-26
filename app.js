@@ -48,6 +48,30 @@ initPassport(passport);
 var routes = require('./routes/index')(passport);
 app.use('/', routes);
 
+// remove requests that are before current date
+var delay = 24*60*60*1000; // one day in terms of milliseconds
+var Request = require('/models/requestModel.js');
+var User = require('/models/userModel.js');
+
+function removeOldRequests() {
+    var current = new Date()
+    var currentDate = current.getMonth().toString() + current.getDate().toString() + (current.getFullYear() % 100).toString();
+    // Request.find( {date: $lte: })
+}
+
+var deleteRequest = function (req, res) {
+    if (req.user && req.user.hasReq.length !== 0) {
+        Request.findByIdAndRemove(req.user.hasReq, function(err, deleted_request){});
+        req.user.hasReq = "";
+        req.user.save();
+        res.redirect('/request');
+    } else {
+        res.redirect('/login');
+    } 
+
+setInterval(removeOldRequests, delay);
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

@@ -29,7 +29,7 @@ var getResults = function(req, res) {
             Request.find({
                 _id: {$ne: request._id},
                 date: request.date,
-                time_calc: {$gte: request.time_calc - time_diff, $lte: request.time_calc + time_diff},  
+                time_calc: {$gte: request.time_calc - time_diff, $gte: current_time, $lte: request.time_calc + time_diff},  
                 pickup_lat: {$gte: request.pickup_lat - lat_diff, $lte: request.pickup_lat + lat_diff},
                 pickup_lng: {$gte: request.pickup_lng - lng_diff, $lte: request.pickup_lng + lng_diff},
                 dropoff_lat: {$gte: request.dropoff_lat - lat_diff, $lte: request.dropoff_lat + lat_diff},

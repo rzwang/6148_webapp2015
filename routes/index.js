@@ -5,6 +5,7 @@ var Request = require('../models/requestModel.js');
 var createRequest = require('../controller/requestController.js');
 var getResults = require('../controller/resultsController.js');
 var deleteRequest = require('../controller/deleteController.js');
+var updateUser = require('../controller/settingsController.js');
 var routes =require('../controller/routesController.js');
 
 var isAuthenticated = function (req, res, next){
@@ -55,6 +56,9 @@ module.exports = function(passport){
 
     /* Handle delete GET - Drop request */
     router.get('/delete', deleteRequest);
+
+    /* Handle settings GET */
+    router.get('/settings', isAuthenticated, updateUser);
 
     return router;
 }
