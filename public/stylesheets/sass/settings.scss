@@ -1,0 +1,44 @@
+@import '_constants';
+
+
+section.settings {
+    height: 100vh;
+
+    .container {
+        height: 100%;
+        width: 100%;
+        background: url("../images/newyorkcity.png") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+
+        .wrapper {
+            height: 550px;
+            width: 500px;
+            position: relative;
+            top: 10%;
+            margin: auto;
+            padding: 25px;
+            background-color: $filter;
+
+            .title {
+                color: white;
+                text-align: center;
+                position: relative;
+                top: 50px;
+                margin-bottom: 30px;
+            }
+
+            .basic-form {
+                
+                .success {
+                    border-bottom: 1px solid $green;
+                }
+
+                .error {
+                    border-bottom: 1px solid $red;
+                }
+            }
+        }
+    }
+}
