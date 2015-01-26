@@ -34,8 +34,9 @@ function initialize() {
 $(document).ready( function() {
     $('#date').pickadate({
       format: "m/dd/yy",
-      formatSubmit: "mddyyyy",
-      min: true
+      formatSubmit: 'mddyyyy',
+      // min: true,
+      hiddenSuffix: '_calc'
     });
 
     $('#time').pickatime({

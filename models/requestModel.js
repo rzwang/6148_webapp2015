@@ -11,6 +11,7 @@ var requestSchema = new Schema({
     dropoff_lat: Number,
     dropoff_lng: Number,
     date: String,
+    date_calc: Number,
     time_disp: String, 
     time_calc: Number,
     phone: String
