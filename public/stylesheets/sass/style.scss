@@ -294,7 +294,7 @@ section.signup {
         height: 100%;
         width: 100%;
         padding: 25px;
-        background: url("../images/street.png") no-repeat center center fixed;
+        background: url("../images/newyorkcity.png") no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
@@ -303,7 +303,7 @@ section.signup {
             height: 550px;
             width: 500px;
             position: relative;
-            top: 15%;
+            top: 12%;
             margin: auto;
             padding: 25px;
             background-color: $filter;
@@ -328,21 +328,24 @@ section.signup {
     }
 }
 
-section.footer {
-    height: 60px;
-    background: $filter;
+div.footer {
+    height: 50px;
+    width: 100%;
     color: white;
+    position: relative;
+    bottom: 50px;
 
     .container {
-        padding-top: 5px;
+        padding-top: 10px;
         margin: 0 auto;
+        background: black !important;
 
         h5 {
             margin: 0;
         }
 
         .icon {
-            height: 50px;
+            height: 30px;
         }
     }
 }
