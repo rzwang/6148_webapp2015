@@ -117,6 +117,17 @@ nav.navbar {
             }
         }
 
+        #black {
+            @extend #clear;
+            a {
+                color: black;
+            }
+
+            a:hover {
+                color: $lightblue;
+            }
+        }
+
         #collapsed {
             @extend #clear;
             background: black;
@@ -303,7 +314,7 @@ section.signup {
             height: 550px;
             width: 500px;
             position: relative;
-            top: 12%;
+            top: 10%;
             margin: auto;
             padding: 25px;
             background-color: $filter;

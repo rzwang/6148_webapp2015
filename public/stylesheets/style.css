@@ -65,14 +65,18 @@ nav.navbar {
         text-transform: uppercase; }
 
 @media only screen and (min-width: 768px) {
-  .navbar #clear, .navbar #collapsed {
+  .navbar #clear, .navbar #black, .navbar #collapsed {
     background: transparent;
     padding: 15px 25px 15px 15px;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out; }
-    .navbar #clear .container-fluid, .navbar #collapsed .container-fluid {
+    .navbar #clear .container-fluid, .navbar #black .container-fluid, .navbar #collapsed .container-fluid {
       max-width: 1500px; }
+  .navbar #black a {
+    color: black; }
+  .navbar #black a:hover {
+    color: #4fa0c4; }
   .navbar #collapsed {
     background: black;
     padding: 0 25px 0 15px;
@@ -202,7 +206,7 @@ section.signup {
       height: 550px;
       width: 500px;
       position: relative;
-      top: 12%;
+      top: 10%;
       margin: auto;
       padding: 25px;
       background-color: rgba(0, 0, 0, 0.7); }
