@@ -33,8 +33,8 @@ var expressSession = require('express-session');
 
 app.use(expressSession({
     secret: 'thisisasecret',
-    // resave: false,
-    // saveUninitialized: true
+    resave: false,
+    saveUninitialized: true
 }));
 app.use(passport.initialize());
 app.use(passport.session());
