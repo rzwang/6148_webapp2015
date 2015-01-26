@@ -36,7 +36,7 @@ route.getSettings = function(req, res) {
 
 route.getRequest = function(req, res){
     if (req.user.hasReq === "") {
-        res.render('request', { title: 'hitch me a ride!', message: req.flash('message') });
+        res.render('request', { title: 'hitch a ride!', message: req.flash('message') });
     } else {
         res.redirect('/results');
     };
