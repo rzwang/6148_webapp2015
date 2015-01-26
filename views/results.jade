@@ -20,10 +20,11 @@ block content
                         span.icon-bar
                 div.collapse.navbar-collapse#basic_nav
                     ul.nav.navbar-nav.navbar-right
-                        li: a(href="/delete") new request
+                        li: a(href="/deleteRequest") new request
+                        li: a(href="/settings") settings
                         li: a(href="/logout") logout
 
-    if message.length
+    if message && message.length
         p#alert.alert.alert-danger(role="alert") #{message}
 
     section.results#results

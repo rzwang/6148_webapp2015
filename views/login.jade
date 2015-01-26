@@ -22,21 +22,22 @@ block content
                     ul.nav.navbar-nav.navbar-right
                         li: a(href="/#signup") sign up
 
-    section.signup#login
+    section.login#login
         div.container
             div.wrapper
                 div.title
                     h3 Login
-                div.signup-wall
+                hr.line
+                div.login-wall
                     form.basic-form(method='POST')
                         div.form-group
-                            input#username.form-control(type='text', name='username', placeholder='Username', autofocus)
-                            input#password.form-control(type='password', name='password', placeholder='Password')
+                            input#username.form-control(type='text', name='username', placeholder='username', autofocus)
+                            input#password.form-control(type='password', name='password', placeholder='password')
                         div.button-wrapper
                             button(type="submit") login
                 a(href="/#signup") don't have an account?
 
-                    if message.length
+                    if message && message.length
                         p#alert.alert.alert-danger(role='alert') #{message}
 
     section.footer#footer
@@ -47,3 +48,4 @@ block content
                 |  2015
 
 block scripts
+    script(src="/javascripts/validation.js")

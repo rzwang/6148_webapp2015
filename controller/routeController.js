@@ -30,6 +30,10 @@ route.getLogout = function(req, res) {
     res.redirect('/');
 };
 
+route.getSettings = function(req, res) {
+    res.render('settings', { title: req.user.username + ' | Settings', user: req.user, message: req.flash('message') })
+};
+
 route.getRequest = function(req, res){
     if (req.user.hasReq === "") {
         res.render('request', { title: 'hitch me a ride!', message: req.flash('message') });

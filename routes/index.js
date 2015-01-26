@@ -4,7 +4,7 @@ var router = express.Router();
 var route = require('../controller/routeController');
 var createRequest = require('../controller/requestController')
 var getResults = require('../controller/resultController');
-var deleteRequest = require('../controller/deleteController');
+var del = require('../controller/deleteController');
 
 
 var isAuthenticated = function (req, res, next){
@@ -43,17 +43,31 @@ module.exports = function(passport){
     /* handle logout */
     router.get('/logout', route.getLogout);
 
-    /* GET request page. */
+    /* GET settings page */
+    router.get('/settings', isAuthenticated, route.getSettings);
+
+    /* handle update POST */
+    router.post('/settings', isAuthenticated, passport.authenticate('update', {
+        successRedirect: '/request',
+        failureRedirect: '/settings',
+        failureFlash: true,
+        successFlash: true
+    }));
+
+    /* GET request page */
     router.get('/request', isAuthenticated, route.getRequest);
 
     /* handle request POST */
     router.post('/request', isAuthenticated, createRequest);
 
-    /* GET results page. */
+    /* GET results page */
     router.get('/results', isAuthenticated, getResults);
 
-    /* handle delete */
-    router.get('/delete', isAuthenticated, deleteRequest);
+    /* handle request delete */
+    router.get('/deleteRequest', isAuthenticated, del.deleteRequest);
+
+    /* handle user delete */
+    router.get('/deleteUser', isAuthenticated, del.deleteUser);
 
     return router;
 }

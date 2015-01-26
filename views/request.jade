@@ -25,6 +25,7 @@ block content
                         span.icon-bar
                 div.collapse.navbar-collapse#basic_nav
                     ul.nav.navbar-nav.navbar-right
+                        li: a(href="/settings") settings
                         li: a(href="/logout") logout
 
     section.request#request
@@ -33,11 +34,11 @@ block content
                 div.title
                     h3 Hitch me a ride
                 hr.line
-                div.signup-wall
+                div.request-wall
                     form.basic-form(method='POST')
-                        input#pickup.form-control(type="text", name="pickup", placeholder="Pickup", onfocus="initialize()", autofocus)
+                        input#pickup.form-control(type="text", name="pickup", placeholder="pickup", onfocus="initialize()", autofocus)
                         input#pickup_loc.form-control(type="hidden", name="pickup_loc")
-                        input#dropoff.form-control(type="text", name="dropoff", placeholder="Dropoff")
+                        input#dropoff.form-control(type="text", name="dropoff", placeholder="dropoff")
                         input#dropoff_loc.form-control(type="hidden", name="dropoff_loc")
                         div.row
                             div.col-sm-6
@@ -47,7 +48,7 @@ block content
                         div.button-wrapper
                             button(type="submit") request
 
-                    if message.length
+                    if message && message.length
                         p#alert.alert.alert-success(role="alert") #{message}
 
     section.footer#footer
@@ -58,6 +59,7 @@ block content
                 |  2015
     
 block scripts
+    script(src="/javascripts/validation.js")
     script(src="/javascripts/datepicker/picker.js")
     script(src="/javascripts/datepicker/picker.date.js")
     script(src="/javascripts/datepicker/picker.time.js")

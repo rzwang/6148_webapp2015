@@ -46,6 +46,12 @@ $(function(){
         return isFormFilled;
     });
 
+    $('input').blur(function() {
+        if ($.trim($(this).val()).length == 0) {
+            $(this).addClass('error');
+        };
+    });
+
     $('input').keyup(function() {
         $(this).removeClass('error');
     });
@@ -75,5 +81,4 @@ $(function(){
     password2.blur(function() {
         password2.removeClass('success');
     });
-
 });
