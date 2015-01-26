@@ -6,6 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var flash = require('connect-flash');
 
+
+var app = express();
+
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 // mongoose
@@ -15,8 +18,6 @@ var mongodbUri = 'mongodb://heroku_app33380250:j71copckd4tl1vqhvj20nroolp@ds0315
 var mongooseUri = uriUtil.formatMongoose(mongodbUri);
 
 mongoose.connect(mongooseUri);
-
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
