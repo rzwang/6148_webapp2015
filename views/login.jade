@@ -7,7 +7,7 @@ block stylesheets
 
 block content
     nav.navbar#navbar
-        div.navbar-fixed-top#clear
+        div.navbar-fixed-top#black
             div.container-fluid
                 div.navbar-header
                     a.navbar-brand.page-scroll(href="/") hitch
@@ -23,7 +23,7 @@ block content
         div.container
             div.wrapper
                 div.title
-                    h3 Login
+                    h2 Login
                 hr.line
                 div.login-wall
                     form.basic-form(method='POST')
@@ -32,7 +32,10 @@ block content
                             input#password.form-control(type='password', name='password', placeholder='password')
                         div.button-wrapper
                             button(type="submit") login
-                a(href="/#signup") don't have an account?
+                div.link
+                    div.link-wrapper
+                        a(href="/#signup")
+                            p Create an account
 
                     if message && message.length
                         p#alert.alert.alert-danger(role='alert') #{message}

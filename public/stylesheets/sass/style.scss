@@ -43,6 +43,12 @@ h5 {
     text-transform: uppercase;
 }
 
+p {
+    @extend h1;
+    font-size: 1em;
+    text-transform: none;
+}
+
 ::-webkit-input-placeholder {
     font-weight: 300;
     text-transform: uppercase;
@@ -79,7 +85,7 @@ nav.navbar {
         
         a:hover {
             text-decoration: none;
-            color: $lightblue;
+            color: $blue;
             background: transparent;
         }
 
@@ -105,7 +111,7 @@ nav.navbar {
 
     .navbar {
         
-        #clear {
+        #white {
             background: transparent;
             padding: 15px 25px 15px 15px;
             -webkit-transition: all .5s ease-in-out;
@@ -118,23 +124,20 @@ nav.navbar {
         }
 
         #black {
-            @extend #clear;
+            @extend #white;
             a {
                 color: black;
             }
 
             a:hover {
-                color: $lightblue;
+                color: $blue;
             }
         }
 
         #collapsed {
-            @extend #clear;
+            @extend #white;
             background: black;
             padding: 0 25px 0 15px;
-            -webkit-transition: all .5s ease-in-out;
-            -moz-transition: all .5s ease-in-out;
-            transition: all .5s ease-in-out;
         }
     } 
 }
@@ -149,6 +152,9 @@ form.basic-form {
         -webkit-border-radius: 0;
         -moz-border-radius: 0;
         border-radius: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
         margin: 3px 0;
         border-bottom: 1px solid white;
         font-family: $opensans;
@@ -156,7 +162,7 @@ form.basic-form {
     }
 
     input.form-control:focus {
-            border-bottom: 1px solid $lightblue;
+            border-bottom: 1px solid $blue;
             -webkit-box-shadow: none;
             -moz-box-shadow: none;
             box-shadow: none;
@@ -182,7 +188,7 @@ form.basic-form {
 
         button:hover {
             color: white;
-            background: $darkblue;
+            background: $button;
         }
     }
 }
@@ -257,7 +263,7 @@ section.main {
 
                 button:hover {
                     color: white;
-                    background: $darkblue;
+                    background: $button;
                 }
             }
         }
@@ -265,15 +271,15 @@ section.main {
 }
 
 section.about {
-    height: 475px;
+    height: 500px;
     background: white;
 
     .container {
-        padding: 25px;
+        margin: auto;
 
         .wrapper {
             width: 90%;
-            margin: 10% auto;
+            margin: 150px auto;
 
             .title {
                 color: black;
@@ -287,7 +293,7 @@ section.about {
             }
 
             hr.line {
-                border: 1px solid $lightblue;
+                border: 1px solid $blue;
             }
 
             .subtitle {
@@ -305,7 +311,7 @@ section.signup {
         height: 100%;
         width: 100%;
         padding: 25px;
-        background: url("../images/newyorkcity.png") no-repeat center center fixed;
+        background: url("../images/street.png") no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
@@ -314,7 +320,7 @@ section.signup {
             height: 550px;
             width: 500px;
             position: relative;
-            top: 10%;
+            top: 13%;
             margin: auto;
             padding: 25px;
             background-color: $filter;
@@ -343,13 +349,14 @@ div.footer {
     height: 50px;
     width: 100%;
     color: white;
+    text-shadow: 1px 1px black;
     position: relative;
     bottom: 50px;
 
     .container {
         padding-top: 10px;
         margin: 0 auto;
-        background: black !important;
+        background: transparent;
 
         h5 {
             margin: 0;

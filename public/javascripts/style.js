@@ -19,6 +19,10 @@ $(document).ready(function(){
             $('hr.line').css('width','30%');
         });
     };
+
+    if (window.location.hash) {
+        $('#firstname').focus();
+    };
 });
 
 $(function(){

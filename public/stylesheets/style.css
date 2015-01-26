@@ -6,7 +6,7 @@ html, body {
   html section, body section {
     width: 100vw; }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, p {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   font-size: 7em;
@@ -26,6 +26,10 @@ h4 {
 h5 {
   font-size: 1em;
   text-transform: uppercase; }
+
+p {
+  font-size: 1em;
+  text-transform: none; }
 
 ::-webkit-input-placeholder {
   font-weight: 300;
@@ -65,13 +69,13 @@ nav.navbar {
         text-transform: uppercase; }
 
 @media only screen and (min-width: 768px) {
-  .navbar #clear, .navbar #black, .navbar #collapsed {
+  .navbar #white, .navbar #black, .navbar #collapsed {
     background: transparent;
     padding: 15px 25px 15px 15px;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out; }
-    .navbar #clear .container-fluid, .navbar #black .container-fluid, .navbar #collapsed .container-fluid {
+    .navbar #white .container-fluid, .navbar #black .container-fluid, .navbar #collapsed .container-fluid {
       max-width: 1500px; }
   .navbar #black a {
     color: black; }
@@ -79,16 +83,16 @@ nav.navbar {
     color: #4fa0c4; }
   .navbar #collapsed {
     background: black;
-    padding: 0 25px 0 15px;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out; } }
+    padding: 0 25px 0 15px; } }
 form.basic-form input.form-control {
   background: transparent;
   border: none;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
   margin: 3px 0;
   border-bottom: 1px solid white;
   font-family: "Open Sans", sans-serif;
@@ -172,13 +176,13 @@ section.main {
           background: rgba(39, 87, 109, 0.7); }
 
 section.about {
-  height: 475px;
+  height: 500px;
   background: white; }
   section.about .container {
-    padding: 25px; }
+    margin: auto; }
     section.about .container .wrapper {
       width: 90%;
-      margin: 10% auto; }
+      margin: 150px auto; }
       section.about .container .wrapper .title {
         color: black;
         margin: 25px; }
@@ -198,7 +202,7 @@ section.signup {
     height: 100%;
     width: 100%;
     padding: 25px;
-    background: url("../images/newyorkcity.png") no-repeat center center fixed;
+    background: url("../images/street.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover; }
@@ -206,7 +210,7 @@ section.signup {
       height: 550px;
       width: 500px;
       position: relative;
-      top: 10%;
+      top: 13%;
       margin: auto;
       padding: 25px;
       background-color: rgba(0, 0, 0, 0.7); }
@@ -224,12 +228,13 @@ div.footer {
   height: 50px;
   width: 100%;
   color: white;
+  text-shadow: 1px 1px black;
   position: relative;
   bottom: 50px; }
   div.footer .container {
     padding-top: 10px;
     margin: 0 auto;
-    background: black !important; }
+    background: transparent; }
     div.footer .container h5 {
       margin: 0; }
     div.footer .container .icon {
