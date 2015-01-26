@@ -23,6 +23,8 @@ $(document).ready(function(){
             $('hr.line').css('width','50%');
             },function(){
             $('hr.line').css('width','30%');
+
+            
         });
     };
 

@@ -33,6 +33,9 @@ section.results {
           margin: 0; }
         section.results .container .wrapper ul .result:hover {
           background: #4fa0c4; }
+      section.results .container .wrapper .icon {
+        height: 8px;
+        margin: auto; }
       section.results .container .wrapper h4 {
         color: white; }
 
