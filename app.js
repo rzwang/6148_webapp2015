@@ -9,7 +9,7 @@ var flash = require('connect-flash');
 
 var app = express();
 
-app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 // passport config
 var passport = require('passport');
@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // mongoose
 var mongoose = require('mongoose');
 var uriUtil = require('mongodb-uri');
-var mongodbUri = 'mongodb://heroku_app33380250:j71copckd4tl1vqhvj20nroolp@ds031551.mongolab.com:31551/heroku_app33380250';
+var mongodbUri = 'mongodb://heroku_app33380250:j71copckd4tl1vqhvj20nroolp@ds031551.mongolab.com:31551/heroku_app33380250' || 'mongodb://localhost/passport';
 var mongooseUri = uriUtil.formatMongoose(mongodbUri);
 
 mongoose.connect(mongooseUri);
