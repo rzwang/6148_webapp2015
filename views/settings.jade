@@ -1,0 +1,48 @@
+extends layout
+
+block header
+
+block stylesheets
+    link(rel="stylesheet", href="/stylesheets/settings.css")
+
+block content
+    nav.navbar#navbar
+        div.navbar-fixed-top(
+                data-start="@id:clear"
+                data-0p="@id:collapsed"
+                data-anchor-target="#navbar")
+            div.container-fluid
+                div.navbar-header
+                    a.navbar-brand.page-scroll(href="/") hitch
+                    button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                div.collapse.navbar-collapse#basic_nav
+                    ul.nav.navbar-nav.navbar-right
+                        li: a(href="/logout") LOGOUT
+
+    section.settings#settings
+        div.container
+            div.wrapper
+                div.title
+                    h6 settings
+                    hr.line
+                 div.settings-wall
+                    form.basic-form(method="POST")
+                        div.form-group
+                            div.row
+                                div.col-sm-6
+                                    input#firstname.form-control(type="text", name="firstname",placeholder= #{user.firstname}, autofocus)
+                                div.col-sm-6
+                                    input#lastname.form-control(type="text", name="lastname", placeholder= #{user.lastname})
+                            input#password.form-control(type="password", name="password", placeholder= #{user.password})
+                            input#password2.form-control(type="password", name="password2", placeholder= #{user.password})
+                            input#phone.form-control(type="tel", name="phone", placeholder= #{user.phone})
+                            div.button-wrapper
+                                button(type="submit") update
+
+                    if message && message.length > 0
+                        p#alert.alert.alert-success(role='alert') #{message}
+
+block scripts
