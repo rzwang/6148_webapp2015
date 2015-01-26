@@ -7,10 +7,7 @@ block stylesheets
 
 block content
     nav.navbar#navbar
-        div.navbar-fixed-top(
-                data-start="@id:clear"
-                data-0p="@id:collapsed"
-                data-anchor-target="#navbar")
+        div.navbar-fixed-top#white
             div.container-fluid
                 div.navbar-header
                     a.navbar-brand.page-scroll(href="/") hitch
@@ -22,6 +19,7 @@ block content
                     ul.nav.navbar-nav.navbar-right
                         li: a(href="/deleteUser") delete
                         li: a(href="/logout") logout
+                        li: a(href="/request") cancel
 
     section.settings#settings
         div.container
@@ -39,12 +37,16 @@ block content
                         input#phone.form-control(type="tel", name="phone", placeholder="phone", value=user.phone)
                         input#username.form-control(type="hidden", name="username", value=user.username)
                         input#password.form-control(type="password", name="password", placeholder="password")
-                        h5 change your password
+                        div.newpasswords
+                            h5 change your password
                         input#newpassword.form-control(type="password", name="newpassword", placeholder="new password")
                         input#newpassword2.form-control(type="password", name="newpassword2", placeholder="retype new password")
                         div.button-wrapper
                             button(type="submit") update
-                a(href='/deleteUser') delete account
+                div.link
+                    div.link-wrapper
+                        a(href='/deleteUser')
+                            p delete account
 
                     if message && message.length
                         p#alert.alert.alert-danger(role='alert') #{message}

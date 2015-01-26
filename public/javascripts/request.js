@@ -38,19 +38,15 @@ $(document).ready(function(){
         format: 'm/d/yy',
         formatSubmit: 'mddyyyy',
         min: true,
-        hiddenSuffix: '_calc'
-        // klass: {
-        //     FOR FORMATTING
-        // }
+        hiddenSuffix: '_calc',
+        clear: ''
     });
     
     $('#time').pickatime({
         format: 'h:i A',
         formatSubmit: 'HHi',
         interval: 15,
-        hiddenSuffix: '_calc'
-        // klass: {
-        //     FOR FORMATTING
-        // }
+        hiddenSuffix: '_calc',
+        clear: ''
     });
 });

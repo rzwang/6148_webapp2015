@@ -30,10 +30,12 @@ $(function(){
         return isFormFilled;
     });
 
-    $('input').blur(function() {
-        if ($.trim($(this).val()).length == 0) {
-            $(this).addClass('error');
-        };
+    $.each([firstname, lastname, phone, password], function() {
+        $(this).blur(function() {
+            if ($.trim($(this).val()).length == 0) {
+                $(this).addClass('error');
+            };
+        });
     });
 
     $('input').keyup(function() {

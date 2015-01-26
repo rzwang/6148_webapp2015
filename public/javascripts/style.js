@@ -18,6 +18,12 @@ $(document).ready(function(){
             },function(){
             $('hr.line').css('width','30%');
         });
+
+        $('.result').hover(function(){
+            $('hr.line').css('width','50%');
+            },function(){
+            $('hr.line').css('width','30%');
+        });
     };
 
     if (window.location.hash) {
@@ -41,6 +47,10 @@ $(function(){
     if ($('#phone').length) {
         $('#phone').mask('(000) 000-0000');
     };
+
+    $('input[readonly]').hover(function() {
+        $(this).css('cursor','text');
+    });
 });
 
 window.setTimeout(function() {

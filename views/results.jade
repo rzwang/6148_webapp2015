@@ -7,10 +7,7 @@ block stylesheets
 
 block content
     nav.navbar#navbar
-        div.navbar-fixed-top(
-                data-start="@id:clear"
-                data-0p="@id:collapsed"
-                data-anchor-target="#navbar")
+        div.navbar-fixed-top#black
             div.container-fluid
                 div.navbar-header
                     a.navbar-brand.page-scroll(href="/") hitch
@@ -31,13 +28,25 @@ block content
         div.container
             div.wrapper
                 div.title
-                    h3 Your results!
+                    h2 Your results!
+                hr.line
                     
-                    if matches.length
-                        each match in matches
-                            p #{match.firstname} #{match.lastname} #{match.pickup} #{match.dropoff} #{match.time_disp} #{match.phone}
-                    else
-                        p you don't have any results :(
+                if matches.length
+                    each match in matches
+                        ul
+                            li.result
+                                p #{match.firstname} #{match.lastname}
+                                p #{match.pickup}
+                                p #{match.dropoff}
+                                span.glyphicon.glyphicon-triangle-bottom
+                                span.glyphicon.glyphicon-arrow-bottom
+                                span.glyphicon.glyphicon-chevron-bottom
+                                span.glyphicon.glyphicon-menu-bottom    
+                                p #{match.time}
+                                p #{match.phone}
+                            hr.line
+                else
+                    h4 you don't have any results :(
 
         div.footer#footer
             div.footer-container

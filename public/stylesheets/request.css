@@ -1,10 +1,13 @@
+@media only screen and (min-width: 768px) {
+  .navbar #white a:hover {
+    color: black; } }
 section.request {
   height: 100vh; }
   section.request .container {
     height: 100%;
     width: 100%;
     padding: 25px;
-    background: url("../images/chicagoskyline.png") no-repeat center center fixed;
+    background: url("../images/skyline.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover; }

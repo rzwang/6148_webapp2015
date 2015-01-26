@@ -8,29 +8,32 @@ section.results {
     -moz-background-size: cover;
     background-size: cover; }
     section.results .container .wrapper {
-      height: 550px;
-      width: 500px;
+      height: auto;
+      min-height: 550px;
+      width: 550px;
       position: relative;
-      top: 10%;
+      top: 15%;
       margin: auto;
       padding: 25px;
       background-color: rgba(0, 0, 0, 0.7); }
       section.results .container .wrapper .title {
         color: white;
-        text-align: center;
-        position: relative;
-        top: 50px;
         margin-bottom: 30px; }
-      section.results .container .wrapper .match {
-        height: 50px;
-        width: 50px;
-        position: relative;
-        top: 15%;
-        margin: auto;
-        padding: 25px;
-        background-color: #4fa0c4; }
-        section.results .container .wrapper .match p {
-          text-align: center;
-          text-color: white; }
+      section.results .container .wrapper p {
+        text-align: center;
+        color: white;
+        margin-bottom: 0;
+        font-size: 1.15em; }
+      section.results .container .wrapper ul {
+        list-style: none;
+        padding: 0;
+        margin: 0; }
+        section.results .container .wrapper ul .result {
+          padding: 10px 0;
+          margin: 0; }
+        section.results .container .wrapper ul .result:hover {
+          background: #4fa0c4; }
+      section.results .container .wrapper h4 {
+        color: white; }
 
 /*# sourceMappingURL=results.css.map */
