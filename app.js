@@ -11,24 +11,6 @@ var app = express();
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
-// mongoose
-var mongoose = require('mongoose');
-var uriUtil = require('mongodb-uri');
-var mongodbUri = 'mongodb://heroku_app33380250:j71copckd4tl1vqhvj20nroolp@ds031551.mongolab.com:31551/heroku_app33380250';
-var mongooseUri = uriUtil.formatMongoose(mongodbUri);
-
-mongoose.connect(mongooseUri);
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
 // passport config
 var passport = require('passport');
 var expressSession = require('express-session');
@@ -45,6 +27,24 @@ app.use(flash());
 // passport init
 var initPassport = require('./passport/init');
 initPassport(passport);
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+// mongoose
+var mongoose = require('mongoose');
+var uriUtil = require('mongodb-uri');
+var mongodbUri = 'mongodb://heroku_app33380250:j71copckd4tl1vqhvj20nroolp@ds031551.mongolab.com:31551/heroku_app33380250';
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+mongoose.connect(mongooseUri);
 
 // cron Database
 var clearDatabase = require('./controller/clearController');
