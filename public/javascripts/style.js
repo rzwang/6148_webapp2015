@@ -38,7 +38,9 @@ $(function(){
         });
     };
 
-    $('#phone').mask('(000) 000-0000');
+    if ($('#phone').length) {
+        $('#phone').mask('(000) 000-0000');
+    };
 });
 
 window.setTimeout(function() {

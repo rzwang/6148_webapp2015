@@ -12,10 +12,7 @@ block stylesheets
 
 block content
     nav.navbar#navbar
-        div.navbar-fixed-top(
-                data-start="@id:clear"
-                data-0p="@id:collapsed"
-                data-anchor-target="#navbar")
+        div.navbar-fixed-top#white
             div.container-fluid
                 div.navbar-header
                     a.navbar-brand.page-scroll(href="/") hitch
@@ -32,7 +29,7 @@ block content
         div.container
             div.wrapper
                 div.title
-                    h3 Hitch me a ride
+                    h2 Hitch me a ride
                 hr.line
                 div.request-wall
                     form.basic-form(method='POST')
@@ -52,7 +49,7 @@ block content
                         p#alert.alert.alert-success(role="alert") #{message}
 
         div.footer#footer
-            div.container
+            div.footer-container
                 h5
                     | wistful worldly wanderers 
                     img.icon(src="/images/3w.png")

@@ -9,8 +9,8 @@ section.request {
     -moz-background-size: cover;
     background-size: cover; }
     section.request .container .wrapper {
-      height: 550px;
-      width: 500px;
+      height: 500px;
+      width: 550px;
       position: relative;
       top: 15%;
       margin: auto;
@@ -21,6 +21,8 @@ section.request {
         text-align: center; }
       section.request .container .wrapper .request-wall {
         padding: 25px; }
+        section.request .container .wrapper .request-wall .button-wrapper {
+          margin: 0 75px; }
         section.request .container .wrapper .request-wall .error {
           border-bottom: 1px solid #a63b37; }
 

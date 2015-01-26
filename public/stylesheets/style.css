@@ -231,13 +231,13 @@ div.footer {
   text-shadow: 1px 1px black;
   position: relative;
   bottom: 50px; }
-  div.footer .container {
+  div.footer .footer-container {
     padding-top: 10px;
     margin: 0 auto;
     background: transparent; }
-    div.footer .container h5 {
+    div.footer .footer-container h5 {
       margin: 0; }
-    div.footer .container .icon {
+    div.footer .footer-container .icon {
       height: 30px; }
 
 /*# sourceMappingURL=style.css.map */
