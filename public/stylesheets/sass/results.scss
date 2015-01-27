@@ -23,11 +23,12 @@ section.results {
 
             .title {
                 color: white;
-                margin-bottom: 30px;
+                margin-bottom: 20px;
             }
 
             p {
                 text-align: center;
+                width: auto;
                 color: white;
                 margin-bottom: 0;
                 font-size: 1.15em;
@@ -37,10 +38,31 @@ section.results {
                 list-style: none;
                 padding: 0;
                 margin: 0;
+                margin-top: 50px;
 
                 .result {
-                    padding: 10px 0;
-                    margin: 0;
+                    padding: 15px;
+                    margin: 20px;
+
+                    hr.sep {
+                        display: block;
+                        width: 30%;
+                        margin: 0 auto 10px auto;
+                        border: 1px solid white;
+                    }
+
+                    .icon {
+                        height: 42px;
+                        position: absolute;
+                        margin-top: 2px;
+                        left: 100px;
+
+                    }
+
+                    h4 {
+                        margin-top: 0;
+                        text-transform: none;
+                    }
                 }
 
                 .result:hover {
@@ -55,14 +77,20 @@ section.results {
 
             h4 {
                 color: white;
+                margin-top: 50px;
+                margin-bottom: 0;
+            }
+
+            h5 {
+                color: white;
             }
 
             .status {
-                width: 400px;
-                top: 155px;
+                width: 500px;
+                top: 145px;
 
                 p {
-                    color: $green;
+                    color: $blue;
                 }
             }
         }

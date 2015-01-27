@@ -53,8 +53,8 @@ $(function(){
     });
 });
 
-// window.setTimeout(function() {
-//     $('#alert').fadeTo(500, 0, function() {
-//         $(this).remove();
-//     });
-// }, 2500);
+window.setTimeout(function() {
+    $('#alert').fadeTo(300, 0, function() {
+        $(this).remove();
+    });
+}, 5000);

@@ -25,19 +25,20 @@ block content
         div.container
             div.wrapper
                 div.title
-                    h2 Your results!
+                    h2 your hitchers
                 hr.line
                 if matches.length
-                    each match in matches
-                        ul
+                    //- h5 the following requests are from other hitchers asking for rides on the same day as yours. hover over them to connect with other hitchers
+                    ul
+                        each match in matches
                             li.result
                                 //- p #{match.firstname} #{match.lastname}
-                                p #{match.time}
-                                p #{match.pickup}
-                                p to
-                                p #{match.dropoff}
+                                h4 #{match.time}
+                                hr.sep
+                                //- img.icon(src="/images/line.png")
+                                p(style="border-left:2px solid rgba(61,184,73,1)") #{match.pickup}
+                                p(style="border-left:2px solid rgba(221,60,40,1)") #{match.dropoff}
                                 //- p #{match.phone}
-                            hr.line
                 else
                     h4 you don't have any results :(
                 if message && message.length
