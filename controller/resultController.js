@@ -49,4 +49,4 @@ var getResults = function(req, res) {
     };
 };
 
-module.exports = getResults;
+module.exports = currentTime, getResults;
