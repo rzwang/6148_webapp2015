@@ -1,12 +1,15 @@
 section.results {
   height: 100vh; }
-  section.results .container {
+  section.results .background {
+    position: absolute;
     height: 100%;
-    width: 100%;
     background: url("../images/bridge.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover; }
+  section.results .container {
+    height: 100%;
+    width: 100%; }
     section.results .container .wrapper {
       height: auto;
       min-height: 550px;
@@ -21,7 +24,6 @@ section.results {
         margin-bottom: 20px; }
       section.results .container .wrapper p {
         text-align: center;
-        width: auto;
         color: white;
         margin-bottom: 0;
         font-size: 1.15em; }
@@ -32,19 +34,27 @@ section.results {
         margin-top: 50px; }
         section.results .container .wrapper ul .result {
           padding: 15px;
-          margin: 20px; }
-          section.results .container .wrapper ul .result hr.sep {
-            display: block;
-            width: 30%;
-            margin: 0 auto 10px auto;
-            border: 1px solid white; }
-          section.results .container .wrapper ul .result .icon {
-            height: 42px;
-            position: absolute;
-            margin-top: 2px;
-            left: 100px; }
+          margin: 20px auto;
+          width: 500px; }
+          section.results .container .wrapper ul .result .col-sm-2 {
+            width: 65px;
+            padding-right: 5px; }
+            section.results .container .wrapper ul .result .col-sm-2 p {
+              text-align: right;
+              text-transform: uppercase;
+              font-size: 1em;
+              padding-top: 7px; }
+          section.results .container .wrapper ul .result .col-sm-10 {
+            width: 430px;
+            padding-left: 5px; }
+            section.results .container .wrapper ul .result .col-sm-10 p {
+              font-size: 1.25em;
+              text-align: left;
+              padding: 3px; }
           section.results .container .wrapper ul .result h4 {
+            text-align: left;
             margin-top: 0;
+            padding: 0 57px;
             text-transform: none; }
         section.results .container .wrapper ul .result:hover {
           background: #4fa0c4; }
@@ -59,7 +69,7 @@ section.results {
         color: white; }
       section.results .container .wrapper .status {
         width: 500px;
-        top: 145px; }
+        top: 130px; }
         section.results .container .wrapper .status p {
           color: #4fa0c4; }
 

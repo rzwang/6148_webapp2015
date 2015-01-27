@@ -22,6 +22,7 @@ block content
                         li: a(href="/logout") logout
 
     section.results#results
+        div.background
         div.container
             div.wrapper
                 div.title
@@ -32,12 +33,18 @@ block content
                     ul
                         each match in matches
                             li.result
-                                //- p #{match.firstname} #{match.lastname}
                                 h4 #{match.time}
-                                hr.sep
-                                //- img.icon(src="/images/line.png")
-                                p(style="border-left:2px solid rgba(61,184,73,1)") #{match.pickup}
-                                p(style="border-left:2px solid rgba(221,60,40,1)") #{match.dropoff}
+                                div.row
+                                    div.col-sm-2
+                                        p from
+                                    div.col-sm-10
+                                        p(style="border-bottom:1px solid white") #{match.pickup}
+                                div.row
+                                    div.col-sm-2
+                                        p to
+                                    div.col-sm-10
+                                        p #{match.dropoff}
+                                //- p #{match.firstname} #{match.lastname}
                                 //- p #{match.phone}
                 else
                     h4 you don't have any results :(

@@ -23,7 +23,7 @@ h1 {
 
 h2 {
     @extend h1;
-    font-size: 5em;
+    font-size: 4em;
 }
 
 h3 {
@@ -307,7 +307,7 @@ section.about {
 
             .title {
                 color: black;
-                margin: 25px;
+                margin: 15px;
 
                 h3 {
                     font-weight: 400;
@@ -368,7 +368,7 @@ section.signup {
 
             .status {
                 width: 400px;
-                top: 155px;
+                top: 135px;
             }
         }
     }

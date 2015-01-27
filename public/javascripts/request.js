@@ -37,7 +37,7 @@ $(document).ready(function(){
     $('#date').pickadate({
         format: 'm/d/yy',
         formatSubmit: 'mddyyyy',
-        min: true,
+        // min: true,
         hiddenSuffix: '_calc',
         clear: ''
     });

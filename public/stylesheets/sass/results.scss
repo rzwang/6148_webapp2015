@@ -3,13 +3,18 @@
 section.results {
     height: 100vh;
 
-    .container {
+    .background {
+        position: absolute;
         height: 100%;
-        width: 100%;
         background: url("../images/bridge.png") no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
+    }
+
+    .container {
+        height: 100%;
+        width: 100%;
 
         .wrapper {
             height: auto;
@@ -28,7 +33,6 @@ section.results {
 
             p {
                 text-align: center;
-                width: auto;
                 color: white;
                 margin-bottom: 0;
                 font-size: 1.15em;
@@ -42,25 +46,36 @@ section.results {
 
                 .result {
                     padding: 15px;
-                    margin: 20px;
+                    margin: 20px auto;
+                    width: 500px;
 
-                    hr.sep {
-                        display: block;
-                        width: 30%;
-                        margin: 0 auto 10px auto;
-                        border: 1px solid white;
+                    .col-sm-2 {
+                        width: 65px;
+                        padding-right: 5px;
+
+                        p {
+                            text-align: right;
+                            text-transform: uppercase;
+                            font-size: 1em;
+                            padding-top: 7px;
+                        }
                     }
 
-                    .icon {
-                        height: 42px;
-                        position: absolute;
-                        margin-top: 2px;
-                        left: 100px;
+                    .col-sm-10 {
+                        width: 430px;
+                        padding-left: 5px;
 
+                        p {
+                            font-size: 1.25em;
+                            text-align: left;
+                            padding: 3px;
+                        }
                     }
 
                     h4 {
+                        text-align: left;
                         margin-top: 0;
+                        padding: 0 57px;
                         text-transform: none;
                     }
                 }
@@ -87,7 +102,7 @@ section.results {
 
             .status {
                 width: 500px;
-                top: 145px;
+                top: 130px;
 
                 p {
                     color: $blue;
