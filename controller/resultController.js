@@ -29,20 +29,23 @@ var getResults = function(req, res) {
     if (req.user.hasReq === "") {
         res.redirect('/request');
     } else {
-        Request.findById(req.user.hasReq, function(err, request) {
-            Request.find({
-                _id: { $ne: request._id }, // not itself
-                date: request.date, // same date
-                time_calc: { $gte: Math.max(request.time_calc-hour, currentTime), $lte: request.time_calc+hour }, // difference of 1 hour
-                pickup_lat: { $gte: request.pickup_lat-lat2, $lte: request.pickup_lat+lat2 }, // difference of ~2 miles
-                pickup_lng: { $gte: request.pickup_lng-lng2, $lte: request.pickup_lng+lng2 },
-                dropoff_lat: { $gte: request.dropoff_lat-lat2, $lte: request.dropoff_lat+lat2 },
-                dropoff_lng: { $gte: request.dropoff_lng-lng2, $lte: request.dropoff_lng+lng2 },
-            }, function(err, results) {
-                var sorted = results.sort(compare(request));
-                res.render('results', { title: 'hitch | Results', matches: sorted, message: req.flash('message') });
-            });
+        Request.find({}, function(err, requests) {
+            res.render('results', { title: 'hitch | Results', matches: requests, message: req.flash('message') });
         });
+        // Request.findById(req.user.hasReq, function(err, request) {
+        //     Request.find({
+        //         _id: { $ne: request._id }, // not itself
+        //         date: request.date, // same date
+        //         time_calc: { $gte: Math.max(request.time_calc-hour, currentTime), $lte: request.time_calc+hour }, // difference of 1 hour
+        //         pickup_lat: { $gte: request.pickup_lat-lat2, $lte: request.pickup_lat+lat2 }, // difference of ~2 miles
+        //         pickup_lng: { $gte: request.pickup_lng-lng2, $lte: request.pickup_lng+lng2 },
+        //         dropoff_lat: { $gte: request.dropoff_lat-lat2, $lte: request.dropoff_lat+lat2 },
+        //         dropoff_lng: { $gte: request.dropoff_lng-lng2, $lte: request.dropoff_lng+lng2 },
+        //     }, function(err, results) {
+        //         var sorted = results.sort(compare(request));
+        //         res.render('results', { title: 'hitch | Results', matches: sorted, message: req.flash('message') });
+        //     });
+        // });
     };
 };
 
