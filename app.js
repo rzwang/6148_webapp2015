@@ -45,8 +45,8 @@ var initPassport = require('./passport/init');
 initPassport(passport);
 
 // cron Database
-var clearDatabase = require('./controller/clearController');
-setInterval(clearDatabase, 86400000);
+// var clearDatabase = require('./controller/clearController');
+// setInterval(clearDatabase, 86400000);
 
 var routes = require('./routes/index')(passport);
 app.use('/', routes);
