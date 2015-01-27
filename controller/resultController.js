@@ -2,8 +2,8 @@ var Request = require('../models/requestModel');
 var hour = 100; // 1 hour
 var lat2 = 0.03; // 2 miles in degrees lat
 var lng2 = 0.03; // average of 2 miles in degrees lng
-var date = new Date();
-var currentTime = 100*date.getHours() + date.getMinutes();
+// var date = new Date();
+// var currentTime = 100*date.getHours() + date.getMinutes();
 
 function compare(request) {
     return function(a, b) {
@@ -25,23 +25,20 @@ function compare(request) {
     };
 };
 
-var getResults = function(req, res) {
+var getResults = function(req, res, currentTime) {
     if (req.user.hasReq === "") {
         res.redirect('/request');
     } else {
-        console.log('before search');
         Request.findById(req.user.hasReq, function(err, request) {
-            console.log('hello', currentTime);
             Request.find({
                 _id: { $ne: request._id }, // not itself
                 date: request.date, // same date
-                time_calc: { $gte: currentTime, $lte: request.time_calc+hour }, // difference of 1 hour
+                time_calc: { $gte: request.time_calc-hour, $lte: request.time_calc+hour }, // difference of 1 hour
                 pickup_lat: { $gte: request.pickup_lat-lat2, $lte: request.pickup_lat+lat2 }, // difference of ~2 miles
                 pickup_lng: { $gte: request.pickup_lng-lng2, $lte: request.pickup_lng+lng2 },
                 dropoff_lat: { $gte: request.dropoff_lat-lat2, $lte: request.dropoff_lat+lat2 },
                 dropoff_lng: { $gte: request.dropoff_lng-lng2, $lte: request.dropoff_lng+lng2 },
             }, function(err, results) {
-                console.log(results);
                 var sorted = results.sort(compare(request));
                 res.render('results', { title: 'hitch | Results', matches: sorted, message: req.flash('message') });
             });
