@@ -30,20 +30,23 @@ block content
                 if matches.length
                     ul
                         each match in matches
-                            li.result
-                                h4 #{match.time}
-                                div.row
-                                    div.col-sm-2
-                                        p from
-                                    div.col-sm-10
-                                        p(style="border-bottom:1px solid white") #{match.pickup}
-                                div.row
-                                    div.col-sm-2
-                                        p to
-                                    div.col-sm-10
-                                        p #{match.dropoff}
-                                //- p #{match.firstname} #{match.lastname}
-                                //- p #{match.phone}
+                            li
+                                div.result
+                                    h4 #{match.time}
+                                    div.row
+                                        div.col-sm-2
+                                            p from
+                                        div.col-sm-10
+                                            p(style="border-bottom:1px solid white") #{match.pickup}
+                                    div.row
+                                        div.col-sm-2
+                                            p to
+                                        div.col-sm-10
+                                            p #{match.dropoff}
+                                div.contact(hidden)
+                                    h4 #{match.firstname} #{match.lastname}
+                                    hr.line
+                                    h4 #{match.phone}
                 else
                     h4 you don't have any results :(
                 if message && message.length
@@ -58,3 +61,4 @@ block content
                     |  2015
 
 block scripts
+    script(src="/javascripts/results.js")

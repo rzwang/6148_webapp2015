@@ -18,12 +18,6 @@ $(document).ready(function(){
             },function(){
             $('hr.line').css('width','30%');
         });
-
-        $('.result').hover(function(){
-            $('hr.line').css('width','50%');
-            },function(){
-            $('hr.line').css('width','30%');
-        });
     };
 
     if (window.location.hash) {

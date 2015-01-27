@@ -135,14 +135,14 @@ hr.line {
   .status p {
     margin: 0; }
   .status .alert-danger {
-    width: 300px;
+    width: 400px;
     margin: auto;
     padding: 13px;
     background-color: transparent;
     background-image: none;
     color: #dd3c28; }
   .status .alert-success {
-    width: 300px;
+    width: 400px;
     margin: auto;
     padding: 13px;
     background-color: transparent;

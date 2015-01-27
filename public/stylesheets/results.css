@@ -26,34 +26,49 @@ section.results {
       section.results .container .wrapper ul {
         list-style: none;
         padding: 0;
-        margin: 0;
-        margin-top: 50px; }
-        section.results .container .wrapper ul .result {
-          padding: 15px;
-          margin: 20px auto;
-          width: 500px; }
-          section.results .container .wrapper ul .result .col-sm-2 {
-            width: 65px;
-            padding-right: 5px; }
-            section.results .container .wrapper ul .result .col-sm-2 p {
-              text-align: right;
-              text-transform: uppercase;
-              font-size: 1em;
-              padding-top: 7px; }
-          section.results .container .wrapper ul .result .col-sm-10 {
-            width: 430px;
-            padding-left: 5px; }
-            section.results .container .wrapper ul .result .col-sm-10 p {
-              font-size: 1.25em;
+        margin: 50px 0 30px 0; }
+        section.results .container .wrapper ul li {
+          position: relative;
+          width: 500px;
+          height: 145px; }
+          section.results .container .wrapper ul li .result {
+            position: absolute;
+            padding: 20px 15px;
+            margin: 0 auto;
+            width: 100%;
+            height: 100%; }
+            section.results .container .wrapper ul li .result .col-sm-2 {
+              width: 65px;
+              padding-right: 5px; }
+              section.results .container .wrapper ul li .result .col-sm-2 p {
+                text-align: right;
+                text-transform: uppercase;
+                font-size: 1em;
+                padding-top: 7px; }
+            section.results .container .wrapper ul li .result .col-sm-10 {
+              width: 430px;
+              padding-left: 5px; }
+              section.results .container .wrapper ul li .result .col-sm-10 p {
+                font-size: 1.25em;
+                text-align: left;
+                padding: 3px; }
+            section.results .container .wrapper ul li .result h4 {
               text-align: left;
-              padding: 3px; }
-          section.results .container .wrapper ul .result h4 {
-            text-align: left;
-            margin-top: 0;
-            padding: 0 57px;
-            text-transform: none; }
-        section.results .container .wrapper ul .result:hover {
-          background: #4fa0c4; }
+              margin-top: 0;
+              padding: 0 57px;
+              text-transform: none; }
+          section.results .container .wrapper ul li .contact {
+            position: absolute;
+            background: #4fa0c4;
+            padding: 15px;
+            margin: 0 auto;
+            width: 500px;
+            height: 145px; }
+            section.results .container .wrapper ul li .contact h4 {
+              text-align: center;
+              margin-top: 0;
+              padding: 0;
+              text-transform: none; }
       section.results .container .wrapper h4 {
         color: white;
         margin-top: 50px;

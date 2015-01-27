@@ -40,7 +40,6 @@ var getResults = function(req, res) {
                 dropoff_lng: { $gte: request.dropoff_lng-lng2, $lte: request.dropoff_lng+lng2 },
             }, function(err, results) {
                 var sorted = results.sort(compare(request));
-                console.log(sorted);
                 res.render('results', { title: 'hitch | Results', matches: sorted, message: req.flash('message') });
             });
         });

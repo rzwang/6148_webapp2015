@@ -26,7 +26,8 @@ section.login {
           bottom: 85px;
           margin: 0 50px; }
       section.login .container .wrapper .status {
-        width: 350px;
+        width: 400px;
+        left: 25px;
         top: 135px; }
       section.login .container .wrapper .link {
         width: 300px;
