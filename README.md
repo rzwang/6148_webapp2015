@@ -6,7 +6,7 @@ Wistful Worldly Wonderers
 http://hitcharide.herokuapp.com
 
 
-#Library/API Sources:
+##Library/API Sources:
 * Bootstrap: http://getbootstrap.com
 * jQuery: http://jquery.com
 * Passport: http://passportjs.org
