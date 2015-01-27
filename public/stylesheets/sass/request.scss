@@ -36,7 +36,7 @@ section.request {
 
             .title {
                 color: white;
-                text-align: center;
+                margin-bottom: 25px;
             }
 
             .request-wall {
@@ -49,6 +49,11 @@ section.request {
                 .error {
                     border-bottom: 1px solid $red;
                 }
+            }
+
+            .status {
+                width: 450px;
+                top: 150px;
             }
         }
     }

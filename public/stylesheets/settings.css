@@ -24,7 +24,7 @@ section.settings {
       section.settings .container .wrapper .settings-wall {
         padding: 25px; }
         section.settings .container .wrapper .settings-wall .success {
-          border-bottom: 1px solid #2d8835; }
+          border-bottom: 1px solid #3db849; }
         section.settings .container .wrapper .settings-wall .error {
           border-bottom: 1px solid #dd3c28; }
         section.settings .container .wrapper .settings-wall .button-wrapper {
@@ -35,6 +35,9 @@ section.settings {
           section.settings .container .wrapper .settings-wall .newpasswords h5 {
             color: white;
             margin-bottom: 5px; }
+      section.settings .container .wrapper .status {
+        width: 400px;
+        top: 125px; }
       section.settings .container .wrapper .link {
         width: 300px;
         position: absolute;

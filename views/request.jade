@@ -44,9 +44,10 @@ block content
                                 input#time.form-control(type="text", name="time", placeholder="hh:mm")
                         div.button-wrapper
                             button(type="submit") request
-
                     if message && message.length
-                        p#alert.alert.alert-success(role="alert") #{message}
+                        div.status#alert
+                            div.alert-success
+                                p #{message}
 
         div.footer#footer
             div.footer-container

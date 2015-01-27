@@ -225,7 +225,7 @@ hr.line {
         width: 300px;
         margin: auto;
         padding: 13px;
-        background-color: $greenbackground;
+        background-color: transparent;
         background-image: none;
         color: $green;
     }
@@ -235,6 +235,15 @@ hr.line {
 // SECTIONS
 .status {
     top: 5vh;
+
+    .alert-background {
+        width: 300px;
+        margin: auto;
+        padding: 13px;
+        background-color: $greenbackground;
+        background-image: none;
+        color: $green;
+    }
 }
 
 section.main {

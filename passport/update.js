@@ -30,7 +30,7 @@ module.exports = function(passport){
                                 console.log('Error in updating user: '+err);  
                                 throw err;
                             };
-                            return done(null, user, req.flash( 'message', 'Welcome, '+user.firstname ));
+                            return done(null, user, req.flash( 'message', user.firstname + ', your settings have been updated' ));
                         });
                     };
                 }

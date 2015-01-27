@@ -43,13 +43,14 @@ block content
                         input#newpassword2.form-control(type="password", name="newpassword2", placeholder="retype new password")
                         div.button-wrapper
                             button(type="submit") update
+                    if message && message.length
+                        div.status#alert
+                            div.alert-danger
+                                p #{message}
                 div.link
                     div.link-wrapper
                         a(href='/deleteUser')
                             p delete account
-
-                    if message && message.length
-                        p#alert.alert.alert-danger(role='alert') #{message}
 
         div.footer#footer
             div.footer-container
