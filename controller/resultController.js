@@ -31,6 +31,7 @@ var getResults = function(req, res) {
     } else {
         console.log('before search');
         Request.findById(req.user.hasReq, function(err, request) {
+            console.log('inside search');
             Request.find({
                 _id: { $ne: request._id }, // not itself
                 date: request.date, // same date
