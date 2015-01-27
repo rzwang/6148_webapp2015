@@ -1,16 +1,11 @@
 @import '_constants';
 
 section.results {
-    height: 100vh;
-
-    .background {
-        position: absolute;
-        height: 100%;
-        background: url("../images/bridge.png") no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
-    }
+    height: auto-50px;
+    background: url("../images/bridge.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
 
     .container {
         height: 100%;
@@ -21,8 +16,7 @@ section.results {
             min-height: 550px;
             width: 550px;
             position: relative;
-            top: 15%;
-            margin: auto;
+            margin: 15vh auto 10vh auto;
             padding: 25px;
             background-color: $filter;
 
@@ -85,19 +79,10 @@ section.results {
                 }
             }
 
-            .icon {
-                height: 8px;
-                margin: auto;
-            }
-
             h4 {
                 color: white;
                 margin-top: 50px;
                 margin-bottom: 0;
-            }
-
-            h5 {
-                color: white;
             }
 
             .status {
@@ -109,5 +94,9 @@ section.results {
                 }
             }
         }
+    }
+
+    .footer {
+        bottom: 0;
     }
 }

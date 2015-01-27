@@ -1,12 +1,9 @@
 section.results {
-  height: 100vh; }
-  section.results .background {
-    position: absolute;
-    height: 100%;
-    background: url("../images/bridge.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover; }
+  height: auto-50px;
+  background: url("../images/bridge.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; }
   section.results .container {
     height: 100%;
     width: 100%; }
@@ -15,8 +12,7 @@ section.results {
       min-height: 550px;
       width: 550px;
       position: relative;
-      top: 15%;
-      margin: auto;
+      margin: 15vh auto 10vh auto;
       padding: 25px;
       background-color: rgba(0, 0, 0, 0.7); }
       section.results .container .wrapper .title {
@@ -58,19 +54,16 @@ section.results {
             text-transform: none; }
         section.results .container .wrapper ul .result:hover {
           background: #4fa0c4; }
-      section.results .container .wrapper .icon {
-        height: 8px;
-        margin: auto; }
       section.results .container .wrapper h4 {
         color: white;
         margin-top: 50px;
         margin-bottom: 0; }
-      section.results .container .wrapper h5 {
-        color: white; }
       section.results .container .wrapper .status {
         width: 500px;
         top: 130px; }
         section.results .container .wrapper .status p {
           color: #4fa0c4; }
+  section.results .footer {
+    bottom: 0; }
 
 /*# sourceMappingURL=results.css.map */

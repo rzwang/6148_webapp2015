@@ -22,14 +22,12 @@ block content
                         li: a(href="/logout") logout
 
     section.results#results
-        div.background
         div.container
             div.wrapper
                 div.title
                     h2 your hitchers
                 hr.line
                 if matches.length
-                    //- h5 the following requests are from other hitchers asking for rides on the same day as yours. hover over them to connect with other hitchers
                     ul
                         each match in matches
                             li.result
@@ -52,7 +50,6 @@ block content
                     div.status#alert
                         div.alert-success
                             p #{message}
-
         div.footer#footer
             div.footer-container
                 h5
