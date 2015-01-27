@@ -128,8 +128,29 @@ hr.line {
   border: 1px solid white;
   transition: all 500ms ease; }
 
-p.alert {
-  width: 100%; }
+.status {
+  width: 100%;
+  position: absolute;
+  border-color: none; }
+  .status p {
+    margin: 0; }
+  .status .alert-danger {
+    width: 300px;
+    margin: auto;
+    padding: 13px;
+    background-color: transparent;
+    background-image: none;
+    color: #dd3c28; }
+  .status .alert-success {
+    width: 300px;
+    margin: auto;
+    padding: 13px;
+    background-color: rgba(200, 229, 188, 0.7);
+    background-image: none;
+    color: #2d8835; }
+
+.status {
+  top: 5vh; }
 
 section.main {
   height: 100vh; }
@@ -220,9 +241,12 @@ section.signup {
       section.signup .container .wrapper .signup-wall {
         padding: 25px; }
         section.signup .container .wrapper .signup-wall .success {
-          border-bottom: 1px solid #41c057; }
+          border-bottom: 1px solid #2d8835; }
         section.signup .container .wrapper .signup-wall .error {
-          border-bottom: 1px solid #a63b37; }
+          border-bottom: 1px solid #dd3c28; }
+      section.signup .container .wrapper .status {
+        width: 400px;
+        top: 155px; }
 
 div.footer {
   height: 50px;

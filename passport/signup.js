@@ -16,7 +16,7 @@ module.exports = function(passport){
                         return done(err);
                     };
                     if (user) {
-                        return done(null, false, req.flash( 'message', 'User already exists with username: '+username ));
+                        return done(null, false, req.flash( 'signup_message', 'User already exists with username: '+username ));
                     } else {
                         var newUser = new User();
 

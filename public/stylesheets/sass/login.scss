@@ -25,7 +25,8 @@ section.login {
                 margin-bottom: 30px;
             }
 
-            .basic-form {
+            .login-wall {
+                padding: 25px;
 
                 .error {
                     border-bottom: 1px solid $red;
@@ -33,7 +34,13 @@ section.login {
 
                 .button-wrapper {
                     bottom: 85px;
+                    margin: 0 50px;
                 }
+            }
+
+            .status {
+                width: 350px;
+                top: 155px;
             }
 
             .link {

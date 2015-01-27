@@ -17,12 +17,11 @@ module.exports = function(passport){
                     if (!isValidPassword(user, password)){
                         return done(null, false, req.flash( 'message', 'Invalid password' ));
                     } else {
-                        console.log('updating');                        
                         user.firstname = req.param('firstname');
                         user.lastname = req.param('lastname');
                         user.phone = req.param('phone');
 
-                        if (req.param('newpassword').value !== 0) {
+                        if (req.param('newpassword') !== '') {
                             user.password = createHash(req.param('newpassword'));
                         };
 

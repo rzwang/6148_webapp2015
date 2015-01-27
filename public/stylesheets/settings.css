@@ -21,18 +21,20 @@ section.settings {
       section.settings .container .wrapper .title {
         color: white;
         margin-bottom: 30px; }
-      section.settings .container .wrapper .basic-form .success {
-        border-bottom: 1px solid #41c057; }
-      section.settings .container .wrapper .basic-form .error {
-        border-bottom: 1px solid #a63b37; }
-      section.settings .container .wrapper .basic-form .button-wrapper {
-        bottom: 85px;
-        margin: 0 100px; }
-      section.settings .container .wrapper .basic-form .newpasswords {
-        margin-top: 4em; }
-        section.settings .container .wrapper .basic-form .newpasswords h5 {
-          color: white;
-          margin-bottom: 5px; }
+      section.settings .container .wrapper .settings-wall {
+        padding: 25px; }
+        section.settings .container .wrapper .settings-wall .success {
+          border-bottom: 1px solid #2d8835; }
+        section.settings .container .wrapper .settings-wall .error {
+          border-bottom: 1px solid #dd3c28; }
+        section.settings .container .wrapper .settings-wall .button-wrapper {
+          bottom: 85px;
+          margin: 0 75px; }
+        section.settings .container .wrapper .settings-wall .newpasswords {
+          margin-top: 4em; }
+          section.settings .container .wrapper .settings-wall .newpasswords h5 {
+            color: white;
+            margin-bottom: 5px; }
       section.settings .container .wrapper .link {
         width: 300px;
         position: absolute;

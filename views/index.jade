@@ -23,8 +23,10 @@ block content
                         li: a(href="/login") login
                         li: a(href="/#signup", onclick="javascript:document.getElementById('firstname').focus()") sign up
 
-    if message && message.length
-        p#alert.alert.alert-danger(role="alert") #{message}
+    if logout_message && logout_message.length
+        div.status#alert
+            div.alert-success
+                p #{logout_message}
 
     section.main#main
         div.container(
@@ -79,6 +81,10 @@ block content
                         input#phone.form-control(type="tel", name="phone", placeholder="phone")
                         div.button-wrapper
                             button(type="submit") submit
+                    if signup_message && signup_message.length
+                        div.status#alert
+                            div.alert-danger
+                                p #{signup_message}
 
         div.footer#footer
             div.footer-container

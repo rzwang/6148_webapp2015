@@ -203,12 +203,40 @@ hr.line {
     transition: all 500ms ease;
 }
 
-p.alert {
+.status {
     width: 100%;
+    position: absolute;
+    border-color: none;
+
+    p {
+        margin: 0;
+    }
+
+    .alert-danger {
+        width: 300px;
+        margin: auto;
+        padding: 13px;
+        background-color: transparent;
+        background-image: none;
+        color: $red;
+    }
+
+    .alert-success {
+        width: 300px;
+        margin: auto;
+        padding: 13px;
+        background-color: $greenbackground;
+        background-image: none;
+        color: $green;
+    }
 }
 
 
 // SECTIONS
+.status {
+    top: 5vh;
+}
+
 section.main {
     height: 100vh;
     
@@ -340,6 +368,11 @@ section.signup {
                 .error {
                     border-bottom: 1px solid $red;
                 }
+            }
+
+            .status {
+                width: 400px;
+                top: 155px;
             }
         }
     }

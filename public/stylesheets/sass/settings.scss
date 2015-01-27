@@ -38,7 +38,8 @@ section.settings {
                 margin-bottom: 30px;
             }
 
-            .basic-form {
+            .settings-wall {
+                padding: 25px;
                
                 .success {
                     border-bottom: 1px solid $green;
@@ -50,7 +51,7 @@ section.settings {
 
                 .button-wrapper {
                     bottom: 85px;
-                    margin: 0 100px;
+                    margin: 0 75px;
                 }
 
                 .newpasswords {
