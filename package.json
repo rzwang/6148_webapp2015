@@ -6,7 +6,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "start": "node app"
+    "start": "node app.js"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",

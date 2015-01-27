@@ -31,7 +31,7 @@ var getResults = function(req, res) {
     } else {
         console.log('before search');
         Request.findById(req.user.hasReq, function(err, request) {
-            console.log('inside search');
+            console.log(currentTime);
             Request.find({
                 _id: { $ne: request._id }, // not itself
                 date: request.date, // same date
@@ -49,4 +49,4 @@ var getResults = function(req, res) {
     };
 };
 
-module.exports = currentTime, getResults;
+module.exports = getResults;
