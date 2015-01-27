@@ -23,11 +23,6 @@ block content
                         li: a(href="/login") login
                         li: a(href="/#signup", onclick="javascript:document.getElementById('firstname').focus()") sign up
 
-    if logout_message && logout_message.length
-        div.status#alert
-            div.alert-background
-                p #{logout_message}
-
     section.main#main
         div.container(
                 data-center="background-position: 50% 0px"
@@ -81,10 +76,10 @@ block content
                         input#phone.form-control(type="tel", name="phone", placeholder="phone")
                         div.button-wrapper
                             button(type="submit") submit
-                    if signup_message && signup_message.length
+                    if message && message.length
                         div.status#alert
                             div.alert-danger
-                                p #{signup_message}
+                                p #{message}
 
         div.footer#footer
             div.footer-container

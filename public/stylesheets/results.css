@@ -38,5 +38,10 @@ section.results {
         margin: auto; }
       section.results .container .wrapper h4 {
         color: white; }
+      section.results .container .wrapper .status {
+        width: 400px;
+        top: 155px; }
+        section.results .container .wrapper .status p {
+          color: #3db849; }
 
 /*# sourceMappingURL=results.css.map */

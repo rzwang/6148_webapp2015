@@ -56,6 +56,15 @@ section.results {
             h4 {
                 color: white;
             }
+
+            .status {
+                width: 400px;
+                top: 155px;
+
+                p {
+                    color: $green;
+                }
+            }
         }
     }
 }

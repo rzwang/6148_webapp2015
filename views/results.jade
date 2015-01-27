@@ -21,16 +21,12 @@ block content
                         li: a(href="/settings") settings
                         li: a(href="/logout") logout
 
-    if message && message.length
-        p#alert.alert.alert-danger(role="alert") #{message}
-
     section.results#results
         div.container
             div.wrapper
                 div.title
                     h2 Your results!
                 hr.line
-                    
                 if matches.length
                     each match in matches
                         ul
@@ -44,6 +40,10 @@ block content
                             hr.line
                 else
                     h4 you don't have any results :(
+                if message && message.length
+                    div.status#alert
+                        div.alert-success
+                            p #{message}
 
         div.footer#footer
             div.footer-container

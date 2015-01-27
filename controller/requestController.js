@@ -1,13 +1,16 @@
 var Request = require('../models/requestModel');
 
 var createRequest = function(req, res){
+    var pickup_full = req.body['pickup'].split(", ");
+    var dropoff_full = req.body['dropoff'].split(", ");
+
     var newRequest = new Request({
         firstname: req.user.firstname,
         lastname: req.user.lastname,
-        pickup: req.body['pickup'],
+        pickup: pickup_full.slice(0,pickup_full.length-1).join(", "),
         pickup_lat: req.body['pickup_loc'].split(', ')[0],
         pickup_lng: req.body['pickup_loc'].split(', ')[1],
-        dropoff: req.body['dropoff'],
+        dropoff: dropoff_full.slice(0,dropoff_full.length-1).join(", "),
         dropoff_lat: req.body['dropoff_loc'].split(', ')[0],
         dropoff_lng: req.body['dropoff_loc'].split(', ')[1],
         date: req.body['date'],

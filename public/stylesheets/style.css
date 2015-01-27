@@ -149,16 +149,6 @@ hr.line {
     background-image: none;
     color: #3db849; }
 
-.status {
-  top: 5vh; }
-  .status .alert-background {
-    width: 300px;
-    margin: auto;
-    padding: 13px;
-    background-color: rgba(200, 229, 188, 0.7);
-    background-image: none;
-    color: #3db849; }
-
 section.main {
   height: 100vh; }
   section.main .container {
