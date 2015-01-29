@@ -23,7 +23,7 @@ h1 {
 
 h2 {
     @extend h1;
-    font-size: 5em;
+    font-size: 4em;
 }
 
 h3 {
@@ -43,29 +43,25 @@ h5 {
     text-transform: uppercase;
 }
 
+p {
+    @extend h1;
+    font-size: 1em;
+    text-transform: none;
+}
+
 ::-webkit-input-placeholder {
-   font-weight: 300;
-   text-transform: uppercase;
+    font-weight: 300;
+    text-transform: uppercase;
 }
 
 :-moz-placeholder {
-     font-weight: 300;
+    font-weight: 300;
     text-transform: uppercase;
 }
 
 ::-moz-placeholder {
     font-weight: 300;
-   text-transform: uppercase;
-}
-
-
-// LINE SEPARATOR
-hr.line {
-    display: block;
-    width: 30%;
-    margin: 1em auto;
-    border: 1px solid white;
-    transition: all 500ms ease;
+    text-transform: uppercase;
 }
 
 
@@ -89,7 +85,7 @@ nav.navbar {
         
         a:hover {
             text-decoration: none;
-            color: $lightblue;
+            color: $blue;
             background: transparent;
         }
 
@@ -115,7 +111,7 @@ nav.navbar {
 
     .navbar {
         
-        #clear {
+        #white {
             background: transparent;
             padding: 15px 25px 15px 15px;
             -webkit-transition: all .5s ease-in-out;
@@ -127,13 +123,21 @@ nav.navbar {
             }
         }
 
+        #black {
+            @extend #white;
+            a {
+                color: black;
+            }
+
+            a:hover {
+                color: $blue;
+            }
+        }
+
         #collapsed {
-            @extend #clear;
-            padding: 0 25px 0 15px;
+            @extend #white;
             background: black;
-            -webkit-transition: all .5s ease-in-out;
-            -moz-transition: all .5s ease-in-out;
-            transition: all .5s ease-in-out;
+            padding: 0 25px 0 15px;
         }
     } 
 }
@@ -142,31 +146,36 @@ nav.navbar {
 // FORM
 form.basic-form {
 
-    .form-control {
+    input.form-control {
         background: transparent;
         border: none;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
         border-radius: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
         margin: 3px 0;
         border-bottom: 1px solid white;
         font-family: $opensans;
         color: white;
     }
 
-    .form-control:focus {
-        border-bottom: 1px solid $lightblue;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-    }
+    input.form-control:focus {
+            border-bottom: 1px solid $blue;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
 
     .button-wrapper {
-        width: 300px;
+        width: 250px;
         position: absolute;
         bottom: 65px;
-        margin: 0 50px;
+        margin: 0 75px;
 
         button {
-            font-size: 30px;
+            font-size: 25px;
             font-weight: 300;
             width: 100%;
             padding: 8px;
@@ -179,16 +188,46 @@ form.basic-form {
 
         button:hover {
             color: white;
-            background: $darkblue;
+            background: $button;
         }
     }
+}
 
-    .error {
-        border-bottom: 1px solid $red;
+
+// MISC
+hr.line {
+    display: block;
+    width: 30%;
+    margin: 1em auto;
+    border: 1px solid white;
+    transition: all 500ms ease;
+}
+
+.status {
+    width: 100%;
+    position: absolute;
+    border-color: none;
+
+    p {
+        margin: 0;
     }
 
-    p.alert {
-        width: 100%;
+    .alert-danger {
+        width: 400px;
+        margin: auto;
+        padding: 13px;
+        background-color: transparent;
+        background-image: none;
+        color: $red;
+    }
+
+    .alert-success {
+        width: 400px;
+        margin: auto;
+        padding: 13px;
+        background-color: transparent;
+        background-image: none;
+        color: $blue;
     }
 }
 
@@ -201,7 +240,7 @@ section.main {
         height: 100%;
         width: 100%;
         padding: 0;
-        background: url("../images/blurry.png") no-repeat center center fixed;
+        background: url("../images/main.png") no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
@@ -229,13 +268,13 @@ section.main {
             }
 
             .button-wrapper {
-                width: 300px;
+                width: 250px;
                 position: absolute;
                 bottom: 65px;
-                margin: 0 50px;
+                margin: 0 75px;
 
                 button {
-                    font-size: 30px;
+                    font-size: 25px;
                     font-weight: 300;
                     width: 100%;
                     padding: 8px;
@@ -248,7 +287,7 @@ section.main {
 
                 button:hover {
                     color: white;
-                    background: $darkblue;
+                    background: $button;
                 }
             }
         }
@@ -256,19 +295,19 @@ section.main {
 }
 
 section.about {
-    height: 475px;
+    height: 500px;
     background: white;
 
     .container {
-        padding: 25px;
+        margin: auto;
 
         .wrapper {
             width: 90%;
-            margin: 10% auto;
+            margin: 150px auto;
 
             .title {
                 color: black;
-                margin: 25px;
+                margin: 15px;
 
                 h3 {
                     font-weight: 400;
@@ -278,7 +317,7 @@ section.about {
             }
 
             hr.line {
-                border: 1px solid $lightblue;
+                border: 1px solid $blue;
             }
 
             .subtitle {
@@ -289,7 +328,7 @@ section.about {
     }
 }
 
-section.request {
+section.signup {
     height: 100vh;
 
     .container {
@@ -305,7 +344,7 @@ section.request {
             height: 550px;
             width: 500px;
             position: relative;
-            top: 15%;
+            top: 13%;
             margin: auto;
             padding: 25px;
             background-color: $filter;
@@ -317,26 +356,43 @@ section.request {
 
             .signup-wall {
                 padding: 25px;
+
+                .success {
+                    border-bottom: 1px solid $green;
+                }
+
+                .error {
+                    border-bottom: 1px solid $red;
+                }
+            }
+
+            .status {
+                width: 400px;
+                top: 135px;
             }
         }
     }
 }
 
-section.footer {
-    height: 60px;
-    background: $filter;
+div.footer {
+    height: 50px;
+    width: 100%;
     color: white;
+    text-shadow: 1px 1px black;
+    position: relative;
+    bottom: 50px;
 
-    .container {
-        padding-top: 5px;
+    .footer-container {
+        padding-top: 10px;
         margin: 0 auto;
+        background: transparent;
 
         h5 {
             margin: 0;
         }
 
         .icon {
-            height: 50px;
+            height: 30px;
         }
     }
 }

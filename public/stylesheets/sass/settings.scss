@@ -1,0 +1,99 @@
+@import '_constants';
+
+@media only screen and (min-width: 768px) {
+
+    .navbar {
+        
+        #white {
+            
+            a:hover {
+                color: black;
+            }
+        }
+    }
+}
+
+section.settings {
+    height: 100vh;
+
+    .container {
+        height: 100%;
+        width: 100%;
+        background: url("../images/newyork.png") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+
+        .wrapper {
+            height: 600px;
+            width: 500px;
+            position: relative;
+            top: 10%;
+            margin: auto;
+            padding: 25px;
+            background-color: $filter;
+
+            .title {
+                color: white;
+                margin-bottom: 30px;
+            }
+
+            .settings-wall {
+                padding: 25px;
+               
+                .success {
+                    border-bottom: 1px solid $green;
+                }
+
+                .error {
+                    border-bottom: 1px solid $red;
+                }
+
+                .button-wrapper {
+                    bottom: 85px;
+                    margin: 0 75px;
+                }
+
+                .newpasswords {
+                    margin-top: 4em;
+
+                    h5 {
+                        color: white;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+
+            .status {
+                width: 400px;
+                top: 125px;
+            }
+
+            .link {
+                width: 300px;
+                position: absolute;
+                bottom: 20px;
+                margin: 0 75px;
+
+                .link-wrapper {
+                    width: 300px;
+                    margin: auto;
+
+                    a {
+                        width: 120px;
+                        color: $blue;
+                        transition: all 500ms ease;
+
+                        p {
+                            text-align: center;
+                        }
+                    }
+
+                    a:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

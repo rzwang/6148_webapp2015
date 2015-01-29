@@ -1,4 +1,3 @@
-var flash = require('connect-flash');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -9,7 +8,11 @@ var flash = require('connect-flash');
 
 // mongoose
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/passport')
+var uriUtil = require('mongodb-uri');
+var mongodbUri = 'mongodb://heroku_app33380250:j71copckd4tl1vqhvj20nroolp@ds031551.mongolab.com:31551/heroku_app33380250';
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+mongoose.connect(mongooseUri);
 
 var app = express();
 
@@ -17,8 +20,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/images/favicon.ico'));
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -29,7 +31,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 var passport = require('passport');
 var expressSession = require('express-session');
 
-app.use(expressSession({secret: 'maroon5fan123'}));
+app.use(expressSession({
+    secret: 'thisisasecret',
+    resave: false,
+    saveUninitialized: true
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -37,6 +43,10 @@ app.use(flash());
 // passport init
 var initPassport = require('./passport/init');
 initPassport(passport);
+
+// cron Database
+// var clearDatabase = require('./controller/clearController');
+// setInterval(clearDatabase, 86400000);
 
 var routes = require('./routes/index')(passport);
 app.use('/', routes);
@@ -71,5 +81,9 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'));
 
 module.exports = app;

@@ -1,0 +1,63 @@
+extends layout
+
+block header
+
+block stylesheets
+    link(rel="stylesheet", href="/stylesheets/settings.css")
+
+block content
+    nav.navbar#navbar
+        div.navbar-fixed-top#white
+            div.container-fluid
+                div.navbar-header
+                    a.navbar-brand.page-scroll(href="/") hitch
+                    button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#basic_nav")
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                div.collapse.navbar-collapse#basic_nav
+                    ul.nav.navbar-nav.navbar-right
+                        li: a(href="/deleteUser") delete
+                        li: a(href="/logout") logout
+                        li: a(href="/request") cancel
+
+    section.settings#settings
+        div.container
+            div.wrapper
+                div.title
+                    h3 update your profile
+                hr.line
+                div.settings-wall
+                    form.basic-form(method="POST")
+                        div.row
+                            div.col-sm-6
+                                input#firstname.form-control(type="text", name="firstname", placeholder="first name", value=user.firstname)
+                            div.col-sm-6
+                                input#lastname.form-control(type="text", name="lastname", placeholder="last name", value=user.lastname)
+                        input#phone.form-control(type="tel", name="phone", placeholder="phone", value=user.phone)
+                        input#username.form-control(type="hidden", name="username", value=user.username)
+                        input#password.form-control(type="password", name="password", placeholder="password")
+                        div.newpasswords
+                            h5 change your password
+                        input#newpassword.form-control(type="password", name="newpassword", placeholder="new password")
+                        input#newpassword2.form-control(type="password", name="newpassword2", placeholder="retype new password")
+                        div.button-wrapper
+                            button(type="submit") update
+                    if message && message.length
+                        div.status#alert
+                            div.alert-danger
+                                p #{message}
+                div.link
+                    div.link-wrapper
+                        a(href='/deleteUser')
+                            p delete account
+        div.footer#footer
+            div.footer-container
+                h5
+                    | wistful worldly wanderers 
+                    img.icon(src="/images/3w.png")
+                    |  2015
+
+block scripts
+    script(src="/javascripts/update.js")
+    script(src="/javascripts/mask.min.js")

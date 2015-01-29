@@ -1,16 +1,18 @@
 extends layout
 
 block header
+    script(src="https://maps.googleapis.com/maps/api/js?libraries=places")
+    script(src="/javascripts/request.js")
 
 block stylesheets
+    link(rel="stylesheet", href="/stylesheets/datepicker/default.css")
+    link(rel="stylesheet", href="/stylesheets/datepicker/default.date.css")
+    link(rel="stylesheet", href="/stylesheets/datepicker/default.time.css")
     link(rel="stylesheet", href="/stylesheets/request.css")
 
 block content
-    //- nav.navbar#navbar
-        div.navbar-fixed-top(
-                data-start="@id:clear"
-                data-0p="@id:collapsed"
-                data-anchor-target="#navbar")
+    nav.navbar#navbar
+        div.navbar-fixed-top#white
             div.container-fluid
                 div.navbar-header
                     a.navbar-brand.page-scroll(href="/") hitch
@@ -20,28 +22,41 @@ block content
                         span.icon-bar
                 div.collapse.navbar-collapse#basic_nav
                     ul.nav.navbar-nav.navbar-right
-                        li: a(href="login") LOGIN
-                        li: a(href="signup") SIGN UP
+                        li: a(href="/settings") settings
+                        li: a(href="/logout") logout
 
     section.request#request
         div.container
             div.wrapper
                 div.title
-                    h3 Hitch me a ride
-                
-                div.signup-wall
+                    h2 Hitch me a ride
+                hr.line
+                div.request-wall
                     form.basic-form(method='POST')
+                        input#pickup.form-control(type="text", name="pickup", placeholder="pickup", onfocus="initialize()", autofocus)
+                        input#pickup_loc.form-control(type="hidden", name="pickup_loc")
+                        input#dropoff.form-control(type="text", name="dropoff", placeholder="dropoff")
+                        input#dropoff_loc.form-control(type="hidden", name="dropoff_loc")
                         div.row
                             div.col-sm-6
-                                input#firstname.form-control(type='text', name='firstname', placeholder='First Name', required, autofocus)
+                                input#date.form-control(type="text", name="date", placeholder="mm/dd/yy")
                             div.col-sm-6
-                                input#lastname.form-control(type='text', name='lastname', placeholder='Last Name', required)
-                        input#pickup.form-control(type='text', name='pickup', placeholder='Pickup', required)
-                        input#dropoff.form-control(type='text', name='dropoff', placeholder='Dropoff', required)
-                        input#time.form-control(type='datetime-local', name='time', placeholder='mm/dd/yyyy hh:mm', required)
-                        input#phone.form-control(type='tel', name='phone', placeholder='Phone', required)
+                                input#time.form-control(type="text", name="time", placeholder="hh:mm")
                         div.button-wrapper
-                            button request
-
-                    if message && message.length > 0
-                        p#alert.alert.alert-success(role='alert') #{message}
+                            button(type="submit") request
+                    if message && message.length
+                        div.status#alert
+                            div.alert-success
+                                p #{message}
+        div.footer#footer
+            div.footer-container
+                h5
+                    | wistful worldly wanderers 
+                    img.icon(src="/images/3w.png")
+                    |  2015
+    
+block scripts
+    script(src="/javascripts/validation.js")
+    script(src="/javascripts/datepicker/picker.js")
+    script(src="/javascripts/datepicker/picker.date.js")
+    script(src="/javascripts/datepicker/picker.time.js")

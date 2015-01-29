@@ -3,14 +3,11 @@ extends layout
 block header
 
 block stylesheets
+    link(rel="stylesheet", href="/stylesheets/results.css")
 
 block content
-    //- nav.navbar#navbar
-        //- FIX RESPONSIVENESS
-        div.navbar-fixed-clear(
-                data-top="@class:navbar-fixed-top-clear"
-                data--0p-top="@class:navbar-fixed-top"
-                data-anchor-target="#navbar")
+    nav.navbar#navbar
+        div.navbar-fixed-top#black
             div.container-fluid
                 div.navbar-header
                     a.navbar-brand.page-scroll(href="/") hitch
@@ -20,13 +17,49 @@ block content
                         span.icon-bar
                 div.collapse.navbar-collapse#basic_nav
                     ul.nav.navbar-nav.navbar-right
-                        li: a(href="login") LOGIN
-                        li: a(href="signup") SIGN UP
+                        li: a(href="/deleteRequest") new request
+                        li: a(href="/settings") settings
+                        li: a(href="/logout") logout
 
-    section.request#request
+    section.results#results
         div.container
             div.wrapper
                 div.title
-                    h3 Your hitchers!
-                    if message && message.length > 0
-                        p#alert.alert.alert-success(role='alert') #{message}
+                    h2 your hitchers
+                hr.line
+                if matches.length
+                    ul
+                        each match in matches
+                            li
+                                div.result
+                                    h4 #{match.time}
+                                    div.row
+                                        div.col-sm-2
+                                            p from
+                                        div.col-sm-10
+                                            p(style="border-bottom:1px solid white") #{match.pickup}
+                                    div.row
+                                        div.col-sm-2
+                                            p to
+                                        div.col-sm-10
+                                            p #{match.dropoff}
+                                div.contact(hidden)
+                                    h4 #{match.firstname} #{match.lastname}
+                                    hr.line
+                                    h4 #{match.phone}
+                else
+                    h4 sorry, we can't find any other hitchers for you at the moment.
+                    h4 please try again later.
+                if message && message.length
+                    div.status#alert
+                        div.alert-success
+                            p #{message}
+            div.footer#footer
+                div.footer-container
+                    h5
+                        | wistful worldly wanderers 
+                        img.icon(src="/images/3w.png")
+                        |  2015
+
+block scripts
+    script(src="/javascripts/results.js")

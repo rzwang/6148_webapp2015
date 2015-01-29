@@ -1,0 +1,58 @@
+@media only screen and (min-width: 768px) {
+  .navbar #white a:hover {
+    color: black; } }
+section.settings {
+  height: 100vh; }
+  section.settings .container {
+    height: 100%;
+    width: 100%;
+    background: url("../images/newyork.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover; }
+    section.settings .container .wrapper {
+      height: 600px;
+      width: 500px;
+      position: relative;
+      top: 10%;
+      margin: auto;
+      padding: 25px;
+      background-color: rgba(0, 0, 0, 0.7); }
+      section.settings .container .wrapper .title {
+        color: white;
+        margin-bottom: 30px; }
+      section.settings .container .wrapper .settings-wall {
+        padding: 25px; }
+        section.settings .container .wrapper .settings-wall .success {
+          border-bottom: 1px solid #3db849; }
+        section.settings .container .wrapper .settings-wall .error {
+          border-bottom: 1px solid #dd3c28; }
+        section.settings .container .wrapper .settings-wall .button-wrapper {
+          bottom: 85px;
+          margin: 0 75px; }
+        section.settings .container .wrapper .settings-wall .newpasswords {
+          margin-top: 4em; }
+          section.settings .container .wrapper .settings-wall .newpasswords h5 {
+            color: white;
+            margin-bottom: 5px; }
+      section.settings .container .wrapper .status {
+        width: 400px;
+        top: 125px; }
+      section.settings .container .wrapper .link {
+        width: 300px;
+        position: absolute;
+        bottom: 20px;
+        margin: 0 75px; }
+        section.settings .container .wrapper .link .link-wrapper {
+          width: 300px;
+          margin: auto; }
+          section.settings .container .wrapper .link .link-wrapper a {
+            width: 120px;
+            color: #4fa0c4;
+            transition: all 500ms ease; }
+            section.settings .container .wrapper .link .link-wrapper a p {
+              text-align: center; }
+          section.settings .container .wrapper .link .link-wrapper a:hover {
+            color: white; }
+
+/*# sourceMappingURL=settings.css.map */

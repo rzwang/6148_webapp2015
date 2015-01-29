@@ -1,5 +1,35 @@
-section.request .container .wrapper .title {
-  color: black;
-  text-align: center; }
+@media only screen and (min-width: 768px) {
+  .navbar #white a:hover {
+    color: black; } }
+section.request {
+  height: 100vh; }
+  section.request .container {
+    height: 100%;
+    width: 100%;
+    padding: 25px;
+    background: url("../images/skyline.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover; }
+    section.request .container .wrapper {
+      height: 500px;
+      width: 550px;
+      position: relative;
+      top: 15%;
+      margin: auto;
+      padding: 25px;
+      background-color: rgba(0, 0, 0, 0.7); }
+      section.request .container .wrapper .title {
+        color: white;
+        margin-bottom: 25px; }
+      section.request .container .wrapper .request-wall {
+        padding: 25px; }
+        section.request .container .wrapper .request-wall .button-wrapper {
+          margin: 0 100px; }
+        section.request .container .wrapper .request-wall .error {
+          border-bottom: 1px solid #dd3c28; }
+      section.request .container .wrapper .status {
+        width: 450px;
+        top: 135px; }
 
 /*# sourceMappingURL=request.css.map */

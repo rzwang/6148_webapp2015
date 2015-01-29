@@ -2,12 +2,15 @@ extends layout
 
 block header
 
+block stylesheets
+
 block content
     nav.navbar#navbar
         div.navbar-fixed-top(
-                data-start="@id:clear"
-                data-0p="@id:collapsed"
-                data-anchor-target="#navbar")
+                data-bottom-top="@id:white"
+                data-40-top="@id:black"
+                data-40-top-bottom="@id:white"
+                data-anchor-target="#about")
             div.container-fluid
                 div.navbar-header
                     a.navbar-brand.page-scroll(href="/") hitch
@@ -17,8 +20,8 @@ block content
                         span.icon-bar
                 div.collapse.navbar-collapse#basic_nav
                     ul.nav.navbar-nav.navbar-right
-                        li: a(href="login") login
-                        li: a(href="signup") sign up
+                        li: a(href="/login") login
+                        li: a(href="/#signup") sign up
 
     section.main#main
         div.container(
@@ -36,8 +39,8 @@ block content
                     h3 hitch a ride to
                     span.typed
                 div.button-wrapper
-                    a(href="#request")
-                        button hitch me a ride
+                    a(href="/#signup")
+                        button get started
 
     section.about#about
         div.container
@@ -46,37 +49,45 @@ block content
                     h3 making ridesharing easier than ever
                 hr.line
                 div.subtitle
-                    h4 hitch finds people for you to share rides with. it's fast, simple, and best of all, it saves you money.
+                    h4 hitch finds people for you to share rides with. it's fast, simple, and best of all, it saves you money. just tell us where you want to go and we'll match you with other people on similar routes.
 
-    section.request#request
+    section.signup#signup
         div.container(
                 data-bottom-top="background-position: 50% 100px"
-                data--60-center="background-position: 50% 0px"
-                data-anchor-target="#request")
+                data-center="background-position: 50% 0px"
+                data-anchor-target="#signup")
             div.wrapper#formbox(
                     data-bottom-top="opacity:0"
                     data-bottom="opacity:1"
                     data-anchor-target="#formbox")
                 div.title
-                    h2 hitch a ride
+                    h2 sign up
                 hr.line
                 div.signup-wall
-                    form.basic-form(action="/request", method="POST")
+                    form.basic-form(action="/signup", method="POST")
                         div.row
                             div.col-sm-6
-                                input#firsname.form-control(type="text", name="firstname", placeholder="First Name", required, autofocus)
+                                input#firstname.form-control(type="text", name="firstname", placeholder="first name")
                             div.col-sm-6
-                                input#lastname.form-control(type="text", name="lastname", placeholder="Last Name", required)
-                        input#pickup.form-control(type="text", name="pickup", placeholder="Pickup", required)
-                        input#dropoff.form-control(type="text", name="dropoff", placeholder="Dropoff", required)
-                        input#time.form-control(type="datetime-local", name="time", placeholder="mm/dd/yyyy hh:mm", required)
-                        input#phone.form-control(type="tel", name="phone", placeholder="Phone", required)
+                                input#lastname.form-control(type="text", name="lastname", placeholder="last name")
+                        input#username.form-control(type="text", name="username", placeholder="username")
+                        input#password.form-control(type="password", name="password", placeholder="password")
+                        input#password2.form-control(type="password", name="password2", placeholder="retype password")
+                        input#phone.form-control(type="tel", name="phone", placeholder="phone number")
                         div.button-wrapper
-                            button request
+                            button(type="submit") submit
+                    if message && message.length
+                        div.status#alert
+                            div.alert-danger
+                                p #{message}
+        div.footer#footer
+            div.footer-container
+                h5
+                    | wistful worldly wanderers 
+                    img.icon(src="/images/3w.png")
+                    |  2015
 
-    section.footer#footer
-        div.container
-            h5
-                | wistful worldly wanderers 
-                img.icon(src="/images/3w.png")
-                |  2015
+block scripts
+    script(src="/javascripts/typed.js")
+    script(src="/javascripts/validation.js")
+    script(src="/javascripts/mask.min.js")

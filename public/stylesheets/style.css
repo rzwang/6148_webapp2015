@@ -6,7 +6,7 @@ html, body {
   html section, body section {
     width: 100vw; }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, p {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   font-size: 7em;
@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5 {
   text-transform: lowercase; }
 
 h2 {
-  font-size: 5em; }
+  font-size: 4em; }
 
 h3 {
   font-size: 3em; }
@@ -27,6 +27,10 @@ h5 {
   font-size: 1em;
   text-transform: uppercase; }
 
+p {
+  font-size: 1em;
+  text-transform: none; }
+
 ::-webkit-input-placeholder {
   font-weight: 300;
   text-transform: uppercase; }
@@ -38,13 +42,6 @@ h5 {
 ::-moz-placeholder {
   font-weight: 300;
   text-transform: uppercase; }
-
-hr.line {
-  display: block;
-  width: 30%;
-  margin: 1em auto;
-  border: 1px solid white;
-  transition: all 500ms ease; }
 
 nav.navbar {
   position: fixed;
@@ -72,40 +69,46 @@ nav.navbar {
         text-transform: uppercase; }
 
 @media only screen and (min-width: 768px) {
-  .navbar #clear, .navbar #collapsed {
+  .navbar #white, .navbar #black, .navbar #collapsed {
     background: transparent;
     padding: 15px 25px 15px 15px;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out; }
-    .navbar #clear .container-fluid, .navbar #collapsed .container-fluid {
+    .navbar #white .container-fluid, .navbar #black .container-fluid, .navbar #collapsed .container-fluid {
       max-width: 1500px; }
+  .navbar #black a {
+    color: black; }
+  .navbar #black a:hover {
+    color: #4fa0c4; }
   .navbar #collapsed {
-    padding: 0 25px 0 15px;
     background: black;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out; } }
-form.basic-form .form-control {
+    padding: 0 25px 0 15px; } }
+form.basic-form input.form-control {
   background: transparent;
   border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
   border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
   margin: 3px 0;
   border-bottom: 1px solid white;
   font-family: "Open Sans", sans-serif;
   color: white; }
-form.basic-form .form-control:focus {
+form.basic-form input.form-control:focus {
   border-bottom: 1px solid #4fa0c4;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none; }
 form.basic-form .button-wrapper {
-  width: 300px;
+  width: 250px;
   position: absolute;
   bottom: 65px;
-  margin: 0 50px; }
+  margin: 0 75px; }
   form.basic-form .button-wrapper button {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 300;
     width: 100%;
     padding: 8px;
@@ -117,10 +120,34 @@ form.basic-form .button-wrapper {
   form.basic-form .button-wrapper button:hover {
     color: white;
     background: rgba(39, 87, 109, 0.7); }
-form.basic-form .error {
-  border-bottom: 1px solid #b94a48; }
-form.basic-form p.alert {
-  width: 100%; }
+
+hr.line {
+  display: block;
+  width: 30%;
+  margin: 1em auto;
+  border: 1px solid white;
+  transition: all 500ms ease; }
+
+.status {
+  width: 100%;
+  position: absolute;
+  border-color: none; }
+  .status p {
+    margin: 0; }
+  .status .alert-danger {
+    width: 400px;
+    margin: auto;
+    padding: 13px;
+    background-color: transparent;
+    background-image: none;
+    color: #dd3c28; }
+  .status .alert-success {
+    width: 400px;
+    margin: auto;
+    padding: 13px;
+    background-color: transparent;
+    background-image: none;
+    color: #4fa0c4; }
 
 section.main {
   height: 100vh; }
@@ -128,7 +155,7 @@ section.main {
     height: 100%;
     width: 100%;
     padding: 0;
-    background: url("../images/blurry.png") no-repeat center center fixed;
+    background: url("../images/main.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover; }
@@ -148,12 +175,12 @@ section.main {
         section.main .container .wrapper .subtitle h3 {
           margin: 5px; }
       section.main .container .wrapper .button-wrapper {
-        width: 300px;
+        width: 250px;
         position: absolute;
         bottom: 65px;
-        margin: 0 50px; }
+        margin: 0 75px; }
         section.main .container .wrapper .button-wrapper button {
-          font-size: 30px;
+          font-size: 25px;
           font-weight: 300;
           width: 100%;
           padding: 8px;
@@ -167,16 +194,16 @@ section.main {
           background: rgba(39, 87, 109, 0.7); }
 
 section.about {
-  height: 475px;
+  height: 500px;
   background: white; }
   section.about .container {
-    padding: 25px; }
+    margin: auto; }
     section.about .container .wrapper {
       width: 90%;
-      margin: 10% auto; }
+      margin: 150px auto; }
       section.about .container .wrapper .title {
         color: black;
-        margin: 25px; }
+        margin: 15px; }
         section.about .container .wrapper .title h3 {
           font-weight: 400;
           line-height: 1.25em;
@@ -187,9 +214,9 @@ section.about {
         color: black;
         margin: 25px; }
 
-section.request {
+section.signup {
   height: 100vh; }
-  section.request .container {
+  section.signup .container {
     height: 100%;
     width: 100%;
     padding: 25px;
@@ -197,30 +224,41 @@ section.request {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover; }
-    section.request .container .wrapper {
+    section.signup .container .wrapper {
       height: 550px;
       width: 500px;
       position: relative;
-      top: 15%;
+      top: 13%;
       margin: auto;
       padding: 25px;
       background-color: rgba(0, 0, 0, 0.7); }
-      section.request .container .wrapper .title {
+      section.signup .container .wrapper .title {
         color: white;
         margin-bottom: 30px; }
-      section.request .container .wrapper .signup-wall {
+      section.signup .container .wrapper .signup-wall {
         padding: 25px; }
+        section.signup .container .wrapper .signup-wall .success {
+          border-bottom: 1px solid #3db849; }
+        section.signup .container .wrapper .signup-wall .error {
+          border-bottom: 1px solid #dd3c28; }
+      section.signup .container .wrapper .status {
+        width: 400px;
+        top: 135px; }
 
-section.footer {
-  height: 60px;
-  background: rgba(0, 0, 0, 0.7);
-  color: white; }
-  section.footer .container {
-    padding-top: 5px;
-    margin: 0 auto; }
-    section.footer .container h5 {
+div.footer {
+  height: 50px;
+  width: 100%;
+  color: white;
+  text-shadow: 1px 1px black;
+  position: relative;
+  bottom: 50px; }
+  div.footer .footer-container {
+    padding-top: 10px;
+    margin: 0 auto;
+    background: transparent; }
+    div.footer .footer-container h5 {
       margin: 0; }
-    section.footer .container .icon {
-      height: 50px; }
+    div.footer .footer-container .icon {
+      height: 30px; }
 
 /*# sourceMappingURL=style.css.map */
