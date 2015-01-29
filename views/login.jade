@@ -30,16 +30,27 @@ block content
                         div.form-group
                             input#username.form-control(type='text', name='username', placeholder='username', autofocus)
                             input#password.form-control(type='password', name='password', placeholder='password')
+                        div.status
+                            if message && message.length
+                                p#alert.alert-danger(role='alert') #{message}
                         div.button-wrapper
                             button(type="submit") login
+<<<<<<< HEAD
+                        
+=======
                     if message && message.length
                         div.status#alert
                             div.alert-danger
                                 p #{message}
+>>>>>>> 1e6716d595a22c16fa635152d37d4dc8cd4f9f00
                 div.link
                     div.link-wrapper
                         a(href="/#signup")
                             p Create an account
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1e6716d595a22c16fa635152d37d4dc8cd4f9f00
         div.footer#footer
             div.footer-container
                 h5

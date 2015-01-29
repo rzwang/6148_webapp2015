@@ -1,264 +1,64 @@
-html, body {
-  height: auto;
-  max-width: 100%;
-  top: 0;
-  left: 0; }
-  html section, body section {
-    width: 100vw; }
+/*
+Error: Invalid CSS after "...und-image: none": expected "{", was ";"
+        on line 240 of public/stylesheets/sass/style.scss
 
-h1, h2, h3, h4, h5, p {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300;
-  font-size: 7em;
-  text-align: center;
-  text-transform: lowercase; }
+235:         width: 400px;
+236:         margin: auto;
+237:         padding: 13px;
+238:         background-color: transparent;
+239: >>>>>>> 1e6716d595a22c16fa635152d37d4dc8cd4f9f00
+240:         background-image: none;
+241:         color: $red;
+242:     }
+243: 
+244:     .alert-success {
+245: <<<<<<< HEAD
 
-h2 {
-  font-size: 4em; }
-
-h3 {
-  font-size: 3em; }
-
-h4 {
-  font-size: 2em;
-  line-height: 1.5em; }
-
-h5 {
-  font-size: 1em;
-  text-transform: uppercase; }
-
-p {
-  font-size: 1em;
-  text-transform: none; }
-
-::-webkit-input-placeholder {
-  font-weight: 300;
-  text-transform: uppercase; }
-
-:-moz-placeholder {
-  font-weight: 300;
-  text-transform: uppercase; }
-
-::-moz-placeholder {
-  font-weight: 300;
-  text-transform: uppercase; }
-
-nav.navbar {
-  position: fixed;
-  z-index: 9; }
-  nav.navbar .navbar-fixed-top {
-    background: black;
-    font-family: "Open Sans", sans-serif; }
-    nav.navbar .navbar-fixed-top a {
-      font-weight: 300;
-      font-size: 2.5em;
-      color: white;
-      text-shadow: none;
-      transition: all 300ms ease;
-      text-transform: lowercase; }
-    nav.navbar .navbar-fixed-top a:hover {
-      text-decoration: none;
-      color: #4fa0c4;
-      background: transparent; }
-    nav.navbar .navbar-fixed-top .container-fluid {
-      padding: 0 5px; }
-      nav.navbar .navbar-fixed-top .container-fluid .icon-bar {
-        background-color: white; }
-      nav.navbar .navbar-fixed-top .container-fluid .collapse.navbar-collapse a {
-        font-size: 1.25em;
-        text-transform: uppercase; }
-
-@media only screen and (min-width: 768px) {
-  .navbar #white, .navbar #black, .navbar #collapsed {
-    background: transparent;
-    padding: 15px 25px 15px 15px;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out; }
-    .navbar #white .container-fluid, .navbar #black .container-fluid, .navbar #collapsed .container-fluid {
-      max-width: 1500px; }
-  .navbar #black a {
-    color: black; }
-  .navbar #black a:hover {
-    color: #4fa0c4; }
-  .navbar #collapsed {
-    background: black;
-    padding: 0 25px 0 15px; } }
-form.basic-form input.form-control {
-  background: transparent;
-  border: none;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  margin: 3px 0;
-  border-bottom: 1px solid white;
-  font-family: "Open Sans", sans-serif;
-  color: white; }
-form.basic-form input.form-control:focus {
-  border-bottom: 1px solid #4fa0c4;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none; }
-form.basic-form .button-wrapper {
-  width: 250px;
-  position: absolute;
-  bottom: 65px;
-  margin: 0 75px; }
-  form.basic-form .button-wrapper button {
-    font-size: 25px;
-    font-weight: 300;
-    width: 100%;
-    padding: 8px;
-    color: white;
-    text-transform: uppercase;
-    background: transparent;
-    border: solid white 2px;
-    transition: all 500ms ease; }
-  form.basic-form .button-wrapper button:hover {
-    color: white;
-    background: rgba(39, 87, 109, 0.7); }
-
-hr.line {
-  display: block;
-  width: 30%;
-  margin: 1em auto;
-  border: 1px solid white;
-  transition: all 500ms ease; }
-
-.status {
-  width: 100%;
-  position: absolute;
-  border-color: none; }
-  .status p {
-    margin: 0; }
-  .status .alert-danger {
-    width: 400px;
-    margin: auto;
-    padding: 13px;
-    background-color: transparent;
-    background-image: none;
-    color: #dd3c28; }
-  .status .alert-success {
-    width: 400px;
-    margin: auto;
-    padding: 13px;
-    background-color: transparent;
-    background-image: none;
-    color: #4fa0c4; }
-
-section.main {
-  height: 100vh; }
-  section.main .container {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    background: url("../images/main.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover; }
-    section.main .container .wrapper {
-      height: 450px;
-      width: 450px;
-      position: relative;
-      top: 20%;
-      margin: auto;
-      padding: 25px;
-      background-color: rgba(0, 0, 0, 0.7); }
-      section.main .container .wrapper .title {
-        color: white;
-        margin-bottom: 20px; }
-      section.main .container .wrapper .subtitle {
-        color: white; }
-        section.main .container .wrapper .subtitle h3 {
-          margin: 5px; }
-      section.main .container .wrapper .button-wrapper {
-        width: 250px;
-        position: absolute;
-        bottom: 65px;
-        margin: 0 75px; }
-        section.main .container .wrapper .button-wrapper button {
-          font-size: 25px;
-          font-weight: 300;
-          width: 100%;
-          padding: 8px;
-          color: white;
-          text-transform: uppercase;
-          background: transparent;
-          border: solid white 2px;
-          transition: all 500ms ease; }
-        section.main .container .wrapper .button-wrapper button:hover {
-          color: white;
-          background: rgba(39, 87, 109, 0.7); }
-
-section.about {
-  height: 500px;
-  background: white; }
-  section.about .container {
-    margin: auto; }
-    section.about .container .wrapper {
-      width: 90%;
-      margin: 150px auto; }
-      section.about .container .wrapper .title {
-        color: black;
-        margin: 15px; }
-        section.about .container .wrapper .title h3 {
-          font-weight: 400;
-          line-height: 1.25em;
-          text-transform: uppercase; }
-      section.about .container .wrapper hr.line {
-        border: 1px solid #4fa0c4; }
-      section.about .container .wrapper .subtitle {
-        color: black;
-        margin: 25px; }
-
-section.signup {
-  height: 100vh; }
-  section.signup .container {
-    height: 100%;
-    width: 100%;
-    padding: 25px;
-    background: url("../images/street.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover; }
-    section.signup .container .wrapper {
-      height: 550px;
-      width: 500px;
-      position: relative;
-      top: 13%;
-      margin: auto;
-      padding: 25px;
-      background-color: rgba(0, 0, 0, 0.7); }
-      section.signup .container .wrapper .title {
-        color: white;
-        margin-bottom: 30px; }
-      section.signup .container .wrapper .signup-wall {
-        padding: 25px; }
-        section.signup .container .wrapper .signup-wall .success {
-          border-bottom: 1px solid #3db849; }
-        section.signup .container .wrapper .signup-wall .error {
-          border-bottom: 1px solid #dd3c28; }
-      section.signup .container .wrapper .status {
-        width: 400px;
-        top: 135px; }
-
-div.footer {
-  height: 50px;
-  width: 100%;
-  color: white;
-  text-shadow: 1px 1px black;
-  position: relative;
-  bottom: 50px; }
-  div.footer .footer-container {
-    padding-top: 10px;
-    margin: 0 auto;
-    background: transparent; }
-    div.footer .footer-container h5 {
-      margin: 0; }
-    div.footer .footer-container .icon {
-      height: 30px; }
-
-/*# sourceMappingURL=style.css.map */
+Backtrace:
+public/stylesheets/sass/style.scss:240
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1165:in `expected'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1101:in `expected'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1096:in `tok!'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:641:in `block'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:661:in `block_child'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:642:in `block'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:661:in `block_child'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:642:in `block'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:661:in `block_child'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:642:in `block'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:661:in `block_child'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:642:in `block'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:635:in `ruleset'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:660:in `block_child'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:117:in `stylesheet'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:42:in `parse'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/engine.rb:393:in `_to_tree'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:293:in `watch'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/plugin.rb:108:in `method_missing'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:370:in `watch_or_update'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:50:in `process_result'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
+/Users/rosewang/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
+/Users/rosewang/.rbenv/versions/2.1.3/bin/sass:23:in `load'
+/Users/rosewang/.rbenv/versions/2.1.3/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...und-image: none\": expected \"{\", was \";\"\A         on line 240 of public/stylesheets/sass/style.scss\A \A 235:         width: 400px;\A 236:         margin: auto;\A 237:         padding: 13px;\A 238:         background-color: transparent;\A 239: >>>>>>> 1e6716d595a22c16fa635152d37d4dc8cd4f9f00\A 240:         background-image: none;\A 241:         color: $red;\A 242:     }\A 243: \A 244:     .alert-success {\A 245: <<<<<<< HEAD"; }

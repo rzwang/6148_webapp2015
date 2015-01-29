@@ -105,6 +105,11 @@ nav.navbar {
             }
         }
     }
+
+    .status {
+        position: relative;
+        margin: auto;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -203,6 +208,20 @@ hr.line {
     transition: all 500ms ease;
 }
 
+<<<<<<< HEAD
+// ERROR MESSAGING
+.status {
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    border-color: none;
+
+    .alert-danger {
+        width: 100%;
+        margin: auto;
+        padding: 10px;
+        background-color: none;
+=======
 .status {
     width: 100%;
     position: absolute;
@@ -217,11 +236,21 @@ hr.line {
         margin: auto;
         padding: 13px;
         background-color: transparent;
+>>>>>>> 1e6716d595a22c16fa635152d37d4dc8cd4f9f00
         background-image: none;
         color: $red;
     }
 
     .alert-success {
+<<<<<<< HEAD
+        width: 100%;
+        margin: auto;
+        padding: 8px;
+        background-color: none;
+        background-image: none;
+        color: $green;
+    }   
+=======
         width: 400px;
         margin: auto;
         padding: 13px;
@@ -229,6 +258,7 @@ hr.line {
         background-image: none;
         color: $blue;
     }
+>>>>>>> 1e6716d595a22c16fa635152d37d4dc8cd4f9f00
 }
 
 
@@ -294,8 +324,8 @@ section.main {
     }
 }
 
-section.about {
-    height: 500px;
+section.tagline {
+    height: 300px;
     background: white;
 
     .container {
@@ -303,11 +333,11 @@ section.about {
 
         .wrapper {
             width: 90%;
-            margin: 150px auto;
+            margin: 75px 25px auto;
 
             .title {
                 color: black;
-                margin: 15px;
+                margin: 25px;
 
                 h3 {
                     font-weight: 400;
@@ -328,6 +358,42 @@ section.about {
     }
 }
 
+
+section.about {
+    height: 400px;
+    background: white;
+
+    .container {
+        margin: auto;
+
+        .wrapper {
+            width: 90%;
+            margin: 0px 25px auto;
+
+            .title {
+                color: black;
+                margin: 15px;
+
+                h3 {
+                    font-weight: 400;
+                    line-height: 1.25em;
+                    text-transform: uppercase;
+                }
+            }
+
+            hr.line {
+                border: 1px solid $blue;
+            }
+
+            .subtitle {
+                color: black;
+                margin: 25px;
+                text-align: center;
+            }
+        }
+    }
+}
+
 section.signup {
     height: 100vh;
 
@@ -341,10 +407,10 @@ section.signup {
         background-size: cover;
 
         .wrapper {
-            height: 550px;
+            height: 580px;
             width: 500px;
             position: relative;
-            top: 13%;
+            top: 7.5%;
             margin: auto;
             padding: 25px;
             background-color: $filter;
@@ -356,6 +422,11 @@ section.signup {
 
             .signup-wall {
                 padding: 25px;
+
+                .status {
+                    position: absolute;
+                    top: 155px;
+                }
 
                 .success {
                     border-bottom: 1px solid $green;

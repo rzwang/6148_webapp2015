@@ -20,6 +20,12 @@ block content
                         li: a(href="/deleteRequest") new request
                         li: a(href="/settings") settings
                         li: a(href="/logout") logout
+<<<<<<< HEAD
+            div.status
+                if message && message.length > 0
+                    p#alert.alert-success #{message}
+=======
+>>>>>>> 1e6716d595a22c16fa635152d37d4dc8cd4f9f00
 
     section.results#results
         div.container
@@ -27,10 +33,25 @@ block content
                 div.title
                     h2 your hitchers
                 hr.line
+<<<<<<< HEAD
+                
+=======
+>>>>>>> 1e6716d595a22c16fa635152d37d4dc8cd4f9f00
                 if matches.length
                     ul
                         each match in matches
                             li
+<<<<<<< HEAD
+                                div.result#itinerary
+                                    p #{match.time}
+                                    p #{match.pickup}
+                                    p to
+                                    p #{match.dropoff}
+                                div.result#info
+                                    p #{match.firstname} #{match.lastname}
+                                    p #{match.phone}
+                            hr.sep
+=======
                                 div.result
                                     h4 #{match.time}
                                     div.row
@@ -47,6 +68,7 @@ block content
                                     h4 #{match.firstname} #{match.lastname}
                                     hr.line
                                     h4 #{match.phone}
+>>>>>>> 1e6716d595a22c16fa635152d37d4dc8cd4f9f00
                 else
                     h4 sorry, we can't find any other hitchers for you at the moment.
                     h4 please try again later.
@@ -62,4 +84,8 @@ block content
                         |  2015
 
 block scripts
+<<<<<<< HEAD
+    script(src='/javascripts/results.js')
+=======
     script(src="/javascripts/results.js")
+>>>>>>> 1e6716d595a22c16fa635152d37d4dc8cd4f9f00

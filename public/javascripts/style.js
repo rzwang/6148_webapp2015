@@ -43,8 +43,16 @@ $(function(){
     });
 });
 
+<<<<<<< HEAD
+// window.setTimeout(function() {
+//     $('#alert').fadeTo(1000, 0, function() {
+//         $(this).remove();
+//     });
+// }, 3000);
+=======
 window.setTimeout(function() {
     $('#alert').fadeTo(300, 0, function() {
         $(this).remove();
     });
 }, 5000);
+>>>>>>> 1e6716d595a22c16fa635152d37d4dc8cd4f9f00

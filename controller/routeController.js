@@ -2,7 +2,7 @@ var route = {};
 
 route.getHome = function(req, res) {
     if (!req.user) {
-        res.render('index', { title: 'hitch', message: req.flash('message') }); // FIX ERROR MESSAGING
+        res.render('index', { title: 'hitch', logout_message: req.flash('logout_message'), signup_mesage: req.flash('signup_message')}); // FIX ERROR MESSAGING
     } else if (req.user.hasReq === "") {
         res.redirect('/request');
     } else {
@@ -26,6 +26,10 @@ route.getLogin = function(req, res) {
 
 route.getLogout = function(req, res) {
     req.logout();
+<<<<<<< HEAD
+    req.flash( 'logout_message', 'You have been successfully logged out' );
+=======
+>>>>>>> 1e6716d595a22c16fa635152d37d4dc8cd4f9f00
     res.redirect('/');
 };
 

@@ -33,7 +33,11 @@ var getResults = function(req, res, currentTime) {
             Request.find({
                 _id: { $ne: request._id }, // not itself
                 date: request.date, // same date
+<<<<<<< HEAD
+                time_calc: { $gte: request.time_calc-hour, $gte: currentTime, $lte: request.time_calc+hour,  }, // difference of 1 hour
+=======
                 time_calc: { $gte: request.time_calc-hour, $lte: request.time_calc+hour }, // difference of 1 hour
+>>>>>>> 1e6716d595a22c16fa635152d37d4dc8cd4f9f00
                 pickup_lat: { $gte: request.pickup_lat-lat2, $lte: request.pickup_lat+lat2 }, // difference of ~2 miles
                 pickup_lng: { $gte: request.pickup_lng-lng2, $lte: request.pickup_lng+lng2 },
                 dropoff_lat: { $gte: request.dropoff_lat-lat2, $lte: request.dropoff_lat+lat2 },
