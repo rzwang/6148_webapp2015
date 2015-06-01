@@ -18,6 +18,22 @@ http://hitcharide.herokuapp.com
 * OpenSans: http://www.google.com/fonts/specimen/Open+Sans
 
 ##Personal Notes:
-#Backend
+####Backend####
     * controller: deals with DB communications
-    * model: mongoose Schema 
+    * model: mongoose Schema, defined "request" and "user" data models
+
+####Frontend####
+    * public: houses the images used on my webpages, javascript files, sass/css files for my webpages
+    * routes/index.js: deals with the routing of each webpage
+    * views: jade/html files
+
+* node_modules: where all the lib files live
+* passport: utilizing passport API in personal webpages
+* app.js: "require" statements, configures passport, connects to DB, sets port
+
+####Technologies Used####
+* Express
+* mongoose, mongoDB
+* Node.js
+* Jade/HTML 
+* Sass/CSS
