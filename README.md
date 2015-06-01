@@ -16,3 +16,8 @@ http://hitcharide.herokuapp.com
 * PickaDate: http://amsul.ca/pickadate.js
 * Skrollr: https://github.com/Prinzhorn/skrollr
 * OpenSans: http://www.google.com/fonts/specimen/Open+Sans
+
+##Personal Notes:
+#Backend
+    * controller: deals with DB communications
+    * model: mongoose Schema 
