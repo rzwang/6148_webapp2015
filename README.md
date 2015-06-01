@@ -27,9 +27,10 @@ http://hitcharide.herokuapp.com
     * routes/index.js: deals with the routing of each webpage
     * views: jade/html files
 
-* node_modules: where all the lib files live
-* passport: utilizing passport API in personal webpages
-* app.js: "require" statements, configures passport, connects to DB, sets port
+####Other Files####
+    * node_modules: where all the lib files live
+    * passport: utilizing passport API in personal webpages
+    * app.js: "require" statements, configures passport, connects to DB, sets port
 
 ####Technologies Used####
 * Express
