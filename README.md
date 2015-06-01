@@ -31,6 +31,7 @@ http://hitcharide.herokuapp.com
     * node_modules: where all the lib files live
     * passport: utilizing passport API in personal webpages
     * app.js: "require" statements, configures passport, connects to DB, sets port
+    * package.json: versions, starting call
 
 ####Technologies Used####
 * Express
